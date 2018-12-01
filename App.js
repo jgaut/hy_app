@@ -5,7 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Go for a new app !<Text>
+        <Text>Go !!!!!!!!!<Text>
       </View>
     );
   }
