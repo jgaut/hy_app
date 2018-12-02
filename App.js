@@ -14,7 +14,7 @@ export class App extends React.Component {
 
 export default withAuthenticator(App 
                 // Render a sign out button once logged in
-                includeGreetings = true, 
+                includeGreetings = true
                 // Show only certain components
                 //authenticatorComponents = [MyComponents],
                 // display federation/social provider buttons 
