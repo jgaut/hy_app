@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import awsconfig from './aws-exports';
+import Auth from '@aws-amplify/auth';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
