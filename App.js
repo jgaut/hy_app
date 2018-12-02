@@ -11,6 +11,16 @@ export default class App extends React.Component {
   }
 }
 
+export default withAuthenticator(App, 
+                // Render a sign out button once logged in
+                includeGreetings = false, 
+                // Show only certain components
+                authenticatorComponents = [MyComponents],
+                // display federation/social provider buttons 
+                federated = {myFederatedConfig}, 
+                // customize the UI/styling
+                theme = {myCustomTheme});
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
