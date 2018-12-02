@@ -20,7 +20,8 @@ export default withAuthenticator(App,
                 // display federation/social provider buttons 
                 //federated = {myFederatedConfig}, 
                 // customize the UI/styling
-                //theme = {myCustomTheme});
+                //theme = {myCustomTheme}
+                );
 
 const styles = StyleSheet.create({
   container: {
