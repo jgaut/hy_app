@@ -50,8 +50,9 @@ function _onPressButton(){
 
 const styles = StyleSheet.create({
   container: {
+    padding: 30, 
+    backgroundColor: '#f5fcff'
     flex: 1,
-    backgroundColor: '#ddd',
     alignItems: 'center',
     justifyContent: 'center',
   },
