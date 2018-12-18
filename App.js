@@ -16,7 +16,7 @@ export default class App extends React.Component {
   render() {
     return (
 <View style={styles.form}>
-  <Text style={styles.label} h4>Email</Text>
+  <Text style={styles.label} h2>Email</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={false} 
@@ -25,7 +25,7 @@ export default class App extends React.Component {
     onChangeText={email => this.setState({ email })}
     mode="outlined"/>
 
-  <Text style={styles.label} h4>Password</Text>
+  <Text style={styles.label} h2>Password</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={true} 
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     height: 26, fontSize: 20, color: '#000', borderBottomWidth: 1, borderBottomColor: '#555' 
   },
   label: {
-    backgroundColor: '#f0f',
+    
   },
   button: {
     marginBottom: 30,
