@@ -13,6 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
 <View style={styles.container}>
+  <Text h4>Password</Text>
   <TextInput label="Password" secureTextEntry={true} style={styles.fieldsForm}/>
 
       </View>
