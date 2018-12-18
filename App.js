@@ -7,26 +7,55 @@ import Auth from '@aws-amplify/auth';
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
 
-export class App extends React.Component {
+  var t = require('tcomb-form-native');
+
+  var Form = t.form.Form;
+
+  // here we are: define your domain model
+  var Person = t.struct({
+        email: t.String              // a required string
+  });
+
+  var Password = t.struct({
+        password: t.String              // a required string
+  });
+
+var options = {
+  fields: {
+    password: {
+      secureTextEntry: true
+    }
+  }
+};
+
+var options = {}; // optional rendering options (see documentation)
+
+export default class App extends React.Component {
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Hello you !</Text>
+<View style={styles.container}>
+        {/* display */}
+        <Form
+          ref="form"
+          type={Person}
+          options={options}
+        />
+        <Form
+          ref="form"
+          type={Password}
+          options={options}
+        />
+
       </View>
     );
   }
 }
 
-export default withAuthenticator(App,
-                // Render a sign out button once logged in
-                includeGreetings = true, 
-                // Show only certain components
-                //authenticatorComponents = [MyComponents],
-                // display federation/social provider buttons 
-                //federated = {myFederatedConfig}, 
-                // customize the UI/styling
-                //theme = {myCustomTheme}
-                );
+function test(){
+	alert("ok");
+}
 
 const styles = StyleSheet.create({
   container: {
