@@ -16,19 +16,19 @@ export default class App extends React.Component {
   render() {
     return (
 <View style={styles.container}>
-  <Text style={styles.fieldsForm} h4>Email</Text>
+  <Text style={styles.label} h4>Email</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={false} 
-    style={styles.fieldsForm} 
+    style={styles.input} 
     value={this.state.password}
     onChangeText={email => this.setState({ email })}/>
 
-    <Text style={styles.fieldsForm} h4>Password</Text>
+    <Text style={styles.label} h4>Password</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={true} 
-    style={styles.fieldsForm} 
+    style={styles.input} 
     value={this.state.password}
     onChangeText={password => this.setState({ password })}/>
 
@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  fieldsForm: {
+  input: {
     backgroundColor: '#fff',
-    },
+  },
+  label: {
+    backgroundColor: '#f0f',
+  },
 });
