@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
 <View style={styles.container}>
-  <TextInput secureTextEntry={true} value="abc" />
+  <TextInput secureTextEntry={true} style={styles.fieldsForm}/>
 
       </View>
     );
@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ddd',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  fielsForm: {
+    flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
