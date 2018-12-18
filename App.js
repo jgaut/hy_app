@@ -63,14 +63,14 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    width: 200, 
+    width: 200,
+    padding: 60, 
     backgroundColor: '#2196F3',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
-    padding: 20,
     color: 'white'
   }
 });
