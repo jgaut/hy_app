@@ -44,7 +44,7 @@ export default class App extends React.Component {
   }
 }
 
-function test(){
+function _onPressButton(){
 	alert("ok");
 }
 
