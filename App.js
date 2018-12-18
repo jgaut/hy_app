@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Input, View } from 'react-native';
 import { withAuthenticator } from 'aws-amplify-react-native';
+import { Input } from 'react-native-elements';
 import awsconfig from './aws-exports';
 import Auth from '@aws-amplify/auth';
 
