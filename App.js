@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Input, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { withAuthenticator } from 'aws-amplify-react-native';
-import { Input } from 'react-native-elements';
 import awsconfig from './aws-exports';
 import Auth from '@aws-amplify/auth';
 
@@ -14,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
 <View style={styles.container}>
-  <Input label="Password" secureTextEntry={true} style={styles.fieldsForm}/>
+  <TextInput label="Password" secureTextEntry={true} style={styles.fieldsForm}/>
 
       </View>
     );
