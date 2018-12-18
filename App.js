@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     padding: 30, 
     backgroundColor: '#f5fcff',
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'left',
     justifyContent: 'center',
   },
   input: {
