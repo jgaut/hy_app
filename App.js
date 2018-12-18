@@ -63,12 +63,11 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    marginBottom: 30,
-    width: 260,
-    padding: 30, 
+    width: 200,
+    padding: 60, 
     backgroundColor: '#2196F3',
     flex: 1,
-    alignItems: 'stretch',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
