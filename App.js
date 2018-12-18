@@ -9,13 +9,22 @@ Auth.configure(awsconfig);
 
 export default class App extends React.Component {
   state = {
+    email: '',
     password: ''
   };
 
   render() {
     return (
 <View style={styles.container}>
-  <Text style={styles.fieldsForm} h4>Password</Text>
+  <Text style={styles.fieldsForm} h4>Email</Text>
+  <TextInput 
+    label="Password" 
+    secureTextEntry={false} 
+    style={styles.fieldsForm} 
+    value={this.state.password}
+    onChangeText={email => this.setState({ email })}/>
+
+    <Text style={styles.fieldsForm} h4>Password</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={true} 
