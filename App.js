@@ -13,16 +13,19 @@ export default class App extends React.Component {
     password: ''
   };
 
+  label = {
+    email: ''
+  }
   render() {
     return (
 <View style={styles.form}>
-  <Text style={styles.label} h2>Email</Text>
+  <Text style={styles.label} h2>{this.label.email}</Text>
   <TextInput 
     placeholder="Email" 
     secureTextEntry={false} 
     style={styles.input} 
     value={this.state.email}
-    onChangeText={email => this.setState({ email })}
+    onChangeText={email => this.setState({ email }); email => this.setLabel({ "Email" }); }
     mode="outlined"/>
 
   <Text style={styles.label} h2>Password</Text>
