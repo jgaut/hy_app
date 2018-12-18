@@ -22,15 +22,17 @@ export default class App extends React.Component {
     secureTextEntry={false} 
     style={styles.input} 
     value={this.state.password}
-    onChangeText={email => this.setState({ email })}/>
+    onChangeText={email => this.setState({ email })}
+    mode="outlined"/>
 
-    <Text style={styles.label} h4>Password</Text>
+  <Text style={styles.label} h4>Password</Text>
   <TextInput 
     label="Password" 
     secureTextEntry={true} 
     style={styles.input} 
     value={this.state.password}
-    onChangeText={password => this.setState({ password })}/>
+    onChangeText={password => this.setState({ password })}
+    mode="outlined"/>
 
       </View>
     );
