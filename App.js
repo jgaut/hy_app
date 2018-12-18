@@ -56,9 +56,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    flex:0.8, 
-    borderWidth:0.5, 
-    height:5,
+    borderWidth:0.5,
+    width:20%, 
+    height:5%,
     backgroundColor: '#fff',
   },
   label: {
