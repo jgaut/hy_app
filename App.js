@@ -33,8 +33,7 @@ export default class App extends React.Component {
     value={this.state.password}
     onChangeText={password => this.setState({ password })}
     mode="outlined"/>
-</View>
-<View style={styles.button}>
+
    <TouchableOpacity onPress={this._onPressButton}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>TouchableOpacity</Text>
@@ -73,8 +72,11 @@ const styles = StyleSheet.create({
   button: {
     marginBottom: 30,
     width: 260,
+    padding: 30, 
+    backgroundColor: '#f5fcff',
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#2196F3'
+    justifyContent: 'center',
   },
   buttonText: {
     padding: 20,
