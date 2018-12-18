@@ -36,7 +36,7 @@ export default class App extends React.Component {
 
    <TouchableOpacity onPress={this._onPressButton}>
           <View style={styles.button}>
-            <Text style={styles.buttonText}>TouchableOpacity</Text>
+            <Text style={styles.buttonText}>Sign in / Sign Up</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     padding: 30, 
     backgroundColor: '#2196F3',
     flex: 1,
-    alignItems: 'strech',
+    alignItems: 'stretch',
     justifyContent: 'center',
   },
   buttonText: {
