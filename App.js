@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, Button } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import awsconfig from './aws-exports';
 import Auth from '@aws-amplify/auth';
@@ -34,22 +34,11 @@ export default class App extends React.Component {
     onChangeText={password => this.setState({ password })}
     mode="outlined"/>
 
-  <Button
-  title="LOADING BUTTON"
-  loading
-  loadingProps={{ size: "large", color: "rgba(111, 202, 186, 1)" }}
-  titleStyle={{ fontWeight: "700" }}
-  buttonStyle={{
-    backgroundColor: "rgba(92, 99,216, 1)",
-    width: 300,
-    height: 45,
-    borderColor: "transparent",
-    borderWidth: 0,
-    borderRadius: 5
-  }}
-  containerStyle={{ marginTop: 20 }}
-  onPress={test()}
-  />
+   <TouchableOpacity onPress={this._onPressButton}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableOpacity</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
