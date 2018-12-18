@@ -50,7 +50,7 @@ function _onPressButton(){
 
 const styles = StyleSheet.create({
   form: {
-    padding: 30, 
+    padding: 60, 
     backgroundColor: '#f5fcff',
     flex: 1,
     alignItems: 'stretch',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     padding: 30, 
     backgroundColor: '#2196F3',
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'strech',
     justifyContent: 'center',
   },
   buttonText: {
