@@ -56,13 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'center',
   },
-  button: {
-    padding: 30, 
-    backgroundColor: '#f5fcff',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   input: {
     height: 26, fontSize: 20, color: '#000', borderBottomWidth: 1, borderBottomColor: '#555' 
   },
