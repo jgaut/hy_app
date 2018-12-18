@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    padding: 120, 
+    padding: 20, 
     backgroundColor: '#2196F3',
-    flex: 1,
+    flex: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
   },
