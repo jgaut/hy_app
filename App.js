@@ -18,7 +18,7 @@ export default class App extends React.Component {
 <View style={styles.form}>
   <Text style={styles.label} h2>Email</Text>
   <TextInput 
-    label="Password" 
+    placeholder="Email" 
     secureTextEntry={false} 
     style={styles.input} 
     value={this.state.email}
@@ -27,7 +27,7 @@ export default class App extends React.Component {
 
   <Text style={styles.label} h2>Password</Text>
   <TextInput 
-    label="Password" 
+    placeholder="Password" 
     secureTextEntry={true} 
     style={styles.input} 
     value={this.state.password}
