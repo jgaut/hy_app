@@ -8,6 +8,7 @@ import Auth from '@aws-amplify/auth';
 Auth.configure(awsconfig);
 
 export default class App extends React.Component {
+
   state = {
     email: '',
     password: ''
@@ -26,7 +27,7 @@ export default class App extends React.Component {
     secureTextEntry={false} 
     style={styles.input} 
     value={this.state.email}
-    onChangeText={email => this.setLabel("Email")}
+    onChangeText={this.label.email="Email"}
     mode="outlined"/>
 
   <Text style={styles.label} h2>Password</Text>
