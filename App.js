@@ -8,13 +8,20 @@ import Auth from '@aws-amplify/auth';
 Auth.configure(awsconfig);
 
 export default class App extends React.Component {
-
+  state = {
+    password: ''
+  };
 
   render() {
     return (
 <View style={styles.container}>
-  <Text h4>Password</Text>
-  <TextInput label="Password" secureTextEntry={true} style={styles.fieldsForm}/>
+  <Text style={styles.fieldsForm} h4>Password</Text>
+  <TextInput 
+    label="Password" 
+    secureTextEntry={true} 
+    style={styles.fieldsForm} 
+    value={this.state.password}
+    onChangeText={password => this.setState({ password })}/>
 
       </View>
     );
