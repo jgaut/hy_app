@@ -32,9 +32,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   fieldsForm: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    },
 });
