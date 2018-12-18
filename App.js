@@ -48,7 +48,7 @@ export default class App extends React.Component {
     borderRadius: 5
   }}
   containerStyle={{ marginTop: 20 }}
-  onPress={alert()}
+  onPress={test()}
   />
       </View>
     );
