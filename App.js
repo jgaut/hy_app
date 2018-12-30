@@ -1,80 +1,68 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
-import { withAuthenticator } from 'aws-amplify-react-native';
+import { View, Text } from 'react-native';
 import awsconfig from './aws-exports';
 import Auth from '@aws-amplify/auth';
+import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import SignInUpScreen from './views/SignInUp';
+import SignUpConfirmScreen from './views/SignUpConfirm';
+import AppAuthScreen from './AppAuth';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
 
-export default class App extends React.Component {
+class AppScreen extends React.Component {
 
-  state = {
-    email: '',
-    password: ''
+  constructor(...args) {
+      super(...args);
+      this.props.navigation.addListener('didFocus', () => {
+        this.launch();
+      });
+    }
+  
+  static navigationOptions = {
+    header: null
   };
 
-  label = {
-    email: ''
-  };
+  updateText = () => {
+  /*  Auth.signIn(this.state.email, this.state.password).then(user => console.log(user)).catch(err => console.log(err));*/
+  }
+
+  componentWillMount(){
+
+  }
+
+  launch(){
+    const {navigate} = this.props.navigation;
+    Auth.currentAuthenticatedUser({bypassCache: false})
+      .then((user) => {
+        console.log(user);
+        navigate('AppAuth', {user: user.attributes.email});
+        }
+      ).catch((err) => {
+        console.log(err);
+        navigate('SignInUp');
+        }
+      );
+  }
 
   render() {
     return (
-<View style={styles.form}>
-  <Text style={styles.label} h2>{this.label.email}</Text>
-  <TextInput 
-    placeholder="Email" 
-    secureTextEntry={false} 
-    style={styles.input} 
-    value={this.state.email}
-    onChangeText={this.label.email="Email"}
-    mode="outlined"/>
-
-  <Text style={styles.label} h2>Password</Text>
-  <TextInput 
-    placeholder="Password" 
-    secureTextEntry={true} 
-    style={styles.input} 
-    value={this.state.password}
-    onChangeText={password => this.setState({ password })}
-    mode="outlined"/>
-
-   <TouchableOpacity onPress={this._onPressButton}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Sign in / Sign Up</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+     <View>{this.launch()}</View>
     );
   }
 }
 
-function _onPressButton(){
-	alert("ok");
-}
+const AppNavigator = createStackNavigator({
+  App: {screen: AppScreen},
+  SignInUp: {screen: SignInUpScreen},
+  SignUpConfirm: {screen: SignUpConfirmScreen},
+  AppAuth: {screen: AppAuthScreen}
+},
+{
+    headerMode: 'none'}
+);
 
-const styles = StyleSheet.create({
-  form: {
-    padding: 60, 
-    backgroundColor: '#f5fcff',
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-  input: {
-    height: 26, fontSize: 20, color: '#000', borderBottomWidth: 1, borderBottomColor: '#555' 
-  },
-  label: {
-    
-  },
-  button: {
-    padding: 20, 
-    backgroundColor: '#2196F3',
-    flex: 0.5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white'
-  }
-});
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
