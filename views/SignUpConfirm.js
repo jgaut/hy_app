@@ -9,8 +9,8 @@ class ProfileScreen extends React.Component {
     this.state = {
       username: '',
       code: '',
-      err: ''
-    };
+      err: '',
+    }
   }
 
   componentWillMount(){
@@ -18,13 +18,17 @@ class ProfileScreen extends React.Component {
     console.log(this.state.username);
   }
 
+
+
   render() {
     const {navigate} = this.props.navigation;
-
+    var test=<Text style='color:black'>blabla</Text>
+    
     return (
       <View style={styles.form}>
       
       <Text style={styles.label} h2>{this.state.err}</Text>
+
 
       <TextInput 
           placeholder="Code" 
@@ -55,10 +59,13 @@ class ProfileScreen extends React.Component {
               <Text style={styles.buttonText}>Confirm</Text>
             </View>
           </TouchableOpacity>
+          
       </View>
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   form: {
@@ -76,7 +83,9 @@ const styles = StyleSheet.create({
     borderBottomColor: '#555' 
   },
   label: {
-    paddingTop: 30
+    paddingTop: 30,
+
+    color: 'black'
   },
   button: {    
     padding: 20,

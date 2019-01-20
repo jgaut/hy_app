@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
 import Auth from '@aws-amplify/auth';
 
 class SignInScreen extends React.Component {
@@ -10,7 +10,8 @@ class SignInScreen extends React.Component {
     email: '',
     password: '',
     err: '',
-    ErrColor: '#ffffff'
+    errColor: '#f5fcff',
+    list: []
       };
   }
 
@@ -18,13 +19,21 @@ class SignInScreen extends React.Component {
     
     const {navigate} = this.props.navigation;
 
-    return (
-       <View style={styles.form}>
+    this.setState({list: "{user1: {item1: {message: 'blabla', color: 'black'}}}" });
 
-        <Text style={{color: this.state.ErrColor}} h2>{this.state.err}</Text>
+    return (
+
+    <KeyboardAvoidingView  behavior='padding' style={styles.container}>
+      
+      <View style={styles.form}>
+
+
+      <Text style={color: this.state.list.user1.item1.color} h2>{this.state.list.user1.item1.message}</Text>
+      
+        <Text style={{color: this.state.ErrColor, paddingTop: 100}} h2>{this.state.err}</Text>
         
         <Text style={styles.label} h2>{this.state.email==''?' ':"Email"}</Text>
-        
+
         <TextInput 
           placeholder="Email" 
           secureTextEntry={false} 
@@ -32,7 +41,6 @@ class SignInScreen extends React.Component {
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
           mode="outlined"/>
-
         <Text style={styles.label} h2>{this.state.password==''?' ':"Password"}</Text>
         
         <TextInput 
@@ -47,6 +55,10 @@ class SignInScreen extends React.Component {
 
             const username = this.state.email;
             const password = this.state.password;
+            const error = false;
+
+            this.setState({errColor: '#000000'});  
+            this.setState({err: ''});  
 
             Auth.signUp(
               this.state.email,
@@ -57,7 +69,6 @@ class SignInScreen extends React.Component {
               })
               .catch((err) => {
                 console.log(err);
-                this.setState({ err: err.message || err || ''});
                 if(err && err.code && typeof err.code != 'undefined' && err.code == 'UsernameExistsException'){
 
                   // For advanced usage
@@ -72,23 +83,30 @@ class SignInScreen extends React.Component {
                   )
                   .catch((err) => {
                     console.log(err);
-                    this.setState({ err: err.message || err || ''});
                     if(err && err.code && typeof err.code != 'undefined' && err.code == 'UserNotConfirmedException'){
                       navigate('SignUpConfirm', {username: this.state.email});
+                    }else{
+                      this.setState({ err: err.message || err || ''});
+                      this.setState({errColor: '#000000'}); 
                     }
                     }
                   );
+                }else{
+                    this.setState({errColor: '#000000'}); 
+                    this.setState({ err: err.message || err || ''});
+
                 }
               }
               );
-              this.setState({errColor: '#000000'});   
+                
         }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sign in / Sign Up</Text>
             </View>
           </TouchableOpacity>
-      
-      </View>
+          </View>
+
+        </KeyboardAvoidingView>
     );
   };
 
@@ -96,33 +114,36 @@ class SignInScreen extends React.Component {
 
 const styles = StyleSheet.create({
   form: {
-    padding: 60,
-    backgroundColor: '#ffffff',
+    padding: 80, 
+    backgroundColor: '#f5fcff',
     flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
-  input: {
-    height: 26, 
-    fontSize: 20, 
-    color: '#000000', 
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
-  },
   label: {
-    paddingTop: 30,
     color: '#000000'
   },
-  button: {    
-    paddingTop: 20,
+  button: {
+    marginTop:10,
+    paddingTop:40,
     backgroundColor: '#2196F3',
-    flex: 0.5,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
-    color: 'white'
-  }
+    color: 'white',
+  },
+container: {
+    backgroundColor: '#f5fcff',
+    flex: 1,
+  },
+  input: {
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
+  },
 });
 
 export default SignInScreen;
