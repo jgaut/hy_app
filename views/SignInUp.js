@@ -10,9 +10,7 @@ class SignInScreen extends React.Component {
     email: '',
     password: '',
     err: '',
-    errColor: '#f5fcff',
-    list: []
-      };
+    errColor: '#f5fcff'      };
   }
 
   render() {
@@ -26,9 +24,6 @@ class SignInScreen extends React.Component {
     <KeyboardAvoidingView  behavior='padding' style={styles.container}>
       
       <View style={styles.form}>
-
-
-      <Text style={{color: this.state.list.user1.item1.color}} h2>{this.state.list.user1.item1.message}</Text>
       
         <Text style={{color: this.state.ErrColor, paddingTop: 100}} h2>{this.state.err}</Text>
         
