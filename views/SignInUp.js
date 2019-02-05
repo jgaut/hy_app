@@ -28,7 +28,7 @@ class SignInScreen extends React.Component {
       <View style={styles.form}>
 
 
-      <Text style={color: this.state.list.user1.item1.color} h2>{this.state.list.user1.item1.message}</Text>
+      <Text style={{color: this.state.list.user1.item1.color}} h2>{this.state.list.user1.item1.message}</Text>
       
         <Text style={{color: this.state.ErrColor, paddingTop: 100}} h2>{this.state.err}</Text>
         
