@@ -10,33 +10,25 @@ class TestPageScreen extends React.Component {
       username: '',
       code: '',
       err: '',
-      data: 'ok'
+      data: ''
     }
   }
 
   componentWillMount(){
+    const data = {[{"type":"Text", "text":"mon texte"}, {"type":"TextInput", "text":"mon TextInput"}]};
+    this.setState({ data });
   
   }
+
+  
 
 
 
 
   render() {
-
-  var MyCatalog = React.createClass({
-  render: function () {
-    return (
-      <div className="catalog">
-        HELLO!!! I AM A CATALOG!!!
-
-        <ItemList data={this.state.data}/>
-      </div>
-    );
-  }
-});
     
     return (
-      <MyCatalog data={data}/>
+      <View>{myData}</View>
     );
   
 }
