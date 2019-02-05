@@ -44,7 +44,7 @@ class ProfileScreen extends React.Component {
       }]
     };
 
-    this.setState({ data })};
+    this.setState({ data });
   }
 
 
