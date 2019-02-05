@@ -25,20 +25,20 @@ class TestPageScreen extends React.Component {
     // Correct! JSX type can be a capitalized variable.
     console.log(props);
     
-    var myReturn;
+    var returnValue = [];;
 
     props.list.forEach(item => {
       console.log(item);
     
       if(item.type=='Text'){
         console.log(item.type);
-          myReturn .= <Text>okokokok !!!!!</Text>;
+          returnValue.push(<Text>okokokok !!!!!</Text>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
-          myReturn .=  <TextInput>okokokok !!!!!</TextInput>;
+          returnValue.push(<TextInput>okokokok !!!!!</TextInput>);
       }
     });
-    return myReturn;
+    return returnValue;
   }
 
 
