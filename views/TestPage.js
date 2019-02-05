@@ -14,6 +14,34 @@ class ProfileScreen extends React.Component {
   }
 
   componentWillMount(){
+    var data = {
+      items: [{
+          itemClass: 'Item',
+          id: 1,
+          contentsHTML: Math.random(),
+          text: 'Item 1'
+      }, {
+          itemClass: 'Item',
+          id: 2,
+          contentsHTML: Math.random(),
+          text: 'Item 2'
+      }, {
+          itemClass: 'Item',
+          id: 3,
+          contentsHTML: Math.random(),
+          text: 'Item 3'
+      }, {
+          itemClass: 'Item',
+          id: 4,
+          contentsHTML: Math.random(),
+          text: 'Item 4'
+      }, {
+          itemClass: 'Item',
+          id: 5,
+          contentsHTML: Math.random(),
+          text: 'Item 5'
+      }]
+    };
   }
 
 
@@ -23,41 +51,8 @@ class ProfileScreen extends React.Component {
     var test=<Text style='color:black'>blabla</Text>
     
     return (
-      <View style={styles.form}>
-      
-      <Text style={styles.label} h2>{this.state.err}</Text>
-
-
-      <TextInput 
-          placeholder="Code" 
-          secureTextEntry={false} 
-          style={styles.input} 
-          value={this.state.code}
-          onChangeText={code => this.setState({ code })}
-          mode="outlined"/>
-
-      <TouchableOpacity onPress={() => {
-        // After retrieveing the confirmation code from the user
-        Auth.confirmSignUp(
-          this.state.username,
-          this.state.code, {
-          // Optional. Force user confirmation irrespective of existing alias. By default set to True.
-          forceAliasCreation: true
-        }).then((data) => {
-          console.log('data');
-          console.log(data);
-          navigate('App', {number: Math.random()});
-        }).catch((err) => {
-          console.log('err');
-            console.log(err);
-            this.setState({ err: err.message || err || ''});
-        });
-      }}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Confirm</Text>
-            </View>
-          </TouchableOpacity>
-          
+      <View>
+          {myData}
       </View>
     );
   }
