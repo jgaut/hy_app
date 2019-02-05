@@ -50,31 +50,97 @@ class ProfileScreen extends React.Component {
 
 
   render() {
-    const {navigate} = this.props.navigation;
-    var Item = window.Item = React.createClass({
-  render: function () {
-    return (
-      <div className="item">
-        <div>
-          Regular item. Nothing special.
-        </div>
-          {this.props.children}
-        </div>
-      );
-    }
-  });
+    var React = window.React;
 
-  var Components = { 'Item': Item };
+        var data = {
+            items: [{
+                itemClass: 'Item',
+                id: 1,
+                contentsHTML: '',
+                text: 'Item 1'
+            }, {
+                itemClass: 'Item',
+                id: 2,
+                contentsHTML: '',
+                text: 'Item 2'
+            }, {
+                itemClass: 'Item',
+                id: 3,
+                contentsHTML: '',
+                text: 'Item 3'
+            }, {
+                itemClass: 'Item',
+                id: 4,
+                contentsHTML: '',
+                text: 'Item 4'
+            }, {
+                itemClass: 'Item',
+                id: 5,
+                contentsHTML: '',
+                text: 'Item 5'
+            }]
+        };
 
-    var items = this.state.data["items"].map(function(itemData) {
+        var MyCatalog = React.createClass({
+            getInitialState: function() {
+                return {
+                    data: {
+                        items: []
+                    }
+                };
+            },
+
+            componentDidMount: function() {
+                this.setState({
+                    data: this.props.data
+                });
+            },
+
+            render: function() {
+                return ( < div className = "catalog" > HELLO !! !I AM A CATALOG !! !
+
+                < ItemList data = {
+                    this.state.data
+                }
+                />
+            </div > );
+            }
+        });
+
+        var ItemList = React.createClass({
+            render: function() {
+                console.log(this.props);
+
+                var items = this.props.data["items"].map(function(itemData) {
                     var component = Components[itemData['itemClass']];
                     return React.createElement(component, {
                         data: itemData,
                         key: itemData['id']
                     });
                 });
-    
-    console.log(items);
+                console.log(items);
+                return (
+                    <div className="list">
+                        <div>And I am an ItemList</div>
+                        <div>{items}</div>
+                    </div>
+                );
+            }
+        });
+
+        var Item = window.Item = React.createClass({
+            render: function() {
+                return ( < div className = "item" > < button > Regular item.Nothing special. < /button>
+              {this.props.children}
+            </div > );
+            }
+        });
+
+        var Components = {
+            'Item': Item
+        };
+
+        React.render( < MyCatalog data = {data}/>);
     
     return (
       <View>
