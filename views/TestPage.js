@@ -33,7 +33,7 @@ class TestPageScreen extends React.Component {
   render() {
     
     return (
-      <View>{Story()}</View>
+      <View>{this.Story()}</View>
     );
   
 }
