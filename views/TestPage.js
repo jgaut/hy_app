@@ -10,6 +10,7 @@ class ProfileScreen extends React.Component {
       username: '',
       code: '',
       err: '',
+      data: ''
     }
   }
 
@@ -42,6 +43,8 @@ class ProfileScreen extends React.Component {
           text: 'Item 5'
       }]
     };
+
+    this.setState({ data })};
   }
 
 
@@ -49,10 +52,19 @@ class ProfileScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     var test=<Text style='color:black'>blabla</Text>
+
+    var items = this.state.data["items"].map(function(itemData) {
+                    var component = Components[itemData['itemClass']];
+                    return React.createElement(component, {
+                        data: itemData,
+                        key: itemData['id']
+                    });
+                });
+                console.log(items);
     
     return (
       <View>
-          {myData}
+          {items}
       </View>
     );
   }
