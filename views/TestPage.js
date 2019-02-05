@@ -26,17 +26,18 @@ class TestPageScreen extends React.Component {
     console.log(props);
     
     var returnValue = [];;
-
+    var key=0;
     props.list.forEach(item => {
       console.log(item);
     
       if(item.type=='Text'){
         console.log(item.type);
-          returnValue.push(<Text style={styles.label}>okokokok !!!!!</Text>);
+          returnValue.push(<Text style={styles.label} key={key}>okokokok !!!!!</Text>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
-          returnValue.push(<TextInput style={styles.input}>okokokok !!!!!</TextInput>);
+          returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
       }
+      key++;
     });
     return returnValue;
   }
