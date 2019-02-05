@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 
-class ProfileScreen extends React.Component {
+class TestPageScreen extends React.Component {
 
   constructor() {
     super();
