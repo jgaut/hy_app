@@ -52,6 +52,7 @@ class ProfileScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     var test=<Text style='color:black'>blabla</Text>
+    var component = Components['itemClass'];
 
     var items = this.state.data["items"].map(function(itemData) {
                     var component = Components[itemData['itemClass']];
