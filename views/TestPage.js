@@ -51,8 +51,20 @@ class ProfileScreen extends React.Component {
 
   render() {
     const {navigate} = this.props.navigation;
-    var test=<Text style='color:black'>blabla</Text>
-    var component = Components['itemClass'];
+    var Item = window.Item = React.createClass({
+  render: function () {
+    return (
+      <div className="item">
+        <div>
+          Regular item. Nothing special.
+        </div>
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  var Components = { 'Item': Item };
 
     var items = this.state.data["items"].map(function(itemData) {
                     var component = Components[itemData['itemClass']];
@@ -61,7 +73,8 @@ class ProfileScreen extends React.Component {
                         key: itemData['id']
                     });
                 });
-                console.log(items);
+    
+    console.log(items);
     
     return (
       <View>
