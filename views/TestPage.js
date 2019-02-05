@@ -21,10 +21,12 @@ class TestPageScreen extends React.Component {
 
   }
 
-  Story() {
+  Story(props) {
   // Correct! JSX type can be a capitalized variable.
-  const SpecificStory = 'Text';
-  return <SpecificStory>{this.state.username}</SpecificStory>;
+  props.list.forEach(item => {
+    console.log(item);
+  })
+  return <Text>{this.state.username}</Text>;
 }
 
 
@@ -32,7 +34,7 @@ class TestPageScreen extends React.Component {
 
   render() {
     
-    var mydata = this.Story();
+    var mydata = this.Story(this.state.data);
     console.log(mydata);
 
     return (
