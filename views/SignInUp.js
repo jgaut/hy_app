@@ -102,6 +102,7 @@ class SignInScreen extends React.Component {
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Try Test Page</Text>
             </View>
+            </TouchableOpacity>
           </View>
 
         </KeyboardAvoidingView>
