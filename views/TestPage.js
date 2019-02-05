@@ -40,5 +40,6 @@ class ProfileScreen extends React.Component {
     );
   
 }
+}
 
 export default TestPageScreen;
