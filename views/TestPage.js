@@ -23,6 +23,7 @@ class TestPageScreen extends React.Component {
 
   Story(props) {
   // Correct! JSX type can be a capitalized variable.
+  console.log(props);
   props.list.forEach(item => {
     console.log(item);
   })
