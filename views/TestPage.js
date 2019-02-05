@@ -22,20 +22,20 @@ class TestPageScreen extends React.Component {
   }
 
   Story(props) {
-  // Correct! JSX type can be a capitalized variable.
-  console.log(props);
-  
-  var myReturn = '';
+    // Correct! JSX type can be a capitalized variable.
+    console.log(props);
+    
+    var myReturn = '';
 
-  props.list.forEach(item => {
-    console.log(item);
-  
-    if(item.type=='Text'){
-        return <Text>okokokok !!!!!</Text>;
-    }
-  return myReturn;
+    props.list.forEach(item => {
+      console.log(item);
+    
+      if(item.type=='Text'){
+          return <Text>okokokok !!!!!</Text>;
+      }
+    });
+    return myReturn;
   }
-}
 
 
 
