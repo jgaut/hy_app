@@ -15,7 +15,7 @@ class TestPageScreen extends React.Component {
   }
 
   componentWillMount(){
-    const data = {[{"type":"Text", "text":"mon texte"}, {"type":"TextInput", "text":"mon TextInput"}]};
+    const data = {"list":[{"type":"Text", "text":"mon texte"}, {"type":"TextInput", "text":"mon TextInput"}]};
     this.setState({ data });
   
   }
