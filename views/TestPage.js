@@ -7,7 +7,7 @@ class TestPageScreen extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      username: 'ok',
       code: '',
       err: '',
       data: ''
@@ -23,8 +23,8 @@ class TestPageScreen extends React.Component {
 
   Story() {
   // Correct! JSX type can be a capitalized variable.
-  const SpecificStory = 'View';
-  return <SpecificStory>ok</SpecificStory>;
+  const SpecificStory = 'Text';
+  return <SpecificStory>this.state.username</SpecificStory>;
 }
 
 
