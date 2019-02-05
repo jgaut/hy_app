@@ -35,7 +35,7 @@ class TestPageScreen extends React.Component {
   render() {
     
     var mydata = this.Story(this.state.data);
-    console.log(mydata);
+    //console.log(mydata);
 
     return (
       <View>{mydata}</View>
