@@ -7,7 +7,7 @@ import { createAppContainer } from 'react-navigation';
 import SignInUpScreen from './views/SignInUp';
 import SignUpConfirmScreen from './views/SignUpConfirm';
 import AppAuthScreen from './AppAuth';
-import TestPageScreen from './TestPage';
+import TestPageScreen from './views/TestPage';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
