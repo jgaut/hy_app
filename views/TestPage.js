@@ -23,7 +23,7 @@ class TestPageScreen extends React.Component {
 
   Story() {
   // Correct! JSX type can be a capitalized variable.
-  const SpecificStory = components['Text'];
+  const SpecificStory = 'Text';
   return <SpecificStory>ok</SpecificStory>;
 }
 
