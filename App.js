@@ -7,6 +7,7 @@ import { createAppContainer } from 'react-navigation';
 import SignInUpScreen from './views/SignInUp';
 import SignUpConfirmScreen from './views/SignUpConfirm';
 import AppAuthScreen from './AppAuth';
+import TestPageScreen from './TestPage';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
@@ -57,7 +58,8 @@ const AppNavigator = createStackNavigator({
   App: {screen: AppScreen},
   SignInUp: {screen: SignInUpScreen},
   SignUpConfirm: {screen: SignUpConfirmScreen},
-  AppAuth: {screen: AppAuthScreen}
+  AppAuth: {screen: AppAuthScreen},
+  TestPage: {screen: TestPageScreen}
 },
 {
     headerMode: 'none'}
