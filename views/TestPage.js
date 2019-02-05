@@ -28,7 +28,7 @@ class TestPageScreen extends React.Component {
   render() {
     
     return (
-      <View>{myData}</View>
+      <View>{this.state.data}</View>
     );
   
 }
