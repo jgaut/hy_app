@@ -31,6 +31,7 @@ class TestPageScreen extends React.Component {
       console.log(item);
     
       if(item.type=='Text'){
+        console.log(item.type);
           return <Text>okokokok !!!!!</Text>;
       }
     });
