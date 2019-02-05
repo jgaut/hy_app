@@ -14,8 +14,6 @@ class ProfileScreen extends React.Component {
   }
 
   componentWillMount(){
-    this.setState({ username: this.props.navigation.state.params.username});
-    console.log(this.state.username);
   }
 
 
