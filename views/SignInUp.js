@@ -17,8 +17,6 @@ class SignInScreen extends React.Component {
     
     const {navigate} = this.props.navigation;
 
-    this.setState({list: "{user1: {item1: {message: 'blabla', color: 'black'}}}" });
-
     return (
 
     <KeyboardAvoidingView  behavior='padding' style={styles.container}>
