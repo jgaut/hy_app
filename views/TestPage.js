@@ -50,7 +50,6 @@ class ProfileScreen extends React.Component {
 
 
   render() {
-    var React = window.React;
 
         var data = {
             items: [{
