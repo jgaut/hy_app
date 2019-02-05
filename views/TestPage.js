@@ -41,4 +41,4 @@ class ProfileScreen extends React.Component {
   
 }
 
-export default ProfileScreen;
+export default TestPageScreen;
