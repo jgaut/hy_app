@@ -18,9 +18,14 @@ class TestPageScreen extends React.Component {
     const data = {"list":[{"type":"Text", "text":"mon texte"}, {"type":"TextInput", "text":"mon TextInput"}]};
     this.setState({ data });
   
+
   }
 
-  
+  Story() {
+  // Correct! JSX type can be a capitalized variable.
+  const SpecificStory = components['Text'];
+  return <SpecificStory>ok</SpecificStory>;
+}
 
 
 
@@ -28,7 +33,7 @@ class TestPageScreen extends React.Component {
   render() {
     
     return (
-      <View>{this.state.data}</View>
+      <View>{{Story()}}</View>
     );
   
 }
