@@ -30,11 +30,11 @@ class TestPageScreen extends React.Component {
     props.list.forEach(item => {
       //console.log(item);
       //console.log(key);
-      console.log(this.state.data.list);
+      console.log(this.state.data.list[key].text);
     
       if(item.type=='TextInput'){
         console.log(item.type);
-          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={text => this.setState({ text: data.list[key].text })}>{this.state.data.list[key].text}</TextInput>);
+          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={text => this.setState({ text: data })}>{this.state.data.list[key].text}</TextInput>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
           returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
