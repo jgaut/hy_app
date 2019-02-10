@@ -28,8 +28,9 @@ class TestPageScreen extends React.Component {
     var returnValue = [];;
     var key=0;
     props.list.forEach(item => {
-      console.log(item);
-      console.log(key);
+      //console.log(item);
+      //console.log(key);
+      console.log(this.state);
     
       if(item.type=='TextInput'){
         console.log(item.type);
