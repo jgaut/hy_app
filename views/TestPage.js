@@ -30,7 +30,7 @@ class TestPageScreen extends React.Component {
     props.list.forEach(item => {
       //console.log(item);
       //console.log(key);
-      console.log(this.state.data);
+      console.log(this.state.data.list);
     
       if(item.type=='TextInput'){
         console.log(item.type);
