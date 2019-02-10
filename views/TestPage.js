@@ -4,6 +4,7 @@ import Auth from '@aws-amplify/auth';
 
 class TestPageScreen extends React.Component {
 
+
   constructor() {
     super();
     this.state = {
@@ -12,6 +13,8 @@ class TestPageScreen extends React.Component {
       err: '',
       data: ''
     }
+    const myState=this.state;
+  
   }
 
   componentWillMount(){
@@ -19,6 +22,10 @@ class TestPageScreen extends React.Component {
     this.setState({ data });
   
 
+  }
+
+  sav(key, text){
+    this.state.data.list[key].text = text;
   }
 
   Story(props) {
@@ -34,7 +41,7 @@ class TestPageScreen extends React.Component {
     
       if(item.type=='TextInput'){
         console.log(item.type);
-          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={text => {console.log(text); this.state.data.list[key].text = 'ok';} }>{this.state.data.list[key].text}</TextInput>);
+          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={text => {console.log(text); sav('ok');} }>{this.state.data.list[key].text}</TextInput>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
           returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
