@@ -13,7 +13,6 @@ class TestPageScreen extends React.Component {
       err: '',
       data: ''
     }
-    const myState=this.state;
   
   }
 
@@ -26,14 +25,14 @@ class TestPageScreen extends React.Component {
 
   Story(props) {
     // Correct! JSX type can be a capitalized variable.
-    //console.log(props);
+    console.log(this.state);
     
     var returnValue = [];;
     var key=0;
     props.list.forEach(item => {
       //console.log(item);
       //console.log(key);
-      console.log(this.state.data.list[key].text);
+      //console.log(this.state.data.list[key].text);
     
       if(item.type=='TextInput'){
         console.log(item.type);
