@@ -30,7 +30,7 @@ class TestPageScreen extends React.Component {
     
       if(item.type=='TextInput'){
         //console.log(item.type);
-          returnValue.push(<TextInput style={styles.label} value={this.state.data.list[key].text} key={key} onChangeText={this.handleChange()}></TextInput>);
+          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={this.handleChange()}>{this.state.data.list[key].text}</TextInput>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
           returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
