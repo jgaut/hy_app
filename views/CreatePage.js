@@ -41,7 +41,7 @@ class CreatePageScreen extends React.Component {
     //If user logged
     //console.log(Auth.currentCredentials());
     var f = new File([this.state.data], this.state.data.id+".json", {type: "text/plain"});
-    Storage.get(f, { level: 'private' }); 
+    Storage.put(f, { level: 'private' }); 
   }
 
   AddElement = () => {
