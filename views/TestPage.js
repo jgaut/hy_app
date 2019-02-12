@@ -55,7 +55,7 @@ class TestPageScreen extends React.Component {
     this.state.data.list.push({"type":"TextInput", "text":"mon texte", "key":Math.random()});
     console.log(this.state.data.list.length);
     console.log(this.state.data.list[this.state.data.list.length-1]);
-    mydata = this.Story(this.state.data);
+    this.forceUpdate()
   }
 
   HandleChange = (e, f) => {
@@ -70,9 +70,8 @@ class TestPageScreen extends React.Component {
 
   render() {
     let tmp = this.Story(this.state.data);
-    this.setState({myRender: tmp});
     return (
-      <View style={styles.form}>{this.state.myRender}</View>
+      <View style={styles.form}>{tmp}</View>
     );
   
 }
