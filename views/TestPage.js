@@ -5,18 +5,16 @@ import Auth from '@aws-amplify/auth';
 class TestPageScreen extends React.Component {
 
 
-  var mydata ='';
-
   constructor() {
     super();
     this.state = {data: ''};
-    mydata = this.Story(this.state.data);
+    
   }
 
   componentWillMount(){
     const data = {"list":[{"type":"TextInput", "text":"mon texte", "key":"234"}, {"type":"TextInput", "text":"mon TextInput", "key":"99870999"}]};
     this.setState({ data });
-  
+    const mydata = this.Story(this.state.data);
 
   }
 
@@ -73,9 +71,6 @@ class TestPageScreen extends React.Component {
   }
 
   render() {
-    
-    
-    //console.log(mydata);
 
     return (
       <View style={styles.form}>{mydata}</View>
