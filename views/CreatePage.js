@@ -8,8 +8,8 @@ import { createAppContainer } from 'react-navigation';
 class CreatePageScreen extends React.Component {
 
 
-  constructor() {
-    super();
+  constructor(...args) {
+      super(...args);
 
     this.props.navigation.addListener('didFocus', () => {
         this.launch();
