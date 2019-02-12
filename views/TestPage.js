@@ -5,9 +5,12 @@ import Auth from '@aws-amplify/auth';
 class TestPageScreen extends React.Component {
 
 
+  var mydata ='';
+
   constructor() {
     super();
     this.state = {data: ''};
+    mydata = this.Story(this.state.data);
   }
 
   componentWillMount(){
@@ -32,11 +35,20 @@ class TestPageScreen extends React.Component {
         //console.log(item.type);
         //Fixer la clef
         let myKey = key;
-          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={(text) => {this.handleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
+          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={(text) => {this.HandleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
       }
       key++;
     });
 
+    //Add sauvegarde
+    returnValue.push(
+      <TouchableOpacity key={Math.random()} onPress={() => addTextInput()}>
+                      <View style={styles.button}>
+              <Text style={styles.buttonText}>Sauvegarde</Text>
+            </View>
+            </TouchableOpacity>);
+
+    //Add TextInput
     returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => console.log('ok')}>
                       <View style={styles.button}>
@@ -46,8 +58,11 @@ class TestPageScreen extends React.Component {
     return returnValue;
   }
 
+  AddTextInput = () => {
+    console.log('AddTextInput function !');
+  }
 
-  handleChange = (e, f) =>{
+  HandleChange = (e, f) => {
     console.log("e : " + e);
     console.log("f : " + JSON.stringify(f));
     //console.log(this.state);
@@ -59,7 +74,7 @@ class TestPageScreen extends React.Component {
 
   render() {
     
-    var mydata = this.Story(this.state.data);
+    
     //console.log(mydata);
 
     return (
