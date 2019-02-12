@@ -33,7 +33,7 @@ class TestPageScreen extends React.Component {
 
     //Add sauvegarde
     returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => AddTextInput()}>
+      <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
