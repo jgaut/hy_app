@@ -7,7 +7,7 @@ class TestPageScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {data: ''};
+    this.state = {data: '', myRender: ''};
   }
 
   componentWillMount(){
@@ -69,9 +69,9 @@ class TestPageScreen extends React.Component {
   }
 
   render() {
-    const mydata = this.Story(this.state.data);
+    this.setState(myRender: this.Story(this.state.data));
     return (
-      <View style={styles.form}>{mydata}</View>
+      <View style={styles.form}>{this.state.myRender}</View>
     );
   
 }
