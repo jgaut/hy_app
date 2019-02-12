@@ -42,11 +42,18 @@ class TestPageScreen extends React.Component {
 
     
     //Add TextInput
-
     returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Add</Text>
+            </View>
+            </TouchableOpacity>);
+
+    //Add TextInput
+    returnValue.push(
+      <TouchableOpacity key={Math.random()} onPress={() => this.RemoveTextInput()}>
+                      <View style={styles.button}>
+              <Text style={styles.buttonText}>Remove</Text>
             </View>
             </TouchableOpacity>);
 
@@ -57,6 +64,14 @@ class TestPageScreen extends React.Component {
     console.log('AddTextInput function !');
     console.log(this.state.data.list.length);
     this.state.data.list.push({"type":"TextInput", "text":Math.random(), "sort":this.state.data.list.length});
+    console.log(this.state.data.list.length);
+    console.log(this.state.data.list[this.state.data.list.length-1]);
+    this.forceUpdate()
+  }
+
+  RemoveTextInput = () => {
+    console.log('RemoveTextInput function !');
+    this.state.data.list.splice(this.state.data.list.length-1, 1);
     console.log(this.state.data.list.length);
     console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
