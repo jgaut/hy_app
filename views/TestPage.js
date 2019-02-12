@@ -14,7 +14,7 @@ class TestPageScreen extends React.Component {
   componentWillMount(){
     const data = {"list":[{"type":"TextInput", "text":"mon texte", "key":"234"}, {"type":"TextInput", "text":"mon TextInput", "key":"99870999"}]};
     this.setState({ data });
-    const mydata = this.Story(this.state.data);
+    
 
   }
 
@@ -71,7 +71,7 @@ class TestPageScreen extends React.Component {
   }
 
   render() {
-
+    const mydata = this.Story(this.state.data);
     return (
       <View style={styles.form}>{mydata}</View>
     );
