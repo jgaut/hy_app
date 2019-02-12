@@ -69,7 +69,7 @@ class TestPageScreen extends React.Component {
   render() {
     let tmp = this.Story(this.state.data);
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.form}>
           {tmp}
         </View>
