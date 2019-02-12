@@ -28,8 +28,13 @@ class CreatePageScreen extends React.Component {
       //console.log(JSON.stringify(this.state.data));
 
       Storage.get('d9df9195-77cb-4e8e-b195-522c01b2216a.json', {level: 'private'})
-    .then(result => console.log(result))
-    .catch(err => console.log(err));
+        .then(result => {console.log(result);
+          fetch(result)
+            .then(response => response.json() )
+            .then(data => console.log(data) )
+            .catch(error => console.log(error));
+        })
+        .catch(err => console.log(err));
 
     }
   }
