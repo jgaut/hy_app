@@ -32,31 +32,6 @@ class TestPageScreen extends React.Component {
       key++;
     });
 
-    //Add sauvegarde
-        returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
-                      <View style={styles.button}>
-              <Text style={styles.buttonText}>Sauvegarde</Text>
-            </View>
-            </TouchableOpacity>);
-
-    
-    //Add TextInput
-    returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
-                      <View style={styles.button}>
-              <Text style={styles.buttonText}>Add</Text>
-            </View>
-            </TouchableOpacity>);
-
-    //Add TextInput
-    returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
-                      <View style={styles.button}>
-              <Text style={styles.buttonText}>Remove</Text>
-            </View>
-            </TouchableOpacity>);
-
     return returnValue;
   }
 
@@ -94,7 +69,30 @@ class TestPageScreen extends React.Component {
   render() {
     let tmp = this.Story(this.state.data);
     return (
-      <View style={styles.form}>{tmp}</View>
+      <View style={styles.form}>
+        {tmp}
+        <View style={styles.submitButton}>
+          
+          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Sauvegarde</Text>
+            </View>
+          </TouchableOpacity>
+          
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Remove</Text>
+            </View>
+          </TouchableOpacity>
+
+        </View>
+      </View>
     );
   
 }
@@ -131,6 +129,11 @@ container: {
     borderBottomWidth: 1, 
     borderBottomColor: '#555' 
   },
+  submitButton: {
+    position: 'absolute',
+    bottom:0,
+    left:0,
+}
 });
 
 export default TestPageScreen;
