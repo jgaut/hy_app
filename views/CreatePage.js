@@ -10,8 +10,11 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {};
-    this.launch();
+
+    const uuidv4 = require('uuid/v4');
+    let myTmp = {"id":uuidv4(),"list":[]};
+    this.setState({data: myTmp});
+    
     this.props.navigation.addListener('didFocus', () => {
         this.launch();
       });
