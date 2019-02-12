@@ -16,6 +16,7 @@ class CreatePageScreen extends React.Component {
   componentWillMount(){
     //const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
     //this.setState({ data });
+    console.log('mount');
   }
 
   Story(props) {
@@ -52,8 +53,7 @@ class CreatePageScreen extends React.Component {
   AddElement = () => {
     //console.log('AddTextInput function !');
     //console.log(this.state.data.list.length);
-    const uuidv4 = require('uuid/v4');
-    this.state.data.list.push({"type":"TextInput", "text":uuidv4(), "sort":this.state.data.list.length});
+    this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
