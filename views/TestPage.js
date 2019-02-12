@@ -40,7 +40,7 @@ class TestPageScreen extends React.Component {
             </View>
             </TouchableOpacity>);
 
-    return returnValue;
+    
     //Add TextInput
 
     returnValue.push(
@@ -49,6 +49,8 @@ class TestPageScreen extends React.Component {
               <Text style={styles.buttonText}>Add</Text>
             </View>
             </TouchableOpacity>);
+
+    return returnValue;
   }
 
   AddTextInput = () => {
