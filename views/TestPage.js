@@ -7,7 +7,8 @@ class TestPageScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {data: list[]};
+    let myTmp = {"list":[]};
+    this.state = {data: myTmp};
   }
 
   componentWillMount(){
