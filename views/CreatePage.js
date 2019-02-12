@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
+import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 
 class CreatePageScreen extends React.Component {
 
