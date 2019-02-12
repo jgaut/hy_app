@@ -86,7 +86,7 @@ class CreatePageScreen extends React.Component {
   }
 
   GetAllElement = () => {
-    Storage.list('/', {level: 'private'})
+    Storage.list('*', {level: 'private'})
       .then(result => {
         result.forEach(item => {
 
