@@ -43,6 +43,7 @@ class CreatePageScreen extends React.Component {
   AddElement = () => {
     //console.log('AddTextInput function !');
     //console.log(this.state.data.list.length);
+    const uuidv4 = require('uuid/v4');
     this.state.data.list.push({"type":"TextInput", "text":uuidv4(), "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
