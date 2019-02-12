@@ -33,12 +33,11 @@ class TestPageScreen extends React.Component {
         //Fixer la clef
         let myKey = key;
           returnValue.push(<TextInput style={styles.label} key={key} onChangeText={(text) => {this.handleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
-      }else if(item.type=='TextInput'){
-        console.log(item.type);
-          returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
       }
       key++;
     });
+
+    returnValue.push(<Button style={styles.button}/>);
     return returnValue;
   }
 
