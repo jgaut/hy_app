@@ -30,7 +30,7 @@ class TestPageScreen extends React.Component {
       }
       key++;
     });
-
+    
     //Add sauvegarde
     returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
@@ -38,7 +38,7 @@ class TestPageScreen extends React.Component {
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
             </TouchableOpacity>);
-
+}
     //Add TextInput
     returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => console.log('ok')}>
@@ -46,7 +46,7 @@ class TestPageScreen extends React.Component {
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
             </TouchableOpacity>);
-  }
+
     return returnValue;
   }
 
