@@ -8,7 +8,7 @@ import Storage from '@aws-amplify/storage';
 class CreatePageScreen extends React.Component {
 
 
-  constructor(...args) {
+  constructor() {
     super();
 
     const uuidv4 = require('uuid/v4');
