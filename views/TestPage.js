@@ -114,6 +114,8 @@ const styles = StyleSheet.create({
 button: {
     height: 40,
     backgroundColor: '#2196F3',
+        alignItems: 'stretch',
+    justifyContent: 'center',
     },
   buttonText: {
     color: 'white'
