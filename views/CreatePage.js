@@ -38,18 +38,18 @@ class CreatePageScreen extends React.Component {
     
     var returnValue = [];
     var key=0;
-
+    if(pros.list){
     props.list.forEach(item => {
     
       if(item.type=='TextInput'){
         //console.log(item.type);
         //Fixer la clef
         let myKey = key;
-          returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
+        returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
       }
       key++;
     });
-
+  }
     return returnValue;
   }
 
