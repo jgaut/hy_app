@@ -7,7 +7,7 @@ class TestPageScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {data: ''};
+    this.state = {data: list[]};
   }
 
   componentWillMount(){
@@ -30,17 +30,9 @@ class TestPageScreen extends React.Component {
       }
       key++;
     });
-    
+
     //Add sauvegarde
-    returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
-                      <View style={styles.button}>
-              <Text style={styles.buttonText}>Sauvegarde</Text>
-            </View>
-            </TouchableOpacity>);
-}
-    //Add TextInput
-    returnValue.push(
+        returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => console.log('ok')}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
@@ -48,6 +40,16 @@ class TestPageScreen extends React.Component {
             </TouchableOpacity>);
 
     return returnValue;
+    
+}
+    //Add TextInput
+
+    returnValue.push(
+      <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
+                      <View style={styles.button}>
+              <Text style={styles.buttonText}>Sauvegarde</Text>
+            </View>
+            </TouchableOpacity>);
   }
 
   AddTextInput = () => {
