@@ -20,7 +20,7 @@ class TestPageScreen extends React.Component {
     
     var returnValue = [];
     var key=0;
-    if(props!=''){
+
     props.list.forEach(item => {
     
       if(item.type=='TextInput'){
@@ -41,14 +41,12 @@ class TestPageScreen extends React.Component {
             </TouchableOpacity>);
 
     return returnValue;
-    
-}
     //Add TextInput
 
     returnValue.push(
       <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
                       <View style={styles.button}>
-              <Text style={styles.buttonText}>Sauvegarde</Text>
+              <Text style={styles.buttonText}>Add</Text>
             </View>
             </TouchableOpacity>);
   }
