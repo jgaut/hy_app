@@ -69,8 +69,10 @@ class TestPageScreen extends React.Component {
   render() {
     let tmp = this.Story(this.state.data);
     return (
-      <View style={styles.form}>
-        {tmp}
+      <View>
+        <View style={styles.form}>
+          {tmp}
+        </View>
         <View style={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
