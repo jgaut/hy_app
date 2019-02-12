@@ -16,6 +16,7 @@ class CreatePageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      console.log('focus');
      this.launch();
+     this.forceUpdate();
     });
   }
 
@@ -25,7 +26,6 @@ class CreatePageScreen extends React.Component {
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
       //console.log(JSON.stringify(this.state.data));
-      this.forceUpdate();
     }
   }
 
