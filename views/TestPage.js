@@ -11,7 +11,7 @@ class TestPageScreen extends React.Component {
   }
 
   componentWillMount(){
-    const data = {"list":[{"type":"TextInput", "text":"mon texte", "key":"234"}, {"type":"TextInput", "text":"mon TextInput", "key":"99870999"}]};
+    const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
     this.setState({ data });
   }
 
@@ -52,7 +52,7 @@ class TestPageScreen extends React.Component {
   AddTextInput = () => {
     console.log('AddTextInput function !');
     console.log(this.state.data.list.length);
-    this.state.data.list.push({"type":"TextInput", "text":"mon texte", "key":Math.random()});
+    this.state.data.list.push({"type":"TextInput", "text":Math.random(), "sort":this.state.data.list.length});
     console.log(this.state.data.list.length);
     console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
