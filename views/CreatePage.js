@@ -94,8 +94,8 @@ class CreatePageScreen extends React.Component {
 
   render() {
     
-    return (
       let tt = this.Story(this.state.data);
+    return (
       <View style={styles.container}>
         <View style={styles.form}>
           {tt}
