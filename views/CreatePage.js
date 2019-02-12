@@ -38,6 +38,7 @@ class CreatePageScreen extends React.Component {
 
   SavMyData = () => {
     //If user logged
+    console.log(Auth.currentCredentials());
   }
 
   AddElement = () => {
