@@ -10,6 +10,7 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
+    this.state = {};
     this.launch();
     this.props.navigation.addListener('didFocus', () => {
         this.launch();
@@ -20,6 +21,7 @@ class CreatePageScreen extends React.Component {
     const uuidv4 = require('uuid/v4');
     let myTmp = {"id":uuidv4(),"list":[]};
     this.setState({data: myTmp});
+    console.log(JSON.stringify(this.state.data));
   }
 
   componentWillMount(){
@@ -87,11 +89,11 @@ class CreatePageScreen extends React.Component {
   }
 
   render() {
-    let tmp = this.Story(this.state.data);
+    
     return (
       <View style={styles.container}>
         <View style={styles.form}>
-          {tmp}
+          {this.Story(this.state.data)}
         </View>
         <View style={styles.submitButton}>
           
