@@ -10,24 +10,22 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data:''
-    };
-    const uuidv4 = require('uuid/v4');
-    let myTmp = {"id":uuidv4(),"list":[]};
-    this.state.data = myTmp;
-    //console.log("ok");
-    //console.log(this.state.data);
+    this.state = {data:'', isSav:true};
+    this.launch();
+
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
     });
   }
 
   launch = () => {
-    const uuidv4 = require('uuid/v4');
-    let myTmp = {"id":uuidv4(),"list":[]};
-    this.state.data = myTmp;
-    console.log(JSON.stringify(this.state.data));
-    this.forceUpdate();
+    if(this.state.isSav){
+      const uuidv4 = require('uuid/v4');
+      let myTmp = {"id":uuidv4(),"list":[]};
+      this.state.data = myTmp;
+      //console.log(JSON.stringify(this.state.data));
+      this.forceUpdate();
+    }
   }
 
   componentWillMount(){
@@ -63,7 +61,7 @@ class CreatePageScreen extends React.Component {
       level: 'private',
       contentType: 'text/plain'
     })
-    .then (result => console.log(result))
+    .then (result => {console.log(result); this.setState({isSav:false});})
     .catch(err => console.log(err));
   }
 
@@ -73,6 +71,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
+    this.setState({isSav:false});
     this.forceUpdate();
   }
 
@@ -81,6 +80,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list.splice(this.state.data.list.length-1, 1);
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
+    this.setState({isSav:false});
     this.forceUpdate();
   }
 
@@ -92,6 +92,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list[JSON.stringify(f)].text = e;
     //console.log("après : " + this.state.data.list[JSON.stringify(f)].text);
     //this.setState({e: e});
+    this.setState({isSav:false});
   }
 
   render() {
