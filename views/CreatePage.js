@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 
-class TestPageScreen extends React.Component {
+class CreatePageScreen extends React.Component {
 
 
   constructor() {
@@ -142,4 +142,4 @@ container: {
   },
 });
 
-export default TestPageScreen;
+export default CreatePageScreen;
