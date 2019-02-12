@@ -54,6 +54,7 @@ class TestPageScreen extends React.Component {
     console.log(this.state.data.list.length);
     this.state.data.list.push({"type":"TextInput", "text":"mon texte", "key":Math.random()});
     console.log(this.state.data.list.length);
+    console.log(this.state.data.list[this.state.data.list.length-1]);
   }
 
   HandleChange = (e, f) => {
