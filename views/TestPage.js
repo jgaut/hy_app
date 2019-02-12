@@ -44,10 +44,7 @@ class TestPageScreen extends React.Component {
 
 
   handleChange = (e, f) =>{
-    console.log("e : " + JSON.stringify(e.target));
-    console.log("e : " + JSON.stringify(e.state));
-    console.log("e : " + JSON.stringify(e.target.value));
-    console.log("e : " + JSON.stringify(e.attr));
+    console.log("e : " + JSON.stringify(e));
     console.log("f : " + JSON.stringify(f));
     //this.setState({e: e});
   }
