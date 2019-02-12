@@ -69,7 +69,8 @@ class TestPageScreen extends React.Component {
   }
 
   render() {
-    this.setState(myRender: {this.Story(this.state.data)});
+    let tmp = this.Story(this.state.data);
+    this.setState(myRender: tmp);
     return (
       <View style={styles.form}>{this.state.myRender}</View>
     );
