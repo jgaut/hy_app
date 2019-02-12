@@ -40,8 +40,11 @@ class CreatePageScreen extends React.Component {
   SavMyData = () => {
     //If user logged
     //console.log(Auth.currentCredentials());
-    //var f = new File([this.state.data], this.state.data.id+".json");
-    Storage.put('test.txt','hello')
+    //var f = new File([], this.state.data.id+".json");
+    Storage.put(this.state.data.id+".json", this.state.data, {
+      level: 'private',
+      contentType: 'text/plain'
+    })
     .then (result => console.log(result))
     .catch(err => console.log(err));
   }
