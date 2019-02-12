@@ -20,6 +20,8 @@ const awsmobile = {
     'aws_user_pools_id': 'eu-west-1_R8jMDNbWG',
     'aws_user_pools_mfa_type': 'OFF',
     'aws_user_pools_web_client_id': '2l1u40k2mdqgpcuc6fnjo23i86',
+    "aws_user_files_s3_bucket": "hyappcbe4b1aa7865421486000f057f79685e",
+    "aws_user_files_s3_bucket_region": "eu-west-1"
 }
 
 export default awsmobile;
