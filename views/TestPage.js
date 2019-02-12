@@ -11,15 +11,15 @@ class TestPageScreen extends React.Component {
   }
 
   componentWillMount(){
-    const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
-    this.setState({ data });
+    //const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
+    //this.setState({ data });
   }
 
   Story(props) {
     
-    var returnValue = [];;
+    var returnValue = [];
     var key=0;
-
+    if(props!=''){
     props.list.forEach(item => {
     
       if(item.type=='TextInput'){
@@ -46,6 +46,7 @@ class TestPageScreen extends React.Component {
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
             </TouchableOpacity>);
+  }
     return returnValue;
   }
 
