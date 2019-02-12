@@ -37,7 +37,12 @@ class TestPageScreen extends React.Component {
       key++;
     });
 
-    returnValue.push(<Button style={styles.button}/>);
+    returnValue.push(
+      <TouchableOpacity onPress={console.log('ok')}>
+                      <View style={styles.button}>
+              <Text style={styles.buttonText}>Sauvegarde</Text>
+            </View>
+            </TouchableOpacity>);
     return returnValue;
   }
 
