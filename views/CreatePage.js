@@ -14,6 +14,7 @@ class CreatePageScreen extends React.Component {
     this.launch();
 
     this.props.navigation.addListener('didFocus', () => {
+     console.log('focus');
      this.launch();
     });
   }
@@ -31,7 +32,7 @@ class CreatePageScreen extends React.Component {
   componentWillMount(){
     //const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
     //this.setState({ data });
-    console.log('mount');
+    //console.log('mount');
   }
 
   Story(props) {
@@ -61,7 +62,7 @@ class CreatePageScreen extends React.Component {
       level: 'private',
       contentType: 'text/plain'
     })
-    .then (result => {console.log(result); this.setState({isSav:false});})
+    .then (result => {console.log(result); this.setState({isSav:true});})
     .catch(err => console.log(err));
   }
 
