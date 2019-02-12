@@ -85,6 +85,12 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
+  GetAllElement = () => {
+    Storage.list('/', {level: 'private'})
+      .then(result => console.log(result))
+      .catch(err => console.log(err));
+  }
+
   HandleChange = (e, f) => {
     //console.log("e : " + e);
     //console.log("f : " + JSON.stringify(f));
@@ -95,6 +101,9 @@ class CreatePageScreen extends React.Component {
     //this.setState({e: e});
     this.setState({isSav:false});
   }
+
+
+
 
   render() {
     
@@ -119,6 +128,12 @@ class CreatePageScreen extends React.Component {
           </TouchableOpacity>
 
           <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Remove</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.GetAllElement()}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Remove</Text>
             </View>
