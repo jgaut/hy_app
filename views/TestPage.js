@@ -111,16 +111,15 @@ const styles = StyleSheet.create({
   label: {
     color: '#000000'
   },
-  button: {
-    marginTop:10,
-    paddingTop:40,
+button: {    
+    padding: 20,
     backgroundColor: '#2196F3',
-    flex: 1,
+    flex: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
-    color: 'white',
+    color: 'white'
   },
 container: {
     backgroundColor: '#f5fcff',
