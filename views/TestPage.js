@@ -111,8 +111,7 @@ const styles = StyleSheet.create({
   label: {
     color: '#000000'
   },
-button: {    
-    width: '30%',
+button: {
     height: 40,
     backgroundColor: '#2196F3',
     },
