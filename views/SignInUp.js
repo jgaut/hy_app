@@ -98,11 +98,6 @@ class SignInScreen extends React.Component {
               <Text style={styles.buttonText}>Sign in / Sign Up</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { navigate('TestPage'); } }>
-                      <View style={styles.button}>
-              <Text style={styles.buttonText}>Try Test Page</Text>
-            </View>
-            </TouchableOpacity>
           </View>
 
         </KeyboardAvoidingView>
