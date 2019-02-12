@@ -7,7 +7,7 @@ class TestPageScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {data: '', myRender: ''};
+    this.state = {data: ''};
   }
 
   componentWillMount(){
