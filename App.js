@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import awsconfig from './aws-exports';
 import Auth from '@aws-amplify/auth';
-//import Storage from '@aws-amplify/storage';
+import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import SignInUpScreen from './views/SignInUp';
@@ -12,7 +12,7 @@ import Amplify, { Storage } from 'aws-amplify';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
-//Storage.configure(awsconfig);
+Storage.configure(awsconfig);
 
 class AppScreen extends React.Component {
 
