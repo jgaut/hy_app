@@ -10,7 +10,7 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-
+    this.launch();
     this.props.navigation.addListener('didFocus', () => {
         this.launch();
       });
