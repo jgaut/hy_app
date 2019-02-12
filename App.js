@@ -59,7 +59,7 @@ const AppNavigator = createStackNavigator({
   SignInUp: {screen: SignInUpScreen},
   SignUpConfirm: {screen: SignUpConfirmScreen},
   AppAuth: {screen: AppAuthScreen},
-  TestPage: {screen: TestPageScreen}
+  //TestPage: {screen: TestPageScreen}
 },
 {
     headerMode: 'none'}
