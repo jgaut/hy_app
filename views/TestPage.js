@@ -47,8 +47,9 @@ class TestPageScreen extends React.Component {
     console.log("e : " + e);
     console.log("f : " + JSON.stringify(f));
     //console.log(this.state);
-
+    console.log("avant : " + this.state.data.list[JSON.stringify(f)].text);
     this.state.data.list[JSON.stringify(f)].text = e;
+    console.log("après : " + this.state.data.list[JSON.stringify(f)].text);
     //this.setState({e: e});
   }
 
