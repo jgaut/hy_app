@@ -7,7 +7,7 @@ class CreatePageScreen extends React.Component {
 
   constructor() {
     super();
-    let myTmp = {"list":[]};
+    let myTmp = {"id":Math.random(),"list":[]};
     this.state = {data: myTmp};
   }
 
@@ -42,7 +42,7 @@ class CreatePageScreen extends React.Component {
   AddElement = () => {
     //console.log('AddTextInput function !');
     //console.log(this.state.data.list.length);
-    this.state.data.list.push({"type":"TextInput", "text":Math.random(), "sort":this.state.data.list.length});
+    this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
