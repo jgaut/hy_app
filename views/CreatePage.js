@@ -90,7 +90,7 @@ class CreatePageScreen extends React.Component {
       .then(result => {
         result.forEach(item => {
 
-        console.log(item);}
+        console.log(item);});
       })
       .catch(err => console.log(err));
   }
