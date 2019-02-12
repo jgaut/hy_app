@@ -135,7 +135,10 @@ container: {
     position: 'absolute',
     bottom:0,
     left:0,
-}
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
 });
 
 export default TestPageScreen;
