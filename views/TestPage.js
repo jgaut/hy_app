@@ -34,7 +34,7 @@ class TestPageScreen extends React.Component {
 
     //Add sauvegarde
         returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => console.log('ok')}>
+      <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
@@ -43,7 +43,7 @@ class TestPageScreen extends React.Component {
     
     //Add TextInput
     returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.AddTextInput()}>
+      <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Add</Text>
             </View>
@@ -51,7 +51,7 @@ class TestPageScreen extends React.Component {
 
     //Add TextInput
     returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => this.RemoveTextInput()}>
+      <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Remove</Text>
             </View>
@@ -60,30 +60,34 @@ class TestPageScreen extends React.Component {
     return returnValue;
   }
 
-  AddTextInput = () => {
-    console.log('AddTextInput function !');
-    console.log(this.state.data.list.length);
+  SavMyData = () => {
+    //If user logged
+  }
+
+  AddElement = () => {
+    //console.log('AddTextInput function !');
+    //console.log(this.state.data.list.length);
     this.state.data.list.push({"type":"TextInput", "text":Math.random(), "sort":this.state.data.list.length});
-    console.log(this.state.data.list.length);
-    console.log(this.state.data.list[this.state.data.list.length-1]);
+    //console.log(this.state.data.list.length);
+    //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
   }
 
-  RemoveTextInput = () => {
-    console.log('RemoveTextInput function !');
+  RemoveElement = () => {
+    //console.log('RemoveTextInput function !');
     this.state.data.list.splice(this.state.data.list.length-1, 1);
-    console.log(this.state.data.list.length);
-    console.log(this.state.data.list[this.state.data.list.length-1]);
+    //console.log(this.state.data.list.length);
+    //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
   }
 
   HandleChange = (e, f) => {
-    console.log("e : " + e);
-    console.log("f : " + JSON.stringify(f));
+    //console.log("e : " + e);
+    //console.log("f : " + JSON.stringify(f));
     //console.log(this.state);
-    console.log("avant : " + this.state.data.list[JSON.stringify(f)].text);
+    //console.log("avant : " + this.state.data.list[JSON.stringify(f)].text);
     this.state.data.list[JSON.stringify(f)].text = e;
-    console.log("après : " + this.state.data.list[JSON.stringify(f)].text);
+    //console.log("après : " + this.state.data.list[JSON.stringify(f)].text);
     //this.setState({e: e});
   }
 
