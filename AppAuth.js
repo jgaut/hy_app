@@ -4,6 +4,7 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
+import TestPageScreen from './views/TestPage';
 
 class AppAuth extends React.Component {
 
@@ -41,7 +42,8 @@ const CustomdrawerComponent = (props) => (
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: HomeScreen,
-  Profile: ProfileScreen
+  Profile: ProfileScreen,
+  'Create Page': TestPageScreen
 },
 {
   contentComponent: CustomdrawerComponent
