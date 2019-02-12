@@ -127,6 +127,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
+        alignItems: 'center',
+    justifyContent: 'center',
   },
 container: {
     backgroundColor: '#f5fcff',
