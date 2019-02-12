@@ -32,7 +32,7 @@ class TestPageScreen extends React.Component {
         //console.log(item.type);
         //Fixer la clef
         let myKey = key;
-          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={(text) => this.handleChange(text, myKey)} value={this.state.data.list[key].text}/>);
+          returnValue.push(<TextInput style={styles.label} key={key} onChangeText={(text) => this.handleChange(text, myKey)} value={this.state.data.list[myKey].text}/>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
           returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
@@ -46,7 +46,7 @@ class TestPageScreen extends React.Component {
   handleChange = (e, f) =>{
     console.log("e : " + e);
     console.log("f : " + JSON.stringify(f));
-    console.log(this.state);
+    //console.log(this.state);
 
     this.state.data.list[JSON.stringify(f)].text = e;
     //this.setState({e: e});
