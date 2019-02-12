@@ -30,7 +30,8 @@ class TestPageScreen extends React.Component {
     
       if(item.type=='TextInput'){
         //console.log(item.type);
-          returnValue.push(<TextInput style={styles.label} data-hy={key} key={key} onChange={this.handleChange.bind(this)} value={this.state.data.list[key].text}/>);
+        let myAttr = {'data-attr': key}
+          returnValue.push(<TextInput {...myAttr} style={styles.label} key={key} onChange={this.handleChange.bind(this)} value={this.state.data.list[key].text}/>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
           returnValue.push(<TextInput style={styles.input} key={key}>okokokok !!!!!</TextInput>);
@@ -45,7 +46,7 @@ class TestPageScreen extends React.Component {
     console.log("e : " + JSON.stringify(e.target));
     console.log("e : " + JSON.stringify(e.state));
     console.log("e : " + JSON.stringify(e.target.mykey));
-    console.log("e : " + JSON.stringify(e.mykey));
+    console.log("e : " + JSON.stringify(e.attr));
     //this.setState({e: e});
   }
 
