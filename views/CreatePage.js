@@ -38,7 +38,7 @@ class CreatePageScreen extends React.Component {
     
     var returnValue = [];
     var key=0;
-    if(pros.list){
+    if(props.list){
     props.list.forEach(item => {
     
       if(item.type=='TextInput'){
