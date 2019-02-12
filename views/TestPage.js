@@ -8,26 +8,19 @@ class TestPageScreen extends React.Component {
   constructor() {
     super();
     this.state = {data: ''};
-    
   }
 
   componentWillMount(){
     const data = {"list":[{"type":"TextInput", "text":"mon texte", "key":"234"}, {"type":"TextInput", "text":"mon TextInput", "key":"99870999"}]};
     this.setState({ data });
-    
-
   }
 
   Story(props) {
-    // Correct! JSX type can be a capitalized variable.
-    //console.log(this.state);
     
     var returnValue = [];;
     var key=0;
+
     props.list.forEach(item => {
-      //console.log(item);
-      //console.log(key);
-      //console.log(this.state.data.list[key].text);
     
       if(item.type=='TextInput'){
         //console.log(item.type);
@@ -40,7 +33,7 @@ class TestPageScreen extends React.Component {
 
     //Add sauvegarde
     returnValue.push(
-      <TouchableOpacity key={Math.random()} onPress={() => addTextInput()}>
+      <TouchableOpacity key={Math.random()} onPress={() => AddTextInput()}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
@@ -58,6 +51,7 @@ class TestPageScreen extends React.Component {
 
   AddTextInput = () => {
     console.log('AddTextInput function !');
+    this.state.data.list.push({"type":"TextInput", "text":"mon texte", "key":Math.random()});
   }
 
   HandleChange = (e, f) => {
