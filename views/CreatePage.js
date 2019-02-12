@@ -14,7 +14,7 @@ class CreatePageScreen extends React.Component {
     this.launch();
 
     this.props.navigation.addListener('didFocus', () => {
-     console.log('focus');
+     //console.log('focus');
      this.launch();
      this.forceUpdate();
     });
@@ -29,11 +29,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  componentWillMount(){
-    //const data = {"list":[{"type":"TextInput", "text":"mon texte", "sort":"0"}, {"type":"TextInput", "text":"mon TextInput", "sort":"1"}]};
-    //this.setState({ data });
-    //console.log('mount');
-  }
+  componentWillMount(){}
 
   Story(props) {
     
@@ -85,7 +81,7 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  GetAllElement = () => {
+  ListAllElement = () => {
     Storage.list('', {level: 'private'})
       .then(result => {
         result.forEach(item => {
@@ -137,7 +133,7 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} onPress={() => this.GetAllElement()}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.ListAllElement()}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>List</Text>
             </View>
