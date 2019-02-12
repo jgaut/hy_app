@@ -112,10 +112,12 @@ const styles = StyleSheet.create({
     color: '#000000'
   },
 button: {
-    height: 40,
-    backgroundColor: '#2196F3',
-        alignItems: 'stretch',
-    justifyContent: 'center',
+  padding:5,
+  margin:5,
+  height: 40,
+  backgroundColor: '#2196F3',
+      alignItems: 'stretch',
+  justifyContent: 'center',
     },
   buttonText: {
     color: 'white'
