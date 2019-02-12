@@ -9,7 +9,7 @@ class CreatePageScreen extends React.Component {
 
 
   constructor(...args) {
-    super(...args);
+    super();
 
     const uuidv4 = require('uuid/v4');
     let myTmp = {"id":uuidv4(),"list":[]};
