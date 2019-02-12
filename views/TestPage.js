@@ -115,9 +115,7 @@ button: {
     width: '30%',
     height: 40,
     backgroundColor: '#2196F3',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    },
   buttonText: {
     color: 'white'
   },
