@@ -8,7 +8,6 @@ import { createAppContainer } from 'react-navigation';
 import SignInUpScreen from './views/SignInUp';
 import SignUpConfirmScreen from './views/SignUpConfirm';
 import AppAuthScreen from './AppAuth';
-import Amplify, { Storage } from 'aws-amplify';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
