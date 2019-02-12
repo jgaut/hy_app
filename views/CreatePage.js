@@ -7,7 +7,8 @@ class CreatePageScreen extends React.Component {
 
   constructor() {
     super();
-    let myTmp = {"id":Math.random(),"list":[]};
+    const uuidv4 = require('uuid/v4');
+    let myTmp = {"id":uuidv4(),"list":[]};
     this.state = {data: myTmp};
   }
 
@@ -42,7 +43,7 @@ class CreatePageScreen extends React.Component {
   AddElement = () => {
     //console.log('AddTextInput function !');
     //console.log(this.state.data.list.length);
-    this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+    this.state.data.list.push({"type":"TextInput", "text":uuidv4(), "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.forceUpdate()
