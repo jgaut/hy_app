@@ -38,7 +38,7 @@ class TestPageScreen extends React.Component {
     });
 
     returnValue.push(
-      <TouchableOpacity onPress={console.log('ok')}>
+      <TouchableOpacity key={Math.random()} onPress={() => console.log('ok')}>
                       <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
