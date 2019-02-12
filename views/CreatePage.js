@@ -86,7 +86,7 @@ class CreatePageScreen extends React.Component {
   }
 
   GetAllElement = () => {
-    Storage.list('*', {level: 'private'})
+    Storage.list('', {level: 'private'})
       .then(result => {
         result.forEach(item => {
 
@@ -139,7 +139,7 @@ class CreatePageScreen extends React.Component {
 
           <TouchableOpacity key={Math.random()} onPress={() => this.GetAllElement()}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>Remove</Text>
+              <Text style={styles.buttonText}>List</Text>
             </View>
           </TouchableOpacity>
 
