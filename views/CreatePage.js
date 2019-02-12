@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
-//import { createStackNavigator } from 'react-navigation';
-//import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 
 class CreatePageScreen extends React.Component {
 
@@ -15,18 +15,19 @@ class CreatePageScreen extends React.Component {
     const uuidv4 = require('uuid/v4');
     let myTmp = {"id":uuidv4(),"list":[]};
     this.state.data = myTmp;
-    console.log("ok");
-    console.log(this.state.data);
-    //this.props.navigation.addListener('didFocus', () => {
-      //  this.launch();
-      //});
+    //console.log("ok");
+    //console.log(this.state.data);
+    this.props.navigation.addListener('didFocus', () => {
+     this.launch();
+    });
   }
 
   launch = () => {
     const uuidv4 = require('uuid/v4');
     let myTmp = {"id":uuidv4(),"list":[]};
-    this.setState({data: myTmp});
+    this.state.data = myTmp;
     console.log(JSON.stringify(this.state.data));
+    this.forceUpdate();
   }
 
   componentWillMount(){
@@ -72,7 +73,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
-    this.forceUpdate()
+    this.forceUpdate();
   }
 
   RemoveElement = () => {
@@ -80,7 +81,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list.splice(this.state.data.list.length-1, 1);
     //console.log(this.state.data.list.length);
     //console.log(this.state.data.list[this.state.data.list.length-1]);
-    this.forceUpdate()
+    this.forceUpdate();
   }
 
   HandleChange = (e, f) => {
