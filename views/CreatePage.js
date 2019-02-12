@@ -8,8 +8,8 @@ import { createAppContainer } from 'react-navigation';
 class CreatePageScreen extends React.Component {
 
 
-  constructor() {
-    super();
+  constructor(...args) {
+    super(...args);
     this.state = {data:''
     };
     const uuidv4 = require('uuid/v4');
