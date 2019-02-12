@@ -11,7 +11,7 @@ class TestPageScreen extends React.Component {
   }
 
   componentWillMount(){
-    const data = {"list":[{"type":"TextInput", "text":"mon texte"}, {"type":"TextInput", "text":"mon TextInput"}]};
+    const data = {"list":[{"type":"TextInput", "text":"mon texte", "key":"234"}, {"type":"TextInput", "text":"mon TextInput", "key":"99870999"}]};
     this.setState({ data });
   
 
@@ -30,7 +30,8 @@ class TestPageScreen extends React.Component {
     
       if(item.type=='TextInput'){
         //console.log(item.type);
-        let myKey = key;
+        //Fixer la clef
+        let myKey = this.state.data.list[key].key;
           returnValue.push(<TextInput style={styles.label} key={key} onFocus={(e) => this.handleChange(e, myKey)} onChange={this.handleChange.bind(this)} value={this.state.data.list[key].text}/>);
       }else if(item.type=='TextInput'){
         console.log(item.type);
