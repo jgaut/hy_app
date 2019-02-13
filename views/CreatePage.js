@@ -11,8 +11,6 @@ class CreatePageScreen extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {data:'', isSav:true, fromKey:''};
-    this.state.fromKey = this.props.navigation.state.params.myKey;
-    console.log('create page : ' + this.state.fromKey);
 
     this.props.navigation.addListener('didFocus', () => {
      //console.log('focus');
@@ -26,7 +24,7 @@ class CreatePageScreen extends React.Component {
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
       //console.log(JSON.stringify(this.state.data));
-      
+      this.state.fromKey = this.props.navigation.state.params.myKey;
       console.log('create page : ' + this.state.fromKey);
       Storage.get(this.state.fromKey, {level: 'private'})
         .then(result => {console.log(result);
