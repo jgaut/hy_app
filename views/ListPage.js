@@ -79,7 +79,7 @@ class ListPageScreen extends React.Component {
     return(
       <TouchableOpacity
         key = { item.key }
-        style = {{ minWidth: itemSize, minHeight: itemSize, paddingHorizontal: itemPaddingHorizontal }}
+        style = {{ width: itemSize, height: itemSize, paddingHorizontal: itemPaddingHorizontal }}
         onPress = { () => {
           console.log(item.key);
           console.log(itemSize);
@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
 button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-
+  height:100,
+  width:100
   
     },
   buttonText: {
