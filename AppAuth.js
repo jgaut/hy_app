@@ -20,7 +20,7 @@ class AppAuth extends React.Component {
 
   render() {
     
-
+const {navigate} = this.props.navigation;
     return (
       <View>
         <MyDrawer/>
@@ -29,7 +29,7 @@ class AppAuth extends React.Component {
   }
 }
 
-const {navigate} = this.props.navigation;
+
 
 const CustomdrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
