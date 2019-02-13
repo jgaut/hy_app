@@ -77,12 +77,12 @@ const styles = StyleSheet.create({
     color: '#000000'
   },
 button: {
-  padding:5,
-  margin:5,
+  padding: 2,
+  margin: 2,
   height: 100,
   width: 100,
   backgroundColor: '#2196F3',
-      alignItems: 'stretch',
+  alignItems: 'stretch',
   justifyContent: 'center',
     },
   buttonText: {
@@ -91,6 +91,7 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex:1,
+      margin: 2,
     //flexDirection: "row",
   },
   input: {
