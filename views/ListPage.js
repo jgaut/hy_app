@@ -30,7 +30,7 @@ class ListPageScreen extends React.Component {
         }
         }>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>--{myKey}--</Text>
+              <Text style={styles.buttonText}>{myKey}</Text>
             </View>
           </TouchableOpacity>);
     });
