@@ -59,7 +59,7 @@ class ListPageScreen extends React.Component {
     return (
       <PhotoGrid
         data = { this.state.data.list }
-        itemsPerRow = { 3 }
+        itemsPerRow = { 5 }
         itemMargin = { 1 }
         itemPaddingHorizontal={1}
         renderHeader = { this.renderHeader }
@@ -106,8 +106,6 @@ const styles = StyleSheet.create({
     color: '#000000'
   },
 button: {
-  height: 100,
-  width: 100,
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   
