@@ -72,7 +72,7 @@ const MyDrawer = createAppContainer(MyDrawerNavigator);
 
 const MyBottom = createAppContainer(TabNavigator);
 
-AppRegistry.registerComponent('RNNavigators', () => MyDrawer );
+//AppRegistry.registerComponent('RNNavigators', () => MyDrawer );
 
 const styles = StyleSheet.create({
   form: {
