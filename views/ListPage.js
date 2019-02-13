@@ -23,17 +23,15 @@ class ListPageScreen extends React.Component {
   Story(props) {
     
     var returnValue = [];
-    var key=0;
     if(props.list){
     props.list.forEach(item => {
-      let myKey = item.id;
+      let myKey = item.key;
       returnValue.push(
         <TouchableOpacity key={Math.random()} onPress={() => console.log(myKey)}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>{myKey}</Text>
+              <Text style={styles.buttonText}>--{myKey}--</Text>
             </View>
           </TouchableOpacity>);
-      key++;
     });
   }
     return returnValue;
@@ -47,6 +45,7 @@ class ListPageScreen extends React.Component {
           console.log(item);});
       })
       .catch(err => console.log(err));
+      console.log(this.state.data.list);
   }
 
   render() {
