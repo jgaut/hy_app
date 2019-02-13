@@ -88,7 +88,8 @@ class ListPageScreen extends React.Component {
         onPress = { () => {
           console.log(item.key);
           console.log(itemSize);
-          this.MyNavigate(item.key);
+          navigate('Create Page', {myKey: item.key});
+          //this.MyNavigate(item.key);
         }}>
         <View style={styles.button}>
               <Text style={styles.buttonText}>{item.key}</Text>
@@ -98,6 +99,8 @@ class ListPageScreen extends React.Component {
   }
 
 }
+
+const {navigate} = props.navigation;
 
 const styles = StyleSheet.create({
   form: {
