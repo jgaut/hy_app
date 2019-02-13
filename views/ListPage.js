@@ -92,6 +92,8 @@ container: {
     backgroundColor: '#f5fcff',
     flex:1,
       margin: 2,
+      flexDirection: 'row',
+    flexWrap: 'wrap'
     //flexDirection: "row",
   },
   input: {
