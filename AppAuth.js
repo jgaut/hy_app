@@ -31,7 +31,7 @@ class AppAuth extends React.Component {
 const CustomdrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
     <View style={{ height: 50}}>
-      <Text>OOOOOOOOOOOOO</Text>
+      <Text></Text>
     </View>
     <View>
       <Text>My Logo is here !</Text>
@@ -93,7 +93,7 @@ button: {
   margin:5,
   height: 40,
   backgroundColor: '#2196F3',
-      alignItems: 'stretch',
+  alignItems: 'center',
   justifyContent: 'center',
     },
   buttonText: {
