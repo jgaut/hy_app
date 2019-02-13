@@ -67,23 +67,6 @@ class ListPageScreen extends React.Component {
 }
 }
 
-const MyTabNavigator = createBottomTabNavigator({
-  'Home': HomeScreen,
-  'Profile': ProfileScreen,
-  'Journal': ListPageScreen,
-  'Create Page': CreatePageScreen
-},
-{
-  contentComponent: CustomdrawerComponent
-}, 
-{
-  navigationOptions: {
-    headerMode: 'none'
-  },
-});
-
-const MyDrawer = createAppContainer(MyDrawerNavigator);
-
 const styles = StyleSheet.create({
   form: {
     padding: 80, 
