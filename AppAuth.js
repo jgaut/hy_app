@@ -70,7 +70,7 @@ const MyDrawerNavigator = createDrawerNavigator({
 {
   navigationOptions: {
     headerMode: 'none',
-    "drawerPosition": 'right'
+    "drawerPosition": 'left'
   },
 });
 
