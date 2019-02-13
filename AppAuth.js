@@ -23,7 +23,7 @@ class AppAuth extends React.Component {
   }
   
   render() {
-    const {navigate} = this.props.navigation;
+    
 
     return (
       <View>
@@ -46,6 +46,7 @@ const CustomdrawerComponent = (props) => (
     </ScrollView>
     <TouchableOpacity onPress={() => {
         // After retrieveing the confirmation code from the user
+        const {navigate} = this.props.navigation;
         Auth.signOut()
         .then((data) => {
           console.log(data);
