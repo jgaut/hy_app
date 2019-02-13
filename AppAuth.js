@@ -6,6 +6,7 @@ import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
+import BottomNavigation from 'react-native-material-bottom-navigation'
 
 
 class AppAuth extends React.Component {
@@ -16,14 +17,45 @@ class AppAuth extends React.Component {
 
   componentWillMount(){
   }
+
+  renderTab = () => {
+    return <View />
+  }
   
   render() {
     const {navigate} = this.props.navigation;
 
+    tabs = [
+    {
+      key: 'games',
+      icon: 'gamepad-variant',
+      label: 'Games',
+      barColor: '#388E3C',
+      pressColor: 'rgba(255, 255, 255, 0.16)'
+    },
+    {
+      key: 'movies-tv',
+      icon: 'movie',
+      label: 'Movies & TV',
+      barColor: '#B71C1C',
+      pressColor: 'rgba(255, 255, 255, 0.16)'
+    },
+    {
+      key: 'music',
+      icon: 'music-note',
+      label: 'Music',
+      barColor: '#E64A19',
+      pressColor: 'rgba(255, 255, 255, 0.16)'
+    }
+    ]
+
     return (
       <View>
         <MyDrawer/>
-
+        <BottomNavigation
+          renderTab={this.renderTab}
+          tabs={this.tabs}
+        />
       </View>
     );
   }
@@ -40,33 +72,7 @@ const CustomdrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-  
-  <View style={styles.submitButton}>
-          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Sauvegarde</Text>
-            </View>
-          </TouchableOpacity>
-          
-          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Add</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Remove</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity key={Math.random()} onPress={() => this.ListAllElement()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>List</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        </SafeAreaView>
+  </SafeAreaView>
   );
 
 const MyDrawerNavigator = createDrawerNavigator({
