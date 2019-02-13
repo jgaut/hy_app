@@ -43,7 +43,7 @@ class ListPageScreen extends React.Component {
       .then(result => {
         result.forEach(item => {
           this.state.data.list.push(item);
-          console.log('item : '+item);});
+          console.log('item : '+item.key);});
       })
       .catch(err => console.log(err));
       console.log('big list : ' +this.state.data.list);
