@@ -77,11 +77,12 @@ class ListPageScreen extends React.Component {
   }
 
   MyNavigate(e){
-    const {navigate} = props.navigation;
+    
     navigate('Create Page', {myKey: e});
   }
 
   renderItem(item, itemSize, itemPaddingHorizontal, ...props) {
+    const {navigate} = props.navigation;
     return(
       <TouchableOpacity
         key = { item.key }
@@ -89,7 +90,7 @@ class ListPageScreen extends React.Component {
         onPress = { () => {
           console.log(item.key);
           console.log(itemSize);
-          this.navigate('Create Page', {myKey: item.key});
+          navigate('Create Page', {myKey: item.key});
           //this.MyNavigate(item.key);
         }}>
         <View style={styles.button}>
