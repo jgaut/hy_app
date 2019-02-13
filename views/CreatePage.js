@@ -45,7 +45,7 @@ class CreatePageScreen extends React.Component {
           .then(result => {console.log(result);
             fetch(result)
               .then(response => response.json() )
-              .then(data => {console.log(data); this.state.data = data; this.forceUpdate(); this.state.isSav=true;} )
+              .then(data => {console.log(data); this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null;} )
               .catch(error => console.log(error));
           })
           .catch(err => console.log(err));
@@ -78,7 +78,7 @@ class CreatePageScreen extends React.Component {
         level: 'private',
         contentType: 'text/plain'
       })
-      .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=''){this.launch();}})
+      .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=null){this.launch();}})
       .catch(err => console.log(err));
     }
   }
