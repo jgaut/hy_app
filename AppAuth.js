@@ -48,12 +48,7 @@ const CustomdrawerComponent = (props) => (
 
 const MyDrawerNavigator = createDrawerNavigator({
   'Home': HomeScreen,
-  'Profile': {
-    screen: ProfileScreen,
-    navigationOptions: {
-      drawerLabel: 'Profile',
-      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
-    }},
+  'Profile': ProfileScreen,
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen
 },
