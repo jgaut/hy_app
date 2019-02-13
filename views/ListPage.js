@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
-import { createStackNavigator } from 'react-navigation';
-import { createAppContainer } from 'react-navigation';
 
 class ListPageScreen extends React.Component {
 
@@ -68,6 +66,23 @@ class ListPageScreen extends React.Component {
   
 }
 }
+
+const MyTabNavigator = createBottomTabNavigator({
+  'Home': HomeScreen,
+  'Profile': ProfileScreen,
+  'Journal': ListPageScreen,
+  'Create Page': CreatePageScreen
+},
+{
+  contentComponent: CustomdrawerComponent
+}, 
+{
+  navigationOptions: {
+    headerMode: 'none'
+  },
+});
+
+const MyDrawer = createAppContainer(MyDrawerNavigator);
 
 const styles = StyleSheet.create({
   form: {
