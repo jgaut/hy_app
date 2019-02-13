@@ -28,6 +28,21 @@ class AppAuth extends React.Component {
     return (
       <View>
         <MyDrawer/>
+        <TouchableOpacity onPress={() => {
+        // After retrieveing the confirmation code from the user
+        const {navigate} = this.props.navigation;
+        Auth.signOut()
+        .then((data) => {
+          console.log(data);
+          navigate('App', {number: Math.random()});
+          }
+        )
+        .catch(err => console.log(err));
+      }}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Logout</Text>
+            </View>
+          </TouchableOpacity>
       </View>
     );
   }
@@ -44,21 +59,6 @@ const CustomdrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-    <TouchableOpacity onPress={() => {
-        // After retrieveing the confirmation code from the user
-        const {navigate} = this.props.navigation;
-        Auth.signOut()
-        .then((data) => {
-          console.log(data);
-          navigate('App', {number: Math.random()});
-          }
-        )
-        .catch(err => console.log(err));
-      }}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Logout</Text>
-            </View>
-          </TouchableOpacity>
   </SafeAreaView>
   );
 
