@@ -89,7 +89,6 @@ button: {
   },
 container: {
     backgroundColor: '#f5fcff',
-    flex: 1,
     flexDirection: "row",
   },
   input: {
