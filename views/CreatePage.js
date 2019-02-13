@@ -12,7 +12,7 @@ class CreatePageScreen extends React.Component {
     super(...args);
     this.state = {data:'', isSav:true, fromKey:''};
     this.state.fromKey = this.props.navigation.state.params.myKey;
-    console.log(this.state.fromKey);
+    console.log('create page : ' + this.state.fromKey);
 
     this.props.navigation.addListener('didFocus', () => {
      //console.log('focus');
