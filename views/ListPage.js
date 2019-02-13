@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
+import PhotoGrid from 'react-native-image-grid';
 
 class ListPageScreen extends React.Component {
 
@@ -55,16 +56,42 @@ class ListPageScreen extends React.Component {
 
   render() {
     
-      let tt = this.Story(this.state.data);
     return (
-      <ScrollView style={styles.container}>
-        <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-          {tt}
-        </View>
-      </ScrollView>
+      <PhotoGrid
+        data = { this.state.data }
+        itemsPerRow = { 3 }
+        itemMargin = { 1 }
+        itemPaddingHorizontal={1}
+        renderHeader = { this.renderHeader }
+        renderItem = { this.renderItem }
+      />
     );
   
-}
+  }
+
+  renderHeader() {
+    return(
+      <Text>I'm on top!</Text>
+    );
+  }
+
+  renderItem(item, itemSize, itemPaddingHorizontal) {
+    return(
+      <TouchableOpacity
+        key = { item.key }
+        style = {{ width: itemSize, height: itemSize, paddingHorizontal: itemPaddingHorizontal }}
+        onPress = { () => {
+          const {navigate} = this.props.navigation;
+          console.log(item.key);
+          navigate('Create Page', {myKey: item.key});
+        }}>
+        <View style={styles.button}>
+              <Text style={styles.buttonText}>{item.key}</Text>
+            </View>
+      </TouchableOpacity>
+    )
+  }
+
 }
 
 const styles = StyleSheet.create({
