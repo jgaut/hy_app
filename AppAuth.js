@@ -28,7 +28,7 @@ class AppAuth extends React.Component {
   }
 }
 
-const CustomdrawerComponent = (...props) => (
+const CustomdrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
     <View style={{ height: 10}}>
       <Text></Text>
@@ -39,7 +39,9 @@ const CustomdrawerComponent = (...props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-    <TouchableOpacity onPress={() => {
+    <TouchableOpacity {...props} onPress={() => {
+      
+    const {navigate} = this.props.navigation;
       Auth.signOut()
   .then((data) => {
     console.log(data);
