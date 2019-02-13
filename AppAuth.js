@@ -116,4 +116,4 @@ container: {
   },
 });
 
-export default MyDrawer;
+export default AppAuth;
