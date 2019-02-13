@@ -100,7 +100,7 @@ class ListPageScreen extends React.Component {
 
 }
 
-const {navigate} = props.navigation;
+const {navigate} = this.props.navigation;
 
 const styles = StyleSheet.create({
   form: {
