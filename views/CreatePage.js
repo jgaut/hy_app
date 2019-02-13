@@ -13,7 +13,6 @@ class CreatePageScreen extends React.Component {
     this.state = {data:'', isSav:true, fromKey:''};
 
     this.props.navigation.addListener('didFocus', () => {
-     //console.log('focus');
      this.launch();
     });
   }
@@ -60,9 +59,6 @@ class CreatePageScreen extends React.Component {
   }
 
   SavMyData = () => {
-    //If user logged
-    //console.log(Auth.currentCredentials());
-    //var f = new File([], this.state.data.id+".json");
     Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
       level: 'private',
       contentType: 'text/plain'
@@ -72,20 +68,13 @@ class CreatePageScreen extends React.Component {
   }
 
   AddElement = () => {
-    //console.log('AddTextInput function !');
-    //console.log(this.state.data.list.length);
     this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
-    //console.log(this.state.data.list.length);
-    //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.setState({isSav:false});
     this.forceUpdate();
   }
 
   RemoveElement = () => {
-    //console.log('RemoveTextInput function !');
     this.state.data.list.splice(this.state.data.list.length-1, 1);
-    //console.log(this.state.data.list.length);
-    //console.log(this.state.data.list[this.state.data.list.length-1]);
     this.setState({isSav:false});
     this.forceUpdate();
   }
@@ -101,18 +90,9 @@ class CreatePageScreen extends React.Component {
   }
 
   HandleChange = (e, f) => {
-    //console.log("e : " + e);
-    //console.log("f : " + JSON.stringify(f));
-    //console.log(this.state);
-    //console.log("avant : " + this.state.data.list[JSON.stringify(f)].text);
     this.state.data.list[JSON.stringify(f)].text = e;
-    //console.log("après : " + this.state.data.list[JSON.stringify(f)].text);
-    //this.setState({e: e});
     this.setState({isSav:false});
   }
-
-
-
 
   render() {
     
