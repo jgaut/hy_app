@@ -34,7 +34,7 @@ const CustomdrawerComponent = (props) => (
       <Text></Text>
     </View>
     <View>
-      <Text style={styles.button}>Logo</Text>
+      <Text style={styles.text}>Logo</Text>
     </View>
     <ScrollView>
       <DrawerItems {...props}/>
@@ -99,6 +99,10 @@ button: {
   buttonText: {
     color: 'white'
   },
+  button: {
+  alignItems: 'center',
+  justifyContent: 'center',
+    },
 container: {
     backgroundColor: '#f5fcff',
     flex: 1,
