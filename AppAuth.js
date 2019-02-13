@@ -64,10 +64,7 @@ const MyDrawerNavigator = createDrawerNavigator({
   //'Journal': ListPageScreen,
   //'Create Page': CreatePageScreen
 }, 
-{
-  headerMode: 'none',
-  drawerPosition: 'left'
-},
+
 {
   contentComponent: CustomdrawerComponent
 }, 
