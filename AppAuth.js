@@ -6,6 +6,7 @@ import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
+import { AppRegistry } from 'react-native'
 
 class AppAuth extends React.Component {
 
@@ -33,8 +34,8 @@ class AppAuth extends React.Component {
 }
 
 const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 0.5 }}>
-    <View style={{ height: 30}}>
+  <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ height: 10}}>
       <Text></Text>
     </View>
     <View>
@@ -71,6 +72,8 @@ const MyDrawerNavigator = createDrawerNavigator({
 const MyDrawer = createAppContainer(MyDrawerNavigator);
 
 const MyBottom = createAppContainer(TabNavigator);
+
+AppRegistry.registerComponent('RNNavigators', () => MyBottom );
 
 const styles = StyleSheet.create({
   form: {
