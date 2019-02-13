@@ -53,7 +53,7 @@ const MyDrawerNavigator = createDrawerNavigator({
     navigationOptions: {
       drawerLabel: 'Profile',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
-    },
+    }},
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen
 },
