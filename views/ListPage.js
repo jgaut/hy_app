@@ -41,6 +41,7 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
+    this.state.data.list = [];
     Storage.list('', {level: 'private'})
       .then(result => {
         result.forEach(item => {
