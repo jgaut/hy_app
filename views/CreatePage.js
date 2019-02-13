@@ -13,13 +13,7 @@ class CreatePageScreen extends React.Component {
     this.state = {data:'', isSav:true, fromKey:''};
 
     this.props.navigation.addListener('didFocus', () => {
-     this.launch();
-    });
-  }
-
-  launch = () => {
-
-    if(!this.state.isSav){
+      if(!this.state.isSav){
       Alert.alert(
         'Alert Title',
         'Une page est en cours de création. Voulez-vous abandonner ?',
@@ -29,7 +23,14 @@ class CreatePageScreen extends React.Component {
         ],
         {cancelable: false},
       );
+    }
+     this.launch();
+    });
+  }
 
+  launch = () => {
+
+    if(this.state.isSav){
       const uuidv4 = require('uuid/v4');
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
