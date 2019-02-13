@@ -71,13 +71,12 @@ class ListPageScreen extends React.Component {
 
   renderHeader() {
     return(
-      <Text>I'm on top!</Text>
+      <Text style={{height:50}}></Text>
     );
   }
 
   renderItem = (item, itemSize, itemPaddingHorizontal) => {
     const {navigate} = this.props.navigation;
-    //navigate('Create Page');
     return(
       <TouchableOpacity
         key = { item.key }
@@ -86,7 +85,6 @@ class ListPageScreen extends React.Component {
           console.log(item.key);
           console.log(itemSize);
           navigate('Create Page', {myKey: item.key});
-          //this.MyNavigate(item.key);
         }}>
         <View style={styles.button}>
               <Text style={styles.buttonText}>{item.key}</Text>
@@ -94,10 +92,7 @@ class ListPageScreen extends React.Component {
       </TouchableOpacity>
     )
   }
-
 }
-
-
 
 const styles = StyleSheet.create({
   form: {
