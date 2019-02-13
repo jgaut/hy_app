@@ -81,8 +81,8 @@ class ListPageScreen extends React.Component {
         key = { item.key }
         style = {{ width: itemSize, height: itemSize, paddingHorizontal: itemPaddingHorizontal }}
         onPress = { () => {
-          const {navigate} = this.props.navigation;
           console.log(item.key);
+          const {navigate} = this.props.navigation;
           navigate('Create Page', {myKey: item.key});
         }}>
         <View style={styles.button}>
@@ -106,8 +106,6 @@ const styles = StyleSheet.create({
     color: '#000000'
   },
 button: {
-  padding: 2,
-  margin: 2,
   height: 100,
   width: 100,
   backgroundColor: '#2196F3',
