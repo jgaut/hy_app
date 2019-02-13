@@ -43,8 +43,8 @@ const CustomdrawerComponent = (props) => (
   );
 
 const MyDrawerNavigator = createDrawerNavigator({
-  Home: HomeScreen,
-  Profile: ProfileScreen,
+  'Home': HomeScreen,
+  'Profile': ProfileScreen,
   'List Pages': ListPageScreen,
   'Create Page': CreatePageScreen
 },
