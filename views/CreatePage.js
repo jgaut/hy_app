@@ -18,7 +18,18 @@ class CreatePageScreen extends React.Component {
   }
 
   launch = () => {
-    if(this.state.isSav){
+
+    if(!this.state.isSav){
+      Alert.alert(
+        'Alert Title',
+        'Une page est en cours de création. Voulez-vous abandonner ?',
+        [
+          {text: 'Sauvegarder et continuer', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Retour au brouillon', onPress: () => console.log('Cancel Pressed')},
+        ],
+        {cancelable: false},
+      );
+
       const uuidv4 = require('uuid/v4');
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
@@ -35,20 +46,7 @@ class CreatePageScreen extends React.Component {
 
     }else{
       // Works on both iOS and Android
-Alert.alert(
-  'Alert Title',
-  'Une page est en cours de création. Voulez-vous abandonner ?',
-  [
-    {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-    {
-      text: 'Cancel',
-      onPress: () => console.log('Cancel Pressed'),
-      style: 'cancel',
-    },
-    {text: 'OK', onPress: () => console.log('OK Pressed')},
-  ],
-  {cancelable: false},
-);
+
     }
   }
 
