@@ -18,18 +18,19 @@ class CreatePageScreen extends React.Component {
         'Alert Title',
         'Une page est en cours de création. Voulez-vous abandonner ?',
         [
-          {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData(); this.launch();} },
-          {text: 'Retour au brouillon', onPress: () => {console.log('Retour au brouillon');this.launch();}},
+          {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData();} },
+          {text: 'Retour au brouillon', onPress: () => console.log('Retour au brouillon')},
         ],
         {cancelable: false},
       );
     }
-     
+     this.launch();
     });
   }
 
   launch = () => {
 
+    console.log(this.state.isSav);
     if(this.state.isSav){
       const uuidv4 = require('uuid/v4');
       let myTmp = {"id":uuidv4(),"list":[]};
