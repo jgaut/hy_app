@@ -32,6 +32,7 @@ class CreatePageScreen extends React.Component {
 
     if(this.state.isSav){
       this.state.fromKey = this.props.navigation.state.params.myKey;
+      console.log(this.state.fromKey);
       if(this.state.fromKey=='' || this.state.fromKey=='undefined'){
         const uuidv4 = require('uuid/v4');
         let myTmp = {"id":uuidv4(),"list":[]};
