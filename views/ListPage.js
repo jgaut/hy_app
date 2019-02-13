@@ -10,7 +10,6 @@ class ListPageScreen extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {data: {"list":[]}};
-    const {navigate} = this.props.navigation;
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
@@ -55,6 +54,8 @@ class ListPageScreen extends React.Component {
   }
 
   render() {
+    
+    const {navigate} = this.props.navigation;
     
     return (
       <PhotoGrid
