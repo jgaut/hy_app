@@ -31,11 +31,11 @@ class CreatePageScreen extends React.Component {
   launch = () => {
 
     if(this.state.isSav){
+      this.state.fromKey = this.props.navigation.state.params.myKey;
       if(this.state.fromKey==''){
         const uuidv4 = require('uuid/v4');
         let myTmp = {"id":uuidv4(),"list":[]};
         this.state.data = myTmp;
-        this.state.fromKey = this.props.navigation.state.params.myKey;
       }else{
         console.log('create page : ' + this.state.fromKey);
         Storage.get(this.state.fromKey, {level: 'private'})
