@@ -16,7 +16,7 @@ class ListPageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      //console.log('focus');
      this.ListAllElement();
-     this.forceUpdate();
+     
     });
   }
 
@@ -26,6 +26,7 @@ class ListPageScreen extends React.Component {
     if(props.list){
     props.list.forEach(item => {
       let myKey = item.key;
+      console.log(myKey);
       returnValue.push(
         <TouchableOpacity key={Math.random()} onPress={() => console.log(myKey)}>
             <View style={styles.button}>
@@ -46,6 +47,7 @@ class ListPageScreen extends React.Component {
       })
       .catch(err => console.log(err));
       console.log(this.state.data.list);
+      this.forceUpdate();
   }
 
   render() {
