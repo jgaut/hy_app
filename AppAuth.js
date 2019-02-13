@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, SafeAreaView, ScrollView, Icon } from 'react-native';
-import { createDrawerNavigator, DrawerItems, createBottomTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
@@ -47,22 +47,7 @@ const CustomdrawerComponent = (props) => (
 
 
 const MyDrawerNavigator = createDrawerNavigator({
-  'Home': HomeScreen,
-  'Profile': ProfileScreen,
-  'Journal': ListPageScreen,
-  'Create Page': CreatePageScreen
-},
-{
-  contentComponent: CustomdrawerComponent
-}, 
-{
-  navigationOptions: {
-    headerMode: 'none'
-  },
-});
-
-const MyTabNavigator = createBottomTabNavigator({
-  'Home': HomeScreen,
+  'Home': TabMenuScreen,
   'Profile': ProfileScreen,
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen

@@ -2,9 +2,6 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import ProfileScreen from 'Profile';
-import CreatePageScreen from 'CreatePage';
-import ListPageScreen from 'ListPage';
 
 class HomeScreen extends React.Component {
 
@@ -53,21 +50,6 @@ class HomeScreen extends React.Component {
   }
 }
 
-
-const MyTabNavigator = createBottomTabNavigator({
-  'Home': HomeScreen,
-  'Profile': ProfileScreen,
-  'Journal': ListPageScreen,
-  'Create Page': CreatePageScreen
-},
-{
-  navigationOptions: {
-    headerMode: 'none'
-  },
-});
-
-const MyTab = createAppContainer(MyTabNavigator);
-
 const styles = StyleSheet.create({
   form: {
     padding: 60, 
@@ -98,4 +80,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MyDrawer;
+export default HomeScreen;
