@@ -58,7 +58,9 @@ class ListPageScreen extends React.Component {
       let tt = this.Story(this.state.data);
     return (
       <ScrollView style={styles.container}>
-        {tt}
+        <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+          {tt}
+        </View>
       </ScrollView>
     );
   
@@ -83,7 +85,7 @@ button: {
   width: 100,
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-  flexDirection: 'row', justifyContent: 'flex-start',
+  
     },
   buttonText: {
     color: 'white'
