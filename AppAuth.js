@@ -66,7 +66,7 @@ const MyDrawerNavigator = createDrawerNavigator({
 }, 
 {
   headerMode: 'none',
-  drawerPosition: 'right'
+  drawerPosition: 'left'
 },
 {
   contentComponent: CustomdrawerComponent
