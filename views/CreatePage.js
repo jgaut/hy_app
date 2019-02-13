@@ -31,20 +31,21 @@ class CreatePageScreen extends React.Component {
   launch = () => {
 
     if(this.state.isSav){
-      const uuidv4 = require('uuid/v4');
-      let myTmp = {"id":uuidv4(),"list":[]};
-      this.state.data = myTmp;
-      this.state.fromKey = this.props.navigation.state.params.myKey;
-      //console.log('create page : ' + this.state.fromKey);
-      Storage.get(this.state.fromKey, {level: 'private'})
-        .then(result => {console.log(result);
-          fetch(result)
-            .then(response => response.json() )
-            .then(data => {console.log(data); this.state.data = data; this.forceUpdate();} )
-            .catch(error => console.log(error));
-        })
-        .catch(err => console.log(err));
-
+      if(this.state.fromKey==''){
+        const uuidv4 = require('uuid/v4');
+        let myTmp = {"id":uuidv4(),"list":[]};
+        this.state.data = myTmp;
+        this.state.fromKey = this.props.navigation.state.params.myKey;
+      }else{//console.log('create page : ' + this.state.fromKey);
+        Storage.get(this.state.fromKey, {level: 'private'})
+          .then(result => {console.log(result);
+            fetch(result)
+              .then(response => response.json() )
+              .then(data => {console.log(data); this.state.data = data; this.forceUpdate(); this.state.isSav=true;} )
+              .catch(error => console.log(error));
+          })
+          .catch(err => console.log(err));
+      }
     }else{
       // Works on both iOS and Android
 
@@ -71,12 +72,14 @@ class CreatePageScreen extends React.Component {
   }
 
   SavMyData = () => {
-    Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
-      level: 'private',
-      contentType: 'text/plain'
-    })
-    .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=''){this.launch();}})
-    .catch(err => console.log(err));
+    if(!this.state.isSav){
+      Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
+        level: 'private',
+        contentType: 'text/plain'
+      })
+      .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=''){this.launch();}})
+      .catch(err => console.log(err));
+    }
   }
 
   AddElement = () => {
