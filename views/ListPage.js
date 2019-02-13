@@ -79,8 +79,8 @@ const styles = StyleSheet.create({
 button: {
   padding:5,
   margin:5,
-  height: 40,
-  width: 30,
+  height: 100,
+  width: 100,
   backgroundColor: '#2196F3',
       alignItems: 'stretch',
   justifyContent: 'center',
@@ -91,7 +91,7 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex:1,
-    flexDirection: "row",
+    //flexDirection: "row",
   },
   input: {
     height: 50,
