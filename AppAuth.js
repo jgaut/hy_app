@@ -26,6 +26,7 @@ class AppAuth extends React.Component {
     return (
       <View>
         <MyDrawer/>
+        <MyBottom/>
       </View>
     );
   }
@@ -67,7 +68,9 @@ const MyDrawerNavigator = createDrawerNavigator({
   },
 });
 
-const MyDrawer = createAppContainer(TabNavigator);
+const MyDrawer = createAppContainer(MyDrawerNavigator);
+
+const MyBottom = createAppContainer(TabNavigator);
 
 const styles = StyleSheet.create({
   form: {
