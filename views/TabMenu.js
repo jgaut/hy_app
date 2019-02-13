@@ -24,8 +24,8 @@ class TabMenuScreen extends React.Component {
 }
 
 const MyTabNavigator = createBottomTabNavigator({
-  'Home': HomeScreen,
-  'Profile': ProfileScreen,
+  //'Home': HomeScreen,
+  //'Profile': ProfileScreen,
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen
 }, 
