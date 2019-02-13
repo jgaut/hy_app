@@ -28,7 +28,7 @@ class ListPageScreen extends React.Component {
       returnValue.push(
         <TouchableOpacity key={Math.random()} onPress={() => {
           console.log(myKey);
-          navigate('Profile', {username: ''});
+          navigate('Create Page', {username: ''});
         }
         }>
             <View style={styles.button}>
