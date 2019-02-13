@@ -11,8 +11,8 @@ import Auth from '@aws-amplify/auth';
 
 class AppAuth extends React.Component {
 
-  constructor() {
-    super();
+  constructor(...props) {
+    super(...props);
   }
 
   componentWillMount(){
@@ -20,7 +20,6 @@ class AppAuth extends React.Component {
 
   render() {
     
-const {navigate} = this.props.navigation;
     return (
       <View>
         <MyDrawer/>
@@ -29,9 +28,7 @@ const {navigate} = this.props.navigation;
   }
 }
 
-
-
-const CustomdrawerComponent = (props) => (
+const CustomdrawerComponent = (...props) => (
   <SafeAreaView style={{ flex: 1 }}>
     <View style={{ height: 10}}>
       <Text></Text>
