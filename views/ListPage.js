@@ -57,11 +57,11 @@ class ListPageScreen extends React.Component {
     
       let tt = this.Story(this.state.data);
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.form}>
           {tt}
         </View>
-      </View>
+      </ScrollView>
     );
   
 }
