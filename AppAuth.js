@@ -7,6 +7,7 @@ import ProfileScreen from './views/Profile';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
 import TabMenuScreen from './views/TabMenu';
+import Auth from '@aws-amplify/auth';
 
 class AppAuth extends React.Component {
 
@@ -43,6 +44,20 @@ const CustomdrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
+    <TouchableOpacity onPress={() => {
+        // After retrieveing the confirmation code from the user
+        Auth.signOut()
+        .then((data) => {
+          console.log(data);
+          navigate('App', {number: Math.random()});
+          }
+        )
+        .catch(err => console.log(err));
+      }}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Logout</Text>
+            </View>
+          </TouchableOpacity>
   </SafeAreaView>
   );
 
