@@ -24,7 +24,7 @@ class CreatePageScreen extends React.Component {
         'Attention',
         'Une page est en cours de création. Voulez-vous abandonner ?',
         [
-          {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData();} },
+          {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData(true);} },
           {text: 'Retour au brouillon', onPress: () => console.log('Retour au brouillon')},
         ],
         {cancelable: false},
@@ -72,13 +72,13 @@ class CreatePageScreen extends React.Component {
     return returnValue;
   }
 
-  SavMyData = () => {
+  SavMyData = (e) => {
     if(!this.state.isSav){
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
         level: 'private',
         contentType: 'text/plain'
       })
-      .then (result => {console.log(result); this.setState({isSav:true}); this.launch();})
+      .then (result => {console.log(result); this.setState({isSav:true}); if(e){this.launch();}})
       .catch(err => console.log(err));
     }
   }
@@ -112,7 +112,7 @@ class CreatePageScreen extends React.Component {
         </View>
         <View style={styles.submitButton}>
           
-          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData(false)}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
             </View>
