@@ -22,9 +22,8 @@ class CreatePageScreen extends React.Component {
       const uuidv4 = require('uuid/v4');
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
-      //console.log(JSON.stringify(this.state.data));
       this.state.fromKey = this.props.navigation.state.params.myKey;
-      console.log('create page : ' + this.state.fromKey);
+      //console.log('create page : ' + this.state.fromKey);
       Storage.get(this.state.fromKey, {level: 'private'})
         .then(result => {console.log(result);
           fetch(result)
