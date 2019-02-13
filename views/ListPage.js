@@ -3,6 +3,7 @@ import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView } from 
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import PhotoGrid from 'react-native-image-grid';
+import { createStackNavigator } from 'react-navigation';
 
 class ListPageScreen extends React.Component {
 
@@ -74,8 +75,8 @@ class ListPageScreen extends React.Component {
     );
   }
 
-  renderItem(item, itemSize, itemPaddingHorizontal) {
-    //const {navigate} = this.props.navigation;
+  renderItem = (item, itemSize, itemPaddingHorizontal) => {
+    const {navigate} = this.props.navigation;
     //navigate('Create Page');
     return(
       <TouchableOpacity
