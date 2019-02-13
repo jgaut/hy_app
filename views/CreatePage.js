@@ -30,7 +30,6 @@ class CreatePageScreen extends React.Component {
 
   launch = () => {
 
-    console.log(this.state.isSav);
     if(this.state.isSav){
       const uuidv4 = require('uuid/v4');
       let myTmp = {"id":uuidv4(),"list":[]};
@@ -76,7 +75,7 @@ class CreatePageScreen extends React.Component {
       level: 'private',
       contentType: 'text/plain'
     })
-    .then (result => {console.log(result); this.setState({isSav:true});})
+    .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=''){this.launch();}})
     .catch(err => console.log(err));
   }
 
