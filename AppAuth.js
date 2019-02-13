@@ -40,8 +40,8 @@ const CustomdrawerComponent = (props) => (
       <DrawerItems {...props}/>
     </ScrollView>
     <TouchableOpacity {...props} onPress={() => {
-      
-    const {navigate} = this.props.navigation;
+
+    const {navigate} = props.navigation;
       Auth.signOut()
   .then((data) => {
     console.log(data);
