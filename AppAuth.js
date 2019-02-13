@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, SafeAreaView, ScrollView, Icon } from 'react-native';
-import { createDrawerNavigator, DrawerItems, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { createDrawerNavigator, DrawerItems, createBottomTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
@@ -76,7 +76,7 @@ const MyTabNavigator = createBottomTabNavigator({
   },
 });
 
-const MyDrawer = createAppContainer(createStackNavigator({MyDrawerNavigator, MyTabNavigator}));
+const MyDrawer = createAppContainer(createSwitchNavigator({MyDrawerNavigator, MyTabNavigator}));
 
 const styles = StyleSheet.create({
   form: {
