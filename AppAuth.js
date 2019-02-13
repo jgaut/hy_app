@@ -17,23 +17,8 @@ class AppAuth extends React.Component {
 
   componentWillMount(){
   }
-
-  renderTab = () => {
-    return <View />
-  }
   
-  render() {
-    
-
-    return (
-      <View>
-        <MyDrawer/>
-      </View>
-    );
-  }
-}
-
-Logout(){
+  Logout(){
   // After retrieveing the confirmation code from the user
   const {navigate} = this.props.navigation;
   Auth.signOut()
@@ -43,6 +28,17 @@ Logout(){
     }
   )
   .catch(err => console.log(err));
+}
+
+  render() {
+    
+
+    return (
+      <View>
+        <MyDrawer/>
+      </View>
+    );
+  }
 }
 
 const CustomdrawerComponent = (props) => (
