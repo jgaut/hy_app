@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import ProfileScreen from './views/Profile';
-import CreatePageScreen from './views/CreatePage';
-import ListPageScreen from './views/ListPage';
+import ProfileScreen from 'Profile';
+import CreatePageScreen from 'CreatePage';
+import ListPageScreen from 'ListPage';
 
 class HomeScreen extends React.Component {
 
