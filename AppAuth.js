@@ -34,7 +34,7 @@ const CustomdrawerComponent = (props) => (
       <Text></Text>
     </View>
     <View>
-      <Text>My Logo is here !</Text>
+      <Text style={styles.button}>Logo</Text>
     </View>
     <ScrollView>
       <DrawerItems {...props}/>
