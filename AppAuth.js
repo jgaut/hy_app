@@ -6,6 +6,7 @@ import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
+import TabMenuScreen from './views/TabMenu';
 
 class AppAuth extends React.Component {
 
