@@ -97,7 +97,7 @@ button: {
   buttonText: {
     color: 'white'
   },
-  button: {
+  text: {
   alignItems: 'center',
   justifyContent: 'center',
     },
