@@ -106,7 +106,7 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Remove</Text>
             </View>
           </TouchableOpacity>
-
+          <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } />
         </View>
       </View>
     );
