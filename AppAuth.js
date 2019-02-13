@@ -26,7 +26,7 @@ class AppAuth extends React.Component {
 
     return (
       <View>
-        <MyDrawer>
+        <MyDrawer/>
         <MyBottom/>
       </View>
     );
