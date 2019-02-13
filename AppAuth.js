@@ -26,7 +26,6 @@ class AppAuth extends React.Component {
 
     return (
       <View>
-        <MyDrawer/>
         <MyBottom/>
       </View>
     );
@@ -73,7 +72,7 @@ const MyDrawer = createAppContainer(MyDrawerNavigator);
 
 const MyBottom = createAppContainer(TabNavigator);
 
-AppRegistry.registerComponent('RNNavigators', () => MyBottom );
+AppRegistry.registerComponent('RNNavigators', () => MyDrawer );
 
 const styles = StyleSheet.create({
   form: {
