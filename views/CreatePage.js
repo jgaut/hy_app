@@ -13,9 +13,15 @@ class CreatePageScreen extends React.Component {
     this.state = {data:'', isSav:true, fromKey:''};
 
     this.props.navigation.addListener('didFocus', () => {
-      if(!this.state.isSav){
+     this.launch();
+    });
+  }
+
+  launch = () => {
+
+    if(!this.state.isSav){
       Alert.alert(
-        'Alert Title',
+        'Attention',
         'Une page est en cours de création. Voulez-vous abandonner ?',
         [
           {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData();} },
@@ -24,11 +30,6 @@ class CreatePageScreen extends React.Component {
         {cancelable: false},
       );
     }
-     this.launch();
-    });
-  }
-
-  launch = () => {
 
     if(this.state.isSav){
       this.state.fromKey = this.props.navigation.state.params.myKey;
@@ -37,6 +38,7 @@ class CreatePageScreen extends React.Component {
         const uuidv4 = require('uuid/v4');
         let myTmp = {"id":uuidv4(),"list":[]};
         this.state.data = myTmp;
+        this.forceUpdate();
       }else{
         console.log('create page : ' + this.state.fromKey);
         Storage.get(this.state.fromKey, {level: 'private'})
@@ -48,9 +50,6 @@ class CreatePageScreen extends React.Component {
           })
           .catch(err => console.log(err));
       }
-    }else{
-      // Works on both iOS and Android
-
     }
   }
 
@@ -96,6 +95,11 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
+  NouvellePage = () => {
+    this.state.fromKey=null;
+    this.launch();
+  }
+
   HandleChange = (e, f) => {
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
@@ -126,6 +130,13 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Remove</Text>
             </View>
           </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.NouvellePage()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Nouvelle page</Text>
+            </View>
+          </TouchableOpacity>
+
         </View>
       </View>
     );
