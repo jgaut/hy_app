@@ -23,7 +23,25 @@ class AppAuth extends React.Component {
     return (
       <View>
         <MyDrawer/>
-        <View style={styles.submitButton}>
+
+      </View>
+    );
+  }
+}
+
+const CustomdrawerComponent = (props) => (
+  <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ height: 30}}>
+      <Text></Text>
+    </View>
+    <View>
+      <Text>My Logo is here !</Text>
+    </View>
+    <ScrollView>
+      <DrawerItems {...props}/>
+    </ScrollView>
+  </SafeAreaView>
+  <View style={styles.submitButton}>
           <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Sauvegarde</Text>
@@ -48,23 +66,6 @@ class AppAuth extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-      </View>
-    );
-  }
-}
-
-const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1 }}>
-    <View style={{ height: 30}}>
-      <Text></Text>
-    </View>
-    <View>
-      <Text>My Logo is here !</Text>
-    </View>
-    <ScrollView>
-      <DrawerItems {...props}/>
-    </ScrollView>
-  </SafeAreaView>
   );
 
 const MyDrawerNavigator = createDrawerNavigator({
