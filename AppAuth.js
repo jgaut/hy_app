@@ -31,7 +31,7 @@ class AppAuth extends React.Component {
 const CustomdrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
     <View style={{ height: 50}}>
-      <Text></Text>
+      <Text>OOOOOOOOOOOOO</Text>
     </View>
     <View>
       <Text>My Logo is here !</Text>
@@ -65,6 +65,7 @@ const MyDrawerNavigator = createDrawerNavigator({
   //'Create Page': CreatePageScreen
 }, 
 {
+  headerMode: 'none',
   drawerPosition: 'right'
 },
 {
