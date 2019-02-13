@@ -20,12 +20,17 @@ class ListPageScreen extends React.Component {
   Story(props) {
     
     var returnValue = [];
+    const {navigate} = this.props.navigation;
     if(props.list){
     props.list.forEach(item => {
       let myKey = item.key;
       console.log(myKey);
       returnValue.push(
-        <TouchableOpacity key={Math.random()} onPress={() => console.log(myKey)}>
+        <TouchableOpacity key={Math.random()} onPress={() => {
+          console.log(myKey);
+          navigate('SignUpConfirm', {username: data.user.username});
+        }
+        }>
             <View style={styles.button}>
               <Text style={styles.buttonText}>--{myKey}--</Text>
             </View>

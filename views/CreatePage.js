@@ -26,7 +26,7 @@ class CreatePageScreen extends React.Component {
       let myTmp = {"id":uuidv4(),"list":[]};
       this.state.data = myTmp;
       //console.log(JSON.stringify(this.state.data));
-
+      
       Storage.get('d9df9195-77cb-4e8e-b195-522c01b2216a.json', {level: 'private'})
         .then(result => {console.log(result);
           fetch(result)
