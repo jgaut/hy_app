@@ -23,6 +23,31 @@ class AppAuth extends React.Component {
     return (
       <View>
         <MyDrawer/>
+        <View style={styles.submitButton}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Sauvegarde</Text>
+            </View>
+          </TouchableOpacity>
+          
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Remove</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.ListAllElement()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>List</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -59,5 +84,46 @@ const MyDrawerNavigator = createDrawerNavigator({
 
 const MyDrawer = createAppContainer(MyDrawerNavigator);
 
+const styles = StyleSheet.create({
+  form: {
+    padding: 80, 
+    backgroundColor: '#f5fcff',
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+  },
+  label: {
+    color: '#000000'
+  },
+button: {
+  padding:5,
+  margin:5,
+  height: 40,
+  backgroundColor: '#2196F3',
+      alignItems: 'stretch',
+  justifyContent: 'center',
+    },
+  buttonText: {
+    color: 'white'
+  },
+container: {
+    backgroundColor: '#f5fcff',
+    flex: 1,
+  },
+  input: {
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
+  },
+  submitButton: {
+    position: 'absolute',
+    bottom:0,
+    left:0,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+});
 
 export default MyDrawer;
