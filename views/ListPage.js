@@ -54,8 +54,6 @@ class ListPageScreen extends React.Component {
   }
 
   render() {
-    
-    const {navigate} = this.props.navigation;
 
     return (
       <PhotoGrid
@@ -76,13 +74,9 @@ class ListPageScreen extends React.Component {
     );
   }
 
-  MyNavigate(e){
-    
-    navigate('Create Page', {myKey: e});
-  }
-
-  renderItem(item, itemSize, itemPaddingHorizontal, ...props) {
-    const {navigate} = this.props.navigation;
+  renderItem(item, itemSize, itemPaddingHorizontal) {
+    //const {navigate} = this.props.navigation;
+    navigate('Create Page');
     return(
       <TouchableOpacity
         key = { item.key }
@@ -90,7 +84,7 @@ class ListPageScreen extends React.Component {
         onPress = { () => {
           console.log(item.key);
           console.log(itemSize);
-          navigate('Create Page', {myKey: item.key});
+          //navigate('Create Page', {myKey: item.key});
           //this.MyNavigate(item.key);
         }}>
         <View style={styles.button}>
