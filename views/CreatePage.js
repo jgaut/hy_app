@@ -36,8 +36,6 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  componentWillMount(){}
-
   Story(props) {
     
     var returnValue = [];
@@ -78,28 +76,16 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  ListAllElement = () => {
-    Storage.list('', {level: 'private'})
-      .then(result => {
-        result.forEach(item => {
-
-        console.log(item);});
-      })
-      .catch(err => console.log(err));
-  }
-
   HandleChange = (e, f) => {
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
   }
 
   render() {
-    
-      let tt = this.Story(this.state.data);
     return (
       <View style={styles.container}>
         <View style={styles.form}>
-          {tt}
+          {this.Story(this.state.data)}
         </View>
         <View style={styles.submitButton}>
           
@@ -118,12 +104,6 @@ class CreatePageScreen extends React.Component {
           <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Remove</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity key={Math.random()} onPress={() => this.ListAllElement()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>List</Text>
             </View>
           </TouchableOpacity>
 
