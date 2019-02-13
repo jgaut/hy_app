@@ -78,7 +78,7 @@ class CreatePageScreen extends React.Component {
         level: 'private',
         contentType: 'text/plain'
       })
-      .then (result => {console.log(result); this.setState({isSav:true}); if(this.state.fromKey!=null){this.launch();}})
+      .then (result => {console.log(result); this.setState({isSav:true}); this.launch();})
       .catch(err => console.log(err));
     }
   }
