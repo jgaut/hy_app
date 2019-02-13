@@ -1,12 +1,11 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
-import { createDrawerNavigator, DrawerItems, createBottomTabNavigator } from 'react-navigation';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
-import { AppRegistry } from 'react-native'
 
 class AppAuth extends React.Component {
 
@@ -27,7 +26,6 @@ class AppAuth extends React.Component {
     return (
       <View>
         <MyDrawer/>
-        <MyBottom/>
       </View>
     );
   }
@@ -47,16 +45,15 @@ const CustomdrawerComponent = (props) => (
   </SafeAreaView>
   );
 
-const TabNavigator = createBottomTabNavigator({
-  'Home': HomeScreen,
-  'Profile': ProfileScreen,
-  'Journal': ListPageScreen,
-  'Create Page': CreatePageScreen
-});
 
 const MyDrawerNavigator = createDrawerNavigator({
   'Home': HomeScreen,
-  'Profile': ProfileScreen,
+  'Profile': {
+    screen: ProfileScreen,
+    navigationOptions: {
+      drawerLabel: 'Profile',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    },
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen
 },
@@ -70,10 +67,6 @@ const MyDrawerNavigator = createDrawerNavigator({
 });
 
 const MyDrawer = createAppContainer(MyDrawerNavigator);
-
-const MyBottom = createAppContainer(TabNavigator);
-
-AppRegistry.registerComponent('RNNavigators', () => MyDrawer );
 
 const styles = StyleSheet.create({
   form: {
@@ -117,4 +110,4 @@ container: {
   },
 });
 
-export default MyBottom;
+export default MyDrawer;
