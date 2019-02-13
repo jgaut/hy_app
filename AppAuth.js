@@ -40,7 +40,7 @@ const CustomdrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-  </SafeAreaView>
+  
   <View style={styles.submitButton}>
           <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData()}>
             <View style={styles.button}>
@@ -66,6 +66,7 @@ const CustomdrawerComponent = (props) => (
             </View>
           </TouchableOpacity>
         </View>
+        </SafeAreaView>
   );
 
 const MyDrawerNavigator = createDrawerNavigator({
