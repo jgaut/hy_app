@@ -18,18 +18,6 @@ class AppAuth extends React.Component {
   componentWillMount(){
   }
 
-  Logout=()=>{
-  // After retrieveing the confirmation code from the user
-  const {navigate} = this.props.navigation;
-  Auth.signOut()
-  .then((data) => {
-    console.log(data);
-    navigate('App', {number: Math.random()});
-    }
-  )
-  .catch(err => console.log(err));
-}
-
   render() {
     
 
@@ -40,6 +28,8 @@ class AppAuth extends React.Component {
     );
   }
 }
+
+const {navigate} = this.props.navigation;
 
 const CustomdrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
@@ -52,7 +42,15 @@ const CustomdrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-    <TouchableOpacity onPress={() => this.Logout.bind(this)}>
+    <TouchableOpacity onPress={() => {
+      Auth.signOut()
+  .then((data) => {
+    console.log(data);
+    navigate('App', {number: Math.random()});
+    }
+  )
+  .catch(err => console.log(err));
+    }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Logout</Text>
             </View>
