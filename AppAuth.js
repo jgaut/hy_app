@@ -76,7 +76,7 @@ const MyTabNavigator = createBottomTabNavigator({
   },
 });
 
-const MyDrawer = createAppContainer(MyDrawerNavigator);
+const MyDrawer = createAppContainer(createBottomTabNavigator({MyDrawerNavigator, MyTabNavigator}));
 
 const styles = StyleSheet.create({
   form: {
