@@ -18,7 +18,7 @@ class TabMenuScreen extends React.Component {
   render() {
     return (
       <View>
-      <Text>DrawerOpen</Text>
+      <MyTab/>
       </View>
     );
   }
@@ -27,7 +27,7 @@ class TabMenuScreen extends React.Component {
 const MyTabNavigator = createBottomTabNavigator({
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen,
-  'Open': {{console.log('open')}}
+  //'Open': {{console.log('open')}}
 }, 
 {
   navigationOptions: {
