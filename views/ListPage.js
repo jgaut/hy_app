@@ -56,7 +56,7 @@ class ListPageScreen extends React.Component {
   render() {
     
     const {navigate} = this.props.navigation;
-    
+
     return (
       <PhotoGrid
         data = { this.state.data.list }
@@ -89,7 +89,7 @@ class ListPageScreen extends React.Component {
         onPress = { () => {
           console.log(item.key);
           console.log(itemSize);
-          navigate('Create Page', {myKey: item.key});
+          this.navigate('Create Page', {myKey: item.key});
           //this.MyNavigate(item.key);
         }}>
         <View style={styles.button}>
