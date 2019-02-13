@@ -18,14 +18,13 @@ class TabMenuScreen extends React.Component {
   render() {
     return (
       <View>
+      <Text>DrawerOpen</Text>
       </View>
     );
   }
 }
 
 const MyTabNavigator = createBottomTabNavigator({
-  //'Home': HomeScreen,
-  //'Profile': ProfileScreen,
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen
 }, 
@@ -38,3 +37,5 @@ const MyTabNavigator = createBottomTabNavigator({
 const MyTab = createAppContainer(MyTabNavigator);
 
 export default MyTab;
+
+//this.props.navigation.navigate('DrawerOpen');
