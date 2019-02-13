@@ -51,7 +51,7 @@ class CreatePageScreen extends React.Component {
       if(item.type=='TextInput'){
         //console.log(item.type);
         //Fixer la clef
-        let myKey = key;
+        let myKey = item.sort;
         returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
       }
       key++;
