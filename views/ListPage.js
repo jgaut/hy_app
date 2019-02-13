@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, Row } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 
@@ -29,9 +29,9 @@ class ListPageScreen extends React.Component {
           navigate('Create Page', {myKey: myKey});
         }
         }>
-            <View style={styles.button}>
+            <Row style={styles.button}>
               <Text style={styles.buttonText}>{myKey}</Text>
-            </View>
+            </Row>
           </TouchableOpacity>);
     });
   }
