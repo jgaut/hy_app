@@ -80,7 +80,7 @@ button: {
   padding:5,
   margin:5,
   height: 40,
-  maxWitdth: 30,
+  width: 30,
   backgroundColor: '#2196F3',
       alignItems: 'stretch',
   justifyContent: 'center',
