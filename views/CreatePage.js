@@ -33,6 +33,22 @@ class CreatePageScreen extends React.Component {
         })
         .catch(err => console.log(err));
 
+    }else{
+      // Works on both iOS and Android
+Alert.alert(
+  'Alert Title',
+  'Une page est en cours de création. Voulez-vous abandonner ?',
+  [
+    {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+    {
+      text: 'Cancel',
+      onPress: () => console.log('Cancel Pressed'),
+      style: 'cancel',
+    },
+    {text: 'OK', onPress: () => console.log('OK Pressed')},
+  ],
+  {cancelable: false},
+);
     }
   }
 
@@ -106,7 +122,6 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Remove</Text>
             </View>
           </TouchableOpacity>
-          <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } />
         </View>
       </View>
     );
