@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, Row } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 
@@ -29,9 +29,9 @@ class ListPageScreen extends React.Component {
           navigate('Create Page', {myKey: myKey});
         }
         }>
-            <Row style={styles.button}>
+            <View style={styles.button}>
               <Text style={styles.buttonText}>{myKey}</Text>
-            </Row>
+            </View>
           </TouchableOpacity>);
     });
   }
@@ -83,7 +83,7 @@ button: {
   width: 100,
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-  justifyContent: 'center',
+  flexDirection: 'row', justifyContent: 'flex-start',
     },
   buttonText: {
     color: 'white'
@@ -91,9 +91,8 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex:1,
-      margin: 2,
-      flexDirection: 'row',
-    flexWrap: 'wrap'
+    margin: 2,
+
     //flexDirection: "row",
   },
   input: {
