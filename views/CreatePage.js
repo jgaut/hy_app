@@ -33,19 +33,19 @@ class CreatePageScreen extends React.Component {
 
     if(this.state.isSav){
       this.state.fromKey = this.props.navigation.state.params.myKey;
-      console.log(this.state.fromKey);
+      //console.log(this.state.fromKey);
       if(this.state.fromKey=='' || this.state.fromKey==null){
         const uuidv4 = require('uuid/v4');
         let myTmp = {"id":uuidv4(),"list":[]};
         this.state.data = myTmp;
         this.forceUpdate();
       }else{
-        console.log('create page : ' + this.state.fromKey);
+        //console.log('create page : ' + this.state.fromKey);
         Storage.get(this.state.fromKey, {level: 'private'})
           .then(result => {console.log(result);
             fetch(result)
               .then(response => response.json() )
-              .then(data => {console.log(data); this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.myKey=null;} )
+              .then(data => {/*console.log(data); */this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.myKey=null;} )
               .catch(error => console.log(error));
           })
           .catch(err => console.log(err));
@@ -78,7 +78,7 @@ class CreatePageScreen extends React.Component {
         level: 'private',
         contentType: 'text/plain'
       })
-      .then (result => {console.log(result); this.setState({isSav:true}); if(e){this.launch();}})
+      .then (result => {/*console.log(result);*/ this.setState({isSav:true}); if(e){this.launch();}})
       .catch(err => console.log(err));
     }
   }
