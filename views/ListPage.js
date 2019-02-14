@@ -23,10 +23,10 @@ class ListPageScreen extends React.Component {
     if(props.list){
     props.list.forEach(item => {
       let myKey = item.key;
-      console.log(myKey);
+      //console.log(myKey);
       returnValue.push(
         <TouchableOpacity key={Math.random()} onPress={() => {
-          console.log(myKey);
+          //console.log(myKey);
           navigate('Create Page', {myKey: myKey});
         }
         }>
@@ -82,8 +82,8 @@ class ListPageScreen extends React.Component {
         key = { item.key }
         style = {{ width: itemSize, height: itemSize, paddingHorizontal: itemPaddingHorizontal }}
         onPress = { () => {
-          console.log(item.key);
-          console.log(itemSize);
+          //console.log(item.key);
+          //console.log(itemSize);
           navigate('Create Page', {myKey: item.key});
         }}>
         <View style={styles.button}>
