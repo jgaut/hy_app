@@ -40,7 +40,7 @@ const MyTabNavigator = createBottomTabNavigator({
             tabBarIcon: ({ tintColor }) => (<Icon name='create' />)
         }),
     },
-  X: {
+  'Menu': {
         screen: ListPageScreen,
         path: '/',
         navigationOptions: () => ({
