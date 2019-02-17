@@ -30,7 +30,7 @@ const MyTabNavigator = createBottomTabNavigator({
         screen: ListPageScreen,
         path: '/',
         navigationOptions: () => ({
-            tabBarIcon: ({ tintColor }) => (<Icon name='list_alt' />)
+            tabBarIcon: ({ tintColor }) => (<Icon name='view_list' />)
         }),
     },
   'Create Page':{
