@@ -27,17 +27,15 @@ class TabMenuScreen extends React.Component {
 const MyTabNavigator = createBottomTabNavigator({
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen,
-   'Bookmarks': {
-        screen: CreatePageScreen,
-        navigationOptions: () => ({
-            tabBarIcon: ({tintColor}) => (
-                <Icon
-                    name="bookmark"
-                    color={tintColor}
-                    size={24}
-                />
-            )
-        })
+   X: {
+        screen: ListPageScreen,
+        path: '/',
+        navigationOptions: {
+            tabBarIcon: ({ focused, tintColor }) => {
+                const iconName = 'X';
+                return <Ionicons name={iconName} size={25} color={tintColor} />;
+            },
+        },
     },
   //'Open': {{console.log('open')}}
 }, 
