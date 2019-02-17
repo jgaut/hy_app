@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Ionicons } from 'react-native';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
 import CreatePageScreen from './CreatePage';
@@ -30,8 +30,8 @@ const MyTabNavigator = createBottomTabNavigator({
    X: {
         screen: ListPageScreen,
         path: '/',
-        navigationOptions: {
-            tabBarIcon: ({ focused, tintColor }) => {
+        navigationOptions: () => {
+            tabBarIcon: ({ tintColor }) => {
                 const iconName = 'X';
                 return <Ionicons name={iconName} size={25} color={tintColor} />;
             },
