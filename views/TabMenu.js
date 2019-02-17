@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Icon } from 'react-native';
+import { View, Ionicons } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
