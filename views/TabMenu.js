@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Ionicons } from 'react-native';
+import { View } from 'react-native';
+import { Icon } from 'react-native-elements';
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -33,7 +34,7 @@ const MyTabNavigator = createBottomTabNavigator({
         navigationOptions: () => {
             tabBarIcon: ({ tintColor }) => {
                 const iconName = 'X';
-                return <Ionicons name={iconName} size={25} color={tintColor} />;
+                return <Icon name='rowing' />;
             },
         },
     },
