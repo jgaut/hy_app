@@ -31,11 +31,9 @@ const MyTabNavigator = createBottomTabNavigator({
    X: {
         screen: ListPageScreen,
         path: '/',
-        navigationOptions: () => {
-            tabBarIcon: ({ tintColor }) => {
-                return (<Icon name='rowing' />);
-            },
-        },
+        navigationOptions: () => ({
+            tabBarIcon: ({ tintColor }) => (<Icon name='rowing' />)
+        }),
     },
   //'Open': {{console.log('open')}}
 }, 
