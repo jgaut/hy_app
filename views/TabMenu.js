@@ -45,7 +45,7 @@ const MyTabNavigator = createBottomTabNavigator({
     navigationOptions: () => ({
       tabBarLabel: '',
       tabBarIcon: ({ tintColor }) => (<Icon name='menu' />),
-      tabBarOnPress: (...props) => { console.log(props[0]); props[0].navigation.actions.openDrawer();},
+      tabBarOnPress: (...props) => { console.log(props[0]); props[0].navigation.openDrawer();},
     }),
   },
   //'Open': {{console.log('open')}}
