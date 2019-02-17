@@ -33,8 +33,7 @@ const MyTabNavigator = createBottomTabNavigator({
         path: '/',
         navigationOptions: () => {
             tabBarIcon: ({ tintColor }) => {
-                const iconName = 'X';
-                return <Icon name='rowing' />;
+                return (<Icon name='rowing' />);
             },
         },
     },
