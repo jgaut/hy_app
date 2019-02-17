@@ -32,7 +32,7 @@ const MyTabNavigator = createBottomTabNavigator({
         screen: ListPageScreen,
         path: '/',
         navigationOptions: () => ({
-            tabBarIcon: ({ tintColor }) => (<Icon name='rowing' />)
+            tabBarIcon: ({ tintColor }) => (<Icon name='menu' />)
         }),
     },
   //'Open': {{console.log('open')}}
