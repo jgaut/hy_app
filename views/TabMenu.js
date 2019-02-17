@@ -29,7 +29,7 @@ const MyTabNavigator = createBottomTabNavigator({
   'Journal': ListPageScreen,
   'Create Page': CreatePageScreen,
   X: {
-        screen: null,
+        screen: ListPageScreen,
         path: '/',
         navigationOptions: () => ({
             tabBarIcon: ({ tintColor }) => (<Icon name='rowing' />)
