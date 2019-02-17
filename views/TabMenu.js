@@ -25,8 +25,6 @@ class TabMenuScreen extends React.Component {
   }
 }
 
-const {navigate} = this.props.navigation;
-
 const MyTabNavigator = createBottomTabNavigator({
   'Journal': {
     screen: ListPageScreen,
