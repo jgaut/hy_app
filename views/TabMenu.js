@@ -25,6 +25,8 @@ class TabMenuScreen extends React.Component {
   }
 }
 
+const {navigate} = this.props.navigation;
+
 const MyTabNavigator = createBottomTabNavigator({
   'Journal': {
     screen: ListPageScreen,
@@ -45,7 +47,7 @@ const MyTabNavigator = createBottomTabNavigator({
     navigationOptions: () => ({
       tabBarLabel: '',
       tabBarIcon: ({ tintColor }) => (<Icon name='menu' />),
-      tabBarOnPress: () => { this.props.navigation('DrawerOpen')},
+      tabBarOnPress: () => { navigate('DrawerOpen')},
     }),
   },
   //'Open': {{console.log('open')}}
