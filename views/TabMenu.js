@@ -28,15 +28,15 @@ class TabMenuScreen extends React.Component {
 const MyTabNavigator = createBottomTabNavigator({
   'Journal': {
     screen: ListPageScreen,
-    path: '/',
     navigationOptions: () => ({
+      tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Icon name='list' />)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
-    path: '/',
     navigationOptions: () => ({
+      tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Icon name='create' />)
     }),
   },
@@ -46,7 +46,6 @@ const MyTabNavigator = createBottomTabNavigator({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Icon name='menu' />),
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
-      tabBarOptions: {showLabel:false}
     }),
   },
   //'Open': {{console.log('open')}}
