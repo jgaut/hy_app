@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
 import Auth from '@aws-amplify/auth';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 
 class HomeScreen extends React.Component {
 
