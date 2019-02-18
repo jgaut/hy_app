@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, SafeAreaView, ScrollView, Icon } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
@@ -49,7 +49,7 @@ const CustomdrawerComponent = (props) => (
   .catch(err => console.log(err));
     }}>
             <View style={styles.button}>
-           
+            <Icon name={Platform.OS === "ios" ? "ios-exit" : "md-exit"} size={30} color="black"/>
               <Text style={styles.buttonText}>Logout</Text>
             </View>
           </TouchableOpacity>
