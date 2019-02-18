@@ -48,7 +48,7 @@ const CustomdrawerComponent = (props) => (
   )
   .catch(err => console.log(err));
     }} style={styles.button}>
-            <View style={styles.button}>
+            <View>
               <Text style={styles.buttonText}><Icon name={Platform.OS === "ios" ? "ios-exit" : "md-exit"} size={30} color="white"/> Logout</Text>
             </View>
           </TouchableOpacity>
