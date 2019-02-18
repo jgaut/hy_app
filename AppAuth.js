@@ -21,9 +21,7 @@ class AppAuth extends React.Component {
   render() {
     
     return (
-      <View style={{ width: 150 }}>
         <MyDrawer/>
-      </View>
     );
   }
 }
