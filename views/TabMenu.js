@@ -30,7 +30,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='calendar_today' size={30} color="black"/>)
+      tabBarIcon: ({ tintColor }) => (<Icon name='grid_on' size={30} color="black"/>)
     }),
   },
   'Create Page':{
