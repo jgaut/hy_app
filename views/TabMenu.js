@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from "react-native";
 import { View } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
@@ -30,7 +31,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name="ios-add"></Icon>)
+      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-add" : "md-add"}></Icon>)
     }),
   },
   'Create Page':{
