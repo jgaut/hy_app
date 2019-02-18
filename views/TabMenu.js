@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -19,7 +19,7 @@ class TabMenuScreen extends React.Component {
   render() {
     return (
       <View>
-      <MyTab/>
+        <MyTab/>
       </View>
     );
   }
@@ -30,21 +30,21 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='list' size={30} color="#900"/>)
+      tabBarIcon: ({ tintColor }) => (<Icon name='calendar_today' size={30} color="black"/>)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='create' />)
+      tabBarIcon: ({ tintColor }) => (<Icon name='create' size={30} color="black"/>)
     }),
   },
   'Menu': {
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='menu' />),
+      tabBarIcon: ({ tintColor }) => (<Icon name='menu' size={30} color="black"/>),
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
