@@ -31,7 +31,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-add" : "md-add"}></Icon>)
+      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-grid" : "md-grid"} size={30} color="black"/>)
     }),
   },
   'Create Page':{
@@ -45,7 +45,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='menu' size={30} color="black"/>),
+      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-menu" : "md-menu"} size={30} color="black"/>),
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
