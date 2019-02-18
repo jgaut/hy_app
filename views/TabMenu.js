@@ -30,7 +30,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<ion-icon name="menu"></ion-icon>)
+      tabBarIcon: ({ tintColor }) => (<Icon name="menu"></Icon>)
     }),
   },
   'Create Page':{
