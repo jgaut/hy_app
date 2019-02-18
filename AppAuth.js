@@ -49,8 +49,7 @@ const CustomdrawerComponent = (props) => (
   .catch(err => console.log(err));
     }}>
             <View style={styles.button}>
-            
-              <Text style={styles.buttonText}><Icon name={Platform.OS === "ios" ? "ios-exit" : "md-exit"} size={30} color="black"/>Logout</Text>
+              <Text style={styles.buttonText}><Icon name={Platform.OS === "ios" ? "ios-exit" : "md-exit"} size={30} color="white"/> Logout</Text>
             </View>
           </TouchableOpacity>
   </SafeAreaView>
@@ -97,7 +96,9 @@ button: {
   justifyContent: 'center',
     },
   buttonText: {
-    color: 'white'
+    color: 'white',
+      alignItems: 'center',
+  justifyContent: 'center',
   },
   text: {
   alignItems: 'center',
