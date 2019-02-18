@@ -38,7 +38,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='create' size={30} color="black"/>)
+      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-add" : "md-add"} size={30} color="black"/>)
     }),
   },
   'Menu': {
