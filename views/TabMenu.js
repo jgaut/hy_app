@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -30,7 +30,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name='calendar'/>)
+      tabBarIcon: ({ tintColor }) => (<Icon name='calendar' size={30} color="black"/>)
     }),
   },
   'Create Page':{
