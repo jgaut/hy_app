@@ -21,7 +21,7 @@ class AppAuth extends React.Component {
   render() {
     
     return (
-      <View>
+      <View style={{ flex: 0.2 }}>
         <MyDrawer/>
       </View>
     );
@@ -29,7 +29,7 @@ class AppAuth extends React.Component {
 }
 
 const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ width: 10 }}>
+  <SafeAreaView style={{ flex: 1 }}>
     <View style={{ height: 50}}>
       <Text></Text>
     </View>
