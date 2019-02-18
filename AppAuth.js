@@ -27,7 +27,7 @@ class AppAuth extends React.Component {
 }
 
 const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ width: 100 }}>
+  <SafeAreaView>
     <View style={{ height: 50}}>
       <Text></Text>
     </View>
@@ -63,7 +63,7 @@ const MyDrawerNavigator = createDrawerNavigator({
 {
   headerMode: 'none',
   drawerPosition: 'right',
-  drawerWidth: 100,
+  drawerWidth: 200,
   contentComponent: CustomdrawerComponent
 }, 
 {
