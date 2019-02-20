@@ -1,6 +1,5 @@
 import React from 'react';
-import { Platform } from "react-native";
-import { View } from 'react-native';
+import { Platform, StyleSheet, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
