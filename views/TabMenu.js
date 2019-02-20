@@ -36,7 +36,7 @@ const MyTabNavigator = createBottomTabNavigator({
     }),
   },
   'Notif': {
-    screen: {()=>{} },
+    screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} />)
