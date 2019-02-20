@@ -9,6 +9,7 @@ import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
 import SvgUri from 'react-native-svg-uri';
 import menu from './menu.svg';
+import Image from 'react-native-remote-svg'
 
 class TabMenuScreen extends React.Component {
 
@@ -49,7 +50,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<SvgUri width="30" height="30" svgXmlData={menu} />),
+      tabBarIcon: ({ tintColor }) => (),
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
