@@ -97,11 +97,11 @@ const styles = StyleSheet.create({
     margin:0,
   },
   barbouton2: {
-    height: 40,
-    width: 40, 
+    height: 60,
+    width: 60, 
     padding: 0,
     margin:0,
-    marginTop: -10,
+    marginTop: -20,
   }
 });
 
