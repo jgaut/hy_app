@@ -50,22 +50,17 @@ const MyTabNavigator = createBottomTabNavigator({
   },
   'Menu': {
     screen: () => {},
+    tabBarOptions: {
+      inactiveBackgroundColor: blue
+    }
     navigationOptions: () => ({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
-    tabBarOptions: {
-      activeTintColor: '#e91e63',
-      labelStyle: {
-      fontSize: 12,
-    },
-    style: {
-    backgroundColor: 'blue',
-    },
   },
   //'Open': {{console.log('open')}}
-},
+}, 
 {
   navigationOptions: {
     headerMode: 'none'
