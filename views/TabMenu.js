@@ -67,10 +67,23 @@ const MyTabNavigator = createBottomTabNavigator({
       style: {
         padding:0,
         margin:0,
+        borderRadius: 4,
+    borderWidth: 4,
+    borderColor: '#d6d7da',
       },
       tabStyle: {
         padding:0,
         margin:0,
+        borderRadius: 4,
+    borderWidth: 4,
+    borderColor: '#d6d7da',
+      },
+      labelStyle: {
+        padding:0,
+        margin:0,
+        borderRadius: 4,
+    borderWidth: 4,
+    borderColor: '#d6d7da',
       },
     },
 });
