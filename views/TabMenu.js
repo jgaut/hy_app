@@ -51,7 +51,7 @@ const MyTabNavigator = createBottomTabNavigator({
   'Menu': {
     screen: () => {},
     tabBarOptions: {
-      inactiveBackgroundColor: blue
+      inactiveBackgroundColor: 'blue'
     },
     navigationOptions: () => ({
       tabBarLabel: () => {},
