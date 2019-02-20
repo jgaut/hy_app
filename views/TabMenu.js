@@ -32,28 +32,28 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} />)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
     }),
   },
   'Notif': {
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} />)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={{ width: 60, height: 60}}/>)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
     }),
   },
   'Menu': {
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/menu.svg')} />), 
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
@@ -63,6 +63,13 @@ const MyTabNavigator = createBottomTabNavigator({
   navigationOptions: {
     headerMode: 'none'
   },
+});
+
+const styles = StyleSheet.create({
+  barbouton: {
+    height: 30,
+    width: 30, 
+    padding: 2,
 });
 
 const MyTab = createAppContainer(MyTabNavigator);
