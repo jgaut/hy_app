@@ -7,6 +7,7 @@ import HomeScreen from './Home';
 import ProfileScreen from './Profile';
 import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
+import SvgUri from 'react-native-svg-uri';
 
 class TabMenuScreen extends React.Component {
 
