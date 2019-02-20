@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30, 
     padding: 0,
-    backgroundColor: 'blue'
+    backgroundColor: 'white'
   }
 });
 
