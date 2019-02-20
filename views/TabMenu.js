@@ -72,7 +72,7 @@ const MyTabNavigator = createBottomTabNavigator({
   tabBarOptions: {
       inactiveBackgroundColor: 'white',
       style: {
-        height:60,
+        height:50,
         padding:0,
         margin:0,
         border:0,
