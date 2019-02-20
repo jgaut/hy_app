@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="241.9708" y1="638" x2="262.7708" y2="638">
+		<stop  offset="0" style="stop-color:#BDF4D9"/>
+		<stop  offset="1" style="stop-color:#50D0A9"/>
+	</linearGradient>
+	<path class="st5" d="M250.14,648h12.63v-11.83c0-4.51-3.66-8.17-8.17-8.17h-4.45c-4.51,0-8.17,3.66-8.17,8.17v3.65
+		C241.97,644.34,245.63,648,250.14,648z"/>
+	<path class="st1" d="M249.77,638h15.18c5.98,0,10.82-4.85,10.82-10.82v-3.35c0-5.98-4.85-10.82-10.82-10.82h-4.35
+		c-5.98,0-10.82,4.85-10.82,10.82V638z"/>
+	<circle cx="257.27" cy="625.5" r="1.5"/>
+	<circle cx="262.27" cy="625.5" r="1.5"/>
+	<circle cx="267.27" cy="625.5" r="1.5"/>
+</g>
+</svg>
