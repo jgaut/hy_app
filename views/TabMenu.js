@@ -66,6 +66,7 @@ const MyTabNavigator = createBottomTabNavigator({
       inactiveBackgroundColor: 'blue',
       style: {
         padding:0,
+        margin:0,
       }
     },
 });
