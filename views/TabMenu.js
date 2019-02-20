@@ -32,14 +32,21 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-grid" : "md-grid"} size={30} color="black"/>)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} />)
+    }),
+  },
+  'Notif': {
+    screen: ()=>{}),
+    navigationOptions: () => ({
+      tabBarLabel: () => {},
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} />)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Icon name={Platform.OS === "ios" ? "ios-add" : "md-add"} size={30} color="black"/>)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} />)
     }),
   },
   'Menu': {
