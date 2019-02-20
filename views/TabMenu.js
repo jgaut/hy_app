@@ -31,7 +31,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/journal.svg')} style={styles.barbouton} />)
     }),
   },
   'Notif': {
@@ -52,7 +52,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/bot.svg')} style={styles.barbouton}/>)
     }),
   },
   'Menu': {
