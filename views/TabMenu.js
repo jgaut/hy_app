@@ -67,7 +67,11 @@ const MyTabNavigator = createBottomTabNavigator({
       style: {
         padding:0,
         margin:0,
-      }
+      },
+      tabStyle: {
+        padding:0,
+        margin:0,
+      },
     },
 });
 
