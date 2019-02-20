@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   barbouton: {
     height: 30,
     width: 30, 
-    padding: 2,
+    padding: 0,
+    backgroundColor: 'blue'
   }
 });
 
