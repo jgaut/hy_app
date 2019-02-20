@@ -20,7 +20,7 @@ class TabMenuScreen extends React.Component {
   render() {
     return (
       <View>
-        <MyTab/>
+        <MyTab style={{backgroundColor: 'blue', border:5}}/>
       </View>
     );
   }
