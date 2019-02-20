@@ -45,7 +45,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton2}/>)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
     }),
   },
   'ChatBot':{
@@ -97,13 +97,6 @@ const styles = StyleSheet.create({
     padding: 0,
     margin:0,
   },
-  barbouton2: {
-    height: 50,
-    width: 50, 
-    padding: 0,
-    margin:0,
-    marginTop: -10,
-  }
 });
 
 const MyTab = createAppContainer(MyTabNavigator);
