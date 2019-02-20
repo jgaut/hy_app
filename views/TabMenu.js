@@ -20,6 +20,7 @@ class TabMenuScreen extends React.Component {
   }
 
   render() {
+    console.log(menu);
     return (
       <View>
         <MyTab/>
