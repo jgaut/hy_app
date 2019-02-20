@@ -20,7 +20,7 @@ class TabMenuScreen extends React.Component {
   render() {
     return (
       <View>
-        <MyTab style={{backgroundColor: 'blue', border:5}}/>
+        <MyTab/>
       </View>
     );
   }
@@ -68,8 +68,7 @@ const styles = StyleSheet.create({
   barbouton: {
     height: 30,
     width: 30, 
-    padding: 0,
-    backgroundColor: 'white'
+    padding: 0
   }
 });
 
