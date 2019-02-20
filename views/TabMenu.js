@@ -46,7 +46,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} />)
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={{ width: 30, height: 30}}/>)
     }),
   },
   'Menu': {
