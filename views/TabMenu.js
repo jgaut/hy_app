@@ -67,36 +67,29 @@ const MyTabNavigator = createBottomTabNavigator({
       style: {
         padding:0,
         margin:0,
-        borderRadius: 4,
-    borderWidth: 4,
-    borderColor: '#d6d7da',
+
       },
       tabStyle: {
         padding:0,
         margin:0,
-        borderRadius: 4,
-    borderWidth: 4,
-    borderColor: '#d6d7da',
+
       },
       labelStyle: {
         padding:0,
         margin:0,
-        borderRadius: 4,
-    borderWidth: 4,
-    borderColor: '#d6d7da',
       },
     },
 });
 
 const styles = StyleSheet.create({
   barbouton: {
-    height: 60,
-    width: 60, 
+    height: 45,
+    width: 45, 
     padding: 0,
     margin:0,
-    borderRadius: 4,
-    borderWidth: 4,
-    borderColor: '#d6d7da',
+    //borderRadius: 4,
+    //borderWidth: 4,
+    //borderColor: '#d6d7da',
 
   }
 });
