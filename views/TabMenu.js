@@ -52,7 +52,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
+      tabBarIcon: ({}) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
