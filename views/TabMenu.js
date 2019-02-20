@@ -48,6 +48,13 @@ const MyTabNavigator = createBottomTabNavigator({
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
     }),
   },
+  'ChatBot':{
+    screen: CreatePageScreen,
+    navigationOptions: () => ({
+      tabBarLabel: () => {},
+      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
+    }),
+  },
   'Menu': {
     screen: () => {},
     navigationOptions: () => ({
