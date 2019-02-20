@@ -65,7 +65,7 @@ const MyTabNavigator = createBottomTabNavigator({
   tabBarOptions: {
       inactiveBackgroundColor: 'white',
       style: {
-        height:35,
+        height:50,
         padding:0,
         margin:0,
 
@@ -84,8 +84,8 @@ const MyTabNavigator = createBottomTabNavigator({
 
 const styles = StyleSheet.create({
   barbouton: {
-    height: 30,
-    width: 30, 
+    height: 40,
+    width: 40, 
     padding: 0,
     margin:0,
     //borderRadius: 4,
