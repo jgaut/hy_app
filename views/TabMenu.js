@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30, 
     padding: 2,
+  }
 });
 
 const MyTab = createAppContainer(MyTabNavigator);
