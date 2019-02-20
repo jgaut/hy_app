@@ -45,7 +45,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<SvgUri width="30" height="30" source={require('./imgages/menu.svg')} />),
+      tabBarIcon: ({ tintColor }) => (<SvgUri width="30" height="30" source={require('./images/menu.svg')} />),
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
