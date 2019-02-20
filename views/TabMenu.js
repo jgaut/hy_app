@@ -75,6 +75,7 @@ const MyTabNavigator = createBottomTabNavigator({
         height:50,
         padding:0,
         margin:0,
+        border:0,
 
       },
       tabStyle: {
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     width: 60, 
     padding: 0,
     margin:0,
-    marginTop: -20,
+    marginTop: -30,
   }
 });
 
