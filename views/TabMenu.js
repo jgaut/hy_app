@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     width: 60, 
     padding: 0,
     margin:0,
-    marginTop: -30,
+    marginTop: -15,
   }
 });
 
