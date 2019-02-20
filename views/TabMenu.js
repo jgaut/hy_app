@@ -50,9 +50,6 @@ const MyTabNavigator = createBottomTabNavigator({
   },
   'Menu': {
     screen: () => {},
-    tabBarOptions: {
-      inactiveBackgroundColor: 'blue'
-    },
     navigationOptions: () => ({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
@@ -65,6 +62,9 @@ const MyTabNavigator = createBottomTabNavigator({
   navigationOptions: {
     headerMode: 'none'
   },
+  tabBarOptions: {
+      inactiveBackgroundColor: 'blue'
+    },
 });
 
 const styles = StyleSheet.create({
