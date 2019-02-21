@@ -17,7 +17,7 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={styles.form}>
-      <Text style={styles.label} h2>My best profile !</Text>
+      <Text style={styles.label} h2>Notif</Text>
       </View>
       
     );
