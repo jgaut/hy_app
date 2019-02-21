@@ -88,7 +88,7 @@ button: {
   borderColor:"grey",
   borderWidth:0.5,
   borderRadius:5,
-  margin: 1,
+  margin: 2,
   
     },
   buttonText: {
