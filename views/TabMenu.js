@@ -30,7 +30,7 @@ const MyTabNavigator = createBottomTabNavigator({
   'Journal': {
     screen: ListPageScreen,
     navigationOptions: () => ({
-      tabBarLabel:"Journal",
+      tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/journal.svg')} style={styles.barbouton} />)
     }),
   },
@@ -51,7 +51,7 @@ const MyTabNavigator = createBottomTabNavigator({
   'ChatBot':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
-      tabBarLabel: "Bot",
+      tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/bot.svg')} style={styles.barbouton}/>)
     }),
   },
