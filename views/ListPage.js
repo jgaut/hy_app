@@ -107,7 +107,7 @@ button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:120,
-  width:{this.state.width},
+  width:this.state.width,
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
