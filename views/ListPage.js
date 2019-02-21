@@ -14,8 +14,7 @@ class ListPageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
-    this.state.width = Dimensions.get('window').width;
-    console.log("-----------"+this.state.width);
+    this.state.width = (Dimensions.get('window').width/3)-4*2;
   }
 
   Story(props) {
@@ -57,7 +56,7 @@ class ListPageScreen extends React.Component {
 
     let {width, height} = Dimensions.get('window');
     console.log(width, height);
-    
+
     return (
       <PhotoGrid
         data = { this.state.data.list }
@@ -88,7 +87,7 @@ class ListPageScreen extends React.Component {
           //console.log(itemSize);
           navigate('Create Page', {myKey: item.key});
         }}>
-        <View style={{width: this.state.width}}>
+        <View style={styles.button}>
               <Text style={styles.buttonText}>{item.key}</Text>
             </View>
       </TouchableOpacity>
@@ -110,7 +109,8 @@ const styles = StyleSheet.create({
 button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-  height:120,
+  height:this.state.width,
+  width: this.state.width,
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
