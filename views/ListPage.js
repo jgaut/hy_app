@@ -79,49 +79,18 @@ class ListPageScreen extends React.Component {
   renderItem = (item, itemSize, itemPaddingHorizontal) => {
     const {navigate} = this.props.navigation;
     const styles = StyleSheet.create({
-  form: {
-    padding: 80, 
-    backgroundColor: '#f5fcff',
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-  label: {
-    color: '#000000'
-  },
 button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:this.state.width,
   width: this.state.width,
-  borderColor:"red",
-  borderWidth:2,
-  borderRadius:5
+  borderColor:"black",
+  borderWidth:1,
+  borderRadius:10
   
     },
   buttonText: {
     color: 'white'
-  },
-container: {
-    backgroundColor: '#f5fcff',
-    flex:1,
-    margin: 2,
-
-    //flexDirection: "row",
-  },
-  input: {
-    height: 50,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
-  },
-  submitButton: {
-    position: 'absolute',
-    bottom:0,
-    left:0,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
   },
 });
     return(
