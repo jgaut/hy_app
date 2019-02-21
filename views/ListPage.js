@@ -65,6 +65,7 @@ class ListPageScreen extends React.Component {
         //itemPaddingHorizontal={2}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
+        style={{marginLeft:1}}
       />
     );
   
@@ -86,7 +87,8 @@ button: {
   width: this.state.width,
   borderColor:"grey",
   borderWidth:0.5,
-  borderRadius:5
+  borderRadius:5,
+  margin: 1,
   
     },
   buttonText: {
