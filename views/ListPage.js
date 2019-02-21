@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import PhotoGrid from 'react-native-image-grid';
@@ -68,7 +68,7 @@ class ListPageScreen extends React.Component {
 
   renderHeader() {
     return(
-      <Text style={{height:20}}></Text>
+      <Text style={{height:25}}></Text>
     );
   }
 
@@ -106,7 +106,7 @@ button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:120,
-  width:120,
+  width:{{Dimensions.get('window').width}},
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
