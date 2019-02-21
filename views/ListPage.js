@@ -107,7 +107,8 @@ button: {
   alignItems: 'stretch',
   height:100,
   width:100,
-
+  borderColor:"red",
+  border:2
   
     },
   buttonText: {
