@@ -105,8 +105,8 @@ const styles = StyleSheet.create({
 button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-  height:100,
-  width:100,
+  height:120,
+  width:120,
   borderColor:"red",
   borderWidth:2
   
