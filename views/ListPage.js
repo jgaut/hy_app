@@ -106,7 +106,7 @@ button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:120,
-  width:{Dimensions.get('window').width},
+  width:()=>{Dimensions.get('window').width},
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
