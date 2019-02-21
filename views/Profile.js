@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity } from 'react-native';
-import Auth from '@aws-amplify/auth';
+import { StyleSheet, View, Text } from 'react-native';
 
 class HomeScreen extends React.Component {
 
@@ -33,26 +32,9 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'center',
   },
-  input: {
-    height: 26, 
-    fontSize: 20, 
-    color: '#000', 
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
-  },
   label: {
     paddingTop: 30
   },
-  button: {    
-    padding: 20,
-    backgroundColor: '#2196F3',
-    flex: 0.5,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white'
-  }
 });
 
 export default HomeScreen;
