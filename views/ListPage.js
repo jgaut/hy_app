@@ -68,7 +68,7 @@ class ListPageScreen extends React.Component {
 
   renderHeader() {
     return(
-      <Text style={{height:50}}></Text>
+      <Text style={{height:20}}></Text>
     );
   }
 
