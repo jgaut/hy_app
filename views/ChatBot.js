@@ -19,7 +19,7 @@ class HomeScreen extends React.Component {
     const calcul = Math.round(w/4);
     return (
       <View style={styles.form}>
-      <Text style={styles.label} h2>ChatBot : {w} - {h}</Text>
+      <Text style={styles.label} h2>ChatBot : {w} - {h} - {calcul}</Text>
       </View>
       
     );
