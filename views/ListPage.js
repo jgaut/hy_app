@@ -55,6 +55,9 @@ class ListPageScreen extends React.Component {
 
   render() {
 
+    let {width, height} = Dimensions.get('window');
+    console.log(width, height);
+    
     return (
       <PhotoGrid
         data = { this.state.data.list }
