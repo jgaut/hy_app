@@ -14,7 +14,7 @@ class ListPageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
-    this.state.width = (Dimensions.get('window').width/3)-4*2;
+    this.state.width = (Dimensions.get('window').width/4)-5*2;
   }
 
   Story(props) {
@@ -60,9 +60,9 @@ class ListPageScreen extends React.Component {
     return (
       <PhotoGrid
         data = { this.state.data.list }
-        itemsPerRow = { 3 }
-        itemMargin = { 2 }
-        itemPaddingHorizontal={2}
+        itemsPerRow = { 4 }
+        //itemMargin = { 2 }
+        //itemPaddingHorizontal={2}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
         style={{marginLeft:1}}
