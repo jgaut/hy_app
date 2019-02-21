@@ -15,7 +15,8 @@ class HomeScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
+    const h = Dimensions.get('window').height;
+    const calcul = Math.round(w/4);
     return (
       <View style={styles.form}>
       <Text style={styles.label} h2>ChatBot : {w} - {h}</Text>
