@@ -61,11 +61,10 @@ class ListPageScreen extends React.Component {
       <PhotoGrid
         data = { this.state.data.list }
         itemsPerRow = { 4 }
-        //itemMargin = { 2 }
-        //itemPaddingHorizontal={2}
+        itemMargin = { 1 }
+        itemPaddingHorizontal={1}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
-        style={{marginLeft:1}}
       />
     );
   
@@ -79,6 +78,25 @@ class ListPageScreen extends React.Component {
 
   renderItem = (item, itemSize, itemPaddingHorizontal) => {
     const {navigate} = this.props.navigation;
+
+    return(
+      <TouchableOpacity
+        key = { item.key }
+        //style = {{ width: 98, height: itemSize, paddingHorizontal: itemPaddingHorizontal, border:1, borderColor:"black" }}
+        style = {{ width: itemSize, height: itemSize, paddingHorizontal: itemPaddingHorizontal }}
+        onPress = { () => {
+          //console.log(item.key);
+          //console.log(itemSize);
+          navigate('Create Page', {myKey: item.key});
+        }}>
+        <View style = {{ flex: 1 }}>
+              <Text style={styles.buttonText}>{item.key}</Text>
+            </View>
+      </TouchableOpacity>
+    )
+  }
+}
+
     const styles = StyleSheet.create({
 button: {
   backgroundColor: '#2196F3',
@@ -95,24 +113,5 @@ button: {
     color: 'white'
   },
 });
-    return(
-      <TouchableOpacity
-        key = { item.key }
-        //style = {{ width: 98, height: itemSize, paddingHorizontal: itemPaddingHorizontal, border:1, borderColor:"black" }}
-        style={styles.button}
-        onPress = { () => {
-          //console.log(item.key);
-          //console.log(itemSize);
-          navigate('Create Page', {myKey: item.key});
-        }}>
-        <View >
-              <Text style={styles.buttonText}>{item.key}</Text>
-            </View>
-      </TouchableOpacity>
-    )
-  }
-}
-
-
 
 export default ListPageScreen;
