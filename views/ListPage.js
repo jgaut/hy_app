@@ -108,7 +108,8 @@ button: {
   height:120,
   width:120,
   borderColor:"red",
-  borderWidth:2
+  borderWidth:2,
+  borderRadius:5
   
     },
   buttonText: {
