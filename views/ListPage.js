@@ -60,8 +60,8 @@ class ListPageScreen extends React.Component {
     return (
       <PhotoGrid
         data = { this.state.data.list }
-        itemsPerRow = { 4 }
-        itemMargin = { 1 }
+        itemsPerRow = { 3 }
+        itemMargin = {0}
         itemPaddingHorizontal={0}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
