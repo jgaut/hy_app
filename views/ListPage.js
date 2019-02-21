@@ -60,9 +60,9 @@ class ListPageScreen extends React.Component {
     return (
       <PhotoGrid
         data = { this.state.data.list }
-        //itemsPerRow = { 3 }
-        //itemMargin = { 2 }
-        //itemPaddingHorizontal={2}
+        itemsPerRow = { 3 }
+        itemMargin = { 2 }
+        itemPaddingHorizontal={2}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
         style={{marginLeft:1}}
@@ -99,12 +99,13 @@ button: {
       <TouchableOpacity
         key = { item.key }
         //style = {{ width: 98, height: itemSize, paddingHorizontal: itemPaddingHorizontal, border:1, borderColor:"black" }}
+        style={styles.button}
         onPress = { () => {
           //console.log(item.key);
           //console.log(itemSize);
           navigate('Create Page', {myKey: item.key});
         }}>
-        <View style={styles.button}>
+        <View >
               <Text style={styles.buttonText}>{item.key}</Text>
             </View>
       </TouchableOpacity>
