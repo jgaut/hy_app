@@ -10,12 +10,12 @@ class ListPageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data: {"list":[]}};
+    this.state = {data: {"list":[]}, width:''};
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
     this.setState({width: Dimensions.get('window').width})
-    console.log(this.state.width);
+    console.log("-----------"+this.state.width);
   }
 
   Story(props) {
