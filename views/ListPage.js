@@ -101,8 +101,8 @@ class ListPageScreen extends React.Component {
 button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
-  height:this.state.width,
-  width: this.state.width,
+  height:100,
+  width: 100,
   borderColor:"grey",
   borderWidth:0.5,
   borderRadius:5,
