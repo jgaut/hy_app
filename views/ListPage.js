@@ -85,7 +85,7 @@ class ListPageScreen extends React.Component {
           //console.log(itemSize);
           navigate('Create Page', {myKey: item.key});
         }}>
-        <View style={styles.button}>
+        <View style={{width: this.state.width}}>
               <Text style={styles.buttonText}>{item.key}</Text>
             </View>
       </TouchableOpacity>
@@ -108,7 +108,6 @@ button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:120,
-  width:this.state.width,
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
