@@ -62,7 +62,7 @@ class ListPageScreen extends React.Component {
         data = { this.state.data.list }
         itemsPerRow = { 4 }
         itemMargin = { 1 }
-        itemPaddingHorizontal={1}
+        itemPaddingHorizontal={0}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
       />
