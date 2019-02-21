@@ -78,13 +78,12 @@ class ListPageScreen extends React.Component {
 
   renderItem = (item, itemSize, itemPaddingHorizontal) => {
     const {navigate} = this.props.navigation;
-    console.log(itemSize);
     itemSize=itemSize-1;
     return(
       <TouchableOpacity
         key = { item.key }
         //style = {{ width: 98, height: itemSize, paddingHorizontal: itemPaddingHorizontal, border:1, borderColor:"black" }}
-        style = {{ width: itemSize, height: itemSize, borderColor:"grey", backgroundColor: '#2196F3', margin:1}}
+        style = {{ width: itemSize, height: itemSize, borderColor:"grey", backgroundColor: '#2196F3', margin:1, borderWidth:0.5, borderRadius:5,}}
         onPress = { () => {
           //console.log(item.key);
           //console.log(itemSize);
