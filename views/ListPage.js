@@ -14,7 +14,7 @@ class ListPageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
-    this.state.width = (Dimensions.get('window').width/8)-9*1;
+    this.state.width = (Dimensions.get('window').width/3)-4*2;
   }
 
   Story(props) {
