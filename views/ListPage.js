@@ -14,7 +14,7 @@ class ListPageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.ListAllElement();
     });
-    this.state.width = (Dimensions.get('window').width/3)-4*2;
+    this.state.width = (Dimensions.get('window').width/1)-2*2;
   }
 
   Story(props) {
@@ -65,7 +65,7 @@ class ListPageScreen extends React.Component {
         //itemPaddingHorizontal={2}
         renderHeader = { this.renderHeader }
         renderItem = { this.renderItem }
-        style={{paddingLeft:1}}
+        style={{marginLeft:1}}
       />
     );
   
@@ -88,7 +88,7 @@ button: {
   borderColor:"grey",
   borderWidth:0.5,
   borderRadius:5,
-  padding: 1,
+  margin: 1,
   
     },
   buttonText: {
