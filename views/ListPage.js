@@ -15,6 +15,7 @@ class ListPageScreen extends React.Component {
      this.ListAllElement();
     });
     this.setState({width: Dimensions.get('window').width})
+    console.log(this.state.width);
   }
 
   Story(props) {
@@ -107,7 +108,7 @@ button: {
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   height:120,
-  width:this.state.width,
+  width:80,
   borderColor:"red",
   borderWidth:2,
   borderRadius:5
