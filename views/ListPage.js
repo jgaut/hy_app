@@ -84,9 +84,9 @@ button: {
   alignItems: 'stretch',
   height:this.state.width,
   width: this.state.width,
-  borderColor:"black",
-  borderWidth:1,
-  borderRadius:10
+  borderColor:"grey",
+  borderWidth:0.5,
+  borderRadius:5
   
     },
   buttonText: {
