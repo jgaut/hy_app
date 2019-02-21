@@ -7,6 +7,7 @@ import ProfileScreen from './Profile';
 import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
 import ChatBotScreen from './ChatBot';
+import NotifScreen from './Notif';
 
 import Image from 'react-native-remote-svg'
 
@@ -37,7 +38,7 @@ const MyTabNavigator = createBottomTabNavigator({
     }),
   },
   'Notif': {
-    screen: ListPageScreen,
+    screen: NotifScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
@@ -51,7 +52,7 @@ const MyTabNavigator = createBottomTabNavigator({
     }),
   },
   'ChatBot':{
-    screen: CreatePageScreen,
+    screen: ChatBotScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/bot.svg')} style={styles.barbouton}/>)
