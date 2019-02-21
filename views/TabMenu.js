@@ -6,6 +6,8 @@ import HomeScreen from './Home';
 import ProfileScreen from './Profile';
 import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
+import ChatBotScreen from './ChatBot';
+
 import Image from 'react-native-remote-svg'
 
 class TabMenuScreen extends React.Component {
