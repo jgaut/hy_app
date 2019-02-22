@@ -83,9 +83,28 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  AddElement = () => {
-    this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+  AddElement = (element) => {
+    switch (element) {
+      case 'note':
+        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        console.log('add note');
+        break;
+      case 'text':
+        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        console.log('add text');
+        break;
+      case 'image':
+        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        console.log('add image');
+        break;
+      default:
+        console.log('Sorry, we are out of ' + expr + '.');
+    }
+
+    //unsave
     this.setState({isSav:false});
+    
+    //force to refresh
     this.forceUpdate();
   }
 
@@ -118,15 +137,21 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
           
-          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement()}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>Add</Text>
+              <Text style={styles.buttonText}>Add note</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} onPress={() => this.RemoveElement()}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('text')}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>Remove</Text>
+              <Text style={styles.buttonText}>Add text</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('image')}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
 
