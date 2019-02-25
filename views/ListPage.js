@@ -40,6 +40,7 @@ class ListPageScreen extends React.Component {
         renderItem={this.renderItem}
         numColumns={numColumns}
         progressViewOffset={(number)=>{console.log('offset : '+number)}}
+        initialNumToRender={20}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
     );
