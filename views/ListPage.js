@@ -42,6 +42,9 @@ class ListPageScreen extends React.Component {
         progressViewOffset={(number)=>{console.log('offset : '+number)}}
         initialNumToRender={30}
         initialScrollIndex={100}
+         getItemLayout={(data, index) => (
+          {length: Dimensions.get('window').width / numColumns, offset: Dimensions.get('window').width / numColumns * index, index}
+          )}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
     );
