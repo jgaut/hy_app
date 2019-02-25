@@ -22,10 +22,10 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
-    const range = moment.range('2010-01-01', '2015-01-01');
+    const range = moment.range('2019-01-01', '2019-12-31');
  
-    for (let month of range.by('month')) {
-      let item = {key:month.format('YYYY-MM-DD')};
+    for (let day of range.by('day')) {
+      let item = {key:day.format('YYYY-MM-DD')};
       this.state.data.list.push(item);
     }
       
