@@ -8,7 +8,7 @@ class ListPageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data: {"list":[]}};
+    this.state = {data: {"list":[]}, max:30, min:-10};
     this.ListAllElement();
     
   }
@@ -18,8 +18,7 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
-    let n = 0;
-    for(let i=0; i<50; i++){
+    for(let i=this.state.min; i<=this.state.max; i++){
       let item = {key:i};
       this.state.data.list.push(item);
     }
@@ -36,7 +35,11 @@ class ListPageScreen extends React.Component {
         onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
         onViewableItemsChanged={(info) => {
           info.viewableItems.forEach(function(el) {
-            console.log(el.item.key);
+            let n = el.item.key;
+            if (Number.isInteger(n) && n>this.state.max-10) {
+              console.log('new max : '+n);
+              this.setState('max': n);
+            }
           });
           //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
         }
