@@ -25,7 +25,7 @@ class ListPageScreen extends React.Component {
     const range = moment.range('2010-01-01', '2015-01-01');
  
     for (let month of range.by('month')) {
-      let item = {key:month.format('YYYY-MM-DD');};
+      let item = {key:month.format('YYYY-MM-DD')};
       this.state.data.list.push(item);
     }
       
