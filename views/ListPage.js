@@ -22,13 +22,14 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
-    const start = moment('2019-01-01', 'YYYY-MM-DD');
-    const end   = moment('2019-12-31', 'YYYY-MM-DD');
-    const range = moment.range(start, end);
-    console.log(range);
-    for(let i=0; i<=range.length; i++){
-      let item = {key:range[i]};
+    const range = moment.range('2010-01-01', '2015-01-01');
+ 
+    for (let month of range.by('month')) {
+      let item = {key:month.format('YYYY-MM-DD');};
       this.state.data.list.push(item);
+    }
+      
+      
     }
   }
 
