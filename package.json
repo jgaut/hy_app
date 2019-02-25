@@ -7,14 +7,15 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "aws-amplify": "^1.1.10",
-    "aws-amplify-react-native": "^2.0.8",
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-react-native": "^2.1.7",
     "expo": "^31.0.2",
+    "moment-range": "^4.0.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "react-native-image-grid": "^1.0.0",
-    "react-native-material-bottom-navigation": "^1.0.2",
-    "react-navigation": "^3.0.9",
+    "react-native-remote-svg": "^1.4.2",
+    "react-native-vector-icons": "^6.3.0",
+    "react-navigation": "^3.3.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
