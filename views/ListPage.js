@@ -41,15 +41,6 @@ class ListPageScreen extends React.Component {
         numColumns={numColumns}
         progressViewOffset={(number)=>{console.log('offset : '+number)}}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
-        onViewableItemsChanged={(info) => {
-          for(let i=0; i<info.viewableItems.length; i++){
-            let n = info.viewableItems[i].item.key;
-            //console.log(n);
-            //console.log('new max : '+n);
-            //console.log(this.state.data);
-          };
-          //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
-        }
       }
       />
     );
