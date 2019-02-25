@@ -34,9 +34,11 @@ class ListPageScreen extends React.Component {
         renderItem={this.renderItem}
         numColumns={numColumns}
         onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
-        onViewableItemsChanged={(viewableItems, changed) => {
-          console.log("viewableItems : " + JSON.stringify(viewableItems)); 
-          console.log("changed : " + JSON.stringify(changed))
+        onViewableItemsChanged={(info) => {
+          info.viewableItems.forEach(function(el) {
+            console.log(el.item.key);
+          });
+          //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
         }
       }
       />
