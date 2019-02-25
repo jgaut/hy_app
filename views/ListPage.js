@@ -5,9 +5,6 @@ import Moment from 'moment';
 import { extendMoment } from 'moment-range';
  
 const moment = extendMoment(Moment);
-const start = moment('2019-01-01', 'YYYY-MM-DD');
-const end   = moment('2019-12-31', 'YYYY-MM-DD');
-const range = moment.range(start, end);
 
 const numColumns = 3;
 
@@ -25,6 +22,10 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
+    const start = moment('2019-01-01', 'YYYY-MM-DD');
+    const end   = moment('2019-12-31', 'YYYY-MM-DD');
+    const range = moment.range(start, end);
+    console.log(range);
     for(let i=0; i<=range.length; i++){
       let item = {key:range[i]};
       this.state.data.list.push(item);
