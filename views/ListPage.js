@@ -1,6 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
+ 
+const moment = extendMoment(Moment);
+const start = moment('2019-01-01', 'YYYY-MM-DD');
+const end   = moment('2019-12-31', 'YYYY-MM-DD');
+const range = moment.range(start, end);
 
 const numColumns = 3;
 
@@ -8,7 +15,7 @@ class ListPageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data: {"list":[]}, max:30, min:-10};
+    this.state = {data: {"list":[]}};
     this.ListAllElement();
     
   }
@@ -18,8 +25,8 @@ class ListPageScreen extends React.Component {
   }
 
   ListAllElement = () => {
-    for(let i=this.state.min; i<=this.state.max; i++){
-      let item = {key:i};
+    for(let i=0; i<=range.length; i++){
+      let item = {key:range[i]};
       this.state.data.list.push(item);
     }
   }
@@ -38,11 +45,8 @@ class ListPageScreen extends React.Component {
           for(let i=0; i<info.viewableItems.length; i++){
             let n = info.viewableItems[i].item.key;
             //console.log(n);
-            if (Number.isInteger(n) && n>this.state.max-10) {
-              console.log('new max : '+n);
-              this.state.max=n;
-              console.log(this.state.data);
-            }
+            //console.log('new max : '+n);
+            //console.log(this.state.data);
           };
           //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
         }
