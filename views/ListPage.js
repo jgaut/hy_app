@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native'; //https://facebook.github.io/react-native/docs/flatlist#refreshing
 import { createStackNavigator } from 'react-navigation';
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
@@ -41,7 +41,6 @@ class ListPageScreen extends React.Component {
         numColumns={numColumns}
         progressViewOffset={(number)=>{console.log('offset : '+number)}}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
-      }
       />
     );
   
