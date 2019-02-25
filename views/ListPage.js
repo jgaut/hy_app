@@ -1,116 +1,92 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
-import Auth from '@aws-amplify/auth';
-import Storage from '@aws-amplify/storage';
-import PhotoGrid from 'react-native-image-grid';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+
+const numColumns = 3;
 
 class ListPageScreen extends React.Component {
 
-
   constructor(...args) {
     super(...args);
-    this.state = {data: {"list":[]}, width:''};
-    this.props.navigation.addListener('didFocus', () => {
-     this.ListAllElement();
-    });
-    this.state.width = (Dimensions.get('window').width/4)-5*2;
+    this.state = {data: {"list":[]}};
+    this.ListAllElement();
+    
   }
 
-  Story(props) {
-    
-    var returnValue = [];
-    const {navigate} = this.props.navigation;
-    if(props.list){
-    props.list.forEach(item => {
-      let myKey = item.key;
-      //console.log(myKey);
-      returnValue.push(
-        <TouchableOpacity key={Math.random()} onPress={() => {
-          //console.log(myKey);
-          navigate('Create Page', {myKey: myKey});
-        }
-        }>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>{myKey}</Text>
-            </View>
-          </TouchableOpacity>);
-    });
-  }
-    return returnValue;
+  componentWillMount(){
+   // this.scrollToItem('item' : this.state.data.list[112]);
   }
 
   ListAllElement = () => {
-    this.state.data.list = [];
-    Storage.list('', {level: 'private'})
-      .then(result => {
-        result.forEach(item => {
-          this.state.data.list.push(item);
-        });
-        this.forceUpdate();
-      })
-      .catch(err => console.log(err));
+    let n = 0;
+    for(let i=0; i<500; i++){
+      let item = {key:i};
+      this.state.data.list.push(item);
+    }
   }
 
   render() {
 
-    let {width, height} = Dimensions.get('window');
-    console.log(width, height);
-
     return (
-      <PhotoGrid
-        data = { this.state.data.list }
-        itemsPerRow = { 3 }
-        itemMargin = {0}
-        itemPaddingHorizontal={0}
-        renderHeader = { this.renderHeader }
-        renderItem = { this.renderItem }
+      <FlatList
+        data={formatData(this.state.data.list, numColumns)}
+        style={styles.container}
+        renderItem={this.renderItem}
+        numColumns={numColumns}
+        initialScrollIndex={50}
       />
     );
   
   }
 
-  renderHeader() {
-    return(
-      <Text style={{height:25}}></Text>
-    );
-  }
-
-  renderItem = (item, itemSize, itemPaddingHorizontal) => {
-    const {navigate} = this.props.navigation;
-    itemSize=itemSize-1;
-    return(
+  renderItem = ({ item, index }) => {
+    if (item.empty === true) {
+      return <View style={[styles.item, styles.itemInvisible]} />;
+    }
+    return (
       <TouchableOpacity
         key = { item.key }
-        //style = {{ width: 98, height: itemSize, paddingHorizontal: itemPaddingHorizontal, border:1, borderColor:"black" }}
-        style = {{ width: itemSize, height: itemSize, borderColor:"grey", backgroundColor: '#2196F3', margin:1, borderWidth:0.5, borderRadius:5,}}
-        onPress = { () => {
-          //console.log(item.key);
-          //console.log(itemSize);
-          navigate('Create Page', {myKey: item.key});
-        }}>
-        <View style = {{ flex: 1 }}>
-              <Text style={styles.buttonText}>{item.key}</Text>
-            </View>
+        style={styles.item}
+      >
+      <View
+        style={styles.item}
+      >
+        <Text style={styles.itemText}>{item.key}</Text>
+      </View>
       </TouchableOpacity>
-    )
-  }
+    );
+  };
 }
 
-    const styles = StyleSheet.create({
-button: {
-  backgroundColor: '#2196F3',
-  alignItems: 'stretch',
-  height:100,
-  width: 100,
-  borderColor:"grey",
-  borderWidth:0.5,
-  borderRadius:5,
-  margin: 1,
-  
-    },
-  buttonText: {
-    color: 'white'
+const formatData = (data, numColumns) => {
+  const numberOfFullRows = Math.floor(data.length / numColumns);
+  let numberOfElementsLastRow = data.length - (numberOfFullRows * numColumns);
+  while (numberOfElementsLastRow !== numColumns && numberOfElementsLastRow !== 0) {
+    data.push({ key: `blank-${numberOfElementsLastRow}`, empty: true });
+    numberOfElementsLastRow++;
+  }
+
+  return data;
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginVertical: 20,
+  },
+  item: {
+    backgroundColor: '#4D243D',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    margin: 1,
+    height: Dimensions.get('window').width / numColumns, // approximate a square
+  },
+  itemInvisible: {
+    backgroundColor: 'transparent',
+  },
+  itemText: {
+    color: '#fff',
   },
 });
 
