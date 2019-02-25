@@ -33,6 +33,7 @@ class ListPageScreen extends React.Component {
         style={styles.container}
         renderItem={this.renderItem}
         numColumns={numColumns}
+        initialNumToRender={200}
         initialScrollIndex={50}
       />
     );
