@@ -40,7 +40,7 @@ class ListPageScreen extends React.Component {
               console.log('new max : '+n);
               this.state.max=n;
             }
-          });
+          };
           //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
         }
       }
