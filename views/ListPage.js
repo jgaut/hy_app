@@ -7,6 +7,7 @@ import { extendMoment } from 'moment-range';
 const moment = extendMoment(Moment);
 
 const numColumns = 3;
+const ITEM_HEIGHT = Dimensions.get('window').width / numColumns;
 
 class ListPageScreen extends React.Component {
 
@@ -43,7 +44,7 @@ class ListPageScreen extends React.Component {
         initialNumToRender={30}
         initialScrollIndex={100}
          getItemLayout={(data, index) => (
-          {length: Dimensions.get('window').width / numColumns, offset: Dimensions.get('window').width / numColumns * index, index}
+          {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
           )}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
     margin: 1,
-    height: Dimensions.get('window').width / numColumns, // approximate a square
+    height: ITEM_HEIGHT, // approximate a square
   },
   itemInvisible: {
     backgroundColor: 'transparent',
