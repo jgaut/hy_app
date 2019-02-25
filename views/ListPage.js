@@ -19,7 +19,7 @@ class ListPageScreen extends React.Component {
 
   ListAllElement = () => {
     let n = 0;
-    for(let i=0; i<500; i++){
+    for(let i=0; i<50; i++){
       let item = {key:i};
       this.state.data.list.push(item);
     }
@@ -33,8 +33,7 @@ class ListPageScreen extends React.Component {
         style={styles.container}
         renderItem={this.renderItem}
         numColumns={numColumns}
-        initialNumToRender={200}
-        initialScrollIndex={50}
+        onEndReached={(info: {distanceFromEnd: number}) => {console.log("distance from end : " + number)}}
       />
     );
   
