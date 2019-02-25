@@ -33,7 +33,7 @@ class ListPageScreen extends React.Component {
         style={styles.container}
         renderItem={this.renderItem}
         numColumns={numColumns}
-        onEndReached={(number) => {console.log("distance from end : " + number)}}
+        onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
     );
   
