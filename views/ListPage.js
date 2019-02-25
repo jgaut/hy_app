@@ -29,8 +29,6 @@ class ListPageScreen extends React.Component {
       this.state.data.list.push(item);
     }
       
-      
-    }
   }
 
   render() {
