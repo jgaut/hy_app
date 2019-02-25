@@ -38,7 +38,7 @@ class ListPageScreen extends React.Component {
             let n = el.item.key;
             if (Number.isInteger(n) && n>this.state.max-10) {
               console.log('new max : '+n);
-              this.setState('max': n);
+              this.state.max=n;
             }
           });
           //console.log("viewableItems : " + JSON.stringify(viewableItems)); 
