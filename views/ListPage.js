@@ -15,21 +15,23 @@ class ListPageScreen extends React.Component {
     super(...args);
     this.state = {data: {"list":[]}};
     this.ListAllElement();
-    
-  }
-
-  componentWillMount(){
-   // this.scrollToItem('item' : this.state.data.list[112]);
   }
 
   ListAllElement = () => {
     const range = moment.range('2019-01-01', '2019-12-31');
- 
+    let m = '';
+    
     for (let day of range.by('day')) {
+      let n = day.format('MM');
+      if(m!=n){
+        m=n;
+        let item = {key:day.format('MMMM YYYY')};
+        this.state.data.list.push(item);
+      }
+
       let item = {key:day.format('YYYY-MM-DD')};
       this.state.data.list.push(item);
     }
-      
   }
 
   render() {
@@ -78,7 +80,6 @@ const formatData = (data, numColumns) => {
     data.push({ key: `blank-${numberOfElementsLastRow}`, empty: true });
     numberOfElementsLastRow++;
   }
-
   return data;
 };
 
