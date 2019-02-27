@@ -25,11 +25,11 @@ class ListPageScreen extends React.Component {
       let n = day.format('MM');
       if(m!=n){
         m=n;
-        let item = {key:day.format('MMMM YYYY')};
+        let item = {key:day.format('MMMM YYYY'), month:true};
         this.state.data.list.push(item);
       }
 
-      let item = {key:day.format('YYYY-MM-DD')};
+      let item = {key:day.format('YYYY-MM-DD'), month:false};
       this.state.data.list.push(item);
     }
   }
@@ -57,19 +57,27 @@ class ListPageScreen extends React.Component {
   renderItem = ({ item, index }) => {
     if (item.empty === true) {
       return <View style={[styles.item, styles.itemInvisible]} />;
-    }
-    return (
-      <TouchableOpacity
-        key = { item.key }
-        style={styles.item}
-      >
-      <View
+    }else if(item.month === true){
+      return (<View
         style={styles.item}
       >
         <Text style={styles.itemText}>{item.key}</Text>
       </View>
-      </TouchableOpacity>
-    );
+      );
+    }else{
+      return (
+        <TouchableOpacity
+          key = { item.key }
+          style={styles.item}
+        >
+        <View
+          style={styles.item}
+        >
+          <Text style={styles.itemText}>{item.key}</Text>
+        </View>
+        </TouchableOpacity>
+      );
+    }
   };
 }
 
