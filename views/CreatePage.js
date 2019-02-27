@@ -57,7 +57,7 @@ class CreatePageScreen extends React.Component {
                 console.log("get result : " +result);
                 //result => private url
                 fetch(result)
-                  .then(response => {response.json(); console.log(JSON.stringify(response));})
+                  .then(response => response.json())
                     .then(data => {
                       console.log("data : "+data);
                       this.setState(data); 
