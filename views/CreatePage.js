@@ -45,7 +45,7 @@ class CreatePageScreen extends React.Component {
           .then(result => {console.log(result);
             fetch(result)
               .then(response => response.json() )
-              .then(data => {console.log(data);this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
+              .then(data => {console.log("data : "+data);this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
               .catch(error => {console.log(error);});
           })
           .catch(err => console.log(err));
