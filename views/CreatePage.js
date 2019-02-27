@@ -48,7 +48,7 @@ class CreatePageScreen extends React.Component {
           console.log('result : ' +result);
           //si page non existante
           if(result==''){
-            this.setState('id':fk);
+            this.state.data.id=fk;
           }else{
             Storage.get(fk, {level: 'private'})
               .then(result => {
@@ -57,7 +57,7 @@ class CreatePageScreen extends React.Component {
                   .then(response => response.json())
                     .then(data => {
                       console.log("data : "+data);
-                      this.setStatre(data); 
+                      this.setState(data); 
                       this.forceUpdate(); 
                       this.state.isSav=true;
                     })
