@@ -50,10 +50,11 @@ class CreatePageScreen extends React.Component {
           if(result==''){
             this.state.data.id=fk;
             this.state.data.list=[];
+            this.forceUpdate();
           }else{
             Storage.get(fk, {level: 'private'})
               .then(result => {
-                console.log(result);
+                console.log("get result : " +result);
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
