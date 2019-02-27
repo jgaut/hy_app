@@ -10,7 +10,7 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data:'', isSav:true, fromKey:''};
+    this.state = {data:{"id":'',"list":[]};, isSav:true, fromKey:''};
 
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
@@ -46,7 +46,7 @@ class CreatePageScreen extends React.Component {
             fetch(result)
               .then(response => response.json() )
               .then(data => {/*console.log(data); */this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
-              .catch(error => console.log(error));
+              .catch(error => {console.log(error);});
           })
           .catch(err => console.log(err));
       }
