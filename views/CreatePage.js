@@ -61,7 +61,7 @@ class CreatePageScreen extends React.Component {
                   .then(response => response.json())
                     .then(data => {
                       console.log("data : "+data);
-                      this.setState(data); 
+                      this.state.data=data; 
                       this.forceUpdate(); 
                       this.state.isSav=true;
                       console.log(JSON.stringify(this.state.data));
