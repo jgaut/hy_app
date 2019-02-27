@@ -32,6 +32,7 @@ class CreatePageScreen extends React.Component {
     }
 
     if(this.state.isSav){
+      const fk = this.props.navigation.state.params.fromKey;
       this.state.fromKey = this.props.navigation.state.params.fromKey;
       //console.log(this.state.fromKey);
       if(this.state.fromKey=='' || this.state.fromKey==null){
@@ -47,17 +48,18 @@ class CreatePageScreen extends React.Component {
           console.log('result : ' +result);
           //si page non existante
           if(result==''){
-            this.data.id=this.state.fromKey;
+            this.setState('id':fk);
           }else{
-            Storage.get(this.state.fromKey, {level: 'private'})
+            Storage.get(fk, {level: 'private'})
               .then(result => {
                 console.log(result);
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
                       console.log("data : "+data);
-                      this.state.data = data; 
-                      this.forceUpdate(); this.state.isSav=true;
+                      this.setStatre(data); 
+                      this.forceUpdate(); 
+                      this.state.isSav=true;
                     })
                     .catch(error => {console.log(error);});
               })
