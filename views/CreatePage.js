@@ -42,7 +42,7 @@ class CreatePageScreen extends React.Component {
       }else{
         console.log('create page : ' + this.state.fromKey);
         //Page exist ?
-        Storage.list('', {level: 'private'})
+        Storage.list(this.state.fromKey+'.json', {level: 'private'})
         .then(result => console.log('result : ' +result))
       .catch(err => console.log('err : ' +err));
 
