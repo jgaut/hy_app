@@ -44,7 +44,7 @@ class CreatePageScreen extends React.Component {
         //Page exist ?
         Storage.list('', {level: 'private'})
         .then(result => console.log('result : ' +result));
-        this.forceUpdate();
+
       })
       .catch(err => console.log('err : ' +err));
 
