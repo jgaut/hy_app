@@ -52,7 +52,7 @@ class CreatePageScreen extends React.Component {
             this.state.data.list=[];
             this.forceUpdate();
           }else{
-            Storage.get(fk, {level: 'private'})
+            Storage.get(fk+'.json', {level: 'private'})
               .then(result => {
                 console.log("get result : " +result);
                 //result => private url
