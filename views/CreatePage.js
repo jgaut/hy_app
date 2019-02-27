@@ -43,17 +43,30 @@ class CreatePageScreen extends React.Component {
         console.log('create page : ' + this.state.fromKey);
         //Page exist ?
         Storage.list(this.state.fromKey+'.json', {level: 'private'})
-        .then(result => console.log('result : ' +result))
-      .catch(err => console.log('err : ' +err));
-
-        Storage.get(this.state.fromKey, {level: 'private'})
-          .then(result => {console.log(result);
-            fetch(result)
-              .then(response => response.json() )
-              .then(data => {console.log("data : "+data);this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
-              .catch(error => {console.log(error);});
-          })
-          .catch(err => console.log(err));
+        .then(result => {
+          console.log('result : ' +result);
+          //si page non existante
+          if(result==''){
+            this.data.id=this.state.fromKey;
+          }else{
+            Storage.get(this.state.fromKey, {level: 'private'})
+              .then(result => {
+                console.log(result);
+                fetch(result)
+                  .then(response => response.json())
+                    .then(data => {
+                      console.log("data : "+data);
+                      this.state.data = data; 
+                      this.forceUpdate(); this.state.isSav=true;
+                    })
+                    .catch(error => {console.log(error);});
+              })
+              .catch(err => console.log(err));
+          }
+          this.state.fromKey=null;
+          this.props.navigation.state.params.fromKey=null;  
+        })
+        .catch(err => console.log('err : ' +err));
       }
     }
   }
