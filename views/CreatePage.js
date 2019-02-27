@@ -51,6 +51,7 @@ class CreatePageScreen extends React.Component {
             this.state.data.id=fk;
             this.state.data.list=[];
             this.forceUpdate();
+            this.state.isSav=true;
           }else{
             Storage.get(fk+'.json', {level: 'private'})
               .then(result => {
@@ -63,6 +64,7 @@ class CreatePageScreen extends React.Component {
                       this.setState(data); 
                       this.forceUpdate(); 
                       this.state.isSav=true;
+                      console.log(JSON.stringify(this.state.data));
                     })
                     .catch(error => {console.log(error);});
               })
