@@ -32,7 +32,7 @@ class CreatePageScreen extends React.Component {
     }
 
     if(this.state.isSav){
-      this.state.fromKey = this.props.navigation.state.params.myKey;
+      this.state.fromKey = this.props.navigation.state.params.fromKey;
       //console.log(this.state.fromKey);
       if(this.state.fromKey=='' || this.state.fromKey==null){
         const uuidv4 = require('uuid/v4');
@@ -40,7 +40,7 @@ class CreatePageScreen extends React.Component {
         this.state.data = myTmp;
         this.forceUpdate();
       }else{
-        //console.log('create page : ' + this.state.fromKey);
+        console.log('create page : ' + this.state.fromKey);
         Storage.get(this.state.fromKey, {level: 'private'})
           .then(result => {console.log(result);
             fetch(result)
