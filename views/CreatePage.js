@@ -49,6 +49,7 @@ class CreatePageScreen extends React.Component {
           //si page non existante
           if(result==''){
             this.state.data.id=fk;
+            this.state.data.list=[];
           }else{
             Storage.get(fk, {level: 'private'})
               .then(result => {
