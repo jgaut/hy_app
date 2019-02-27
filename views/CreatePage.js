@@ -41,12 +41,11 @@ class CreatePageScreen extends React.Component {
         this.forceUpdate();
       }else{
         console.log('create page : ' + this.state.fromKey);
-        this.state.data=this.props.navigation.state.params.fromKey;
         Storage.get(this.state.fromKey, {level: 'private'})
           .then(result => {console.log(result);
             fetch(result)
               .then(response => response.json() )
-              .then(data => {/*console.log(data); */this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
+              .then(data => {console.log(data);this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
               .catch(error => {console.log(error);});
           })
           .catch(err => console.log(err));
