@@ -45,7 +45,7 @@ class CreatePageScreen extends React.Component {
           .then(result => {console.log(result);
             fetch(result)
               .then(response => response.json() )
-              .then(data => {/*console.log(data); */this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.myKey=null;} )
+              .then(data => {/*console.log(data); */this.state.data = data; this.forceUpdate(); this.state.isSav=true; this.state.fromKey=null; this.props.navigation.state.params.fromKey=null;} )
               .catch(error => console.log(error));
           })
           .catch(err => console.log(err));
@@ -63,8 +63,8 @@ class CreatePageScreen extends React.Component {
       if(item.type=='TextInput'){
         //console.log(item.type);
         //Fixer la clef
-        let myKey = item.sort;
-        returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, myKey); this.value=text;}} >{this.state.data.list[myKey].text}</TextInput>);
+        let fromKey = item.sort;
+        returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
       }
       key++;
     });
