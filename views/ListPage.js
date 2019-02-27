@@ -55,6 +55,9 @@ class ListPageScreen extends React.Component {
   }
 
   renderItem = ({ item, index }) => {
+
+    const {navigate} = this.props.navigation;
+
     if (item.empty === true) {
       return <View style={[styles.item, styles.itemInvisible]} />;
     }else if(item.month === true){
@@ -69,6 +72,9 @@ class ListPageScreen extends React.Component {
         <TouchableOpacity
           key = { item.key }
           style={styles.item}
+          onPress={()=>{
+            navigate('Create Page', {fromKey: item.key});
+          }}
         >
         <View
           style={styles.item}
