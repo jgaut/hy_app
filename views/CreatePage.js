@@ -81,20 +81,19 @@ class CreatePageScreen extends React.Component {
   Story(props) {
     
     var returnValue = [];
-    let sortKey='';
     if(props.list){
     props.list.forEach(item => {
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput style={styles.note} key={{sortKey}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput style={styles.note} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'text' :
-          sortKey = item.sort;
+          var sortKey = item.sort;
           returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
-          //let fromKey = item.sort;
+          //var fromKey = item.sort;
           //returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
           break;
         default:
