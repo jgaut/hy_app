@@ -92,7 +92,7 @@ class CreatePageScreen extends React.Component {
         break;
       case 'text' :
         fromKey = item.sort;
-        returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+        returnValue.push(<TextInput multiline={true} style={styles.text} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
         break;
       case 'image' :
         //let fromKey = item.sort;
@@ -237,7 +237,7 @@ container: {
     borderBottomColor: '#555' 
   },
   text: {
-    height: 50,
+    height: 150,
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
     borderBottomColor: '#555' 
