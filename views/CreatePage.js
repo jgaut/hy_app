@@ -187,13 +187,6 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
-
-          <TouchableOpacity key={Math.random()} onPress={() => this.NouvellePage()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Nouvelle page</Text>
-            </View>
-          </TouchableOpacity>
-
         </View>
       </View>
     );
