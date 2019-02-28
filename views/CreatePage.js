@@ -81,27 +81,25 @@ class CreatePageScreen extends React.Component {
   Story(props) {
     
     var returnValue = [];
-    var key=0;
-    let fromKey='';
+    let sortKey='';
     if(props.list){
     props.list.forEach(item => {
-    switch(item.type) {
-      case 'note' :
-        fromKey = item.sort;
-        returnValue.push(<TextInput style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
-        break;
-      case 'text' :
-        fromKey = item.sort;
-        returnValue.push(<TextInput multiline={true} style={styles.text} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
-        break;
-      case 'image' :
-        //let fromKey = item.sort;
-        //returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
-        break;
-      default:
-        console.log('Sorry, we are out of ' + item.type + '.');
-    }
-      key++;
+      switch(item.type) {
+        case 'note' :
+          sortKey = item.sort;
+          returnValue.push(<TextInput style={styles.note} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey); this.value=text;}} >{this.state.data.list[sortKey].text}</TextInput>);
+          break;
+        case 'text' :
+          sortKey = item.sort;
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey); this.value=text;}} >{this.state.data.list[sortKey].text}</TextInput>);
+          break;
+        case 'image' :
+          //let fromKey = item.sort;
+          //returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+          break;
+        default:
+          console.log('Sorry, we are out of ' + item.type + '.');
+      }
     });
   }
     return returnValue;
