@@ -152,6 +152,8 @@ class CreatePageScreen extends React.Component {
   }
 
   HandleChange = (e, f) => {
+    console.log('text : ' +e);
+    console.log('position : ' +JSON.stringify(f));
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
   }
