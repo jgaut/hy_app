@@ -86,7 +86,7 @@ class CreatePageScreen extends React.Component {
     props.list.forEach(item => {
       switch(item.type) {
         case 'note' :
-          sortKey = item.sort;
+          var sortKey = item.sort;
           returnValue.push(<TextInput style={styles.note} key={{sortKey}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'text' :
