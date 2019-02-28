@@ -84,13 +84,22 @@ class CreatePageScreen extends React.Component {
     var key=0;
     if(props.list){
     props.list.forEach(item => {
-    
-      if(item.type=='TextInput'){
-        //console.log(item.type);
-        //Fixer la clef
+    switch(item.type) {
+      case 'note' :
         let fromKey = item.sort;
-        returnValue.push(<TextInput style={styles.input} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
-      }
+        returnValue.push(<TextInput style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+        break;
+      case 'text' :
+        let fromKey = item.sort;
+        returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+        break;
+      case 'image' :
+        //let fromKey = item.sort;
+        //returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+        break;
+      default:
+        console.log('Sorry, we are out of ' + item.type + '.');
+    }
       key++;
     });
   }
@@ -111,19 +120,19 @@ class CreatePageScreen extends React.Component {
   AddElement = (element) => {
     switch (element) {
       case 'note':
-        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"note", "text":'', "sort":this.state.data.list.length});
         console.log('add note');
         break;
       case 'text':
-        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"text", "text":'', "sort":this.state.data.list.length});
         console.log('add text');
         break;
       case 'image':
-        this.state.data.list.push({"type":"TextInput", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
         break;
       default:
-        console.log('Sorry, we are out of ' + expr + '.');
+        console.log('Sorry, we are out of ' + element + '.');
     }
 
     //unsave
@@ -219,7 +228,20 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
   },
-  input: {
+  note: {
+    flex: 1,
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
+  },
+  text: {
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
+  },
+  image: {
     height: 50,
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
