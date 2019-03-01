@@ -93,9 +93,8 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur')}} onFocus={()=>{UIManager.measure(this, (originX, originY, width, height, pageX, pageY) => {
-  console.log(originX, originY, width, height, pageX, pageY);
-});}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur')}} 
+            onFocus={()=>{this.Mesure(this)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
@@ -163,7 +162,13 @@ class CreatePageScreen extends React.Component {
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
   }
-
+  
+  Mesure = (e) => {
+    UIManager.measure(e, (originX, originY, width, height, pageX, pageY) => {
+    console.log(originX, originY, width, height, pageX, pageY);
+    });
+  }
+  
   render() {
     return (
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
