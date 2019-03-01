@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, UIManager } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
