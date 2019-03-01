@@ -6,7 +6,7 @@ import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
-import ImagePicker from 'react-native-image-picker';
+var ImagePicker = require('react-native-image-picker');
 
 class CreatePageScreen extends React.Component {
 
