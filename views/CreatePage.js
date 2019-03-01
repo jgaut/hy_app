@@ -18,7 +18,7 @@ class CreatePageScreen extends React.Component {
     });
   }
 
-  async componentDidMount() {
+  async function componentDidMount() {
   const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
   if (permission.status !== 'granted') {
       const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
