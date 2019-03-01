@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -164,6 +164,7 @@ class CreatePageScreen extends React.Component {
 
   render() {
     return (
+      <KeyboardAvoidingView  behavior='padding' style={styles.container}>
       <View style={styles.container}>
       <Text>
         {this.state.data.id}
@@ -198,6 +199,7 @@ class CreatePageScreen extends React.Component {
           </TouchableOpacity>
         </View>
       </View>
+      </KeyboardAvoidingView>
     );
   
 }
