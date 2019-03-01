@@ -221,7 +221,6 @@ container: {
     flex: 1,
   },
   note: {
-    flex: 1,
     height: 50,
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
