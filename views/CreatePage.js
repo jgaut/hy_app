@@ -19,11 +19,15 @@ class CreatePageScreen extends React.Component {
     //alertIfRemoteNotificationsDisabledAsync();
   }
 
-  async function alertIfRemoteNotificationsDisabledAsync() {
-  const { Permissions } = Expo;
-  const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-  if (status !== 'granted') {
-    alert('Hey! You might want to enable notifications for my app, they are good.');
+async componentDidMount() {
+  const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+  if (permission.status !== 'granted') {
+      const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (newPermission.status === 'granted') {
+        //its granted.
+      }
+  } else {
+   ....your code
   }
 }
 
