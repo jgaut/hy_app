@@ -12,7 +12,7 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data:{"id":'',"list":[]}, isSav:true, fromKey:''};
+    this.state = {data:{"id":'',"list":[]}, isSav:true, fromKey:'', keyboardVerticalOffset:0};
 
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
@@ -164,7 +164,7 @@ class CreatePageScreen extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={90}>
+      <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
