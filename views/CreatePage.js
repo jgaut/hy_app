@@ -223,14 +223,14 @@ container: {
   note: {
     height: 50,
     backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
+    borderWidth: 1, 
+    borderColor: '#555' 
   },
   text: {
     height: 150,
     backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
+    borderWidth: 1, 
+    borderColor: '#555' 
   },
   image: {
     height: 50,
