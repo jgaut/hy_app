@@ -93,7 +93,10 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onFocus={()=>{console.log('focus')}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onFocus={()=>{this.measure((width, height, px, py, fx, fy) => {
+            // do positioning checks here
+            console.log(px);
+            })}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
