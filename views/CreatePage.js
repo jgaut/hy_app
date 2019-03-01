@@ -175,7 +175,7 @@ async componentDidMount() {
         console.log('add text');
         break;
       case 'image':
-        var source=chooseFile();
+        var source=this.chooseFile();
         console.log(source);
         //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
