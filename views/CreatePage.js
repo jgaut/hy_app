@@ -127,9 +127,9 @@ class CreatePageScreen extends React.Component {
         console.log('add text');
         break;
       case 'image':
-        const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+        const permission = Permissions.getAsync(Permissions.CAMERA_ROLL);
         if (permission.status !== 'granted') {
-            const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+            const newPermission = Permissions.askAsync(Permissions.CAMERA_ROLL);
             if (newPermission.status === 'granted') {
               //its granted.
             }
