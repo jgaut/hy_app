@@ -165,10 +165,6 @@ class CreatePageScreen extends React.Component {
   render() {
     return (
       <KeyboardAvoidingView  behavior='padding' style={styles.container}>
-      <View style={styles.container}>
-      <Text>
-        {this.state.data.id}
-      </Text>
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
