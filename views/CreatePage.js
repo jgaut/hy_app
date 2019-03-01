@@ -92,7 +92,8 @@ class CreatePageScreen extends React.Component {
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput style={styles.note} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput style={styles.note} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);}} 
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=this.state.position[sortKey].y; console.log(this.state.keyboardVerticalOffset);}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'text' :
           var sortKey = item.sort;
