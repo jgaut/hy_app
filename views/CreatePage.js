@@ -196,8 +196,7 @@ class CreatePageScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  form: {
-    padding: 80, 
+  form: { 
     backgroundColor: '#f5fcff',
     flex: 1,
     alignItems: 'stretch',
