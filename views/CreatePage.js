@@ -93,7 +93,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onFocus={()=>{this.TextInputmeasure( (fx, fy, width, height, px, py) => {
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onFocus={()=>{this.TextInput.measure( (fx, fy, width, height, px, py) => {
 
     console.log('Component width is: ' + width)
     console.log('Component height is: ' + height)
