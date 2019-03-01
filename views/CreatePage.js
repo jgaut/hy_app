@@ -4,6 +4,7 @@ import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
+import { Permissions } from 'expo';
 
 class CreatePageScreen extends React.Component {
 
