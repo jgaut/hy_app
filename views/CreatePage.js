@@ -130,6 +130,39 @@ async componentDidMount() {
     }
   }
 
+  chooseFile = () => {
+    var options = {
+      title: 'Select Image',
+      customButtons: [
+        { name: 'customOptionKey', title: 'Choose Photo from Custom Option' },
+      ],
+      storageOptions: {
+        skipBackup: true,
+        path: 'images',
+      },
+    };
+    ImagePicker.showImagePicker(options, response => {
+      console.log('Response = ', response);
+ 
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+        alert(response.customButton);
+      } else {
+        let source = response;
+        // You can also display the image using data:
+        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+        /*this.setState({
+          filePath: source,
+        });*/
+        return source;
+      }
+    });
+  };
+
   AddElement = (element) => {
     switch (element) {
       case 'note':
@@ -141,20 +174,9 @@ async componentDidMount() {
         console.log('add text');
         break;
       case 'image':
-        CameraRoll.getPhotos({
-          first: 20,
-          assetType: 'Photos',
-        })
-        .then(r => {
-          //this.setState({ photos: r.edges });
-          console.log(r.edges);
-        })
-        .catch((err) => {
-          //Error Loading Images
-          console.log(err);
-        });
-
-        this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
+        var source=chooseFile();
+        console.log(source);
+        //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
         break;
       default:
