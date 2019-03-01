@@ -6,7 +6,7 @@ class HomeScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {
+    this.state = {selected:''
     };
   }
 
@@ -17,14 +17,19 @@ class HomeScreen extends React.Component {
     console.log(a);
     console.log(b);
   }
-  
+
   render() {
     const {navigate} = this.props.navigation;
     return (
       <View>
-        <CameraRollPicker
-  callback={this.getSelectedImages} />
-        </View>
+<CameraRollPicker
+          groupTypes='SavedPhotos'
+          maximum={3}
+          selected={this.state.selected}
+          assetType='Photos'
+          imagesPerRow={3}
+          imageMargin={5}
+          callback={this.getSelectedImages} />        </View>
       
     );
   }
