@@ -126,6 +126,7 @@ class CreatePageScreen extends React.Component {
         console.log('add text');
         break;
       case 'image':
+      console.log('add image 1');
         CameraRoll.getPhotos({
           first: 20,
           assetType: 'Photos',
