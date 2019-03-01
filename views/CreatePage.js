@@ -126,7 +126,6 @@ class CreatePageScreen extends React.Component {
         console.log('add text');
         break;
       case 'image':
-      console.log('add image 1');
         CameraRoll.getPhotos({
           first: 20,
           assetType: 'Photos',
@@ -137,6 +136,7 @@ class CreatePageScreen extends React.Component {
         })
         .catch((err) => {
           //Error Loading Images
+          console.log(err);
         });
 
         this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
