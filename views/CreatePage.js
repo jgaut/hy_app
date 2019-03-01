@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, CameraRoll } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
+import ImagePicker from 'react-native-image-picker';
 
 class CreatePageScreen extends React.Component {
 
