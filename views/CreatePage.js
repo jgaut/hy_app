@@ -6,7 +6,6 @@ import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
-var ImagePicker = require('react-native-image-picker');
 
 class CreatePageScreen extends React.Component {
 
@@ -20,18 +19,6 @@ class CreatePageScreen extends React.Component {
     });
     //alertIfRemoteNotificationsDisabledAsync();
   }
-
-async componentDidMount() {
-  const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
-  if (permission.status !== 'granted') {
-      const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-      if (newPermission.status === 'granted') {
-        //its granted.
-      }
-  } else {
-   //....your code
-  }
-}
 
   launch = () => {
 
@@ -130,39 +117,6 @@ async componentDidMount() {
       .catch(err => console.log(err));
     }
   }
-
-  chooseFile = () => {
-    var options = {
-      title: 'Select Image',
-      customButtons: [
-        { name: 'customOptionKey', title: 'Choose Photo from Custom Option' },
-      ],
-      storageOptions: {
-        skipBackup: true,
-        path: 'images',
-      },
-    };
-    ImagePicker.showImagePicker(options, response => {
-      console.log('Response = ', response);
- 
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      } else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-        alert(response.customButton);
-      } else {
-        let source = response;
-        // You can also display the image using data:
-        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-        /*this.setState({
-          filePath: source,
-        });*/
-        return source;
-      }
-    });
-  };
 
   AddElement = (element) => {
     switch (element) {

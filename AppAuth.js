@@ -6,6 +6,7 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
+import RollScreen from './views/Camerarollpicker';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
 import TabMenuScreen from './views/TabMenu';
@@ -59,6 +60,7 @@ const CustomdrawerComponent = (props) => (
 const MyDrawerNavigator = createDrawerNavigator({
   'Home': TabMenuScreen,
   'Profile': ProfileScreen,
+  'Roll': RollScreen,
   //'Journal': ListPageScreen,
   //'Create Page': CreatePageScreen
 }, 
