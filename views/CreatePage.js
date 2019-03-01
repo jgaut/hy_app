@@ -12,7 +12,7 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data:{"id":'',"list":[]}, isSav:true, fromKey:'', keyboardVerticalOffset:0};
+    this.state = {data:{"id":'',"list":[]}, isSav:true, fromKey:'', keyboardVerticalOffset:0, position:[]};
 
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
@@ -110,6 +110,8 @@ class CreatePageScreen extends React.Component {
 
   onLayout(event){
     console.log(event.nativeEvent.layout)
+    console.log(event)
+
   }
 
   SavMyData = (e) => {
@@ -156,21 +158,11 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  NouvellePage = () => {
-    this.launch();
-  }
-
   HandleChange = (e, f) => {
     console.log('text : ' +e);
     console.log('position : ' +JSON.stringify(f));
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
-  }
-  
-  Mesure = (e) => {
-    UIManager.measure(e, (originX, originY, width, height, pageX, pageY) => {
-    console.log(originX, originY, width, height, pageX, pageY);
-    });
   }
   
   render() {
