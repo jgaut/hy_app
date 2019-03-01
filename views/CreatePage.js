@@ -110,7 +110,7 @@ class CreatePageScreen extends React.Component {
 
   onLayout(event){
     console.log(event.nativeEvent.layout);
-    //console.log(event);
+    console.log(event);
   }
 
   SavMyData = (e) => {
