@@ -164,7 +164,7 @@ class CreatePageScreen extends React.Component {
 
   render() {
     return (
-      
+      <View style={styles.container}>
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
@@ -194,7 +194,7 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-     
+      </View>
     );
   
 }
