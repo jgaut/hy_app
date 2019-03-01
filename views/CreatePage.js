@@ -5,6 +5,7 @@ import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
+import { Constants } from 'expo';
 
 class CreatePageScreen extends React.Component {
 
@@ -246,6 +247,7 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex: 1,
+    paddingTop: Constants.statusBarHeight,
   },
   note: {
       padding:5,
