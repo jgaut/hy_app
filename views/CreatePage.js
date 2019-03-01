@@ -167,6 +167,8 @@ class CreatePageScreen extends React.Component {
       <KeyboardAvoidingView  behavior='padding' style={styles.container}>
         <View style={styles.form}>
           {this.Story(this.state.data)}
+        </View>
+        <View style={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData(false)}>
             <View style={styles.button}>
