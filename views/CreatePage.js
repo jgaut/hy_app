@@ -166,6 +166,7 @@ class CreatePageScreen extends React.Component {
     return (
       <KeyboardAvoidingView  behavior='padding' style={styles.container}>
         <View style={styles.form}>
+        <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
         <View style={styles.submitButton}>
@@ -193,6 +194,7 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
+        </View>
         </View>
       
       </KeyboardAvoidingView>
