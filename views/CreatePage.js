@@ -194,7 +194,7 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-      </View>
+      
       </KeyboardAvoidingView>
     );
   
