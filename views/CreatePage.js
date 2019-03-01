@@ -26,7 +26,7 @@ class CreatePageScreen extends React.Component {
         //its granted.
       }
   } else {
-   ....your code
+   //....your code
   }
 }
 
