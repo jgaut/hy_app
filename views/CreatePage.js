@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, CameraRoll } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -126,6 +126,18 @@ class CreatePageScreen extends React.Component {
         console.log('add text');
         break;
       case 'image':
+        CameraRoll.getPhotos({
+          first: 20,
+          assetType: 'Photos',
+        })
+        .then(r => {
+          //this.setState({ photos: r.edges });
+          console.log(r.edges);
+        })
+        .catch((err) => {
+          //Error Loading Images
+        });
+
         this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
         break;
