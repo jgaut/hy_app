@@ -94,7 +94,7 @@ class CreatePageScreen extends React.Component {
         case 'text' :
           var sortKey = item.sort;
           returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur')}} 
-            onFocus={()=>{}} onLayout = {this.onLayout} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+            onFocus={()=>{console.log('on focus')}} onLayout = {this.onLayout} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
@@ -109,8 +109,8 @@ class CreatePageScreen extends React.Component {
   }
 
   onLayout(event){
-    console.log(event.nativeEvent.layout)
-    console.log(event)
+    console.log(event.nativeEvent.layout);
+    console.log(event);
 
   }
 
