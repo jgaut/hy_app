@@ -16,16 +16,8 @@ class CreatePageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
     });
-    alertIfRemoteNotificationsDisabledAsync();
+    //alertIfRemoteNotificationsDisabledAsync();
   }
-
- alertIfRemoteNotificationsDisabledAsync = () => {
-  const { Permissions } = Expo;
-  const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
-  if (status !== 'granted') {
-    alert('Hey! You might want to enable notifications for my app, they are good.');
-  }
-}
 
   launch = () => {
 
