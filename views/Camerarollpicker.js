@@ -6,7 +6,9 @@ class HomeScreen extends React.Component {
 
   constructor() {
     super();
-    this.state = {selected:''
+ this.state = {
+      num: 0,
+      selected: [],
     };
   }
 
