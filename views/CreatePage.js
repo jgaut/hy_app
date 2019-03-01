@@ -67,7 +67,7 @@ class CreatePageScreen extends React.Component {
                       this.forceUpdate(); 
                       this.state.isSav=true;
                       //init position array
-                      for(var i=0; i<data.length; i++{
+                      for(var i=0; i<data.length; i++){
                         this.state.position[i]=0;
                       })
                       console.log(JSON.stringify(this.state.data));
