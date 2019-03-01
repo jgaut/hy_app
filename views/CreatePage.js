@@ -119,6 +119,7 @@ class CreatePageScreen extends React.Component {
   }
 
   AddElement = (element) => {
+    const {navigate} = this.props.navigation;
     switch (element) {
       case 'note':
         this.state.data.list.push({"type":"note", "text":'', "sort":this.state.data.list.length});
@@ -129,7 +130,7 @@ class CreatePageScreen extends React.Component {
         console.log('add text');
         break;
       case 'image':
-        var source=this.chooseFile();
+        navigate('Roll');
         console.log(source);
         //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
