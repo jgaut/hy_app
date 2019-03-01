@@ -93,7 +93,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={} onFocus={()=>{UIManager.measure(this, (originX, originY, width, height, pageX, pageY) => {
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur')}} onFocus={()=>{UIManager.measure(this, (originX, originY, width, height, pageX, pageY) => {
   console.log(originX, originY, width, height, pageX, pageY);
 });}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
