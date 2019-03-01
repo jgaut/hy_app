@@ -27,7 +27,7 @@ async componentDidMount() {
         //its granted.
       }
   } else {
-   ....your code
+   //....your code
   }
 }
 
