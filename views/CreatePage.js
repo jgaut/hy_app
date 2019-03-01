@@ -63,10 +63,13 @@ class CreatePageScreen extends React.Component {
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
-                      console.log("data : "+data);
                       this.state.data=data; 
                       this.forceUpdate(); 
                       this.state.isSav=true;
+                      //init position array
+                      for(var i=0; i<data.length; i++{
+                        this.state.position[i]=0;
+                      })
                       console.log(JSON.stringify(this.state.data));
                     })
                     .catch(error => {console.log(error);});
@@ -93,8 +96,8 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur')}} 
-            onFocus={()=>{console.log('on focus')}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0;}} 
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=this.state.position[sortKey].y;}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
@@ -111,6 +114,7 @@ class CreatePageScreen extends React.Component {
   onLayout(event, sortKey){
     console.log(event.nativeEvent.layout);
     console.log(JSON.stringify(sortKey));
+    this.state.position[sortKey]=event.nativeEvent.layout;
   }
 
   SavMyData = (e) => {
