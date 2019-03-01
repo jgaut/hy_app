@@ -221,14 +221,14 @@ container: {
     flex: 1,
   },
   note: {
-      padding:1,
+      padding:5,
     height: 50,
     backgroundColor: '#fff',
     borderWidth: 1, 
     borderColor: '#555' 
   },
   text: {
-      padding:1,
+      padding:5,
     height: 150,
     backgroundColor: '#fff',
     borderWidth: 1, 
