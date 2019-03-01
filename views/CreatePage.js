@@ -69,7 +69,7 @@ class CreatePageScreen extends React.Component {
                       //init position array
                       for(var i=0; i<data.length; i++){
                         this.state.position[i]=0;
-                      })
+                      }
                       console.log(JSON.stringify(this.state.data));
                     })
                     .catch(error => {console.log(error);});
