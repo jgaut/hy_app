@@ -93,7 +93,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onFocus={()=>{console.log('focus')}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
@@ -164,7 +164,7 @@ class CreatePageScreen extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView  behavior='padding' style={styles.container}>
+      
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
@@ -194,7 +194,7 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
+     
     );
   
 }
