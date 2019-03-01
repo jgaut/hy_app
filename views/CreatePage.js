@@ -131,7 +131,6 @@ class CreatePageScreen extends React.Component {
         break;
       case 'image':
         navigate('Roll');
-        console.log(source);
         //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
         break;
