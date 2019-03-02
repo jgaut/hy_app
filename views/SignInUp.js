@@ -32,7 +32,7 @@ class SignInScreen extends React.Component {
           placeholder="Email" 
           secureTextEntry={false} 
           style={styles.input} 
-          value={this.state.email}
+          
           
           />
         <Text style={styles.label} h2>{this.state.password==''?' ':"Password"}</Text>
