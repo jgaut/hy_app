@@ -52,6 +52,7 @@ class Roll extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 20,
     flex: 1,
     backgroundColor: '#F6AE2D',
   },
