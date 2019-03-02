@@ -124,7 +124,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'image' :
           var sortKey = item.sort;
-          returnValue.push(<Image style={{width: 50, height: 50}} key={sortKey} source={{uri: item.uri}} />);
+          returnValue.push(<Image style={{width: '100%'}} key={sortKey} source={{uri: item.uri}} />);
           break;
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
