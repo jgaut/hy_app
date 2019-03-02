@@ -23,7 +23,9 @@ class CreatePageScreen extends React.Component {
 
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
-      this.launch();
+      if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
+        this.launch();
+      }
     });
 
     this.props.navigation.addListener('didBlur', () => {
