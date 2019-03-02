@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard, Dimensions } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -19,6 +19,7 @@ class CreatePageScreen extends React.Component {
       keyboardVerticalOffset:0, 
       position:[], 
       keyboardHeight:0,
+      screenH:Dimensions.get('window').height,
     };
 
     this.props.navigation.addListener('didFocus', () => {
@@ -38,23 +39,10 @@ class CreatePageScreen extends React.Component {
   }
 
   _keyboardDidShow(e) {
-    //console.log('height keyboard :' +e.endCoordinates.height);
     this.state.keyboardHeight=e.endCoordinates.height;
   }
 
   launch() {
-    if(!this.state.isSav){
-      Alert.alert(
-        'Attention',
-        'Une page est en cours de création. Voulez-vous abandonner ?',
-        [
-          {text: 'Sauvegarder et continuer', onPress: () => {console.log('Sauvegarder et continuer'); this.SavMyData(true);} },
-          {text: 'Retour au brouillon', onPress: () => console.log('Retour au brouillon')},
-        ],
-        {cancelable: false},
-      );
-    }
-
     if(this.state.isSav){
       const fk = this.props.navigation.state.params.fromKey;
       this.state.fromKey = this.props.navigation.state.params.fromKey;
@@ -144,8 +132,6 @@ class CreatePageScreen extends React.Component {
   onLayout(event, sortKey){
     
     if(this.state.position[sortKey]==null){
-      //console.log(event.nativeEvent.layout);
-      //console.log(JSON.stringify(sortKey));
       this.state.position[sortKey]=event.nativeEvent.layout;
     }
   }
@@ -172,8 +158,11 @@ class CreatePageScreen extends React.Component {
         this.state.data.list.push({"type":"text", "text":'', "sort":this.state.data.list.length});
         console.log('add text');
         break;
-      case 'image':
+      case 'roll':
         navigate('Roll');
+        console.log('lauch roll screen');
+        break;
+      case 'image':
         //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
         console.log('add image');
         break;
@@ -209,12 +198,6 @@ class CreatePageScreen extends React.Component {
         </View>
         <View style={styles.submitButton}>
           
-          <TouchableOpacity key={Math.random()} onPress={() => this.SavMyData(false)}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Sauvegarde</Text>
-            </View>
-          </TouchableOpacity>
-          
           <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add note</Text>
@@ -227,7 +210,7 @@ class CreatePageScreen extends React.Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('image')}>
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('roll')}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add image</Text>
             </View>
