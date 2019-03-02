@@ -28,22 +28,7 @@ class SignInScreen extends React.Component {
         
         <Text style={styles.label} h2>{this.state.email==''?' ':"Email"}</Text>
 
-        <TextInput 
-          placeholder="Email" 
-          secureTextEntry={false} 
-          style={styles.input} 
-          value={this.state.email}
-          onChangeText={email => this.setState({ email })}
-          mode="outlined"/>
-        <Text style={styles.label} h2>{this.state.password==''?' ':"Password"}</Text>
-        
-        <TextInput 
-          placeholder="Password" 
-          secureTextEntry={true} 
-          style={styles.input} 
-          value={this.state.password}
-          onChangeText={password => this.setState({ password })}
-          mode="outlined"/>
+
 
         <TouchableOpacity onPress={() => {
 
@@ -109,23 +94,34 @@ class SignInScreen extends React.Component {
 
 const styles = StyleSheet.create({
   form: {
-    
+    padding: 80, 
+    backgroundColor: '#f5fcff',
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
   },
   label: {
     color: '#000000'
   },
 button: {    
-    
+    padding: 20,
+    backgroundColor: '#2196F3',
+    flex: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white'
   },
 container: {
-    
+    backgroundColor: '#f5fcff',
     flex: 1,
   },
   input: {
-    
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
   },
 });
 
