@@ -28,9 +28,10 @@ class Roll extends Component {
       selected: images,
     });
     const {navigate} = this.props.navigation;
-    console.log(current);
-    console.log(this.state.selected);
-    navigate('Create Page', {image:this.state.selected});
+    //console.log(current);
+    //console.log(this.state.selected);
+    navigate('Create Page', {image:current});
+    this.state.selected=[];
   }
 
   render() {
@@ -43,7 +44,7 @@ class Roll extends Component {
         </View>
         <CameraRollPicker
           groupTypes='SavedPhotos'
-          maximum={3}
+          maximum={1}
           selected={this.state.selected}
           assetType='Photos'
           imagesPerRow={3}
