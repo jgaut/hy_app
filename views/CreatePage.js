@@ -12,7 +12,14 @@ class CreatePageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {data:{"id":'',"list":[]}, isSav:true, fromKey:'', keyboardVerticalOffset:0, position:[]};
+    this.state = {
+      data:{"id":'',"list":[]}, 
+      isSav:true, 
+      fromKey:'', 
+      keyboardVerticalOffset:0, 
+      position:[], 
+      keyboardHeight:0,
+    };
 
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
@@ -24,6 +31,7 @@ class CreatePageScreen extends React.Component {
 
   _keyboardDidShow(e) {
     console.log('height keyboard :' +e.endCoordinates.height);
+    this.state.keyboardHeight=e.endCoordinates.height;
   }
 
   launch = () => {
@@ -99,12 +107,12 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           returnValue.push(<TextInput style={styles.note} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=this.state.position[sortKey].y; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=Math.max(0, this.state.position[sortKey].y-this.state.keyboardHeight); console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'text' :
           var sortKey = item.sort;
           returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=this.state.position[sortKey].y; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=Math.max(0, this.state.position[sortKey].y-this.state.keyboardHeight); console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
