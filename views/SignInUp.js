@@ -137,7 +137,7 @@ container: {
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
     borderBottomColor: '#555',
-    opacityz:10, 
+    textDecorationLine: '#fff', 
   },
 });
 
