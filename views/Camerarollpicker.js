@@ -37,11 +37,6 @@ class Roll extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.content}>
-          <Text style={styles.text}>
-            <Text style={styles.bold}> {this.state.num} </Text> images has been selected
-          </Text>
-        </View>
         <CameraRollPicker
           groupTypes='SavedPhotos'
           maximum={1}
