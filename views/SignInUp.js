@@ -137,7 +137,8 @@ container: {
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
     borderBottomColor: '#555',
-    textDecorationLinea: 'underline', 
+    textDecorationLine: 'underline',
+    textDecorationColor: 'black', 
   },
 });
 
