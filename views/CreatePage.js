@@ -27,7 +27,7 @@ class CreatePageScreen extends React.Component {
 
     this.props.navigation.addListener('didBlur', () => {
       console.log('time to sav!');
-      this.SavMyData(false);
+      this.SavMyData(true);
     });
 
     //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
