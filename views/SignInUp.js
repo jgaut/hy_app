@@ -135,10 +135,8 @@ container: {
   input: {
     height: 50,
     backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555',
-    textDecorationLine: 'underline',
-    textDecorationColor: 'black', 
+    borderWidth: 1, 
+    borderColor: '#555',
   },
 });
 
