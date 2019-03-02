@@ -27,7 +27,7 @@ class CreatePageScreen extends React.Component {
 
     this.props.navigation.addListener('didBlur', () => {
       console.log('time to sav!');
-      async SavMyData(false);
+      SavMyData(false);
     });
 
     //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
@@ -154,7 +154,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  SavMyData = (e) => {
+  async SavMyData = (e) => {
     if(!this.state.isSav){
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
         level: 'private',
