@@ -102,6 +102,7 @@ class CreatePageScreen extends React.Component {
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
+      console.log(item.type);
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
