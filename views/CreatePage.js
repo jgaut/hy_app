@@ -212,7 +212,7 @@ class CreatePageScreen extends React.Component {
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
-        <ScrollView style={styles.submitButton}>
+        <ScrollView contentContainerStyle={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
             <View style={styles.button}>
