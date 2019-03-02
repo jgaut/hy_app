@@ -35,15 +35,17 @@ class CreatePageScreen extends React.Component {
       this.SavMyData(false);
     });
 
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
+      console.log(e.endCoordinates.height);
+      this.state.keyboardHeight=e.endCoordinates.height;
+    }));
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
     console.log(this.state);
   }
 
   _keyboardDidShow(e) {
-    console.log(e.endCoordinates.height);
-    this.state.keyboardHeight=e.endCoordinates.height;
+    
   }
 
   launch() {
