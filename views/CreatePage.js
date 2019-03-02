@@ -124,7 +124,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'image' :
           var sortKey = item.sort;
-          returnValue.push(<Image key={sortKey} source={{uri: item.uri}} />);
+          returnValue.push(<Image style={{width: 50, height: 50}} key={sortKey} source={{uri: item.uri}} />);
           break;
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
@@ -180,7 +180,7 @@ class CreatePageScreen extends React.Component {
         break;
       case 'image':
         this.state.data.list.push({"type":"image", "uri":uri, "sort":this.state.data.list.length});
-        console.log('add image');
+        console.log('add image:' + uri);
         break;
       default:
         console.log('Sorry, we are out of ' + element + '.');
