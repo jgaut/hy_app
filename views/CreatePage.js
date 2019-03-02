@@ -29,10 +29,10 @@ class CreatePageScreen extends React.Component {
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
   }
 
-  _keyboardDidShow(e) {
+  /*_keyboardDidShow(e) {
     console.log('height keyboard :' +e.endCoordinates.height);
     this.state.keyboardHeight=e.endCoordinates.height;
-  }
+  }*/
 
   launch() {
     if(!this.state.isSav){
