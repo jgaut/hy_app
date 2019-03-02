@@ -208,7 +208,7 @@ class CreatePageScreen extends React.Component {
   
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <View style={styles.form}>
           {this.Story(this.state.data)}
@@ -293,6 +293,9 @@ container: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  contentContainer: {
+    paddingVertical: 20
   },
 });
 
