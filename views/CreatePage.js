@@ -99,7 +99,7 @@ class CreatePageScreen extends React.Component {
             style={styles.note} 
             key={sortKey} 
             onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{console.log('on focus'); this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
               {this.state.data.list[sortKey].text}
@@ -111,7 +111,7 @@ class CreatePageScreen extends React.Component {
             <TextInput multiline={true} style={styles.text}
             key={sortKey} 
             onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{console.log('on focus');this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
               {this.state.data.list[sortKey].text}
@@ -129,8 +129,13 @@ class CreatePageScreen extends React.Component {
     return returnValue;
   }
 
+  OffsetKeyboard(sortKey){
+    if((this.state.screenH-this.state.keyboardHeight) < this.state.position[sortKey].y){
+      this.state.keyboardVerticalOffset=this.state.position[sortKey].y - (this.state.screenH-this.state.keyboardHeight);
+    }
+  }
+
   onLayout(event, sortKey){
-    
     if(this.state.position[sortKey]==null){
       this.state.position[sortKey]=event.nativeEvent.layout;
     }
