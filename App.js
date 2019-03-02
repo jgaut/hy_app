@@ -43,7 +43,7 @@ class AppScreen extends React.Component {
         }
       ).catch((err) => {
         console.log(err);
-        //navigate('SignInUp');
+        navigate('SignInUp');
         }
       );
   }
