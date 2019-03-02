@@ -57,12 +57,6 @@ class CreatePageScreen extends React.Component {
       const fk = this.props.navigation.state.params.fromKey;
       this.state.fromKey = this.props.navigation.state.params.fromKey;
       //console.log(this.state.fromKey);
-      if(this.state.fromKey=='' || this.state.fromKey==null){
-        const uuidv4 = require('uuid/v4');
-        let myTmp = {"id":uuidv4(),"list":[]};
-        this.state.data = myTmp;
-        this.forceUpdate();
-      }else{
         console.log('create page : ' + this.state.fromKey);
         //Page exist ?
         Storage.list(this.state.fromKey+'.json', {level: 'private'})
@@ -99,7 +93,6 @@ class CreatePageScreen extends React.Component {
           this.props.navigation.state.params.fromKey=null;  
         })
         .catch(err => console.log('err : ' +err));
-      }
     }
   }
 
