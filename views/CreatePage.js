@@ -123,8 +123,8 @@ class CreatePageScreen extends React.Component {
             </TextInput>);
           break;
         case 'image' :
-          //var fromKey = item.sort;
-          //returnValue.push(<TextInput multiline={true} style={styles.note} key={key} onChangeText={(text) => {this.HandleChange(text, fromKey); this.value=text;}} >{this.state.data.list[fromKey].text}</TextInput>);
+          var fromKey = item.sort;
+          returnValue.push(<Image source={{uri: item.uri}} />);
           break;
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
