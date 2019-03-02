@@ -17,7 +17,13 @@ class CreatePageScreen extends React.Component {
     this.props.navigation.addListener('didFocus', () => {
      this.launch();
     });
-    //alertIfRemoteNotificationsDisabledAsync();
+
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+  }
+
+  _keyboardDidShow(e) {
+    console.log('height keyboard :' +e.endCoordinates.height);
   }
 
   launch = () => {
