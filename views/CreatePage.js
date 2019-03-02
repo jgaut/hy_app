@@ -208,11 +208,12 @@ class CreatePageScreen extends React.Component {
   
   render() {
     return (
+      <ScrollView contentContainerStyle={styles.container}>
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
-        <ScrollView contentContainerStyle={styles.submitButton}>
+        <View style={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
             <View style={styles.button}>
@@ -231,8 +232,9 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
-        </ScrollView>
+        </View>
       </KeyboardAvoidingView>
+      </ScrollView>
     );
   
 }
