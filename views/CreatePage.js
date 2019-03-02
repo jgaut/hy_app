@@ -22,7 +22,8 @@ class CreatePageScreen extends React.Component {
     };
 
     this.props.navigation.addListener('didFocus', () => {
-     this.launch();
+      console.log('time to launch!');
+      this.launch();
     });
 
     this.props.navigation.addListener('didBlur', () => {
@@ -148,8 +149,8 @@ class CreatePageScreen extends React.Component {
   onLayout(event, sortKey){
     
     if(this.state.position[sortKey]==null){
-      console.log(event.nativeEvent.layout);
-      console.log(JSON.stringify(sortKey));
+      //console.log(event.nativeEvent.layout);
+      //console.log(JSON.stringify(sortKey));
       this.state.position[sortKey]=event.nativeEvent.layout;
     }
   }
