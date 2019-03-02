@@ -154,7 +154,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  async SavMyData = (e) => {
+  SavMyData = (e) => {
     if(!this.state.isSav){
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
         level: 'private',
