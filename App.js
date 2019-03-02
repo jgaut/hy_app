@@ -39,7 +39,7 @@ class AppScreen extends React.Component {
     Auth.currentAuthenticatedUser({bypassCache: false})
       .then((user) => {
         console.log(user);
-        //navigate('AppAuth', {user: user.attributes.email});
+        navigate('AppAuth', {user: user.attributes.email});
         }
       ).catch((err) => {
         console.log(err);
