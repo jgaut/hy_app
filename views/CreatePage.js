@@ -25,6 +25,10 @@ class CreatePageScreen extends React.Component {
      this.launch();
     });
 
+    this.props.navigation.addListener('didBlur', () => {
+     console.log('time to sav!');
+    });
+
     //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
   }
@@ -102,7 +106,6 @@ class CreatePageScreen extends React.Component {
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
-      console.log(item.type);
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
