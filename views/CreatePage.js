@@ -33,14 +33,14 @@ class CreatePageScreen extends React.Component {
       this.SavMyData(false);
     });
 
-    //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
   }
 
-  /*_keyboardDidShow(e) {
-    console.log('height keyboard :' +e.endCoordinates.height);
+  _keyboardDidShow(e) {
+    //console.log('height keyboard :' +e.endCoordinates.height);
     this.state.keyboardHeight=e.endCoordinates.height;
-  }*/
+  }
 
   launch() {
     if(!this.state.isSav){
@@ -73,7 +73,7 @@ class CreatePageScreen extends React.Component {
           }else{
             Storage.get(fk+'.json', {level: 'private'})
               .then(result => {
-                console.log("get result : " +result);
+                //console.log("get result : " +result);
                 //result => private url
                 fetch(result)
                   .then(response => response.json())
@@ -85,7 +85,7 @@ class CreatePageScreen extends React.Component {
                       for(var i=0; i<data.length; i++){
                         this.state.position[i]=0;
                       }
-                      console.log(JSON.stringify(this.state.data));
+                      //console.log(JSON.stringify(this.state.data));
                     })
                     .catch(error => {console.log(error);});
               })
