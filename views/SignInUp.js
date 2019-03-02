@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, KeyboardAvoidingView, Dimensions } from 'react-native';
 import Auth from '@aws-amplify/auth';
 
 class SignInScreen extends React.Component {
@@ -7,10 +7,11 @@ class SignInScreen extends React.Component {
   constructor() {
     super();
     this.state = {
-    email: '',
-    password: '',
-    err: '',
-    errColor: '#f5fcff'      };
+      email: '',
+      password: '',
+      err: '',
+      errColor: '#f5fcff'
+    };
   }
 
   render() {
