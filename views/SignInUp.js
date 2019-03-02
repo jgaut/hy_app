@@ -109,34 +109,23 @@ class SignInScreen extends React.Component {
 
 const styles = StyleSheet.create({
   form: {
-    padding: 80, 
-    backgroundColor: '#f5fcff',
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
+    
   },
   label: {
     color: '#000000'
   },
 button: {    
-    padding: 20,
-    backgroundColor: '#2196F3',
-    flex: 0.5,
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
   buttonText: {
     color: 'white'
   },
 container: {
-    backgroundColor: '#f5fcff',
+    
     flex: 1,
   },
   input: {
-    height: 50,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
+    
   },
 });
 
