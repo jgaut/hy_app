@@ -123,7 +123,7 @@ class CreatePageScreen extends React.Component {
             </TextInput>);
           break;
         case 'image' :
-          var fromKey = item.sort;
+          var sortKey = item.sort;
           returnValue.push(<Image key={sortKey} source={{uri: item.uri}} />);
           break;
         default:
