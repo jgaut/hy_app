@@ -34,7 +34,7 @@ class SignInScreen extends React.Component {
           style={styles.input} 
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
-          mode="outlined"/>
+          />
         <Text style={styles.label} h2>{this.state.password==''?' ':"Password"}</Text>
         
 
