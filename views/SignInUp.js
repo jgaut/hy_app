@@ -30,7 +30,7 @@ class SignInScreen extends React.Component {
 
         <TextInput 
           placeholder="Email" 
-          secureTextEntry={false} 
+          
           
           
           
