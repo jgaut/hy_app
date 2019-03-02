@@ -20,7 +20,7 @@ class SignInScreen extends React.Component {
 
     return (
 
-    <KeyboardAvoidingView  behavior='padding' style={styles.container}>
+    <KeyboardAvoidingView  behavior='padding' style={styles.container} keyboardVerticalOffset=0>
       
       <View style={styles.form}>
       
