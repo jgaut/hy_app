@@ -19,7 +19,8 @@ class CreatePageScreen extends React.Component {
       keyboardVerticalOffset:0, 
       position:[], 
       keyboardHeight:0,
-      screenH:Dimensions.get('window').height,
+      screenH:740,
+      //screenH:Dimensions.get('window').height,
     };
 
     this.props.navigation.addListener('didFocus', () => {
