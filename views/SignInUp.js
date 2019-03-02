@@ -29,7 +29,6 @@ class SignInScreen extends React.Component {
         <Text style={styles.label} h2>{this.state.email==''?' ':"Email"}</Text>
 
         <TextInput 
-          placeholder="Email" 
           
           
           
