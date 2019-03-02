@@ -28,7 +28,7 @@ class CreatePageScreen extends React.Component {
         this.launch();
       }else if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
-        AddElement('image', this.props.navigation.state.params.image.uri);
+        this.AddElement('image', this.props.navigation.state.params.image.uri);
       }
     });
 
