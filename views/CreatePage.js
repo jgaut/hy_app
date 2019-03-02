@@ -25,9 +25,7 @@ class CreatePageScreen extends React.Component {
      this.launch();
     });
 
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
-      this.state.keyboardHeight=e.endCoordinates.height;
-    });
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
   }
 
@@ -36,8 +34,7 @@ class CreatePageScreen extends React.Component {
     this.state.keyboardHeight=e.endCoordinates.height;
   }
 
-  launch = () => {
-
+  launch() {
     if(!this.state.isSav){
       Alert.alert(
         'Attention',
