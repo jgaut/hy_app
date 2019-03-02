@@ -29,13 +29,21 @@ class SignInScreen extends React.Component {
         <Text style={styles.label} h2>{this.state.email==''?' ':"Email"}</Text>
 
         <TextInput 
-          
-          
-          
-          
-          />
+          placeholder="Email" 
+          secureTextEntry={false} 
+          style={styles.input} 
+          value={this.state.email}
+          onChangeText={email => this.setState({ email })}
+          mode="outlined"/>
         <Text style={styles.label} h2>{this.state.password==''?' ':"Password"}</Text>
         
+        <TextInput 
+          placeholder="Password" 
+          secureTextEntry={true} 
+          style={styles.input} 
+          value={this.state.password}
+          onChangeText={password => this.setState({ password })}
+          mode="outlined"/>
 
         <TouchableOpacity onPress={() => {
 
