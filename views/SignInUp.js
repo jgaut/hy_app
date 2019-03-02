@@ -136,7 +136,8 @@ container: {
     height: 50,
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
+    borderBottomColor: '#555',
+    underlineColorAndroid:'#fff', 
   },
 });
 
