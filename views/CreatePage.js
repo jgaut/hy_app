@@ -25,7 +25,7 @@ class CreatePageScreen extends React.Component {
      this.launch();
     });
 
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
   }
 
@@ -105,8 +105,14 @@ class CreatePageScreen extends React.Component {
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput style={styles.note} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(
+          <TextInput 
+            style={styles.note} 
+            key={sortKey} 
+            onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
           break;
         case 'text' :
           var sortKey = item.sort;
