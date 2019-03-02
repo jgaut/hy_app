@@ -137,7 +137,7 @@ container: {
     backgroundColor: '#fff',
     borderBottomWidth: 1, 
     borderBottomColor: '#555',
-    underlineColorAndroid:'#fff', 
+    opacity:'10', 
   },
 });
 
