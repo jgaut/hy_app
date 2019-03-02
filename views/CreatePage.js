@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard, Dimensions } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard, Dimensions, ScrollView } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -28,6 +28,7 @@ class CreatePageScreen extends React.Component {
         this.launch();
       }else if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
+        AddElement('image', this.props.navigation.state.params.image.uri);
       }
     });
 
@@ -162,7 +163,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  AddElement = (element) => {
+  AddElement = (element, uri) => {
     const {navigate} = this.props.navigation;
     switch (element) {
       case 'note':
@@ -178,7 +179,7 @@ class CreatePageScreen extends React.Component {
         console.log('lauch roll screen');
         break;
       case 'image':
-        //this.state.data.list.push({"type":"image", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"image", "uri":uri, "sort":this.state.data.list.length});
         console.log('add image');
         break;
       default:
@@ -211,7 +212,7 @@ class CreatePageScreen extends React.Component {
         <View style={styles.form}>
           {this.Story(this.state.data)}
         </View>
-        <View style={styles.submitButton}>
+        <ScrollView style={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
             <View style={styles.button}>
@@ -230,7 +231,7 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
-        </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     );
   
