@@ -112,12 +112,21 @@ class CreatePageScreen extends React.Component {
             onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
             onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
-            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
+              {this.state.data.list[sortKey].text}
+            </TextInput>);
           break;
         case 'text' :
           var sortKey = item.sort;
-          returnValue.push(<TextInput multiline={true} style={styles.text} key={sortKey} onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} onLayout = {(event) => {this.onLayout(event, sortKey)}} onChangeText={(text) => {this.HandleChange(text, sortKey);}} >{this.state.data.list[sortKey].text}</TextInput>);
+          returnValue.push(
+            <TextInput multiline={true} style={styles.text}
+            key={sortKey} 
+            onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{console.log('on focus'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
+              {this.state.data.list[sortKey].text}
+            </TextInput>);
           break;
         case 'image' :
           //var fromKey = item.sort;
