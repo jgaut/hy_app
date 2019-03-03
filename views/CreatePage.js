@@ -110,42 +110,30 @@ class CreatePageScreen extends React.Component {
 
   Story(item2, index, move, moveEnd, isActive, component) {
 
-    console.log('compo : ' + JSON.stringify(component.state));
-    return <Text>{index}</Text>;
-    function OffsetKeyboard(sortKey, state){
-
-      var sortKeyPosition = state.position.find(function(element) { return element.sortKey == sortKey;});
-
-      if((state.screenH-state.keyboardHeight) < (sortKeyPosition.layout.y - state.screenScroll)) {
-        state.keyboardVerticalOffset=(sortKeyPosition.layout.y - state.screenScroll) - (state.screenH-state.keyboardHeight) + sortKeyPosition.layout.height;
-        forceUpdate();
-      }else if(state.keyboardHeight > (sortKeyPosition.layout.y - state.screenScroll)){
-        state.keyboardVerticalOffset=(state.keyboardHeight - (sortKeyPosition.layout.y - state.screenScroll) + sortKeyPosition.layout.height)*-1
-        forceUpdate();
-      }
-    }
-
+    //console.log('compo : ' + JSON.stringify(component.state));
+    //return <Text>{index}</Text>;
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
+
     item = item2.item;
     if(item){
-      console.log('item : ' + JSON.stringify(state));
+      //console.log('item : ' + JSON.stringify(component.state));
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
-          console.log('returnValue : ' + item.text);
+          //console.log('returnValue : ' + item.text);
           return(
-              <TextInput 
-                style={styles.note} 
-                key={sortKey} 
-                onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
-                onFocus={()=>{OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
-                onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
-                //onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
-                //onScroll={(event) => {this.onLayout(event, sortKey)}}
-              >
-                {item.text}
-              </TextInput>
+            <TextInput 
+              style={styles.note} 
+              key={sortKey} 
+              onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
+              onFocus={()=>{component.OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
+              onLayout = {(event) => {component.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
+              onChangeText={(text) => {component.HandleChange(text, sortKey);}} 
+              onScroll={(event) => {component.onLayout(event, sortKey)}}
+            >
+              {item.text}
+            </TextInput>
           );
           console.log('returnValue 2: ' + item.text);
           break;
@@ -155,10 +143,11 @@ class CreatePageScreen extends React.Component {
           return(
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
-              onBlur={()=>{state.keyboardVerticalOffset=0; console.log(state.keyboardVerticalOffset);this.forceUpdate();}} 
-              onFocus={()=>{OffsetKeyboard(sortKey, state); forceUpdate();}} 
-              onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
-              //onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
+              onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
+              onFocus={()=>{component.OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
+              onLayout = {(event) => {component.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
+              onChangeText={(text) => {component.HandleChange(text, sortKey);}}
+              onScroll={(event) => {component.onLayout(event, sortKey)}}
             >
               {item.text}
             </TextInput>
@@ -182,7 +171,16 @@ class CreatePageScreen extends React.Component {
   }
 
   
-
+  OffsetKeyboard(sortKey){
+    var sortKeyPosition = this.state.position.find(function(element) { return element.sortKey == sortKey;});
+    if((this.state.screenH-state.keyboardHeight) < (sortKeyPosition.layout.y - this.state.screenScroll)) {
+      this.state.keyboardVerticalOffset=(sortKeyPosition.layout.y - this.state.screenScroll) - (this.state.screenH-state.keyboardHeight) + sortKeyPosition.layout.height;
+      this.forceUpdate();
+    }else if(this.state.keyboardHeight > (sortKeyPosition.layout.y - this.state.screenScroll)){
+      this.state.keyboardVerticalOffset=(this.state.keyboardHeight - (sortKeyPosition.layout.y - this.state.screenScroll) + sortKeyPosition.layout.height)*-1
+      this.forceUpdate();
+    }
+  }
   
 
   SavMyData(e) {
