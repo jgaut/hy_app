@@ -110,11 +110,6 @@ class CreatePageScreen extends React.Component {
 
   Story(item, index, move, moveEnd, isActive) {
 
-    function onLayout(event, sortKey){
-      console.log('layout');
-      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
-    }
-
     console.log('call story : ' + JSON.stringify(item));
     var returnValue = [];
     item = item.item;
@@ -129,7 +124,7 @@ class CreatePageScreen extends React.Component {
                 key={sortKey} 
                 onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
                 onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-                onLayout = {(event) => {onLayout(event, sortKey)}} 
+                onLayout = {(event) => {this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
               >
@@ -143,8 +138,8 @@ class CreatePageScreen extends React.Component {
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
               onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-              onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-              onLayout = {(event) => {onLayout(event, sortKey)}} 
+              onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}}
+              onLayout = {(event) => {this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
               {item.text}
