@@ -131,7 +131,7 @@ class CreatePageScreen extends React.Component {
                 //{...this.panResponder.panHandlers}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               //>
-              <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+              <KeyboardAvoidingView key={Math.random()} behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
