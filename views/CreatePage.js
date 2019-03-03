@@ -281,7 +281,7 @@ container: {
     borderBottomColor: '#555' 
   },
   submitButton: {
-    //position: 'absolute',
+    position: 'absolute',
     bottom:0,
     left:0,
     flex: 1,
