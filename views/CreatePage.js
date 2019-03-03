@@ -128,6 +128,7 @@ class CreatePageScreen extends React.Component {
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
                 onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
                 onResponderRelease={(event) => {console.log(JSON.stringify('release : '+event));}}
+                onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+event));}}
               >
                 {item.text}
               </TextInput>
