@@ -157,12 +157,7 @@ class CreatePageScreen extends React.Component {
           return(
             <TouchableOpacity
             key={Math.random()} 
-        style={{ 
-          height: 100, 
-          backgroundColor: isActive ? 'blue' : 'red',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
+ 
         onLongPress={move}
         onPressOut={moveEnd}
       >
@@ -184,12 +179,7 @@ class CreatePageScreen extends React.Component {
           return(
              <TouchableOpacity
             key={Math.random()}
-        style={{ 
-          height: 100, 
-          backgroundColor: isActive ? 'blue' : 'red',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
+      
         onLongPress={move}
         onPressOut={moveEnd}
       >
