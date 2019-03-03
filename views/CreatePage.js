@@ -262,7 +262,7 @@ class CreatePageScreen extends React.Component {
     return (
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
-      <View style={{ flex: 1 }}>
+
         <DraggableFlatList
           data={this.state.data.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive, this)}
@@ -270,7 +270,7 @@ class CreatePageScreen extends React.Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
         />
-        </View>
+
 /*
         <View style={styles.submitButton}>
           
