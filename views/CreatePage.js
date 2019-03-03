@@ -9,6 +9,11 @@ import { Constants } from 'expo';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import DraggableFlatList from 'react-native-draggable-flatlist'
 
+onLayout(event, sortKey){
+    //console.log('layout');
+      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
+  }
+
 class CreatePageScreen extends React.Component {
 
 
@@ -176,10 +181,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  onLayout(event, sortKey){
-    //console.log('layout');
-      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
-  }
+  
 
   SavMyData(e) {
     if(!this.state.isSav){
