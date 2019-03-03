@@ -112,6 +112,7 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           returnValue.push(
+            <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
             <GestureRecognizer 
               key={Math.random()}
               onSwipeLeft={(state) => this.onSwipeLeft(state, sortKey)}
@@ -130,6 +131,7 @@ class CreatePageScreen extends React.Component {
                   {item.text}
               </TextInput>
             </GestureRecognizer>
+            </KeyboardAvoidingView>
           );
           break;
         case 'text' :
@@ -259,8 +261,8 @@ class CreatePageScreen extends React.Component {
   render() {
     return (
 
-      <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
-        
+      //<KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+      <View>
         <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.handleScroll(event)}}>
           {this.Story(this.state.data)}
         </ScrollView>
@@ -286,8 +288,8 @@ class CreatePageScreen extends React.Component {
           </TouchableOpacity>
         
         </View>
-      
-      </KeyboardAvoidingView>
+      </View>     
+      //</KeyboardAvoidingView>
 
     );
   
