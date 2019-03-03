@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard, Dimensions, ScrollView, Image } from 'react-native';
+import { StyleSheet, TextInput, View, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Keyboard, Dimensions, ScrollView, Image, PanResponder } from 'react-native';
 import Auth from '@aws-amplify/auth';
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -54,6 +54,13 @@ class CreatePageScreen extends React.Component {
       //console.log('keyboard : ' + this.state.keyboardHeight);
     });
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+
+    this.panResponder = PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
+      onMoveShouldSetResponderCapture: () => true,
+      onMoveShouldSetPanResponderCapture: () => true
+    });
 
   }
 
@@ -120,7 +127,7 @@ class CreatePageScreen extends React.Component {
               >*/
               <View
                 key={Math.random()}
-                onMoveShouldSetResponderCapture={(evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500}}
+                {...this.panResponder.panHandlers}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               >
               <TextInput 
