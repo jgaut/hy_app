@@ -113,7 +113,8 @@ class CreatePageScreen extends React.Component {
   }
 
   Story(props) {
-    console.log('call story');
+    console.log('call story : ' + props );
+    return '';
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
