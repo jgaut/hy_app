@@ -91,7 +91,10 @@ class CreatePageScreen extends React.Component {
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
-                      this.state.data=data; 
+                      this.state.data=data;
+                      this.state.data.list.forEach(item => {
+                        item.key=`item-${item.sort}`;
+                      });
                       this.forceUpdate(); 
                       this.state.isSav=true;
                       //init position array
