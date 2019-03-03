@@ -105,7 +105,9 @@ class CreatePageScreen extends React.Component {
             onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
             onFocus={()=>{console.log('on focus'); this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
-            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
+            onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
+            onScroll={(event) => {this.onLayout(event, sortKey)}} 
+            >
               {this.state.data.list[sortKey].text}
             </TextInput>);
           break;
