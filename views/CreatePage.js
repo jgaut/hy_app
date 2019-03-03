@@ -133,7 +133,7 @@ class CreatePageScreen extends React.Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
-            <TextInput 
+            <Text
               style={styles.note} 
               key={sortKey} 
               onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
@@ -143,7 +143,7 @@ class CreatePageScreen extends React.Component {
               onScroll={(event) => {component.onLayout(event, sortKey)}}
             >
               {item.text}
-            </TextInput>
+            </Text>
             </TouchableOpacity>
           );
           console.log('returnValue 2: ' + item.text);
@@ -161,7 +161,7 @@ class CreatePageScreen extends React.Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
-            <TextInput multiline={true} style={styles.text}
+            <Text multiline={true} style={styles.text}
               key={sortKey} 
               onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
               onFocus={()=>{component.OffsetKeyboard(sortKey); component.forceUpdate();}} 
@@ -170,7 +170,7 @@ class CreatePageScreen extends React.Component {
               onScroll={(event) => {component.onLayout(event, sortKey)}}
             >
               {item.text}
-            </TextInput>
+            </Text>
             </TouchableOpacity>
           );
           break;
