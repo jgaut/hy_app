@@ -112,7 +112,7 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           returnValue.push(
-            <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+            <KeyboardAvoidingView key={Math.random()} behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
             <GestureRecognizer 
               key={Math.random()}
               onSwipeLeft={(state) => this.onSwipeLeft(state, sortKey)}
