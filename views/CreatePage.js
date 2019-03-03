@@ -301,7 +301,7 @@ container: {
   },
   contentContainer: {
     paddingTop: 0,
-    paddingBottom: 50,
+    paddingBottom: 100,
   },
 });
 
