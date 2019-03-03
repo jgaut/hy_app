@@ -276,7 +276,7 @@ class CreatePageScreen extends React.Component {
     return (
 
       
-       <KeyboardAvoidingView key={Math.random()} behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+       <KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
                
         <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.handleScroll(event)}}>
           {this.Story(this.state.data)}
