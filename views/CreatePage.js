@@ -185,7 +185,7 @@ class CreatePageScreen extends React.Component {
 
   AddElement = (element, data) => {
     const {navigate} = this.props.navigation;
-    const maxPosition = 0;
+    var maxPosition = 0;
     this.state.data.list.forEach(item => {
       maxPosition=Math.max(maxPosition, item.sort);
     });
