@@ -20,6 +20,7 @@ class CreatePageScreen extends React.Component {
       position:[], 
       keyboardHeight:290,
       screenH:Dimensions.get('window').height,
+      screenScroll:0,
     };
 
     this.props.navigation.addListener('didFocus', () => {
@@ -136,12 +137,12 @@ class CreatePageScreen extends React.Component {
   }
 
   OffsetKeyboard(sortKey){
-    if((this.state.screenH-this.state.keyboardHeight) < this.state.position[sortKey].y){
+    if((this.state.screenH-this.state.keyboardHeight) < (this.state.position[sortKey].y - this.state.screenScroll)) {
       this.state.keyboardVerticalOffset=this.state.position[sortKey].y - (this.state.screenH-this.state.keyboardHeight) + this.state.position[sortKey].height;
       console.log('decalage : ' + this.state.keyboardVerticalOffset);
       console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height);
       this.forceUpdate();
-    }else if(this.state.keyboardHeight > this.state.position[sortKey].y){
+    }else if(this.state.keyboardHeight > (this.state.position[sortKey].y - this.state.screenScroll)){
       this.state.keyboardVerticalOffset=(this.state.keyboardHeight - this.state.position[sortKey].y + this.state.position[sortKey].height)*-1
       console.log('decalage : ' + this.state.keyboardVerticalOffset);
       console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height);
@@ -214,7 +215,9 @@ class CreatePageScreen extends React.Component {
     /*console.log(event);
     console.log(event.nativeEvent);
     console.log(event.nativeEvent.contentOffset);
-  */}
+  */
+    this.state.screenScroll=event.nativeEvent.contentOffset.y;
+  }
   
   render() {
     return (
