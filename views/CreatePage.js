@@ -60,7 +60,7 @@ class CreatePageScreen extends React.Component {
       //onStartShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onMoveShouldSetResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onMoveShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
-      onMoveShouldSetPanResponder: () => {Alert.alert('move detected'); return true}
+      //onMoveShouldSetPanResponder: () => {Alert.alert('move detected'); return true}
     });
 
   }
