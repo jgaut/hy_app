@@ -188,7 +188,7 @@ class CreatePageScreen extends React.Component {
     const maxPosition = 0;
     this.state.data.list.forEach(item => {
       maxPosition=Math.max(maxPosition, item.sort);
-    }
+    });
     maxPosition = maxPosition +1;
 
     switch (element) {
