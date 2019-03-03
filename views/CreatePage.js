@@ -304,7 +304,7 @@ class CreatePageScreen extends React.Component {
         <DraggableFlatList
           data={this.state.data.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive, this)}
-          keyExtractor={(item, index) => {console.log('keyExtractor :' + index); `draggable-item-${item.sort}`;}}
+          keyExtractor={(item, index) => {console.log('keyExtractor :' + index); return `draggable-item-${item.sort}`;}}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
         />
