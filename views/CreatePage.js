@@ -25,6 +25,12 @@ class CreatePageScreen extends React.Component {
       screenScroll:0,
     };
 
+    this.data2: [...Array(20)].map((d, index) => ({
+      key: `item-${index}`,
+      label: index,
+      backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+    }))
+
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
@@ -113,12 +119,12 @@ class CreatePageScreen extends React.Component {
   }
 
   Story(item, index, move, moveEnd, isActive) {
-    console.log('call story : ' + item );
+    //console.log('call story : ' + item );
     return (
       <TouchableOpacity
         style={{ 
           height: 100, 
-          backgroundColor: isActive ? 'blue' : 'blue',
+          backgroundColor: isActive ? 'blue' : item.backgroundColor,
           alignItems: 'center', 
           justifyContent: 'center' 
         }}
@@ -298,11 +304,11 @@ class CreatePageScreen extends React.Component {
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <DraggableFlatList
-          data={this.state.data.list}
+          data={this.state.data2}
           renderItem={this.Story}
-          keyExtractor={(item, index) => `draggable-item-${item.sort}`}
+          keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.state.data.list=data }
+          onMoveEnd={({ data }) => this.state.data2=data }
         />
 /*
         <View style={styles.submitButton}>
