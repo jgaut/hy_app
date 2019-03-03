@@ -111,7 +111,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  Story(item2, index, move, moveEnd, isActive, component) {
+  Story(item, index, move, moveEnd, isActive, component) {
 
     //console.log('compo : ' + JSON.stringify(component.state));
     //return <Text>{index}</Text>;
