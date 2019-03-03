@@ -79,9 +79,6 @@ class CreatePageScreen extends React.Component {
                       this.forceUpdate(); 
                       this.state.isSav=true;
                       //init position array
-                      for(var i=0; i<data.length; i++){
-                        this.state.position[i]=0;
-                      }
                       //console.log(JSON.stringify(this.state.data));
                     })
                     .catch(error => {console.log(error);});
@@ -169,9 +166,7 @@ class CreatePageScreen extends React.Component {
 
   onLayout(event, sortKey){
     //console.log('layout');
-    if(this.state.position[sortKey]==null){
-      this.state.position[sortKey]=event.nativeEvent.layout;
-    }
+      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
   }
 
   SavMyData = (e) => {
@@ -187,13 +182,19 @@ class CreatePageScreen extends React.Component {
 
   AddElement = (element, data) => {
     const {navigate} = this.props.navigation;
+    const maxPosition = 0;
+    this.state.data.list.forEach(item => {
+      maxPosition=Math.max(maxPosition, item.sort);
+    }
+    maxPosition = maxPosition +1;
+    
     switch (element) {
       case 'note':
-        this.state.data.list.push({"type":"note", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"note", "text":'', "sort":maxPosition});
         console.log('add note');
         break;
       case 'text':
-        this.state.data.list.push({"type":"text", "text":'', "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"text", "text":'', "sort":maxPosition});
         console.log('add text');
         break;
       case 'roll':
@@ -201,7 +202,7 @@ class CreatePageScreen extends React.Component {
         console.log('lauch roll screen');
         break;
       case 'image':
-        this.state.data.list.push({"type":"image", "uri":data.uri, "height":data.height, "width":data.width, "sort":this.state.data.list.length});
+        this.state.data.list.push({"type":"image", "uri":data.uri, "height":data.height, "width":data.width, "sort":maxPosition});
         console.log('add image:' + JSON.stringify(data));
         break;
       default:
