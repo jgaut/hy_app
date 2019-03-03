@@ -127,8 +127,8 @@ class CreatePageScreen extends React.Component {
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
                 onResponderMove={(event) => {console.log(JSON.stringify(event));}}
-                >
-                  {item.text}
+              >
+                {item.text}
               </TextInput>
             //</GestureRecognizer>
           );
@@ -137,11 +137,12 @@ class CreatePageScreen extends React.Component {
           var sortKey = item.sort;
           returnValue.push(
             <TextInput multiline={true} style={styles.text}
-            key={sortKey} 
-            onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-            onLayout = {(event) => {this.onLayout(event, sortKey)}} 
-            onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
+              key={sortKey} 
+              onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+              onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
+              onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+              onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
+            >
               {item.text}
             </TextInput>
           );
@@ -245,7 +246,10 @@ class CreatePageScreen extends React.Component {
   HandleChange(e, f) {
     //console.log('text : ' +e);
     //console.log('position : ' +JSON.stringify(f));
-    this.state.data.list[JSON.stringify(f)].text = e;
+    this.state.data.list.forEach(item => {
+      if(item.sort == f){
+        item.text = e;
+    });
     this.setState({isSav:false});
   }
 
