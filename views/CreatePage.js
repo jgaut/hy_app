@@ -23,14 +23,15 @@ class CreatePageScreen extends React.Component {
       keyboardHeight:290,
       screenH:Dimensions.get('window').height,
       screenScroll:0,
-    };
-
-    this.data2: [...Array(20)].map((d, index) => ({
+      data2: [...Array(20)].map((d, index) => ({
       key: `item-${index}`,
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-    }))
+    })),
 
+    };
+
+    
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
