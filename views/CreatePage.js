@@ -129,18 +129,6 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           returnValue.push(
-            /*<GestureRecognizer 
-              key={Math.random()}
-              onSwipeLeft={(state) => this.onSwipeLeft(state, sortKey)}
-              config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
-              style={{flex: 1, backgroundColor: 'pink'}}
-              onStartShouldSetPanResponder={()=>{false}}
-              onStartShouldSetPanResponderCapture={()=>{false}}
-              onMoveShouldSetResponderCapture={()=>{false}}
-              onMoveShouldSetPanResponderCapture={()=>{false}}
-              onMoveShouldSetPanResponder={()=>{false}}
-              >*/
-
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -152,9 +140,6 @@ class CreatePageScreen extends React.Component {
               >
                 {item.text}
               </TextInput>
-              
-     
-            /*</GestureRecognizer>*/
           );
           break;
         case 'text' :
