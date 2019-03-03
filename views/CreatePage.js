@@ -58,8 +58,8 @@ class CreatePageScreen extends React.Component {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
-      onMoveShouldSetResponderCapture: () => true,
-      onMoveShouldSetPanResponderCapture: () => true
+      onMoveShouldSetResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
     });
 
   }
