@@ -120,7 +120,7 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           console.log('returnValue : ' + item.text);
-          returnValue.push(
+          return(
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -138,7 +138,7 @@ class CreatePageScreen extends React.Component {
         case 'text' :
           var sortKey = item.sort;
           console.log('returnValue : ' + item.text);
-          returnValue.push(
+          return(
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
               onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
@@ -146,13 +146,13 @@ class CreatePageScreen extends React.Component {
               //onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
-              {item.text}{Math.random()}
+              {item.text}
             </TextInput>
           );
           break;
         case 'image' :
           var sortKey = item.sort;
-          returnValue.push(
+          return(
             <Image 
               style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
               key={sortKey} 
@@ -165,8 +165,6 @@ class CreatePageScreen extends React.Component {
       }
 
   }
-
-    return returnValue;
   }
 
   OffsetKeyboard(sortKey){
