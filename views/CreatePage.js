@@ -114,7 +114,7 @@ class CreatePageScreen extends React.Component {
     //var returnValue = [];
     item = item2.item;
     if(item){
-      console.log('item : ' + JSON.stringify(item));
+      console.log('item : ' + JSON.stringify(state));
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
