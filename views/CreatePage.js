@@ -6,6 +6,7 @@ import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
 class CreatePageScreen extends React.Component {
 
@@ -94,6 +95,11 @@ class CreatePageScreen extends React.Component {
     }
   }
 
+  onSwipeLeft(gestureState, sortKey) {
+    console.log('You swiped left!');
+    this.RemoveElement(sortKey);
+  }
+
   Story(props) {
     
     var returnValue = [];
@@ -103,17 +109,24 @@ class CreatePageScreen extends React.Component {
         case 'note' :
           var sortKey = item.sort;
           returnValue.push(
-          <TextInput 
-            style={styles.note} 
-            key={sortKey} 
-            onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-            onLayout = {(event) => {this.onLayout(event, sortKey)}} 
-            onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
-            onScroll={(event) => {this.onLayout(event, sortKey)}} 
-            >
-              {this.state.data.list[sortKey].text}
-            </TextInput>);
+            <GestureRecognizer 
+              onSwipeRight={(state) => this.onSwipeRight(state, sortKey)}
+              config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
+              style={{flex: 1, backgroundColor: this.state.backgroundColor}}
+              >
+              <TextInput 
+                style={styles.note} 
+                key={sortKey} 
+                onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+                onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
+                onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+                onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
+                onScroll={(event) => {this.onLayout(event, sortKey)}} 
+                >
+                  {this.state.data.list[sortKey].text}
+              </TextInput>
+            </GestureRecognizer>
+          );
           break;
         case 'text' :
           var sortKey = item.sort;
@@ -201,8 +214,8 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  RemoveElement = () => {
-    this.state.data.list.splice(this.state.data.list.length-1, 1);
+  RemoveElement = (sortKey) => {
+    this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
     this.setState({isSav:false});
     this.forceUpdate();
   }
