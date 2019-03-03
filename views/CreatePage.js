@@ -131,7 +131,6 @@ class CreatePageScreen extends React.Component {
                 //{...this.panResponder.panHandlers}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               //>
-              <KeyboardAvoidingView key={Math.random()} behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -143,7 +142,7 @@ class CreatePageScreen extends React.Component {
               >
                 {item.text}
               </TextInput>
-              </KeyboardAvoidingView>
+              
               //</View>
             //</GestureRecognizer>
           );
@@ -277,7 +276,8 @@ class CreatePageScreen extends React.Component {
     return (
 
       <View style={styles.container}>
-        
+       <KeyboardAvoidingView key={Math.random()} behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+               
         <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.handleScroll(event)}}>
           {this.Story(this.state.data)}
         </ScrollView>
@@ -303,7 +303,7 @@ class CreatePageScreen extends React.Component {
           </TouchableOpacity>
         
         </View>
-      
+      </KeyboardAvoidingView>
       </View>
 
     );
