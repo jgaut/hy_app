@@ -245,6 +245,7 @@ class CreatePageScreen extends React.Component {
     this.state.data.list.forEach(item => {
       if(item.sort == f){
         item.text = e;
+      }
     });
     this.setState({isSav:false});
   }
