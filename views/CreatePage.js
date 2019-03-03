@@ -10,9 +10,9 @@ import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import DraggableFlatList from 'react-native-draggable-flatlist'
 
 function onLayout(event, sortKey){
-    //console.log('layout');
-      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
-  }
+  console.log('layout');
+  this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
+}
 
 class CreatePageScreen extends React.Component {
 
