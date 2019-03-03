@@ -124,7 +124,7 @@ class CreatePageScreen extends React.Component {
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}} 
                 >
-                  {this.state.data.list[sortKey].text}
+                  {item.text}
               </TextInput>
             </GestureRecognizer>
           );
@@ -138,7 +138,7 @@ class CreatePageScreen extends React.Component {
             onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
-              {this.state.data.list[sortKey].text}
+              {item.text}
             </TextInput>);
           break;
         case 'image' :
@@ -216,9 +216,9 @@ class CreatePageScreen extends React.Component {
   }
 
   RemoveElement = (sortKey) => {
-    console.log(this.state.data.list[sortKey]);
+    //console.log(this.state.data.list[sortKey]);
     this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
-    console.log(this.state.data.list);
+    //console.log(this.state.data.list);
     this.setState({isSav:false});
     this.forceUpdate();
   }
