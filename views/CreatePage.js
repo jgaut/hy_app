@@ -119,6 +119,7 @@ class CreatePageScreen extends React.Component {
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
+          console.log('returnValue : ' + item.text);
           returnValue.push(
               <TextInput 
                 style={styles.note} 
@@ -135,6 +136,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'text' :
           var sortKey = item.sort;
+          console.log('returnValue : ' + item.text);
           returnValue.push(
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
@@ -162,7 +164,7 @@ class CreatePageScreen extends React.Component {
       }
 
   }
-    console.log('returnValue : ' + returnValue);
+
     return returnValue;
   }
 
