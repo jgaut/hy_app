@@ -23,12 +23,6 @@ class CreatePageScreen extends React.Component {
       keyboardHeight:290,
       screenH:Dimensions.get('window').height,
       screenScroll:0,
-      data2: [...Array(20)].map((d, index) => ({
-      key: `item-${index}`,
-      label: index,
-      backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-    })),
-
     };
 
     
@@ -114,11 +108,6 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  onSwipeLeft(gestureState, sortKey) {
-    //console.log('You swiped left! : ' + sortKey);
-    this.RemoveElement(sortKey);
-  }
-
   Story(item, index, move, moveEnd, isActive) {
     console.log('call story : ' + JSON.stringify(item));
     var returnValue = [];
@@ -134,7 +123,7 @@ class CreatePageScreen extends React.Component {
                 key={sortKey} 
                 onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
                 onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-                //onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+                onLayout = {(event) => {this.onLayout(event, sortKey)}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
               >
@@ -149,7 +138,7 @@ class CreatePageScreen extends React.Component {
               key={sortKey} 
               onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
               onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-              //onLayout = {(event) => {this.onLayout(event, sortKey)}} 
+              onLayout = {(event) => {this.onLayout(event, sortKey)}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
               {item.text}
@@ -268,8 +257,6 @@ class CreatePageScreen extends React.Component {
   }
   
   render() {
-
-    console.log('data2 : ' + this.state.data2);
     return (
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
