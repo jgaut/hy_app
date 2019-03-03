@@ -44,7 +44,13 @@ class CreatePageScreen extends React.Component {
 
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
       //console.log(e.endCoordinates.height);
+      console.log('keaybord show');
       this.state.keyboardHeight=e.endCoordinates.height;
+      //console.log('keyboard : ' + this.state.keyboardHeight);
+    });
+
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', (e)=>{
+      console.log('keaybord hide');
       //console.log('keyboard : ' + this.state.keyboardHeight);
     });
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
@@ -93,7 +99,7 @@ class CreatePageScreen extends React.Component {
   }
 
   onSwipeLeft(gestureState, sortKey) {
-    console.log('You swiped left! : ' + sortKey);
+    //console.log('You swiped left! : ' + sortKey);
     this.RemoveElement(sortKey);
   }
 
@@ -179,7 +185,7 @@ class CreatePageScreen extends React.Component {
       this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
   }
 
-  SavMyData = (e) => {
+  SavMyData(e) {
     if(!this.state.isSav){
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
         level: 'private',
@@ -190,7 +196,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  AddElement = (element, data) => {
+  AddElement(element, data) {
     const {navigate} = this.props.navigation;
     var maxPosition = 0;
     this.state.data.list.forEach(item => {
@@ -226,7 +232,7 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  RemoveElement = (sortKey) => {
+  RemoveElement(sortKey) {
     //console.log(this.state.data.list[sortKey]);
     this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
     this.state.position = this.state.position.filter(item => item.sort != sortKey);
@@ -235,7 +241,7 @@ class CreatePageScreen extends React.Component {
     this.forceUpdate();
   }
 
-  HandleChange = (e, f) => {
+  HandleChange(e, f) {
     //console.log('text : ' +e);
     //console.log('position : ' +JSON.stringify(f));
     this.state.data.list[JSON.stringify(f)].text = e;
