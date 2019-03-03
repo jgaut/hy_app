@@ -317,7 +317,7 @@ button: {
   margin:5,
   height: 40,
   backgroundColor: '#2196F3',
-      alignItems: 'stretch',
+  alignItems: 'stretch',
   justifyContent: 'center',
     },
   buttonText: {
@@ -329,14 +329,14 @@ container: {
     paddingTop: Constants.statusBarHeight,
   },
   note: {
-      padding:5,
+    padding:5,
     height: 50,
     backgroundColor: '#fff',
     borderWidth: 1, 
     borderColor: '#555' 
   },
   text: {
-      padding:5,
+    padding:5,
     height: 150,
     backgroundColor: '#fff',
     borderWidth: 1, 
