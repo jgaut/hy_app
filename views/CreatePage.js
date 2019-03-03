@@ -188,7 +188,7 @@ class CreatePageScreen extends React.Component {
         break;
       case 'image':
         this.state.data.list.push({"type":"image", "uri":data.uri, "height":data.height, "width":data.width, "sort":this.state.data.list.length});
-        console.log('add image:' + JSON.sringify(data));
+        console.log('add image:' + JSON.stringify(data));
         break;
       default:
         console.log('Sorry, we are out of ' + element + '.');
