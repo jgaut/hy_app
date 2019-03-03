@@ -300,8 +300,7 @@ container: {
     justifyContent: 'space-between'
   },
   contentContainer: {
-    paddingTop: STATUSBAR_HEIGHT,
-    paddingBottom: 40,
+    marginVertical:20
   },
 });
 
