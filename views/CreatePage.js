@@ -56,7 +56,7 @@ class CreatePageScreen extends React.Component {
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
     this.panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
+      onStartShouldSetPanResponder: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       onStartShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       onMoveShouldSetResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       onMoveShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
