@@ -110,7 +110,7 @@ class CreatePageScreen extends React.Component {
               key={Math.random()}
               onSwipeLeft={(state) => this.onSwipeLeft(state, sortKey)}
               config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
-              style={{flex: 1, backgroundColor: this.state.backgroundColor}}
+              style={{flex: 1, backgroundColor: 'pink'}}
               >
               <TextInput 
                 style={styles.note} 
@@ -136,11 +136,18 @@ class CreatePageScreen extends React.Component {
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
               {item.text}
-            </TextInput>);
+            </TextInput>
+          );
           break;
         case 'image' :
           var sortKey = item.sort;
-          returnValue.push(<Image style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} key={sortKey} source={{uri: item.uri}} />);
+          returnValue.push(
+            <Image 
+              style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
+              key={sortKey} 
+              source={{uri: item.uri}} 
+            />
+          );
           break;
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
