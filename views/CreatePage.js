@@ -162,7 +162,7 @@ class CreatePageScreen extends React.Component {
       }
 
   }
-    console.log('returnValue : ' + JSON.stringify(returnValue));
+    console.log('returnValue : ' + returnValue);
     return returnValue;
   }
 
