@@ -125,7 +125,7 @@ class CreatePageScreen extends React.Component {
       <TouchableOpacity
         style={{ 
           height: 100, 
-          backgroundColor: isActive ? 'blue' : item.backgroundColor,
+          backgroundColor: isActive ? 'blue' : 'red',
           alignItems: 'center', 
           justifyContent: 'center' 
         }}
