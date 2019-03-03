@@ -143,7 +143,7 @@ class CreatePageScreen extends React.Component {
               //onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
-              {item.text}
+              {item.text}{Math.random()}
             </TextInput>
           );
           break;
