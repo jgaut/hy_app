@@ -208,6 +208,7 @@ class CreatePageScreen extends React.Component {
   }
 
   handleScroll(event) {
+    console.log(event);
     console.log(event.nativeEvent);
     console.log(event.nativeEvent.contentOffset);
   }
@@ -217,7 +218,7 @@ class CreatePageScreen extends React.Component {
 
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         
-        <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.onLayout(event)}}>
+        <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.onScroll(event)}}>
           {this.Story(this.state.data)}
         </ScrollView>
 
