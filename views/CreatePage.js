@@ -108,8 +108,9 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  Story(item2, index, move, moveEnd, isActive, state) {
+  Story(item2, index, move, moveEnd, isActive, component) {
 
+    console.log('compo : ' + JSON.stringify(component.state));
     function OffsetKeyboard(sortKey, state){
 
       var sortKeyPosition = state.position.find(function(element) { return element.sortKey == sortKey;});
@@ -136,8 +137,8 @@ class CreatePageScreen extends React.Component {
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
-                onBlur={()=>{state.keyboardVerticalOffset=0; console.log(state.keyboardVerticalOffset);this.forceUpdate();}} 
-                onFocus={()=>{OffsetKeyboard(sortKey, state); forceUpdate();}} 
+                onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
+                onFocus={()=>{OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
                 onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
                 //onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 //onScroll={(event) => {this.onLayout(event, sortKey)}}
@@ -265,7 +266,7 @@ class CreatePageScreen extends React.Component {
       <View style={{ flex: 1 }}>
         <DraggableFlatList
           data={this.state.data.list}
-          renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive, this.state)}
+          renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive, this)}
           keyExtractor={(item, index) => `draggable-item-${item.sort}`}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
