@@ -275,7 +275,7 @@ class CreatePageScreen extends React.Component {
   render() {
     return (
 
-      
+      <View>
         
         <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.handleScroll(event)}}>
           {this.Story(this.state.data)}
@@ -303,7 +303,7 @@ class CreatePageScreen extends React.Component {
         
         </View>
       
-      
+      </View>
 
     );
   
