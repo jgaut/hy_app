@@ -137,6 +137,7 @@ class CreatePageScreen extends React.Component {
     if((this.state.screenH-this.state.keyboardHeight) < this.state.position[sortKey].y){
       this.state.keyboardVerticalOffset=this.state.position[sortKey].y - (this.state.screenH-this.state.keyboardHeight) + this.state.position[sortKey].height;
       console.log('decalage : ' + this.state.keyboardVerticalOffset);
+      console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height);
       this.forceUpdate();
     }else if(this.state.keyboardHeight > this.state.position[sortKey].y){
       this.state.keyboardVerticalOffset=(this.state.keyboardHeight - this.state.position[sortKey].y + this.state.position[sortKey].height)*-1
