@@ -148,6 +148,7 @@ class CreatePageScreen extends React.Component {
   }
 
   onLayout(event, sortKey){
+    console.log('layout');
     if(this.state.position[sortKey]==null){
       this.state.position[sortKey]=event.nativeEvent.layout;
     }
