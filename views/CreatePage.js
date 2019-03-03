@@ -141,8 +141,6 @@ class CreatePageScreen extends React.Component {
               onLayout = {(event) => {component.onLayout(event, sortKey)}}  
               onChangeText={(text) => {component.HandleChange(text, sortKey);}} 
               onScroll={(event) => {component.onLayout(event, sortKey)}}
-              onLongPress={move}
-              onPressOut={moveEnd}
             >
               {item.text}
             </TextInput>
@@ -170,8 +168,6 @@ class CreatePageScreen extends React.Component {
               onLayout = {(event) => {component.onLayout(event, sortKey)}} 
               onChangeText={(text) => {component.HandleChange(text, sortKey);}}
               onScroll={(event) => {component.onLayout(event, sortKey)}}
-              onLongPress={move}
-              onPressOut={moveEnd}
             >
               {item.text}
             </TextInput>
