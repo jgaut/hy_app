@@ -60,7 +60,7 @@ class CreatePageScreen extends React.Component {
         //Page exist ?
         Storage.list(this.state.fromKey+'.json', {level: 'private'})
         .then(result => {
-          console.log('result : ' +result);
+          console.log('result : ' +JSON.stringify(result));
           //si page non existante
           if(result==''){
             this.state.data.id=fk;
@@ -229,8 +229,8 @@ class CreatePageScreen extends React.Component {
   }
 
   HandleChange = (e, f) => {
-    console.log('text : ' +e);
-    console.log('position : ' +JSON.stringify(f));
+    //console.log('text : ' +e);
+    //console.log('position : ' +JSON.stringify(f));
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
   }
