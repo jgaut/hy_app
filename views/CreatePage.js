@@ -122,8 +122,6 @@ class CreatePageScreen extends React.Component {
                 key={Math.random()}
                 onMoveShouldSetResponderCapture={() => true} 
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
-                onResponderRelease={(event) => {console.log(JSON.stringify('release : '+JSON.stringify(event.nativeEvent)));}}
-                onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+JSON.stringify(event.nativeEvent)));}}
               >
               <TextInput 
                 style={styles.note} 
