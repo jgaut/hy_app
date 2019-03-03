@@ -151,13 +151,16 @@ class CreatePageScreen extends React.Component {
   }
 
   OffsetKeyboard(sortKey){
-    if((this.state.screenH-this.state.keyboardHeight) < (this.state.position[sortKey].y - this.state.screenScroll)) {
-      this.state.keyboardVerticalOffset=(this.state.position[sortKey].y - this.state.screenScroll) - (this.state.screenH-this.state.keyboardHeight) + this.state.position[sortKey].height;
+
+    var sortKeyPosition = this.state.position.find(function(element) { return element.sort == sortKey;});
+
+    if((this.state.screenH-this.state.keyboardHeight) < (sortKeyPosition.layout.y - this.state.screenScroll)) {
+      this.state.keyboardVerticalOffset=(sortKeyPosition.layout.y - this.state.screenScroll) - (this.state.screenH-this.state.keyboardHeight) + sortKeyPosition.layout.height;
       //console.log('decalage : ' + this.state.keyboardVerticalOffset);
       //console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
       this.forceUpdate();
-    }else if(this.state.keyboardHeight > (this.state.position[sortKey].y - this.state.screenScroll)){
-      this.state.keyboardVerticalOffset=(this.state.keyboardHeight - (this.state.position[sortKey].y - this.state.screenScroll) + this.state.position[sortKey].height)*-1
+    }else if(this.state.keyboardHeight > (sortKeyPosition.layout.y - this.state.screenScroll)){
+      this.state.keyboardVerticalOffset=(this.state.keyboardHeight - (sortKeyPosition.layout.y - this.state.screenScroll) + sortKeyPosition.layout.height)*-1
       //console.log('decalage : ' + this.state.keyboardVerticalOffset);
       //console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
       this.forceUpdate();
@@ -187,7 +190,7 @@ class CreatePageScreen extends React.Component {
       maxPosition=Math.max(maxPosition, item.sort);
     }
     maxPosition = maxPosition +1;
-    
+
     switch (element) {
       case 'note':
         this.state.data.list.push({"type":"note", "text":'', "sort":maxPosition});
@@ -219,6 +222,7 @@ class CreatePageScreen extends React.Component {
   RemoveElement = (sortKey) => {
     //console.log(this.state.data.list[sortKey]);
     this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
+    this.state.position = this.state.position.filter(item => item.sort != sortKey);
     //console.log(this.state.data.list);
     this.setState({isSav:false});
     this.forceUpdate();
