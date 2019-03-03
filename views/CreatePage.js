@@ -300,7 +300,7 @@ container: {
     justifyContent: 'space-between'
   },
   contentContainer: {
-    paddingTop: 12,
+    paddingTop: 0,
     paddingBottom: 50,
   },
 });
