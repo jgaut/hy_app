@@ -114,7 +114,7 @@ class CreatePageScreen extends React.Component {
 
   Story(props) {
     console.log('call story : ' + props );
-    return <Text key={Math.random()} style={styles.text}>{props.sort}</Text>;
+    return <Text key={Math.random()} style={styles.text}>{Math.random()}</Text>;
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
