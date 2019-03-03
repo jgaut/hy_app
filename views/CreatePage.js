@@ -295,8 +295,7 @@ container: {
   },
   contentContainer: {
     //paddingTop: 0,
-    padding: 100,
-    margin:100,
+    paddingVertical: 100,
   },
 });
 
