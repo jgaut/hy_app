@@ -126,7 +126,7 @@ class CreatePageScreen extends React.Component {
                 onLayout = {(event) => {this.onLayout(event, sortKey)}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
-                onMoveShouldSetResponderCapture={true}
+                onMoveShouldSetResponderCapture=true
                 onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
                 onResponderRelease={(event) => {console.log(JSON.stringify('release : '+event));}}
                 onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+event));}}
