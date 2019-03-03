@@ -128,11 +128,7 @@ class CreatePageScreen extends React.Component {
               onStartShouldSetPanResponder={()=>{false}}
               onStartShouldSetPanResponderCapture={()=>{false}}
               >
-              //<View
-                //key={Math.random()}
-                //{...this.panResponder.panHandlers}
-                //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
-              //>
+
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -145,7 +141,7 @@ class CreatePageScreen extends React.Component {
                 {item.text}
               </TextInput>
               
-              //</View>
+     
             </GestureRecognizer>
           );
           break;
