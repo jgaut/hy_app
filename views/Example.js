@@ -5,7 +5,7 @@ import DraggableFlatList from 'react-native-draggable-flatlist'
 class Example extends Component {
 
   state = {
-    data: [...Array(20)].map((d, index) => ({
+    list: [...Array(20)].map((d, index) => ({
       key: `item-${index}`,
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
@@ -37,11 +37,11 @@ class Example extends Component {
     return (
       <View style={{ flex: 1 }}>
         <DraggableFlatList
-          data={this.state.data}
+          data={this.state.list}
           renderItem={this.renderItem}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ data })}
+          onMoveEnd={({ data }) => this.setState({ 'list': data})}
         />
       </View>
     )
