@@ -118,6 +118,25 @@ class CreatePageScreen extends React.Component {
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
 
+    return (
+      <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'red',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
+        <Text style={{ 
+          fontWeight: 'bold', 
+          color: 'white',
+          fontSize: 32,
+        }}>{item.text || Math.random()}</Text>
+      </TouchableOpacity>
+    );
+
     item = item2.item;
     if(item){
       //console.log('item : ' + JSON.stringify(component.state));
