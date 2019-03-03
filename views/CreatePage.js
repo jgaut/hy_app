@@ -127,7 +127,7 @@ class CreatePageScreen extends React.Component {
               style={styles.note} 
               key={sortKey} 
               onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
-              onFocus={()=>{component.OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
+              onFocus={()=>{component.OffsetKeyboard(sortKey); component.forceUpdate();}} 
               onLayout = {(event) => {component.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {component.HandleChange(text, sortKey);}} 
               onScroll={(event) => {component.onLayout(event, sortKey)}}
@@ -144,7 +144,7 @@ class CreatePageScreen extends React.Component {
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
               onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
-              onFocus={()=>{component.OffsetKeyboard(sortKey, state); component.forceUpdate();}} 
+              onFocus={()=>{component.OffsetKeyboard(sortKey); component.forceUpdate();}} 
               onLayout = {(event) => {component.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {component.HandleChange(text, sortKey);}}
               onScroll={(event) => {component.onLayout(event, sortKey)}}
