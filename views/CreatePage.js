@@ -6,7 +6,11 @@ import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
+import { Platform, NativeModules } from 'react-native';
 
+const { StatusBarManager } = NativeModules;
+
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 class CreatePageScreen extends React.Component {
 
 
@@ -296,7 +300,7 @@ container: {
     justifyContent: 'space-between'
   },
   contentContainer: {
-    paddingTop: 10,
+    paddingTop: STATUSBAR_HEIGHT,
     paddingBottom: 40,
   },
 });
