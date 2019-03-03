@@ -112,8 +112,8 @@ class CreatePageScreen extends React.Component {
     this.RemoveElement(sortKey);
   }
 
-  Story(props) {
-    console.log('call story : ' + props );
+  Story(item, index, move, moveEnd, isActive) {
+    console.log('call story : ' + item );
     return <Text key={Math.random()} style={styles.text} onLongPress={move} onPressOut={moveEnd} >{Math.random()}</Text>;
     var returnValue = [];
     if(props.list){
