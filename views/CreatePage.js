@@ -114,7 +114,25 @@ class CreatePageScreen extends React.Component {
 
   Story(item, index, move, moveEnd, isActive) {
     console.log('call story : ' + item );
-    return <Text key={Math.random()} style={styles.text} onLongPress={move} onPressOut={moveEnd} >{Math.random()}</Text>;
+    return (
+      <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'yellow',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
+        <Text style={{ 
+          fontWeight: 'bold', 
+          color: 'white',
+          fontSize: 32,
+        }}>{Math.random()}</Text>
+      </TouchableOpacity>
+    );
+
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
