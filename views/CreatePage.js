@@ -111,6 +111,7 @@ class CreatePageScreen extends React.Component {
   Story(item2, index, move, moveEnd, isActive, component) {
 
     console.log('compo : ' + JSON.stringify(component.state));
+    return '';
     function OffsetKeyboard(sortKey, state){
 
       var sortKeyPosition = state.position.find(function(element) { return element.sortKey == sortKey;});
