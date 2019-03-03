@@ -119,9 +119,10 @@ class CreatePageScreen extends React.Component {
               style={{flex: 1, backgroundColor: 'pink'}}
               >*/
               <View
+                key={Math.random()}
                 onMoveShouldSetResponderCapture={() => true} 
-                onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
-                onResponderRelease={(event) => {console.log(JSON.stringify('release : '+event));}}
+                //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
+                onResponderRelease={(event) => {console.log(JSON.stringify('release : '+JSON.stringify(event)));}}
                 onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+event));}}
               >
               <TextInput 
