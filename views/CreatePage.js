@@ -13,7 +13,7 @@ class CreatePageScreen extends React.Component {
 
 
   constructor(...args) {
-    
+    super(...args);
     state = {
       data:{"id":'',"list":[]}, 
       isSav:true, 
