@@ -127,6 +127,9 @@ class CreatePageScreen extends React.Component {
               style={{flex: 1, backgroundColor: 'pink'}}
               onStartShouldSetPanResponder={()=>{false}}
               onStartShouldSetPanResponderCapture={()=>{false}}
+              onMoveShouldSetResponderCapture={()=>{false}}
+              onMoveShouldSetPanResponderCapture={()=>{false}}
+              onMoveShouldSetPanResponder={()=>{false}}
               >
 
               <TextInput 
