@@ -206,13 +206,18 @@ class CreatePageScreen extends React.Component {
     this.state.data.list[JSON.stringify(f)].text = e;
     this.setState({isSav:false});
   }
+
+  handleScroll(event) {
+    console.log(event.nativeEvent);
+    console.log(event.nativeEvent.contentOffset);
+  }
   
   render() {
     return (
 
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         
-        <ScrollView contentContainerStyle={styles.contentContainer}>
+        <ScrollView contentContainerStyle={styles.contentContainer} onScroll={this.handleScroll}>
           {this.Story(this.state.data)}
         </ScrollView>
 
