@@ -110,10 +110,9 @@ class CreatePageScreen extends React.Component {
 
   Story(item, index, move, moveEnd, isActive, state) {
 
-    console.log('call story : ' + JSON.stringify(item));
-    var returnValue = [];
+    //console.log('call story : ' + JSON.stringify(item));
+    //var returnValue = [];
     item = item.item;
-
     if(item){
       console.log('item : ' + JSON.stringify(item));
       switch(item.type) {
@@ -261,6 +260,7 @@ class CreatePageScreen extends React.Component {
     return (
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+      <View style={{ flex: 1 }}>
         <DraggableFlatList
           data={this.state.data.list}
           renderItem={(item, index, move, moveEnd, isActive) => {this.Story(item, index, move, moveEnd, isActive, this.state)}}
@@ -268,6 +268,7 @@ class CreatePageScreen extends React.Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
         />
+        </View>
 /*
         <View style={styles.submitButton}>
           
