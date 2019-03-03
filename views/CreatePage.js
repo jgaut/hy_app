@@ -126,8 +126,8 @@ class CreatePageScreen extends React.Component {
               config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
               style={{flex: 1, backgroundColor: 'pink'}}
               >*/
-              <View
-                key={Math.random()}
+              //<View
+                //key={Math.random()}
                 //{...this.panResponder.panHandlers}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               >
@@ -144,7 +144,7 @@ class CreatePageScreen extends React.Component {
                 {item.text}
               </TextInput>
               </KeyboardAvoidingView>
-              </View>
+              //</View>
             //</GestureRecognizer>
           );
           break;
