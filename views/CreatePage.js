@@ -120,7 +120,7 @@ class CreatePageScreen extends React.Component {
               >*/
               <View
                 key={Math.random()}
-                onMoveShouldSetResponderCapture={() => true} 
+                onMoveShouldSetResponderCapture={(evt, gestureState) => Math.abs(gestureState.dy) > 5}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               >
               <TextInput 
