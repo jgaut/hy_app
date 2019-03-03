@@ -12,8 +12,7 @@ import DraggableFlatList from 'react-native-draggable-flatlist'
 class CreatePageScreen extends React.Component {
 
 
-  constructor(...args) {
-    super(...args);
+  constructor() {
     this.state = {
       data:{"id":'',"list":[]}, 
       isSav:true, 
