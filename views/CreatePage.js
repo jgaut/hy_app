@@ -133,6 +133,7 @@ class CreatePageScreen extends React.Component {
                 {item.text}
               </TextInput>
           );
+          console.log('returnValue 2: ' + item.text);
           break;
         case 'text' :
           var sortKey = item.sort;
