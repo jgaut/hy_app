@@ -118,6 +118,12 @@ class CreatePageScreen extends React.Component {
               config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
               style={{flex: 1, backgroundColor: 'pink'}}
               >*/
+              <View
+                onMoveShouldSetResponderCapture={() => true} 
+                onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
+                onResponderRelease={(event) => {console.log(JSON.stringify('release : '+event));}}
+                onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+event));}}
+              >
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -126,13 +132,10 @@ class CreatePageScreen extends React.Component {
                 onLayout = {(event) => {this.onLayout(event, sortKey)}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
-                onMoveShouldSetResponderCapture={() => true} 
-                onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
-                onResponderRelease={(event) => {console.log(JSON.stringify('release : '+event));}}
-                onMoveShouldSetResponder={(event) => {console.log(JSON.stringify('responder : '+event));}}
               >
                 {item.text}
               </TextInput>
+              </View>
             //</GestureRecognizer>
           );
           break;
