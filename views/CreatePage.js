@@ -123,6 +123,7 @@ class CreatePageScreen extends React.Component {
     console.log('call story : ' + JSON.stringify(item));
     var returnValue = [];
     item = item.item;
+
     if(item){
       switch(item.type) {
         case 'note' :
@@ -288,11 +289,11 @@ class CreatePageScreen extends React.Component {
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <DraggableFlatList
-          data={this.state.data2}
+          data={this.state.data.list}
           renderItem={this.Story}
-          keyExtractor={(item, index) => `draggable-item-${item.key}`}
+          keyExtractor={(item, index) => `draggable-item-${item.sort}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.state.data2=data }
+          onMoveEnd={({ data }) => this.state.data.list=data }
         />
 /*
         <View style={styles.submitButton}>
