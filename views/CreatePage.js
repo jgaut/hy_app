@@ -25,11 +25,14 @@ class CreatePageScreen extends React.Component {
 
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
+      //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
         this.launch();
-      }else if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
+      }else 
+      //From roll photo
+      if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
-        this.AddElement('image', this.props.navigation.state.params.image.uri);
+        this.AddElement('image', this.props.navigation.state.params.image);
       }
     });
 
@@ -103,8 +106,8 @@ class CreatePageScreen extends React.Component {
           <TextInput 
             style={styles.note} 
             key={sortKey} 
-            onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus'); this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
+            onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             onScroll={(event) => {this.onLayout(event, sortKey)}} 
@@ -117,8 +120,8 @@ class CreatePageScreen extends React.Component {
           returnValue.push(
             <TextInput multiline={true} style={styles.text}
             key={sortKey} 
-            onBlur={()=>{console.log('on blur'); this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
-            onFocus={()=>{console.log('on focus');this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
+            onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
+            onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
             onLayout = {(event) => {this.onLayout(event, sortKey)}} 
             onChangeText={(text) => {this.HandleChange(text, sortKey);}} >
               {this.state.data.list[sortKey].text}
@@ -139,13 +142,13 @@ class CreatePageScreen extends React.Component {
   OffsetKeyboard(sortKey){
     if((this.state.screenH-this.state.keyboardHeight) < (this.state.position[sortKey].y - this.state.screenScroll)) {
       this.state.keyboardVerticalOffset=(this.state.position[sortKey].y - this.state.screenScroll) - (this.state.screenH-this.state.keyboardHeight) + this.state.position[sortKey].height;
-      console.log('decalage : ' + this.state.keyboardVerticalOffset);
-      console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
+      //console.log('decalage : ' + this.state.keyboardVerticalOffset);
+      //console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
       this.forceUpdate();
     }else if(this.state.keyboardHeight > (this.state.position[sortKey].y - this.state.screenScroll)){
       this.state.keyboardVerticalOffset=(this.state.keyboardHeight - (this.state.position[sortKey].y - this.state.screenScroll) + this.state.position[sortKey].height)*-1
-      console.log('decalage : ' + this.state.keyboardVerticalOffset);
-      console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
+      //console.log('decalage : ' + this.state.keyboardVerticalOffset);
+      //console.log(this.state.keyboardHeight , this.state.position[sortKey].y , this.state.position[sortKey].height, (this.state.position[sortKey].y - this.state.screenScroll));
       this.forceUpdate();
     }
   }
@@ -168,7 +171,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  AddElement = (element, uri) => {
+  AddElement = (element, data) => {
     const {navigate} = this.props.navigation;
     switch (element) {
       case 'note':
@@ -184,8 +187,8 @@ class CreatePageScreen extends React.Component {
         console.log('lauch roll screen');
         break;
       case 'image':
-        this.state.data.list.push({"type":"image", "uri":uri, "sort":this.state.data.list.length});
-        console.log('add image:' + uri);
+        this.state.data.list.push({"type":"image", "uri":data.uri, "height":data.height, "width":data.width, "sort":this.state.data.list.length});
+        console.log('add image:' + data);
         break;
       default:
         console.log('Sorry, we are out of ' + element + '.');
