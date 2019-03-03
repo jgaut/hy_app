@@ -123,6 +123,16 @@ class CreatePageScreen extends React.Component {
           var sortKey = item.sort;
           //console.log('returnValue : ' + item.text);
           return(
+            <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'red',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
             <TextInput 
               style={styles.note} 
               key={sortKey} 
@@ -136,12 +146,23 @@ class CreatePageScreen extends React.Component {
             >
               {item.text}
             </TextInput>
+            </TouchableOpacity>
           );
           console.log('returnValue 2: ' + item.text);
           break;
         case 'text' :
           var sortKey = item.sort;
           return(
+            <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'red',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
             <TextInput multiline={true} style={styles.text}
               key={sortKey} 
               onBlur={()=>{component.state.keyboardVerticalOffset=0; console.log(component.state.keyboardVerticalOffset);component.forceUpdate();}} 
@@ -154,6 +175,7 @@ class CreatePageScreen extends React.Component {
             >
               {item.text}
             </TextInput>
+            </TouchableOpacity>
           );
           break;
         case 'image' :
