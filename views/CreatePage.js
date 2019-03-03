@@ -48,7 +48,7 @@ class CreatePageScreen extends React.Component {
     });
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
-    //console.log(this.state);
+    console.log(StatusBarManager.HEIGHT);
   }
 
   launch() {
