@@ -100,7 +100,8 @@ const formatData = (data, numColumns) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 20,
+    paddingTop: 0,
+    paddingBottom: 100,
   },
   item: {
     backgroundColor: '#4D243D',
