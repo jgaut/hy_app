@@ -7,6 +7,9 @@ import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
 
+class CreatePageScreen extends React.Component {
+
+
   constructor(...args) {
     super(...args);
     this.state = {
@@ -40,6 +43,7 @@ import { Constants } from 'expo';
       //console.log('keyboard : ' + this.state.keyboardHeight);
     });
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+
   }
 
   launch() {
