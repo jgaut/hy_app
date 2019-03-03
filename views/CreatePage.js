@@ -108,7 +108,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  Story(item, index, move, moveEnd, isActive) {
+  Story(item, index, move, moveEnd, isActive, state) {
 
     console.log('call story : ' + JSON.stringify(item));
     var returnValue = [];
@@ -124,7 +124,7 @@ class CreatePageScreen extends React.Component {
                 key={sortKey} 
                 onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
                 onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-                onLayout = {(event) => {this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
+                onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
               >
@@ -139,7 +139,7 @@ class CreatePageScreen extends React.Component {
               key={sortKey} 
               onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
               onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}}
-              onLayout = {(event) => {this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
+              onLayout = {(event) => {state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
               {item.text}
@@ -260,7 +260,7 @@ class CreatePageScreen extends React.Component {
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
         <DraggableFlatList
           data={this.state.data.list}
-          renderItem={this.Story}
+          renderItem={(item, index, move, moveEnd, isActive)=>{this.Storyitem, index, move, moveEnd, isActive, this.state}}
           keyExtractor={(item, index) => `draggable-item-${item.sort}`}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
