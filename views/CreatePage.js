@@ -121,28 +121,8 @@ class CreatePageScreen extends React.Component {
 
   Story(item, index, move, moveEnd, isActive) {
     console.log('call story : ' + JSON.stringify(item));
-    return (
-      <TouchableOpacity
-        style={{ 
-          height: 100, 
-          backgroundColor: isActive ? 'blue' : 'red',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
-        onLongPress={move}
-        onPressOut={moveEnd}
-      >
-        <Text style={{ 
-          fontWeight: 'bold', 
-          color: 'white',
-          fontSize: 32,
-        }}>{Math.random()}</Text>
-      </TouchableOpacity>
-    );
-
     var returnValue = [];
-    if(props.list){
-    props.list.forEach(item => {
+    if(item.item){
       switch(item.type) {
         case 'note' :
           var sortKey = item.sort;
@@ -202,7 +182,7 @@ class CreatePageScreen extends React.Component {
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
       }
-    });
+
   }
     return returnValue;
   }
