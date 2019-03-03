@@ -110,7 +110,7 @@ class CreatePageScreen extends React.Component {
 
   Story(item, index, move, moveEnd, isActive) {
 
-    onLayout(event, sortKey){
+    function onLayout(event, sortKey){
       console.log('layout');
       this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
     }
