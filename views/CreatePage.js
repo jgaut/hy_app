@@ -111,7 +111,7 @@ class CreatePageScreen extends React.Component {
           returnValue.push(
             <GestureRecognizer 
               key={Math.random()}
-              onSwipeRight={(state) => this.onSwipeRight(state, sortKey)}
+              onSwipeLeft={(state) => this.onSwipeLeft(state, sortKey)}
               config={{velocityThreshold: 0.3, directionalOffsetThreshold: 80}}
               style={{flex: 1, backgroundColor: this.state.backgroundColor}}
               >
