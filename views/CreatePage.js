@@ -6,13 +6,6 @@ import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
-import { Platform, NativeModules } from 'react-native';
-
-const { StatusBarManager } = NativeModules;
-
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
-class CreatePageScreen extends React.Component {
-
 
   constructor(...args) {
     super(...args);
@@ -47,8 +40,6 @@ class CreatePageScreen extends React.Component {
       //console.log('keyboard : ' + this.state.keyboardHeight);
     });
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
-
-    console.log(StatusBarManager.HEIGHT);
   }
 
   launch() {
@@ -295,7 +286,7 @@ container: {
   },
   contentContainer: {
     //paddingTop: 0,
-    marginBottom: 100,
+    //marginBottom: 100,
   },
 });
 
