@@ -209,10 +209,10 @@ class CreatePageScreen extends React.Component {
   }
 
   handleScroll(event) {
-    console.log(event);
+    /*console.log(event);
     console.log(event.nativeEvent);
     console.log(event.nativeEvent.contentOffset);
-  }
+  */}
   
   render() {
     return (
