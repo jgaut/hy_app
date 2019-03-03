@@ -96,7 +96,7 @@ class CreatePageScreen extends React.Component {
   }
 
   onSwipeLeft(gestureState, sortKey) {
-    console.log('You swiped left!');
+    console.log('You swiped left! : ' + sortKey);
     this.RemoveElement(sortKey);
   }
 
@@ -216,6 +216,7 @@ class CreatePageScreen extends React.Component {
   }
 
   RemoveElement = (sortKey) => {
+    console.log(this.state.data.list[sortKey]);
     this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
     this.setState({isSav:false});
     this.forceUpdate();
