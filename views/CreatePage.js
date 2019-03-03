@@ -173,8 +173,8 @@ class CreatePageScreen extends React.Component {
   
   OffsetKeyboard(sortKey){
     var sortKeyPosition = this.state.position.find(function(element) { return element.sortKey == sortKey;});
-    if((this.state.screenH-state.keyboardHeight) < (sortKeyPosition.layout.y - this.state.screenScroll)) {
-      this.state.keyboardVerticalOffset=(sortKeyPosition.layout.y - this.state.screenScroll) - (this.state.screenH-state.keyboardHeight) + sortKeyPosition.layout.height;
+    if((this.state.screenH-this.state.keyboardHeight) < (sortKeyPosition.layout.y - this.state.screenScroll)) {
+      this.state.keyboardVerticalOffset=(sortKeyPosition.layout.y - this.state.screenScroll) - (this.state.screenH-this.state.keyboardHeight) + sortKeyPosition.layout.height;
       this.forceUpdate();
     }else if(this.state.keyboardHeight > (sortKeyPosition.layout.y - this.state.screenScroll)){
       this.state.keyboardVerticalOffset=(this.state.keyboardHeight - (sortKeyPosition.layout.y - this.state.screenScroll) + sortKeyPosition.layout.height)*-1
