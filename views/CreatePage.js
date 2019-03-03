@@ -9,11 +9,6 @@ import { Constants } from 'expo';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import DraggableFlatList from 'react-native-draggable-flatlist'
 
-function onLayout(event, sortKey){
-  console.log('layout');
-  this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
-}
-
 class CreatePageScreen extends React.Component {
 
 
@@ -114,6 +109,12 @@ class CreatePageScreen extends React.Component {
   }
 
   Story(item, index, move, moveEnd, isActive) {
+
+    onLayout(event, sortKey){
+      console.log('layout');
+      this.state.position.push({"sortKey": sortKey, "layout": event.nativeEvent.layout});
+    }
+
     console.log('call story : ' + JSON.stringify(item));
     var returnValue = [];
     item = item.item;
@@ -128,7 +129,7 @@ class CreatePageScreen extends React.Component {
                 key={sortKey} 
                 onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
                 onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-                onLayout = {(event) => {onLayout(event, sortKey)}} 
+                onLayout = {(event) => {this.onLayout(event, sortKey)}} 
                 onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
                 onScroll={(event) => {this.onLayout(event, sortKey)}}
               >
@@ -143,7 +144,7 @@ class CreatePageScreen extends React.Component {
               key={sortKey} 
               onBlur={()=>{this.state.keyboardVerticalOffset=0; console.log(this.state.keyboardVerticalOffset);this.forceUpdate();}} 
               onFocus={()=>{this.OffsetKeyboard(sortKey); this.forceUpdate();}} 
-              onLayout = {(event) => {onLayout(event, sortKey)}} 
+              onLayout = {(event) => {this.onLayout(event, sortKey)}} 
               onChangeText={(text) => {this.HandleChange(text, sortKey);}} 
             >
               {item.text}
