@@ -264,7 +264,6 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    paddingBottom:100,
   },
   note: {
       padding:5,
