@@ -129,7 +129,7 @@ class CreatePageScreen extends React.Component {
           break;
         case 'image' :
           var sortKey = item.sort;
-          returnValue.push(<Image style={{width: Dimensions.get('window').width, height: Match.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} key={sortKey} source={{uri: item.uri}} />);
+          returnValue.push(<Image style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} key={sortKey} source={{uri: item.uri}} />);
           break;
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
