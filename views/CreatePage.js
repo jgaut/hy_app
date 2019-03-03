@@ -7,6 +7,7 @@ import { createAppContainer } from 'react-navigation';
 import { Permissions } from 'expo';
 import { Constants } from 'expo';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+import DraggableFlatList from 'react-native-draggable-flatlist'
 
 class CreatePageScreen extends React.Component {
 
@@ -112,7 +113,7 @@ class CreatePageScreen extends React.Component {
   }
 
   Story(props) {
-    
+    console.log('call story');
     var returnValue = [];
     if(props.list){
     props.list.forEach(item => {
@@ -277,11 +278,14 @@ class CreatePageScreen extends React.Component {
     return (
 
       
-       <KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
-               
-        <ScrollView contentContainerStyle={styles.contentContainer} onScroll={(event)=>{this.handleScroll(event)}}>
-          {this.Story(this.state.data)}
-        </ScrollView>
+      <KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
+        <DraggableFlatList
+          data={this.state.data}
+          renderItem={this.Story}
+          keyExtractor={(item, index) => `draggable-item-${item.sort}`}
+          scrollPercent={5}
+          onMoveEnd={({ data }) => this.setState({ data })}
+        />
 
         <View style={styles.submitButton}>
           
