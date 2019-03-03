@@ -214,10 +214,11 @@ class CreatePageScreen extends React.Component {
     return (
 
       <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
-            <ScrollView contentContainerStyle={styles.contentContainer}>
-
+        
+        <ScrollView contentContainerStyle={styles.contentContainer}>
           {this.Story(this.state.data)}
-                </ScrollView>
+        </ScrollView>
+
         <View style={styles.submitButton}>
           
           <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
@@ -237,7 +238,9 @@ class CreatePageScreen extends React.Component {
               <Text style={styles.buttonText}>Add image</Text>
             </View>
           </TouchableOpacity>
+        
         </View>
+      
       </KeyboardAvoidingView>
 
     );
@@ -246,15 +249,6 @@ class CreatePageScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  form: { 
-    backgroundColor: '#f5fcff',
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
-  label: {
-    color: '#000000'
-  },
 button: {
   padding:5,
   margin:5,
@@ -270,6 +264,7 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
+    paddingBottom:100,
   },
   note: {
       padding:5,
@@ -300,8 +295,8 @@ container: {
     justifyContent: 'space-between'
   },
   contentContainer: {
-    paddingTop: 0,
-    paddingBottom: 100,
+    //paddingTop: 0,
+    //paddingBottom: 100,
   },
 });
 
