@@ -218,6 +218,7 @@ class CreatePageScreen extends React.Component {
   RemoveElement = (sortKey) => {
     console.log(this.state.data.list[sortKey]);
     this.state.data.list = this.state.data.list.filter(item => item.sort != sortKey);
+    console.log(this.state.data.list);
     this.setState({isSav:false});
     this.forceUpdate();
   }
