@@ -130,7 +130,7 @@ class CreatePageScreen extends React.Component {
                 {...this.panResponder.panHandlers}
                 //onResponderMove={(event) => {console.log(JSON.stringify('move : '+event));}}
               >
-              
+              <KeyboardAvoidingView  behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
               <TextInput 
                 style={styles.note} 
                 key={sortKey} 
@@ -142,7 +142,7 @@ class CreatePageScreen extends React.Component {
               >
                 {item.text}
               </TextInput>
-              
+              </KeyboardAvoidingView>
               </View>
             //</GestureRecognizer>
           );
