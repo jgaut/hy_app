@@ -177,11 +177,22 @@ class CreatePageScreen extends React.Component {
         case 'image' :
           var sortKey = item.sort;
           return(
+             <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'red',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
             <Image 
               style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
               key={sortKey} 
               source={{uri: item.uri}} 
             />
+            </TouchableOpacity>
           );
           break;
         default:
