@@ -120,7 +120,7 @@ class CreatePageScreen extends React.Component {
   }
 
   Story(item, index, move, moveEnd, isActive) {
-    //console.log('call story : ' + item );
+    console.log('call story : ' + JSON.stringify(item));
     return (
       <TouchableOpacity
         style={{ 
