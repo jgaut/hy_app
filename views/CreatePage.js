@@ -124,6 +124,7 @@ class CreatePageScreen extends React.Component {
           //console.log('returnValue : ' + item.text);
           return(
             <TouchableOpacity
+            key={Math.random()}
         style={{ 
           height: 100, 
           backgroundColor: isActive ? 'blue' : 'red',
@@ -152,6 +153,7 @@ class CreatePageScreen extends React.Component {
           var sortKey = item.sort;
           return(
             <TouchableOpacity
+            key={Math.random()} 
         style={{ 
           height: 100, 
           backgroundColor: isActive ? 'blue' : 'red',
@@ -178,6 +180,7 @@ class CreatePageScreen extends React.Component {
           var sortKey = item.sort;
           return(
              <TouchableOpacity
+            key={Math.random()}
         style={{ 
           height: 100, 
           backgroundColor: isActive ? 'blue' : 'red',
