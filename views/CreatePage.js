@@ -104,7 +104,7 @@ class Example extends Component {
       <TouchableOpacity
         style={{ 
           height: 100, 
-          backgroundColor: isActive ? 'blue' : 'grey',
+          backgroundColor: 'blue',
           alignItems: 'center', 
           justifyContent: 'center' 
         }}
