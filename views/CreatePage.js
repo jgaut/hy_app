@@ -17,15 +17,14 @@ class Example extends Component {
   
   constructor(...args) {
     super(...args);
-  }
 
-  componentWillMount(){
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
+        console.log("constructor ! : "+this.props.navigation.state.params.fromKey);
         this.setState({'fromKey' : this.props.navigation.state.params.fromKey});
-        this.launch(this.state.fromKey);
+        this.launch();
       }else 
       //From roll photo
       if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
@@ -39,12 +38,18 @@ class Example extends Component {
       //TODO
       //this.SavMyData(false);
     });
+
+  }
+
+  componentWillMount(){
+    
   }
 
 
 
-  launch(key){
+  launch(){
     console.log("launch ! : "+this.props.navigation.state.params.fromKey);
+    var key = this.props.navigation.state.params.fromKey;
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         fetch(result)
