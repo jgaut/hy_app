@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text, InputText } from 'react-native'
 import DraggableFlatList from 'react-native-draggable-flatlist'
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -86,11 +86,11 @@ class Example extends Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
-        <Text style={{ 
+        <InputText style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }}>{item.label}</Text>
+        }}>{item.label}</InputText>
       </TouchableOpacity>
     )
   }
