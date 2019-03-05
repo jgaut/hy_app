@@ -321,7 +321,7 @@ class CreatePageScreen extends React.Component {
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
 
         <DraggableFlatList
-          data={this.state.data.list}
+          data={this.state.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
