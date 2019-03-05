@@ -322,7 +322,7 @@ state = {
   }
   
   render() {
-    console.log(this.state.data.list);
+    console.log(this.state.list);
     return (
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
