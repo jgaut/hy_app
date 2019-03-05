@@ -20,7 +20,8 @@ class Example extends Component {
       console.log('time to launch!');
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
-        this.launch();
+        this.setState({'fromKey' : this.props.navigation.state.params.fromKey});
+        this.launch(this.state.fromKey);
       }else 
       //From roll photo
       if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
@@ -42,10 +43,9 @@ class Example extends Component {
 
 
 
-  launch(){
-    console.log("launch !");
-    var fk="2019-10-26";
-    Storage.get(fk+'.json', {level: 'private'})
+  launch(key){
+    console.log("launch ! : "+key);
+    Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         fetch(result)
           .then(response => response.json())
