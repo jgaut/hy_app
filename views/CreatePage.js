@@ -11,21 +11,24 @@ import DraggableFlatList from 'react-native-draggable-flatlist'
 
 class CreatePageScreen extends React.Component {
 
+state = {
+    list: [...Array(20)].map((d, index) => ({
+      key: `item-${index}`,
+      label: index,
+      backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+    })),
+    data: {"list":[]},
+    isSav:true, 
+    fromKey:'', 
+    keyboardVerticalOffset:0, 
+    position:[], 
+    keyboardHeight:290,
+    screenH:Dimensions.get('window').height,
+    screenScroll:0,
+  }
 
   constructor(...args) {
     super(...args);
-    this.state = {
-      data:{"id":'',"list":[]},
-      list:[], 
-      isSav:true, 
-      fromKey:'', 
-      keyboardVerticalOffset:0, 
-      position:[], 
-      keyboardHeight:290,
-      screenH:Dimensions.get('window').height,
-      screenScroll:0,
-    };
-
     
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
