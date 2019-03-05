@@ -91,9 +91,9 @@ class CreatePageScreen extends React.Component {
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
-                      this.state.data=data;
+                      this.state.list=data;
                       var tmp=0;
-                      this.state.data.list.forEach(item => {
+                      this.state.list.forEach(item => {
                         item.key=`item-${tmp}`;
                         item.label=tmp;
                         item.backgroundColor= `rgb(${Math.floor(Math.random() * 255)}, ${tmp * 5}, ${132})`;
@@ -116,7 +116,7 @@ class CreatePageScreen extends React.Component {
     }
   }
 
-  Story(item, index, move, moveEnd, isActive, component) {
+  Story(item, index, move, moveEnd, isActive) {
 
     //console.log('compo : ' + JSON.stringify(component.state));
     //return <Text>{index}</Text>;
@@ -321,10 +321,10 @@ class CreatePageScreen extends React.Component {
 
         <DraggableFlatList
           data={this.state.data.list}
-          renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive, this)}
+          renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.state.data.list=data }
+          onMoveEnd={({ data }) => this.setState({ 'list': data}) }
         />
 
 /*
