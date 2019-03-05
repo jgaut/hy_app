@@ -48,26 +48,26 @@ state = {
       this.SavMyData(false);
     });*/
 
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
+    //this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
       //console.log(e.endCoordinates.height);
-      console.log('keaybord show');
-      this.state.keyboardHeight=e.endCoordinates.height;
+      //console.log('keaybord show');
+      //this.state.keyboardHeight=e.endCoordinates.height;
       //console.log('keyboard : ' + this.state.keyboardHeight);
-    });
+    //});
 
-    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', (e)=>{
-      console.log('keaybord hide');
+    //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', (e)=>{
+      //console.log('keaybord hide');
       //console.log('keyboard : ' + this.state.keyboardHeight);
-    });
+    //});
     //this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
-    this.panResponder = PanResponder.create({
+    //this.panResponder = PanResponder.create({
       //onStartShouldSetPanResponder: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onStartShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onMoveShouldSetResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onMoveShouldSetPanResponderCapture: (evt, gestureState) => {console.log(gestureState); return Math.abs(gestureState.dy) > 500},
       //onMoveShouldSetPanResponder: () => {Alert.alert('move detected'); return true}
-    });
+    //});
 
   }
 
