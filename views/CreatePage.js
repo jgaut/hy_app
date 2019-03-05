@@ -48,7 +48,7 @@ class Example extends Component {
             .then(data => {
               console.log("data :" + JSON.stringify(data));
               this.state.data=data;
-              this.state.list=this.state.data.list.map((d, index) => (
+              this.state.list=this.state.data.list.map((d, index) => ({
                 console.log(d);
                 console.log(index);
                 var tmp = {
@@ -57,6 +57,7 @@ class Example extends Component {
                                 backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               })
               return tmp;
+            }
               );
             })
             .catch(error => {console.log(error);});
