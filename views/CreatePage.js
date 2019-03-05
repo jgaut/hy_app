@@ -65,7 +65,6 @@ class CreatePage extends Component {
                                 uri: d.uri,
                                 width: d.width,
                                 height: d.height,
-                                //backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
               this.setState({'list': tmp});
               this.forceUpdate(); 
@@ -124,6 +123,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Image 
+            style={{flex: 0.5}}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
@@ -183,12 +183,6 @@ container: {
     borderWidth: 1, 
     borderColor: '#555' 
   },
-  image: {
-    height: 50,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1, 
-    borderBottomColor: '#555' 
-  },
   submitButton: {
     position: 'absolute',
     bottom:0,
@@ -196,10 +190,6 @@ container: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between'
-  },
-  contentContainer: {
-    //paddingTop: 0,
-    //marginBottom: 100,
   },
 });
 
