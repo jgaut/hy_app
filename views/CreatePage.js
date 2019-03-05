@@ -51,7 +51,7 @@ class Example extends Component {
               this.state.data=data;
               this.state.list=this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
-                                label: `item-${d.type}`,
+                                label: `item-ok`,
                                 backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
             })
