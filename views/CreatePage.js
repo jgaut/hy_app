@@ -52,16 +52,18 @@ class Example extends Component {
             .then(data => {
               //console.log("data :" + JSON.stringify(data));
               this.state.data=data;
-              this.state.list=this.state.data.list.map((d, index) => ({
+              var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
                                 label: d.text,
                                 backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
+              this.setState('list': tmp);
+              this.forceUpdate(); 
+              this.state.isSav=true;
             })
             .catch(error => {console.log(error);});
       })
       .catch(err => console.log(err));
-    this.forceUpdate();
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
