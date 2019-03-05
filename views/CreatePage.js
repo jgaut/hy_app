@@ -86,11 +86,14 @@ class Example extends Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
+      <View>
         <InputText style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
         }}>{item.label}</InputText>
+        </View>
+
       </TouchableOpacity>
     )
   }
