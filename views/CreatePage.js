@@ -5,7 +5,7 @@ import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 
-class Example extends Component {
+class CreatePage extends Component {
 
   state = {
     list: [...Array(20)].map((d, index) => ({
@@ -118,16 +118,10 @@ class Example extends Component {
         </View>
 
       </TouchableOpacity>
-        <DraggableFlatList
-          data={this.state.list}
-          renderItem={this.renderItem}
-          keyExtractor={(item, index) => `draggable-item-${item.key}`}
-          scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ 'list': data})}
-        />
+        
       </View>
     )
   }
 }
 
-export default Example
+export default CreatePage
