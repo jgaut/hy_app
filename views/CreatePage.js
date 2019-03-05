@@ -60,7 +60,11 @@ class CreatePage extends Component {
               this.state.data=data;
               var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
+                                type: d.type,
                                 text: d.text,
+                                uri: d.uri,
+                                width: d.width,
+                                height: d.height,
                                 //backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
               this.setState({'list': tmp});
