@@ -17,7 +17,7 @@ state = {
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     })),
-    data: {"list":[]},
+    //data: {"list":[]},
     isSav:true, 
     fromKey:'', 
     keyboardVerticalOffset:0, 
@@ -329,7 +329,7 @@ state = {
       <View style={{ flex: 1 }}>
         <DraggableFlatList
           data={this.state.list}
-          renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
+          renderItem={this.renderItem}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.list=data }
