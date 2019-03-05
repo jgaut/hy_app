@@ -120,7 +120,7 @@ state = {
     }
   }
 
-  Story(item, index, move, moveEnd, isActive) {
+  renderItem(item, index, move, moveEnd, isActive) {
 
     //console.log('compo : ' + JSON.stringify(component.state));
     //return <Text>{index}</Text>;
