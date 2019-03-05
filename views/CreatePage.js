@@ -76,7 +76,16 @@ class Example extends Component {
     console.log("item : " +item.label);
     
     return (
-
+      <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'grey',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}
+      >
       <View>
         <InputText style={{ 
           fontWeight: 'bold', 
@@ -85,13 +94,30 @@ class Example extends Component {
         }}>{item.label}</InputText>
         </View>
 
-      
+      </TouchableOpacity>
     )
   }
 
   render() {
     return (
       <View style={{ flex: 1 }}>
+      <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'grey',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+      >
+      <View>
+        <InputText style={{ 
+          fontWeight: 'bold', 
+          color: 'white',
+          fontSize: 32,
+        }}>xxxxxxxxxxx</InputText>
+        </View>
+
+      </TouchableOpacity>
         <DraggableFlatList
           data={this.state.list}
           renderItem={this.renderItem}
