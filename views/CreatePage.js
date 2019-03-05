@@ -83,12 +83,12 @@ class CreatePage extends Component {
       case 'note':
         return (
           <TouchableOpacity
-            
+            style={styles.note}
             onLongPress={move}
             onPressOut={moveEnd}
           >
             <Text 
-              style={styles.note} 
+               
               key={Math.random()} 
             >
               {item.text}
@@ -101,12 +101,12 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            
+            style={styles.note} 
             onLongPress={move}
             onPressOut={moveEnd}
           >
             <Text 
-              style={styles.note} 
+              
               key={Math.random()} 
             >
               {item.text}
@@ -119,12 +119,12 @@ class CreatePage extends Component {
       case 'image':
         return (
           <TouchableOpacity
-            
+            style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
             onLongPress={move}
             onPressOut={moveEnd}
           >
             <Image 
-              style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
+              
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
