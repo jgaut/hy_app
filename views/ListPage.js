@@ -50,7 +50,6 @@ class ListPageScreen extends React.Component {
          getItemLayout={(data, index) => (
           {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
           )}
-        //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
       </View>
     );
