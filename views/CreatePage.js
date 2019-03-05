@@ -95,7 +95,7 @@ class CreatePageScreen extends React.Component {
                       console.log("data :" + JSON.stringify(data));
                       this.state.data=data;
                       var tmp=0;
-                      this.state.data.list.map((d, index) => ({
+                      this.state.data.list=this.state.data.list.map((d, index) => ({
                         key: `item-${index}`,
                         label: d.text,
                         backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
