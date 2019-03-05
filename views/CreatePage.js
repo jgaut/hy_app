@@ -27,8 +27,7 @@ state = {
     screenScroll:0,
   }
 
-  constructor(...args) {
-    super(...args);
+  constructor() {
     
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
