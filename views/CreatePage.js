@@ -68,7 +68,7 @@ class Example extends Component {
           renderItem={this.renderItem}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ 'list': data})}
+          onMoveEnd={({ data }) => {this.state.list=data}}
         />
       </View>
     )
