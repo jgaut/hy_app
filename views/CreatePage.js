@@ -122,7 +122,7 @@ class CreatePageScreen extends React.Component {
     //return <Text>{index}</Text>;
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
-    item = item2.item;
+    item = item.item;
     return (
       <TouchableOpacity
         style={{ 
