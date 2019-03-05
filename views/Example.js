@@ -13,6 +13,9 @@ class Example extends Component {
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
+     console.log("item : " +item);
+    console.log("item : " +item.label);
+    
     return (
       <TouchableOpacity
         style={{ 
