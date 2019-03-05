@@ -54,7 +54,6 @@ class Example extends Component {
                                 label: `item-${d.type}`,
                                 backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
-              this.forceUpdate();
             })
             .catch(error => {console.log(error);});
       })
