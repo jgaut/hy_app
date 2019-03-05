@@ -87,11 +87,11 @@ class CreatePage extends Component {
         onPressOut={moveEnd}
       >
       <View>
-        <Text style={{ 
+        <InputText style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }}>{item.label}</Text>
+        }} value="xxxxxxx"/>
         </View>
 
       </TouchableOpacity>
@@ -101,24 +101,13 @@ class CreatePage extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-      <TouchableOpacity
-        style={{ 
-          height: 100, 
-          backgroundColor: 'blue',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
-      >
-      <View>
-        <InputText style={{ 
-          fontWeight: 'bold', 
-          color: 'white',
-          fontSize: 32,
-        }}>xxxxxxxxxxx</InputText>
-        </View>
-
-      </TouchableOpacity>
-        
+        <DraggableFlatList
+          data={this.state.list}
+          renderItem={this.renderItem}
+          keyExtractor={(item, index) => `draggable-item-${item.key}`}
+          scrollPercent={5}
+          onMoveEnd={({ data }) => this.setState({ 'list': data})}
+        />
       </View>
     )
   }
