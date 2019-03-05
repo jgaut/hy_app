@@ -83,12 +83,7 @@ class CreatePage extends Component {
       case 'note':
         return (
           <TouchableOpacity
-            style={{ 
-              height: 100, 
-              backgroundColor: isActive ? 'blue' : 'grey',
-              alignItems: 'center', 
-              justifyContent: 'center' 
-            }}
+            
             onLongPress={move}
             onPressOut={moveEnd}
           >
@@ -106,12 +101,7 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            style={{ 
-              height: 100, 
-              backgroundColor: isActive ? 'blue' : 'grey',
-              alignItems: 'center', 
-              justifyContent: 'center' 
-            }}
+            
             onLongPress={move}
             onPressOut={moveEnd}
           >
@@ -129,12 +119,7 @@ class CreatePage extends Component {
       case 'image':
         return (
           <TouchableOpacity
-            style={{ 
-              height: 100, 
-              backgroundColor: isActive ? 'blue' : 'grey',
-              alignItems: 'center', 
-              justifyContent: 'center' 
-            }}
+            
             onLongPress={move}
             onPressOut={moveEnd}
           >
