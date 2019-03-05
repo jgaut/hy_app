@@ -88,7 +88,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Text 
-               style={styles.note} 
+               style={{ flex: 1 }}
               key={Math.random()} 
             >
               {item.text}
@@ -106,7 +106,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Text 
-              style={styles.note} 
+              style={{ flex: 1 }}
               key={Math.random()} 
             >
               {item.text}
@@ -124,7 +124,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Image 
-              style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
+              style={{ flex: 1 }}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
