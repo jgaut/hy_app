@@ -25,6 +25,7 @@ class Example extends Component {
   }
 
   launch(){
+    console.log("launch !");
     var fk="2019-10-26";
     Storage.get(fk+'.json', {level: 'private'})
       .then(result => {
