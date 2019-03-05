@@ -322,7 +322,7 @@ class CreatePageScreen extends React.Component {
     return (
 
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
-
+      <View style={{ flex: 1 }}>
         <DraggableFlatList
           data={this.state.data.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
@@ -355,7 +355,7 @@ class CreatePageScreen extends React.Component {
         </View>
       </KeyboardAvoidingView>
       */
-
+</View>
     );
   
 }
