@@ -124,7 +124,6 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Image 
-              style={{ flex: 1 }}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
