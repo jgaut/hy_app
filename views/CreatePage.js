@@ -24,7 +24,7 @@ class Example extends Component {
 
   }
 
-  lauch(){
+  launch(){
     var fk="2019-10-26";
     Storage.get(fk+'.json', {level: 'private'})
       .then(result => {
@@ -71,7 +71,6 @@ class Example extends Component {
   }
 
   render() {
-    //console.log(this.state.list);
     return (
       <View style={{ flex: 1 }}>
         <DraggableFlatList
