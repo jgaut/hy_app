@@ -17,7 +17,9 @@ class Example extends Component {
   
   constructor(...args) {
     super(...args);
-    
+  }
+
+  componentWillMount(){
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
@@ -37,10 +39,6 @@ class Example extends Component {
       //TODO
       //this.SavMyData(false);
     });
-  }
-
-  componentWillMount(){
-
   }
 
 
