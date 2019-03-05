@@ -77,7 +77,7 @@ class CreatePage extends Component {
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
-    //console.log("item : " +item);
+    console.log("item : " +item);
     //console.log("item : " +item.label);
     switch(item.label) {
       case 'note':
