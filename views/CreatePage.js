@@ -38,6 +38,13 @@ class Example extends Component {
 
   render() {
     console.log(this.state.list);
+
+    this.state.list=[...Array(20)].map((d, index) => ({
+                                    key: `item-${index}`,
+                                    label: Math.random(),
+                                    backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+                                  }));
+
     return (
       <View style={{ flex: 1 }}>
         <DraggableFlatList
