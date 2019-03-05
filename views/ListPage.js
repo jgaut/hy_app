@@ -13,14 +13,7 @@ class ListPageScreen extends React.Component {
 
   constructor(...args) {
     super(...args);
-    state = {
-    list: [...Array(20)].map((d, index) => ({
-      key: `item-${index}`,
-      label: index,
-      backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-    })),
-    data: {"list":[]},
-  }
+    this.state = {data: {"list":[]}};
     this.ListAllElement();
   }
 
