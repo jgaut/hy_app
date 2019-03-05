@@ -12,6 +12,13 @@ class Example extends Component {
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     }))
   }
+  
+  constructor(...args) {
+      super(...args);
+      this.props.navigation.addListener('didFocus', () => {
+  //      this.launch();
+      });
+  }
 
   componentWillMount(){
 
