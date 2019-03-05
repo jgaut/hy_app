@@ -88,7 +88,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Text 
-               style={{ flex: 1 }}
+               
               key={Math.random()} 
             >
               {item.text}
@@ -106,7 +106,7 @@ class CreatePage extends Component {
             onPressOut={moveEnd}
           >
             <Text 
-              style={{ flex: 1 }}
+              
               key={Math.random()} 
             >
               {item.text}
