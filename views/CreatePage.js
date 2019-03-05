@@ -86,13 +86,12 @@ class CreatePage extends Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
-      <View>
-        <InputText style={{ 
+        <Text style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }} value="xxxxxxx"/>
-        </View>
+        }}>
+        </Text>
 
       </TouchableOpacity>
     )
