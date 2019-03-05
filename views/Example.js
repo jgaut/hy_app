@@ -34,6 +34,7 @@ class Example extends Component {
   }
 
   render() {
+    console.log(this.state.list);
     return (
       <View style={{ flex: 1 }}>
         <DraggableFlatList
