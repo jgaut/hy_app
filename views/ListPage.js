@@ -73,7 +73,7 @@ class ListPageScreen extends React.Component {
           key = { item.key }
           style={styles.item}
           onPress={()=>{
-            console/log("create page : " + item.key);
+            console.log("create page : " + item.key);
             navigate('Create Page', {fromKey: item.key});
             //navigate('Example', {fromKey: item.key});
           }}
