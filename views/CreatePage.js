@@ -31,7 +31,7 @@ class Example extends Component {
         fetch(result)
           .then(response => response.json())
             .then(data => {
-              console.log("data :" + JSON.stringify(data));
+              //console.log("data :" + JSON.stringify(data));
               this.state.data=data;
               var tmp=this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
@@ -47,8 +47,8 @@ class Example extends Component {
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
-     console.log("item : " +item);
-    console.log("item : " +item.label);
+    //console.log("item : " +item);
+    //console.log("item : " +item.label);
     
     return (
       <TouchableOpacity
@@ -78,7 +78,7 @@ class Example extends Component {
           renderItem={this.renderItem}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => {this.state.data.list=data; console.log(data); console.log(this.state.data.list);}}
+          onMoveEnd={({ data }) => {this.state.data.list=data; /*console.log(data); console.log(this.state.data.list);*/}}
         />
       </View>
     )
