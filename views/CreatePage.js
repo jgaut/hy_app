@@ -127,6 +127,7 @@ class CreatePageScreen extends React.Component {
     //item = item.item;
     return (
       <TouchableOpacity
+      key={Math.random()}
         style={{ 
           height: 100, 
           backgroundColor: isActive ? 'blue' : item.backgroundColor,
@@ -136,7 +137,8 @@ class CreatePageScreen extends React.Component {
         onLongPress={move}
         onPressOut={moveEnd}
       >
-        <Text style={{ 
+        <Text key={Math.random()}
+        style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
