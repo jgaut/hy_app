@@ -98,6 +98,7 @@ class CreatePageScreen extends React.Component {
                         item.label=tmp;
                         item.backgroundColor= `rgb(${Math.floor(Math.random() * 255)}, ${tmp * 5}, ${132})`;
                         tmp++;
+                        console.log(tmp);
                       });
                       this.forceUpdate(); 
                       this.state.isSav=true;
@@ -121,7 +122,7 @@ class CreatePageScreen extends React.Component {
     //return <Text>{index}</Text>;
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
-
+    item = item2.item;
     return (
       <TouchableOpacity
         style={{ 
@@ -141,7 +142,7 @@ class CreatePageScreen extends React.Component {
       </TouchableOpacity>
     );
 
-    item = item2.item;
+    
     if(item){
       //console.log('item : ' + JSON.stringify(component.state));
       switch(item.type) {
