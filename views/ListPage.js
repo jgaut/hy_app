@@ -81,7 +81,7 @@ class ListPageScreen extends React.Component {
         <View
           style={styles.item}
         >
-          <InpuText style={styles.itemText}>{item.key}</InpuText>
+          <InputText style={styles.itemText}>{item.key}</InputText>
         </View>
         </TouchableOpacity>
       );
