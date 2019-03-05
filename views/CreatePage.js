@@ -27,7 +27,7 @@ state = {
     screenScroll:0,
   }
 
-  constructor(...args) {
+  //constructor(...args) {
     
     /*this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
@@ -69,7 +69,7 @@ state = {
       //onMoveShouldSetPanResponder: () => {Alert.alert('move detected'); return true}
     //});
 
-  }
+  //}
 
   launch() {
     if(this.state.isSav){
