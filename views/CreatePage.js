@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, TouchableOpacity, Text, InputText, Dimensions } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, Text, InputText, Dimensions, Image } from 'react-native'
 import DraggableFlatList from 'react-native-draggable-flatlist'
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
