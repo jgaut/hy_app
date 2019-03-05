@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text, InputText } from 'react-native'
+import { View, TouchableOpacity, Text, InputText, Dimensions } from 'react-native'
 import DraggableFlatList from 'react-native-draggable-flatlist'
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
@@ -73,28 +73,79 @@ class CreatePage extends Component {
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
     //console.log("item : " +item);
-    console.log("item : " +item.label);
-    
-    return (
-      <TouchableOpacity
-        style={{ 
-          height: 100, 
-          backgroundColor: isActive ? 'blue' : 'grey',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
-        onLongPress={move}
-        onPressOut={moveEnd}
-      >
-        <Text style={{ 
-          fontWeight: 'bold', 
-          color: 'white',
-          fontSize: 32,
-        }}>{item.text}
-        </Text>
+    //console.log("item : " +item.label);
+    switch(item.label) {
+      case 'note':
+        return (
+          <TouchableOpacity
+            style={{ 
+              height: 100, 
+              backgroundColor: isActive ? 'blue' : 'grey',
+              alignItems: 'center', 
+              justifyContent: 'center' 
+            }}
+            onLongPress={move}
+            onPressOut={moveEnd}
+          >
+            <Text 
+              style={styles.note} 
+              key={sortKey} 
+            >
+              {item.text}
+            </Text>
 
-      </TouchableOpacity>
-    )
+          </TouchableOpacity>
+        );
+        break;
+
+      case 'text':
+        return (
+          <TouchableOpacity
+            style={{ 
+              height: 100, 
+              backgroundColor: isActive ? 'blue' : 'grey',
+              alignItems: 'center', 
+              justifyContent: 'center' 
+            }}
+            onLongPress={move}
+            onPressOut={moveEnd}
+          >
+            <Text 
+              style={styles.note} 
+              key={sortKey} 
+            >
+              {item.text}
+            </Text>
+
+          </TouchableOpacity>
+        );
+        break;
+
+      case 'image':
+        return (
+          <TouchableOpacity
+            style={{ 
+              height: 100, 
+              backgroundColor: isActive ? 'blue' : 'grey',
+              alignItems: 'center', 
+              justifyContent: 'center' 
+            }}
+            onLongPress={move}
+            onPressOut={moveEnd}
+          >
+            <Image 
+              style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
+              key={sortKey} 
+              source={{uri: item.uri}} 
+            />
+
+          </TouchableOpacity>
+        );
+        break;
+
+        default:
+          console.log('Sorry, we are out of ' + item.type + '.');
+  }
   }
 
   render() {
@@ -111,5 +162,56 @@ class CreatePage extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+button: {
+  padding:5,
+  margin:5,
+  height: 40,
+  backgroundColor: '#2196F3',
+  alignItems: 'stretch',
+  justifyContent: 'center',
+    },
+  buttonText: {
+    color: 'white'
+  },
+container: {
+    backgroundColor: '#f5fcff',
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+  },
+  note: {
+    padding:5,
+    height: 50,
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
+  },
+  text: {
+    padding:5,
+    height: 150,
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
+  },
+  image: {
+    height: 50,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1, 
+    borderBottomColor: '#555' 
+  },
+  submitButton: {
+    position: 'absolute',
+    bottom:0,
+    left:0,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  contentContainer: {
+    //paddingTop: 0,
+    //marginBottom: 100,
+  },
+});
 
 export default CreatePage
