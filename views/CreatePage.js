@@ -87,11 +87,11 @@ class Example extends Component {
         onPressOut={moveEnd}
       >
       <View>
-        <InputText style={{ 
+        <Text style={{ 
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }}>{item.label}</InputText>
+        }}>{item.label}</Text>
         </View>
 
       </TouchableOpacity>
