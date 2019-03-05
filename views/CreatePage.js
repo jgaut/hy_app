@@ -16,11 +16,33 @@ class Example extends Component {
   constructor(...args) {
       super(...args);
       this.props.navigation.addListener('didFocus', () => {
-  //      this.launch();
+        this.launch();
       });
   }
 
   componentWillMount(){
+
+  }
+
+  lauch(){
+    var fk="2019-10-26";
+    Storage.get(fk+'.json', {level: 'private'})
+      .then(result => {
+        fetch(result)
+          .then(response => response.json())
+            .then(data => {
+              console.log("data :" + JSON.stringify(data));
+              this.state.data=data;
+              var tmp=this.state.data.list.map((d, index) => ({
+                                key: `item-${index}`,
+                                label: d.text,
+                                backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+                              }));
+              this.state.list=tmp;
+            })
+            .catch(error => {console.log(error);});
+      })
+      .catch(err => console.log(err));
 
   }
 
@@ -49,28 +71,7 @@ class Example extends Component {
   }
 
   render() {
-    console.log(this.state.list);
-    var fk="2019-10-26";
-    Storage.get(fk+'.json', {level: 'private'})
-      .then(result => {
-        fetch(result)
-          .then(response => response.json())
-            .then(data => {
-              console.log("data :" + JSON.stringify(data));
-              this.state.data=data;
-              var tmp=this.state.data.list.map((d, index) => ({
-                                key: `item-${index}`,
-                                label: d.text,
-                                backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-                              }));
-              this.state.list=tmp;
-            })
-            .catch(error => {console.log(error);});
-      })
-      .catch(err => console.log(err));
-
-
-
+    //console.log(this.state.list);
     return (
       <View style={{ flex: 1 }}>
         <DraggableFlatList
