@@ -139,7 +139,7 @@ class CreatePage extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <DraggableFlatList
           data={this.state.list}
           renderItem={this.renderItem}
