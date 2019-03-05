@@ -94,7 +94,7 @@ class CreatePage extends Component {
           >
             <Text 
               style={styles.note} 
-              key={sortKey} 
+              key={Math.random()} 
             >
               {item.text}
             </Text>
@@ -117,7 +117,7 @@ class CreatePage extends Component {
           >
             <Text 
               style={styles.note} 
-              key={sortKey} 
+              key={Math.random()} 
             >
               {item.text}
             </Text>
@@ -140,7 +140,7 @@ class CreatePage extends Component {
           >
             <Image 
               style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
-              key={sortKey} 
+              key={Math.random()} 
               source={{uri: item.uri}} 
             />
 
