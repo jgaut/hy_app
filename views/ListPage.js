@@ -38,6 +38,7 @@ class ListPageScreen extends React.Component {
   render() {
 
     return (
+      <View style={styles.container}>
       <FlatList
         data={formatData(this.state.data.list, numColumns)}
         style={styles.container}
@@ -51,6 +52,7 @@ class ListPageScreen extends React.Component {
           )}
         //onEndReached={(number) => {console.log("distance from end : " + JSON.stringify(number))}}
       />
+      </View>
     );
   
   }
