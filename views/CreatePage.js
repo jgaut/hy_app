@@ -92,6 +92,7 @@ class CreatePageScreen extends React.Component {
                 fetch(result)
                   .then(response => response.json())
                     .then(data => {
+                      console.log("data :" + data);
                       this.state.list=data;
                       var tmp=0;
                       this.state.list.forEach(item => {
