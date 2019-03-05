@@ -92,8 +92,12 @@ class CreatePageScreen extends React.Component {
                   .then(response => response.json())
                     .then(data => {
                       this.state.data=data;
+                      var tmp=0;
                       this.state.data.list.forEach(item => {
-                        item.key=`item-${item.sort}`;
+                        item.key=`item-${tmp}`;
+                        item.label=tmp;
+                        item.backgroundColor= `rgb(${Math.floor(Math.random() * 255)}, ${tmp * 5}, ${132})`;
+                        tmp++;
                       });
                       this.forceUpdate(); 
                       this.state.isSav=true;
@@ -122,7 +126,7 @@ class CreatePageScreen extends React.Component {
       <TouchableOpacity
         style={{ 
           height: 100, 
-          backgroundColor: isActive ? 'blue' : 'red',
+          backgroundColor: isActive ? 'blue' : item.backgroundColor,
           alignItems: 'center', 
           justifyContent: 'center' 
         }}
@@ -133,7 +137,7 @@ class CreatePageScreen extends React.Component {
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }}>{item.text || Math.random()}</Text>
+        }}>{item.label}</Text>
       </TouchableOpacity>
     );
 
