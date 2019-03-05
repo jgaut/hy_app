@@ -44,7 +44,7 @@ class Example extends Component {
 
 
   launch(key){
-    console.log("launch ! : "+key);
+    console.log("launch ! : "+this.props.navigation.state.params.fromKey);
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         fetch(result)
