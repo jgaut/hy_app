@@ -41,7 +41,7 @@ class Example extends Component {
 
     this.state.list=[...Array(20)].map((d, index) => ({
                                     key: `item-${index}`,
-                                    label: Math.random(),
+                                    label: `item-${index}`,
                                     backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                                   }));
 
