@@ -59,7 +59,7 @@ class CreatePage extends Component {
               this.state.data=data;
               var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
-                                label: d.text,
+                                text: d.text,
                                 //backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
               this.setState({'list': tmp});
@@ -90,7 +90,7 @@ class CreatePage extends Component {
           fontWeight: 'bold', 
           color: 'white',
           fontSize: 32,
-        }}>
+        }}>{item.text}
         </Text>
 
       </TouchableOpacity>
