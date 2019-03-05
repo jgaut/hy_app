@@ -330,6 +330,7 @@ class CreatePageScreen extends React.Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.state.data.list=data }
         />
+        </View>
 
 /*
         <View style={styles.submitButton}>
@@ -355,7 +356,7 @@ class CreatePageScreen extends React.Component {
         </View>
       </KeyboardAvoidingView>
       */
-</View>
+
     );
   
 }
