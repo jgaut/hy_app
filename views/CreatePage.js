@@ -27,12 +27,12 @@ state = {
     screenScroll:0,
   }
 
-  constructor() {
+  constructor(...args) {
     
     this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
-      /*if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
+      if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
         this.launch();
       }else 
       //From roll photo
@@ -45,7 +45,7 @@ state = {
     this.props.navigation.addListener('didBlur', () => {
       console.log('time to sav!');
       this.SavMyData(false);
-    });*/
+    });
 
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
       //console.log(e.endCoordinates.height);
