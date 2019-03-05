@@ -127,6 +127,7 @@ state = {
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
     console.log("item : " +item);
+    console.log("item : " +item.label);
     //item = item.item;
     return (
       <TouchableOpacity
@@ -327,11 +328,11 @@ state = {
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
       <View style={{ flex: 1 }}>
         <DraggableFlatList
-          data={this.state.data.list}
+          data={this.state.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.state.data.list=data }
+          onMoveEnd={({ data }) => this.state.list=data }
         />
         </View>
 
