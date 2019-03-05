@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions, InputText } from 'react-native'; //https://facebook.github.io/react-native/docs/flatlist#refreshing
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native'; //https://facebook.github.io/react-native/docs/flatlist#refreshing
 import { createStackNavigator } from 'react-navigation';
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
@@ -69,8 +69,6 @@ class ListPageScreen extends React.Component {
       );
     }else{
       return (
-        <View style={styles.item}>
-        <InputText style={styles.itemText}>{item.key}</InputText>
         <TouchableOpacity
           key = { item.key }
           style={styles.item}
@@ -86,7 +84,6 @@ class ListPageScreen extends React.Component {
           <Text style={styles.itemText}>{item.key}</Text>
         </View>
         </TouchableOpacity>
-        </View>
       );
     }
   };
