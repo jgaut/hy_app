@@ -60,7 +60,7 @@ class Example extends Component {
               var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
                                 label: d.text,
-                                backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+                                //backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
               this.setState({'list': tmp});
               this.forceUpdate(); 
@@ -79,7 +79,7 @@ class Example extends Component {
       <TouchableOpacity
         style={{ 
           height: 100, 
-          backgroundColor: isActive ? 'blue' : item.backgroundColor,
+          backgroundColor: isActive ? 'blue' : 'grey',
           alignItems: 'center', 
           justifyContent: 'center' 
         }}
