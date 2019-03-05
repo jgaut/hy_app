@@ -38,12 +38,32 @@ class Example extends Component {
 
   render() {
     console.log(this.state.list);
+    var fk="2019-10-26";
+    Storage.get(fk+'.json', {level: 'private'})
+      .then(result => {
+        //console.log("get result : " +result);
+        //result => private url
+        fetch(result)
+          .then(response => response.json())
+            .then(data => {
+              console.log("data :" + JSON.stringify(data));
+              this.state.data=data;
+              this.state.list=this.state.data.list.map((d, index) => (
+                console.log(d);
+                console.log(index);
+                var tmp = {
+                                key: `item-${index}`,
+                                label: `item-${index}`,
+                                backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+                              })
+              return tmp;
+              );
+            })
+            .catch(error => {console.log(error);});
+      })
+      .catch(err => console.log(err));
 
-    this.state.list=[...Array(20)].map((d, index) => ({
-                                    key: `item-${index}`,
-                                    label: `item-${index}`,
-                                    backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-                                  }));
+
 
     return (
       <View style={{ flex: 1 }}>
