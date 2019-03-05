@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
 import DraggableFlatList from 'react-native-draggable-flatlist'
 import Storage from '@aws-amplify/storage';
+import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 
 class Example extends Component {
 
