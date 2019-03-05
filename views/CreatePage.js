@@ -29,7 +29,7 @@ state = {
 
   constructor(...args) {
     
-    this.props.navigation.addListener('didFocus', () => {
+    /*this.props.navigation.addListener('didFocus', () => {
       console.log('time to launch!');
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
@@ -40,12 +40,13 @@ state = {
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
         this.AddElement('image', this.props.navigation.state.params.image);
       }
-    });
+    });*/
 
-    this.props.navigation.addListener('didBlur', () => {
+
+    /*this.props.navigation.addListener('didBlur', () => {
       console.log('time to sav!');
       this.SavMyData(false);
-    });
+    });*/
 
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (e)=>{
       //console.log(e.endCoordinates.height);
