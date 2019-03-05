@@ -57,7 +57,7 @@ class Example extends Component {
                                 label: d.text,
                                 backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
                               }));
-              this.setState('list': tmp);
+              this.setState({'list': tmp});
               this.forceUpdate(); 
               this.state.isSav=true;
             })
