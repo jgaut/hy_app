@@ -76,16 +76,7 @@ class Example extends Component {
     console.log("item : " +item.label);
     
     return (
-      <TouchableOpacity
-        style={{ 
-          height: 100, 
-          backgroundColor: isActive ? 'blue' : 'grey',
-          alignItems: 'center', 
-          justifyContent: 'center' 
-        }}
-        onLongPress={move}
-        onPressOut={moveEnd}
-      >
+
       <View>
         <InputText style={{ 
           fontWeight: 'bold', 
@@ -94,7 +85,7 @@ class Example extends Component {
         }}>{item.label}</InputText>
         </View>
 
-      </TouchableOpacity>
+      
     )
   }
 
