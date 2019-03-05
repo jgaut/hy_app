@@ -93,15 +93,14 @@ class CreatePageScreen extends React.Component {
                   .then(response => response.json())
                     .then(data => {
                       console.log("data :" + JSON.stringify(data));
-                      this.state.list=data;
+                      this.state.data=data;
                       var tmp=0;
-                      this.state.list.forEach(item => {
-                        item.key=`item-${tmp}`;
-                        item.label=tmp;
-                        item.backgroundColor= `rgb(${Math.floor(Math.random() * 255)}, ${tmp * 5}, ${132})`;
-                        tmp++;
-                        console.log(tmp);
-                      });
+                      this.state.data.list.map((d, index) => ({
+                        key: `item-${index}`,
+                        label: d.text,
+                        backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+                      }));
+
                       this.forceUpdate(); 
                       this.state.isSav=true;
                       //init position array
@@ -124,7 +123,8 @@ class CreatePageScreen extends React.Component {
     //return <Text>{index}</Text>;
     //console.log('call story : ' + JSON.stringify(item));
     //var returnValue = [];
-    item = item.item;
+    console.log("item : " +item);
+    //item = item.item;
     return (
       <TouchableOpacity
         style={{ 
@@ -322,11 +322,11 @@ class CreatePageScreen extends React.Component {
       //<KeyboardAvoidingView behavior="padding" style={styles.container} keyboardVerticalOffset={this.state.keyboardVerticalOffset}>
 
         <DraggableFlatList
-          data={this.state.list}
+          data={this.state.data.list}
           renderItem={(item, index, move, moveEnd, isActive ) => this.Story(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ 'list': data}) }
+          onMoveEnd={({ data }) => this.state.data.list=data }
         />
 
 /*
