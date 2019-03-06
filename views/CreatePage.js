@@ -27,7 +27,7 @@ class CreatePage extends Component {
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
         this.launch();
-        this.props.navigation.state.params.fromKey:null;
+        this.props.navigation.state.params.fromKey=null;
       }else 
       //From roll photo
       if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
