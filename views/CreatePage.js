@@ -127,7 +127,7 @@ class CreatePage extends Component {
             onLongPress={()=>{console.log("onLongPress!"); move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
-            <Image 
+            <Text 
             style={this.state.isMoving ? {backgroundImage: `url(${item.uri})`} : {backgroundImage: `url(${item.uri})`, width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
             //style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
