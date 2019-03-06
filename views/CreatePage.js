@@ -14,7 +14,7 @@ class CreatePage extends Component {
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     })),
-    isMoving: false,
+    isMoving: true,
   }
   
   constructor(...args) {
