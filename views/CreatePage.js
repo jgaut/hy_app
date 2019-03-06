@@ -143,6 +143,7 @@ class CreatePage extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <Text>{this.state.isMoving}</Text>
         <DraggableFlatList
           data={this.state.list}
           renderItem={this.renderItem}
