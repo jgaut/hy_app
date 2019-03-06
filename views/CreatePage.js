@@ -172,7 +172,7 @@ class CreatePage extends Component {
           renderItem={( item, index, move, moveEnd, isActive ) => this.renderItem(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => {this.setState({'list': data}}); this.setState({'isSav': false}});}}
+          onMoveEnd={({ data }) => {this.setState({'list': data}); this.setState({'isSav': false});}}
         />
 
 
