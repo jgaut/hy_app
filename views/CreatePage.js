@@ -17,10 +17,9 @@ class CreatePage extends Component {
     isMoving: false,
   }
   
-  static navigationOptions = {
-    header: null,
-    drawerLockMode: "locked-closed"
-  };
+static navigationOptions = () => ({
+    drawerLockMode: 'locked-closed'
+  })
 
   constructor(...args) {
     super(...args);
