@@ -14,7 +14,7 @@ class CreatePage extends Component {
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     })),
-    isMoving: true,
+    isMoving: false,
   }
   
   constructor(...args) {
@@ -84,7 +84,7 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onLongPress={()=>{console.log("onLongPress!"); move();}}
+            onLongPress={()=>{console.log("onLongPress!"); compo.state.isMoving=true;compo.forceUpdate();move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
