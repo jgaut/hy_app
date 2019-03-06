@@ -106,11 +106,20 @@ class CreatePage extends Component {
 
     switch (type) {
       case 'note':
-        this.state.data.list.push({"type":"note", "text":this.props.navigation.state.params.text});
+        this.state.list.push({"type":"note", "text":this.props.navigation.state.params.text});
         console.log('add note');
         break;
       case 'text':
         this.state.data.list.push({"type":"text", "text":''});
+        var tmp = this.state.data.list.map((d, index) => ({
+                                key: `item-${index}`,
+                                type: d.type,
+                                text: d.text,
+                                uri: d.uri,
+                                width: d.width,
+                                height: d.height,
+                              }));
+        this.setState({'list': tmp});
         console.log('add text');
         break;
       case 'image':
