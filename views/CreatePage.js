@@ -184,12 +184,12 @@ class CreatePage extends Component {
             </View>
           </TouchableOpacity>
         
-        <TouchableOpacity key={Math.random()} onPress={() => {console.log("onPressButton");this.setState({'isMoving':this.state.isMoving?false:true});}}>
+          <TouchableOpacity key={Math.random()} onPress={() => {console.log("onPressButton");this.setState({'isMoving':this.state.isMoving?false:true});}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>{this.state.isMoving?"End move":"Start move"}</Text>
             </View>
           </TouchableOpacity>
-
+          
         </View>
       </View>
     )
