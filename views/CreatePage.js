@@ -162,6 +162,29 @@ class CreatePage extends Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.setState({ 'list': data})}
         />
+
+
+        <View style={styles.submitButton}>
+          
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add note</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('text')}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add text</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('roll')}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Add image</Text>
+            </View>
+          </TouchableOpacity>
+        
+
         <TouchableOpacity key={Math.random()} onPress={() => {console.log("onPressButton");this.setState({'isMoving':true});}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Start move</Text>
