@@ -143,7 +143,7 @@ class CreatePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text>{this.state.isMoving}</Text>
+
         <DraggableFlatList
           data={this.state.list}
           renderItem={this.renderItem}
@@ -162,6 +162,12 @@ class CreatePage extends Component {
               <Text style={styles.buttonText}>End move</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity key={Math.random()}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>{this.state.isMoving}</Text>
+            </View>
+          </TouchableOpacity>
+
       </View>
     )
   }
