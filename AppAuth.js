@@ -6,11 +6,9 @@ import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from './views/Home';
 import ProfileScreen from './views/Profile';
-import RollScreen from './views/Camerarollpicker';
 import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
 import TabMenuScreen from './views/TabMenu';
-import ExampleScreen from './views/Example';
 import Auth from '@aws-amplify/auth';
 
 class AppAuth extends React.Component {
@@ -61,8 +59,6 @@ const CustomdrawerComponent = (props) => (
 const MyDrawerNavigator = createDrawerNavigator({
   'Home': TabMenuScreen,
   'Profile': ProfileScreen,
-  'Roll': RollScreen,
-  'Example': ExampleScreen,
   //'Journal': ListPageScreen,
   //'Create Page': CreatePageScreen
 }, 
