@@ -86,7 +86,7 @@ class CreatePage extends Component {
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); 
-            if(!this.state.isMoving){this.setState({'isMoving':true});}
+            //if(!this.state.isMoving){this.setState({'isMoving':true});}
             move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
