@@ -16,6 +16,7 @@ class CreatePage extends Component {
     })),
     isMoving: false,
     isSav: false,
+    isEdit: false,
   }
 
   constructor(...args) {
@@ -181,7 +182,7 @@ class CreatePage extends Component {
 
         <View style={styles.submitButton}>
           
-          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('note')}>
+          <TouchableOpacity key={Math.random()} onPress={() => {this.setState({'isEdit': false}); /*this.AddElement('note');*/}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add note</Text>
             </View>
@@ -206,6 +207,15 @@ class CreatePage extends Component {
           </TouchableOpacity>
 
         </View>
+
+        <View style={this.state.isEdit?styles.editMode: styles.nothing}>
+          <TouchableOpacity key={Math.random()} onPress={() => {this.setState({'isEdit': false});}}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Close</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
       </View>
     )
   }
@@ -258,6 +268,10 @@ container: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  editMode: {
+    position: 'absolute',
+    flex: 1,
   },
 });
 
