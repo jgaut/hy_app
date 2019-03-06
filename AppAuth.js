@@ -65,12 +65,11 @@ const MyDrawerNavigator = createDrawerNavigator({
   drawerPosition: 'right',
   drawerWidth: 200,
   contentComponent: CustomdrawerComponent,
-  gesturesEnabled: false,
+  lockMode: 'locked-closed',
 }, 
 {
   navigationOptions: {
     headerMode: 'none',
-    drawerLockMode: "locked-closed",
   },
 });
 
