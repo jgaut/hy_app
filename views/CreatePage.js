@@ -83,12 +83,12 @@ class CreatePage extends Component {
       case 'note':
         return (
           <TouchableOpacity
-            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
-            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
-            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            onLongPress={()=>{console.log("onLongPress!"); move();}}
+            onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.nothing}
+              style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
               key={Math.random()} 
             >
               {item.text}
@@ -101,12 +101,12 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
-            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
-            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            onLongPress={()=>{console.log("onLongPress!"); move();}}
+            onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.nothing}
+              style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
               key={Math.random()} 
             >
               {item.text}
@@ -121,9 +121,8 @@ class CreatePage extends Component {
           <TouchableOpacity
             //style={} 
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onPressIn={()=>{console.log("onPressIn!"); this.state.isMoving=true; this.forceUpdate()}}
             onLongPress={()=>{console.log("onLongPress!"); move();}}
-            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
+            onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Image 
             style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
@@ -151,6 +150,17 @@ class CreatePage extends Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.setState({ 'list': data})}
         />
+        <TouchableOpacity key={Math.random()} onPress={() => {this.state.isMoving=true;this.forceUpdate();}}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Start move</Text>
+            </View>
+          </TouchableOpacity>
+
+                  <TouchableOpacity key={Math.random()} onPress={() => {this.state.isMoving=false;this.forceUpdate();}}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>End move</Text>
+            </View>
+          </TouchableOpacity>
       </View>
     )
   }
