@@ -120,13 +120,14 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
-            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            onPress={()=>{console.log("onPress!"); this.state.isMoving=true;}}
+            onLongPress={()=>{console.log("onLongPress!"); move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Image 
-            //style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
-            style={this.state.isMoving ? styles.nothing : styles.nothing}
+            style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            //style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
