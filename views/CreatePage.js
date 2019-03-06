@@ -78,7 +78,7 @@ class CreatePage extends Component {
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
     //console.log("item : " +item);
-    console.log("item : " +item.uri);
+    console.log("item : " +item.text);
     console.log("compo : " +JSON.stringify(this.state.isMoving));
     switch(item.type) {
       case 'note':
@@ -123,15 +123,15 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.state.isMoving ? {padding:5, height: 50, backgroundColor: '#fff', borderWidth: 1, borderColor: '#555', backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",} : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Image 
-            style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            style={this.state.isMoving ? {backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"} : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
             //style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
-              source={{uri: item.uri}} 
+              //source={{uri: item.uri}} 
             />
 
           </TouchableOpacity>
