@@ -38,14 +38,12 @@ class CreatePage extends Component {
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
         switch(this.props.navigation.state.params.type) {
           case 'note':
-            AddElement('note');
+            this.AddElement('note');
             break;
 
           default :
             console.log("error with this type : "+ this.props.navigation.state.params.type)
         }
-        console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
-        this.AddElement('image', this.props.navigation.state.params.image);
       }
     });
 
