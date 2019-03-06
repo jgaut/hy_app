@@ -48,29 +48,56 @@ class EditNote extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 20,
-    flex: 1,
-    backgroundColor: '#F6AE2D',
+button: {
+  padding:5,
+  margin:5,
+  height: 40,
+  backgroundColor: '#2196F3',
+  alignItems: 'stretch',
+  justifyContent: 'center',
+    },
+  buttonText: {
+    color: 'white'
   },
-  content: {
-    marginTop: 15,
+container: {
+    backgroundColor: '#f5fcff',
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+  },
+  nothing: {
+
+  },
+  MovingBlock: {
     height: 50,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
+  },
+  note: {
+    padding:5,
+    height: 50,
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
   },
   text: {
-    fontSize: 16,
-    alignItems: 'center',
-    color: '#fff',
+    padding:5,
+    height: 150,
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
   },
-  bold: {
-    fontWeight: 'bold',
+  submitButton: {
+    position: 'absolute',
+    bottom:0,
+    left:0,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  info: {
-    fontSize: 12,
+  editMode: {
+    position: 'absolute',
+    flex: 1,
   },
 });
 
