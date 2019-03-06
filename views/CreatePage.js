@@ -38,7 +38,7 @@ class CreatePage extends Component {
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
         switch(this.props.navigation.state.params.type) {
           case 'note':
-
+            AddElement('note');
             break;
 
           default :
@@ -108,7 +108,7 @@ class CreatePage extends Component {
 
     switch (type) {
       case 'note':
-        this.state.data.list.push({"type":"note", "text":this.props.navigation.state.params.});
+        this.state.data.list.push({"type":"note", "text":this.props.navigation.state.params.text});
         console.log('add note');
         break;
       case 'text':
