@@ -168,6 +168,9 @@ class CreatePage extends Component {
   }
 
   render() {
+
+    const {navigate} = this.props.navigation;
+
     return (
       <View style={styles.container}>
 
@@ -182,7 +185,7 @@ class CreatePage extends Component {
 
         <View style={styles.submitButton}>
           
-          <TouchableOpacity key={Math.random()} onPress={() => {this.setState({'isEdit': false}); /*this.AddElement('note');*/}}>
+          <TouchableOpacity key={Math.random()} onPress={() => {navigate('EditNote')}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add note</Text>
             </View>
@@ -208,13 +211,6 @@ class CreatePage extends Component {
 
         </View>
 
-        <View style={this.state.isEdit?styles.editMode: styles.nothing}>
-          <TouchableOpacity key={Math.random()} onPress={() => {this.setState({'isEdit': false});}}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Close</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
 
       </View>
     )
