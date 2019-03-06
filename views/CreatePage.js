@@ -91,10 +91,10 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
+              style={this.state.isMoving ? styles.nothing : styles.note}
               key={Math.random()} 
             >
-              {item.text}{this.state.isMoving?"true":"false"}
+              {item.text}
             </Text>
 
           </TouchableOpacity>
@@ -109,10 +109,10 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
+              style={this.state.isMoving ? styles.nothing : styles.text}
               key={Math.random()} 
             >
-              {item.text}{this.state.isMoving?"true":"false"}
+              {item.text}
             </Text>
 
           </TouchableOpacity>
@@ -165,12 +165,6 @@ class CreatePage extends Component {
               <Text style={styles.buttonText}>End move</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity key={Math.random()}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>{this.state.isMoving?"true":"false"}</Text>
-            </View>
-          </TouchableOpacity>
-
       </View>
     )
   }
