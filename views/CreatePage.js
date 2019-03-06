@@ -121,8 +121,8 @@ class CreatePage extends Component {
           <TouchableOpacity
             //style={} 
             style={this.isMoving ? styles.MovingBlock : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
-            onLongPress={move}
-            onPressOut={moveEnd}
+            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
+            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Image 
             style={{flex: 0.5}}
