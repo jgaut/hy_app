@@ -150,13 +150,13 @@ class CreatePage extends Component {
           scrollPercent={5}
           onMoveEnd={({ data }) => this.setState({ 'list': data})}
         />
-        <TouchableOpacity key={Math.random()} onPress={() => {this.state.isMoving=true;this.forceUpdate();}}>
+        <TouchableOpacity key={Math.random()} onPress={() => {console.log("onPressButton");this.state.isMoving=true; this.forceUpdate();}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Start move</Text>
             </View>
           </TouchableOpacity>
 
-                  <TouchableOpacity key={Math.random()} onPress={() => {this.state.isMoving=false;this.forceUpdate();}}>
+                  <TouchableOpacity key={Math.random()} onPress={() => {console.log("onPressButton");this.state.isMoving=false; this.forceUpdate();}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>End move</Text>
             </View>
