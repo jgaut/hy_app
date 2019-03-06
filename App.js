@@ -10,6 +10,7 @@ import SignUpConfirmScreen from './views/SignUpConfirm';
 import AppAuthScreen from './AppAuth';
 import ExampleScreen from './views/Example';
 import RollScreen from './views/Camerarollpicker';
+import EditNoteScreen from './views/EditNote';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
@@ -64,6 +65,7 @@ const AppNavigator = createStackNavigator({
   AppAuth: {screen: AppAuthScreen},
   Roll: {screen: RollScreen},
   Example: {screen: ExampleScreen},
+  EditNote: {screen: EditNoteScreen},
 },
 {
     headerMode: 'none'}
