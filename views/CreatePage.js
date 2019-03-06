@@ -77,18 +77,18 @@ class CreatePage extends Component {
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
-    console.log("item : " +item);
+    //console.log("item : " +item);
     //console.log("item : " +item.label);
     switch(item.type) {
       case 'note':
         return (
           <TouchableOpacity
-            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.note}
+              style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
             >
               {item.text}
@@ -101,12 +101,12 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.text}
+              style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
             >
               {item.text}
@@ -120,12 +120,13 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Image 
-            style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            //style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
