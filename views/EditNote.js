@@ -26,7 +26,7 @@ class EditNote extends Component {
     return (
       <View style={styles.container}>
         <TextInput 
-          style={styles.input} 
+          style={styles.note} 
           value={this.state.text}
           onChangeText={text => this.setState({ text })}
           >{this.state.text}</TextInput>
