@@ -9,9 +9,9 @@ import { Constants } from 'expo';
 class CreatePage extends Component {
 
   state = {
-    list: [...Array(20)].map((d, index) => ({
+    list: [...Array(1)].map((d, index) => ({
       key: `item-${index}`,
-      label: index,
+      type: "Loading",
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     })),
     isMoving: false,
@@ -133,6 +133,16 @@ class CreatePage extends Component {
             />
 
           </TouchableOpacity>
+        );
+        break;
+
+        case 'loading':
+        return (
+          
+            <Text 
+            style={styles.button}
+              key={Math.random()}>Loading...</Text>
+
         );
         break;
 
