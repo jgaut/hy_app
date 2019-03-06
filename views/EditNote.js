@@ -3,7 +3,9 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
 
 class EditNote extends Component {
@@ -72,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Roll;
+export default EditNote;
