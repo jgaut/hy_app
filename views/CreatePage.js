@@ -83,12 +83,12 @@ class CreatePage extends Component {
       case 'note':
         return (
           <TouchableOpacity
-            style={styles.note}
-            onLongPress={move}
-            onPressOut={moveEnd}
+            style={this.isMoving ? styles.MovingBlock : styles.nothing}
+            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
+            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-               
+              style={this.isMoving ? styles.nothing : styles.note}
               key={Math.random()} 
             >
               {item.text}
@@ -101,12 +101,12 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            style={styles.note} 
-            onLongPress={move}
-            onPressOut={moveEnd}
+            style={this.isMoving ? styles.MovingBlock : styles.nothing}
+            onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
+            onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              
+              style={this.isMoving ? styles.nothing : styles.text}
               key={Math.random()} 
             >
               {item.text}
@@ -120,12 +120,12 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.isMoving ? styles.MovingBlock : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            style={this.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Image 
-            style={{flex: 0.5}}
+            style={this.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
@@ -170,6 +170,16 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
+  },
+  nothing: {
+
+  },
+  MovingBlock: : {
+    padding:5,
+    height: 50,
+    backgroundColor: '#fff',
+    borderWidth: 1, 
+    borderColor: '#555' 
   },
   note: {
     padding:5,
