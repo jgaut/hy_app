@@ -78,7 +78,7 @@ class CreatePage extends Component {
 
   SavMyData(e) {
     if(!this.state.isSav){
-      this.state.data.list = this.list;
+      this.state.data.list = this.state.list;
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
         level: 'private',
         contentType: 'text/plain'
