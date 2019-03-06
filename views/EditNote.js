@@ -10,12 +10,13 @@ import {
 import { Constants } from 'expo';
 
 class EditNote extends Component {
+
+  state = {
+    text: "",
+  }
+
   constructor(...props) {
     super(...props);
-
-    this.state = {
-      text: 0,
-    };
   }
 
   render() {
