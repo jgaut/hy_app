@@ -76,16 +76,16 @@ class CreatePage extends Component {
       .catch(err => console.log(err));
   }
 
-  renderItem = ({ item, index, move, moveEnd, isActive, compo }) => {
+  renderItem = ({ item, index, move, moveEnd, isActive }) => {
     //console.log("item : " +item);
     console.log("item : " +item.text);
-    console.log("compo : " +JSON.stringify(compo));
+    console.log("compo : " +JSON.stringify(this.state.isMoving));
     switch(item.type) {
       case 'note':
         return (
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onLongPress={()=>{console.log("onLongPress!"); compo.state.isMoving=true;compo.forceUpdate();move();}}
+            onLongPress={()=>{console.log("onLongPress!"); this.setState('isMoving':true);move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Text 
@@ -147,7 +147,7 @@ class CreatePage extends Component {
 
         <DraggableFlatList
           data={this.state.list}
-          renderItem={( item, index, move, moveEnd, isActive ) => this.renderItem(item, index, move, moveEnd, isActive, this.bind(this))}
+          renderItem={( item, index, move, moveEnd, isActive ) => this.renderItem(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.setState({ 'list': data})}
