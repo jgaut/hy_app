@@ -26,12 +26,24 @@ class CreatePage extends Component {
       console.log('time to launch!');
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
-        console.log("constructor ! : "+this.props.navigation.state.params.fromKey);
-        this.setState({'fromKey' : this.props.navigation.state.params.fromKey});
         this.launch();
+        this.props.navigation.state.params.fromKey:null;
       }else 
       //From roll photo
       if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
+        console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
+        this.AddElement('image', this.props.navigation.state.params.image);
+      }else 
+      //From edit note
+      if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
+        switch(this.props.navigation.state.params.type) {
+          case 'note':
+
+            break;
+
+          default :
+            console.log("error with this type : "+ this.props.navigation.state.params.type)
+        }
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
         this.AddElement('image', this.props.navigation.state.params.image);
       }
@@ -90,6 +102,32 @@ class CreatePage extends Component {
       .then (result => {/*console.log(result);*/ this.setState({isSav:true}); if(e){this.launch();}})
       .catch(err => console.log(err));
     }
+  }
+
+  AddElement(type) {
+
+    switch (type) {
+      case 'note':
+        this.state.data.list.push({"type":"note", "text":this.props.navigation.state.params.});
+        console.log('add note');
+        break;
+      case 'text':
+        this.state.data.list.push({"type":"text", "text":''});
+        console.log('add text');
+        break;
+      case 'image':
+        this.state.data.list.push({"type":"image", "uri":'', "height":'', "width":''});
+        console.log('add image');
+        break;
+      default:
+        console.log('Sorry, we are out of ' + type + '.');
+    }
+
+    //unsave
+    this.setState({isSav:false});
+    
+    //force to refresh
+    this.forceUpdate();
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
