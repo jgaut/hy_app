@@ -217,7 +217,7 @@ container: {
 
   },
   MovingBlock: {
-    height: 50,
+    height: 150,
     backgroundColor: '#fff',
     borderWidth: 1, 
     borderColor: '#555' 
