@@ -120,6 +120,7 @@ class CreatePage extends Component {
                                 height: d.height,
                               }));
         this.setState({'list': tmp});
+        console.log(tmp);
         console.log('add text');
         break;
       case 'image':
