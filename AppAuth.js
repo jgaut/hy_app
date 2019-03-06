@@ -10,6 +10,7 @@ import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
 import TabMenuScreen from './views/TabMenu';
 import Auth from '@aws-amplify/auth';
+import { Constants } from 'expo';
 
 class AppAuth extends React.Component {
 
@@ -29,7 +30,7 @@ class AppAuth extends React.Component {
 }
 
 const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1 }}>
+  <SafeAreaView style={{ flex: 1, paddingTop: Constants.statusBarHeight }}>
     <View style={{ height: 50}}>
       <Text></Text>
     </View>
