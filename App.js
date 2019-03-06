@@ -62,8 +62,8 @@ const AppNavigator = createStackNavigator({
   SignInUp: {screen: SignInUpScreen},
   SignUpConfirm: {screen: SignUpConfirmScreen},
   AppAuth: {screen: AppAuthScreen}
-  'Roll': RollScreen,
-  'Example': ExampleScreen,
+  Roll: {screen: RollScreen},
+  Example: {screen: ExampleScreen},
 },
 {
     headerMode: 'none'}
