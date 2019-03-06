@@ -111,16 +111,6 @@ class CreatePage extends Component {
         break;
       case 'text':
         this.state.data.list.push({"type":"text", "text":''});
-        var tmp = this.state.data.list.map((d, index) => ({
-                                key: `item-${index}`,
-                                type: d.type,
-                                text: d.text,
-                                uri: d.uri,
-                                width: d.width,
-                                height: d.height,
-                              }));
-        this.setState({'list': tmp});
-        console.log(tmp);
         console.log('add text');
         break;
       case 'image':
@@ -130,6 +120,17 @@ class CreatePage extends Component {
       default:
         console.log('Sorry, we are out of ' + type + '.');
     }
+
+    var tmp = this.state.data.list.map((d, index) => ({
+                                key: `item-${index}`,
+                                type: d.type,
+                                text: d.text,
+                                uri: d.uri,
+                                width: d.width,
+                                height: d.height,
+                              }));
+    this.setState({'list': tmp});
+    console.log(tmp);
 
     //unsave
     this.setState({isSav:false});
