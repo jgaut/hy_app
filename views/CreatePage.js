@@ -83,12 +83,12 @@ class CreatePage extends Component {
       case 'note':
         return (
           <TouchableOpacity
-            style={this.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.isMoving ? styles.nothing : styles.note}
+              style={this.state.isMoving ? styles.nothing : styles.note}
               key={Math.random()} 
             >
               {item.text}
@@ -101,12 +101,12 @@ class CreatePage extends Component {
       case 'text':
         return (
           <TouchableOpacity
-            style={this.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.isMoving ? styles.nothing : styles.text}
+              style={this.state.isMoving ? styles.nothing : styles.text}
               key={Math.random()} 
             >
               {item.text}
@@ -120,12 +120,12 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.isMoving ? styles.MovingBlock : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); this.state.isMoving=true; move();}}
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Image 
-            style={this.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
@@ -174,7 +174,7 @@ container: {
   nothing: {
 
   },
-  MovingBlock: : {
+  MovingBlock: {
     padding:5,
     height: 50,
     backgroundColor: '#fff',
