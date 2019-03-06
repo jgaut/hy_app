@@ -164,7 +164,7 @@ class CreatePage extends Component {
           </TouchableOpacity>
           <TouchableOpacity key={Math.random()}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>{this.state.isMoving}</Text>
+              <Text style={styles.buttonText}>{this.state.isMoving?"true":"false"}</Text>
             </View>
           </TouchableOpacity>
 
