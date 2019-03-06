@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import { Constants } from 'expo';
 
 class EditNote extends Component {
   constructor(...props) {
