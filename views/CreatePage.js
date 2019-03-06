@@ -123,7 +123,7 @@ class CreatePage extends Component {
         return (
           <TouchableOpacity
             //style={} 
-            style={this.state.isMoving ? {padding:5, height: 50, backgroundColor: '#fff', borderWidth: 1, borderColor: '#555', backgroundImage: `url(content://media/external/images/media/51632)`} : styles.nothing}
+            style={this.state.isMoving ? {padding:5, height: 50, backgroundColor: '#fff', borderWidth: 1, borderColor: '#555', backgroundImage: `url('content://media/external/images/media/51632')`} : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!"); move();}}
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
