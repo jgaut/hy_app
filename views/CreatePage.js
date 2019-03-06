@@ -91,7 +91,7 @@ class CreatePage extends Component {
               style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
               key={Math.random()} 
             >
-              {item.text}
+              {item.text}{this.state.isMoving?"true":"false"}
             </Text>
 
           </TouchableOpacity>
@@ -109,7 +109,7 @@ class CreatePage extends Component {
               style={this.state.isMoving ? styles.nothing : styles.MovingBlock}
               key={Math.random()} 
             >
-              {item.text}
+              {item.text}{this.state.isMoving?"true":"false"}
             </Text>
 
           </TouchableOpacity>
