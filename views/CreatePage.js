@@ -197,6 +197,7 @@ class CreatePage extends Component {
             </View>
           </TouchableOpacity>
       </View>
+      </View>
     )
   }
 }
