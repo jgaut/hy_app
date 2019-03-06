@@ -52,6 +52,11 @@ class CreatePage extends Component {
   launch(){
     console.log("launch ! : "+this.props.navigation.state.params.fromKey);
     var key = this.props.navigation.state.params.fromKey;
+    this.state.list = [...Array(1)].map((d, index) => ({
+      key: `item-${index}`,
+      type: "Loading",
+      backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
+    }));
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         fetch(result)
