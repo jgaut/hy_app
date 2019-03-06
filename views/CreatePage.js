@@ -15,6 +15,7 @@ class CreatePage extends Component {
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
     })),
     isMoving: false,
+    isSav: false,
   }
 
   constructor(...args) {
@@ -37,8 +38,7 @@ class CreatePage extends Component {
 
     this.props.navigation.addListener('didBlur', () => {
       console.log('time to sav!');
-      //TODO
-      //this.SavMyData(false);
+      this.SavMyData(false);
     });
 
   }
@@ -74,6 +74,18 @@ class CreatePage extends Component {
             .catch(error => {console.log(error);});
       })
       .catch(err => console.log(err));
+  }
+
+  SavMyData(e) {
+    if(!this.state.isSav){
+      this.state.data.list = this.list;
+      Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
+        level: 'private',
+        contentType: 'text/plain'
+      })
+      .then (result => {/*console.log(result);*/ this.setState({isSav:true}); if(e){this.launch();}})
+      .catch(err => console.log(err));
+    }
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
@@ -160,7 +172,7 @@ class CreatePage extends Component {
           renderItem={( item, index, move, moveEnd, isActive ) => this.renderItem(item, index, move, moveEnd, isActive)}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ 'list': data})}
+          onMoveEnd={({ data }) => this.setState({ 'list': data, isSav:false}})}
         />
 
 
@@ -189,7 +201,7 @@ class CreatePage extends Component {
               <Text style={styles.buttonText}>{this.state.isMoving?"End move":"Start move"}</Text>
             </View>
           </TouchableOpacity>
-          
+
         </View>
       </View>
     )
