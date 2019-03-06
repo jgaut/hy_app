@@ -13,7 +13,8 @@ class CreatePage extends Component {
       key: `item-${index}`,
       label: index,
       backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${index * 5}, ${132})`,
-    }))
+    })),
+    isMoving: false,
   }
   
   constructor(...args) {
@@ -118,7 +119,8 @@ class CreatePage extends Component {
       case 'image':
         return (
           <TouchableOpacity
-            style={{width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}} 
+            //style={} 
+            style={this.isMoving ? styles.MovingBlock : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
             onLongPress={move}
             onPressOut={moveEnd}
           >
