@@ -47,8 +47,6 @@ class CreatePage extends Component {
     
   }
 
-
-
   launch(){
     console.log("launch ! : "+this.props.navigation.state.params.fromKey);
     var key = this.props.navigation.state.params.fromKey;
