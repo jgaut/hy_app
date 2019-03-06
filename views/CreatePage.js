@@ -88,7 +88,7 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.nothing}
+              style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
               key={Math.random()} 
             >
               {item.text}
@@ -106,7 +106,7 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!"); this.state.isMoving=false; moveEnd();}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.nothing}
+              style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
               key={Math.random()} 
             >
               {item.text}
@@ -126,7 +126,7 @@ class CreatePage extends Component {
           >
             <Image 
             //style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
-            style={this.state.isMoving ? styles.nothing : styles.nothing}
+            style={this.state.isMoving ? styles.MovingBlock : styles.MovingBlock}
               key={Math.random()} 
               source={{uri: item.uri}} 
             />
