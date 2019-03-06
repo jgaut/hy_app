@@ -76,7 +76,7 @@ class CreatePage extends Component {
       .catch(err => console.log(err));
   }
 
-  renderItem = ({ item, index, move, moveEnd, isActive, component }) => {
+  renderItem = ({ item, index, move, moveEnd, isActive }) => {
     //console.log("item : " +item);
     console.log("item : " +item.text);
     switch(item.type) {
@@ -146,7 +146,7 @@ class CreatePage extends Component {
 
         <DraggableFlatList
           data={this.state.list}
-          renderItem={(item, index, move, moveEnd, isActive ) => {this.renderItem(item, index, move, moveEnd, isActive, this );}}
+          renderItem={(item, index, move, moveEnd, isActive ) => {this.renderItem(item, index, move, moveEnd, isActive);}}
           keyExtractor={(item, index) => `draggable-item-${item.key}`}
           scrollPercent={5}
           onMoveEnd={({ data }) => this.setState({ 'list': data})}
