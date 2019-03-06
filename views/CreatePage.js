@@ -128,7 +128,7 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!");moveEnd();}}
           >
             <Image 
-            style={this.state.isMoving ? {backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"} : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
+            style={this.state.isMoving ? {backgroundImage: `url(${item.uri})`} : {backgroundImage: `url(${item.uri})`, width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
             //style={this.state.isMoving ? styles.nothing : styles.nothing}
               key={Math.random()} 
               //source={{uri: item.uri}} 
