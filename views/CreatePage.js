@@ -256,7 +256,7 @@ class CreatePage extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} >
+          <TouchableOpacity key={Math.random()} onPress={() => {navigate('EditText')}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add text</Text>
             </View>
