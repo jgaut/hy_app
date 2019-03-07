@@ -305,7 +305,8 @@ container: {
     paddingTop: Constants.statusBarHeight,
   },
   nothing: {
-
+    width:1,
+    height:1,
   },
   MovingBlock: {
     height: 50,
