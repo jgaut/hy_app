@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  KeyboardAvoidingView,
 } from 'react-native';
 import { Constants } from 'expo';
 
