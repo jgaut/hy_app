@@ -73,6 +73,12 @@ class CreatePage extends Component {
     }));
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
+        if(result==''){
+            this.state.data.id=fk;
+            this.state.data.list=[];
+            this.forceUpdate();
+            this.state.isSav=true;
+          }else{
         fetch(result)
           .then(response => response.json())
             .then(data => {
@@ -91,6 +97,7 @@ class CreatePage extends Component {
               this.state.isSav=true;
             })
             .catch(error => {console.log(error);});
+          }
       })
       .catch(err => console.log(err));
   }
