@@ -24,7 +24,7 @@ class EditNote extends Component {
     const {navigate} = this.props.navigation;
 
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <TextInput 
           style={styles.note} 
           value={this.state.text}
@@ -44,7 +44,7 @@ class EditNote extends Component {
             </View>
           </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
