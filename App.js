@@ -11,6 +11,7 @@ import AppAuthScreen from './AppAuth';
 import ExampleScreen from './views/Example';
 import RollScreen from './views/Camerarollpicker';
 import EditNoteScreen from './views/EditNote';
+import EditTextScreen from './views/EditText';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
@@ -66,6 +67,7 @@ const AppNavigator = createStackNavigator({
   Roll: {screen: RollScreen},
   Example: {screen: ExampleScreen},
   EditNote: {screen: EditNoteScreen},
+  EditText: {screen: EditTextScreen},
 },
 {
     headerMode: 'none'}
