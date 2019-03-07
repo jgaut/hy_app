@@ -109,6 +109,10 @@ class CreatePage extends Component {
 
   AddElement(type, d) {
 
+    if(!this.state.data.list){
+      this.state.data.list=[];
+    }
+
     switch (type) {
       case 'note':
         this.state.list.push({"type":"note", "text":this.props.navigation.state.params.text});
