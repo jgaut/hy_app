@@ -249,7 +249,7 @@ class CreatePage extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} onPress={() => {navigate('roll'); console.log('go to roll');}}>
+          <TouchableOpacity key={Math.random()} onPress={() => {navigate('Roll'); console.log('go to roll');}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add image</Text>
             </View>
