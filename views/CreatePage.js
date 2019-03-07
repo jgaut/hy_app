@@ -37,8 +37,12 @@ class CreatePage extends Component {
             this.AddElement('note');
             break;
 
+          case 'text':
+            this.AddElement('text');
+            break;
+
           case 'image':
-            this.AddElement('image', this.props.navigation.state.params.data);
+            this.AddElement('image');
             break;
 
           default :
@@ -116,7 +120,7 @@ class CreatePage extends Component {
     }
   }
 
-  AddElement(type, d) {
+  AddElement(type) {
 
     if(!this.state.data.list){
       this.state.data.list=[];
@@ -128,10 +132,11 @@ class CreatePage extends Component {
         console.log('add note');
         break;
       case 'text':
-        this.state.data.list.push({"type":"text", "text":''});
+        this.state.data.list.push({"type":"text", "text":this.props.navigation.state.params.text});
         console.log('add text');
         break;
       case 'image':
+        var d=this.props.navigation.state.params.data
         this.state.data.list.push({"type":"image", "uri":d.uri, "height":d.height, "width":d.width});
         console.log('add image');
         break;
