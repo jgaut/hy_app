@@ -74,13 +74,7 @@ class CreatePage extends Component {
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         console.log('get result'+result);
-        if(result==''){
-            console.log('init data');
-            this.state.data.id=fk;
-            this.state.data.list=[];
-            this.forceUpdate();
-            this.state.isSav=true;
-          }else{
+
         fetch(result)
           .then(response => response.json())
             .then(data => {
@@ -98,8 +92,14 @@ class CreatePage extends Component {
               this.forceUpdate(); 
               this.state.isSav=true;
             })
-            .catch(error => {console.log(error);});
-          }
+            .catch(error => {console.log(error);
+            console.log('init data');
+            this.state.data.id=fk;
+            this.state.data.list=[];
+            this.forceUpdate();
+            this.state.isSav=true;
+          });
+          
       })
       .catch(err => console.log(err));
   }
