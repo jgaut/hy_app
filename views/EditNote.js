@@ -26,13 +26,13 @@ class EditNote extends Component {
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View style={styles.submitButton}>
+        <View>
           <TextInput 
             style={styles.note} 
             value={this.state.text}
             onChangeText={text => this.setState({ text })}
             />
-          <View>
+          <View style={styles.submitButton}>
             
             <TouchableOpacity key={Math.random()} onPress={() => {navigate('Create Page', {'type':'note', 'text':this.state.text});}}>
               <View style={styles.button}>
@@ -68,6 +68,8 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
+    justifyContent: 'center', 
+alignItems: 'center' 
   },
   nothing: {
 
@@ -93,7 +95,6 @@ container: {
     borderColor: '#555' 
   },
   submitButton: {
-    position: 'absolute',
     bottom:0,
     left:0,
     flex: 1,
