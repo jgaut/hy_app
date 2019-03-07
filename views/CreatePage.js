@@ -84,7 +84,7 @@ class CreatePage extends Component {
         fetch(result)
           .then(response => response.json())
             .then(data => {
-              //console.log("data :" + JSON.stringify(data));
+              console.log("data :" + JSON.stringify(data));
               this.state.data=data;
               var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
