@@ -74,6 +74,7 @@ class CreatePage extends Component {
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
         if(result==''){
+            console.log('init data');
             this.state.data.id=fk;
             this.state.data.list=[];
             this.forceUpdate();
