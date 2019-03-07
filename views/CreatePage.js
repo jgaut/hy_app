@@ -32,7 +32,7 @@ class CreatePage extends Component {
       //From roll photo
       if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
         console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
-        this.AddElement('image', this.props.navigation.state.params.image);
+        
       }else 
       //From edit note
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
@@ -41,10 +41,15 @@ class CreatePage extends Component {
             this.AddElement('note');
             break;
 
+          case 'image':
+            this.AddElement('image', this.props.navigation.state.params.data);
+            break;
+
           default :
             console.log("error with this type : "+ this.props.navigation.state.params.type)
         }
       }
+      this.props.navigation.state.params.type=null;
     });
 
     this.props.navigation.addListener('didBlur', () => {
@@ -102,7 +107,7 @@ class CreatePage extends Component {
     }
   }
 
-  AddElement(type) {
+  AddElement(type, d) {
 
     switch (type) {
       case 'note':
