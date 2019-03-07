@@ -26,13 +26,13 @@ class EditNote extends Component {
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View>
+        <View style={styles.submitButton}>
           <TextInput 
             style={styles.note} 
             value={this.state.text}
             onChangeText={text => this.setState({ text })}
             />
-          <View style={styles.submitButton}>
+          <View>
             
             <TouchableOpacity key={Math.random()} onPress={() => {navigate('Create Page', {'type':'note', 'text':this.state.text});}}>
               <View style={styles.button}>
