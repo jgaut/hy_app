@@ -31,7 +31,7 @@ class EditNote extends Component {
           value={this.state.text}
           onChangeText={text => this.setState({ text })}
           />
-          <View style={styles.submitButton}>
+
           
           <TouchableOpacity key={Math.random()} onPress={() => {navigate('Create Page', {'type':'note', 'text':this.state.text});}}>
             <View style={styles.button}>
@@ -44,7 +44,7 @@ class EditNote extends Component {
               <Text style={styles.buttonText}>Cancel</Text>
             </View>
           </TouchableOpacity>
-        </View>
+    
       </KeyboardAvoidingView>
     );
   }
