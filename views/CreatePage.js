@@ -119,7 +119,7 @@ class CreatePage extends Component {
         console.log('add text');
         break;
       case 'image':
-        this.state.data.list.push({"type":"image", "uri":'', "height":'', "width":''});
+        this.state.data.list.push({"type":"image", "uri":d.uri, "height":d.height, "width":d.width});
         console.log('add image');
         break;
       default:
@@ -249,7 +249,7 @@ class CreatePage extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity key={Math.random()} onPress={() => this.AddElement('roll')}>
+          <TouchableOpacity key={Math.random()} onPress={() => {navigate('roll')}}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Add image</Text>
             </View>
