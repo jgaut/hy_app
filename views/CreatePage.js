@@ -91,6 +91,7 @@ class CreatePage extends Component {
             .catch(error => {console.log(error);
             console.log('init data');
             this.state.data={'id':this.props.navigation.state.params.fromKey, 'list':[]};
+            console.log('state.data.id : '+JSON.stringify(this.state.data.id));
             this.forceUpdate();
             this.state.isSav=true;
           });
