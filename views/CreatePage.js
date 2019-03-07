@@ -100,9 +100,9 @@ class CreatePage extends Component {
   }
 
   SavMyData(e) {
-    console.log('state.data : '+this.state.data);
-    console.log('state.data.list : '+this.state.data.list);
-    console.log('state.list : '+this.state.list);
+    console.log('state.data : '+JSON.stringify(this.state.data));
+    console.log('state.data.list : '+JSON.stringifythis.state.data.list));
+    console.log('state.list : '+JSON.stringify(this.state.list));
     console.log('state.isSav : '+this.state.isSav);
     if(!this.state.isSav && this.state.data && this.state.list){
       this.state.data.list = this.state.list;
