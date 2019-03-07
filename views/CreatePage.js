@@ -130,7 +130,7 @@ class CreatePage extends Component {
                                 height: d.height,
                               }));
     this.setState({'list': tmp});
-    console.log(tmp);
+    //console.log(tmp);
 
     //unsave
     this.setState({isSav:false});
