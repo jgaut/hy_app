@@ -57,7 +57,7 @@ button: {
   padding:5,
   margin:5,
   height: 40,
-  flex:0.8
+  flex:0.8,
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   justifyContent: 'center',
