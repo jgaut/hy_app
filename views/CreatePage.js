@@ -30,11 +30,6 @@ class CreatePage extends Component {
         this.launch();
         this.props.navigation.state.params.fromKey=null;
       }else 
-      //From roll photo
-      if(this.props.navigation.state.params.image!=null && this.props.navigation.state.params.image!=''){
-        console.log('Get image :'+JSON.stringify(this.props.navigation.state.params.image));
-        
-      }else 
       //From edit note
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
         switch(this.props.navigation.state.params.type) {
