@@ -69,12 +69,12 @@ class CreatePage extends Component {
     }));
     Storage.get(key+'.json', {level: 'private'})
       .then(result => {
-        console.log('get result'+result);
+        //console.log('get result'+result);
 
         fetch(result)
           .then(response => response.json())
             .then(data => {
-              console.log("data :" + JSON.stringify(data));
+              //console.log("data :" + JSON.stringify(data));
               this.state.data=data;
               var tmp = this.state.data.list.map((d, index) => ({
                                 key: `item-${index}`,
@@ -89,9 +89,9 @@ class CreatePage extends Component {
               this.state.isSav=true;
             })
             .catch(error => {console.log(error);
-            console.log('init data');
+            //console.log('init data');
             this.state.data={'id': key, 'list':[]};
-            console.log('state.data.id : '+JSON.stringify(key));
+            //console.log('state.data.id : '+JSON.stringify(key));
             this.forceUpdate();
             this.state.isSav=true;
           });
@@ -101,10 +101,10 @@ class CreatePage extends Component {
   }
 
   SavMyData(e) {
-    console.log('state.data : '+JSON.stringify(this.state.data));
-    console.log('state.data.list : '+JSON.stringify(this.state.data.list));
-    console.log('state.list : '+JSON.stringify(this.state.list));
-    console.log('state.isSav : '+this.state.isSav);
+    //console.log('state.data : '+JSON.stringify(this.state.data));
+    //console.log('state.data.list : '+JSON.stringify(this.state.data.list));
+    //console.log('state.list : '+JSON.stringify(this.state.list));
+    //console.log('state.isSav : '+this.state.isSav);
     if(!this.state.isSav && this.state.data && this.state.list){
       this.state.data.list = this.state.list;
       Storage.put(this.state.data.id+".json", JSON.stringify(this.state.data), {
@@ -148,7 +148,7 @@ class CreatePage extends Component {
                                 height: d.height,
                               }));
     this.setState({'list': tmp});
-    console.log(JSON.stringify(tmp));
+    //console.log(JSON.stringify(tmp));
 
     //unsave
     this.setState({isSav:false});
