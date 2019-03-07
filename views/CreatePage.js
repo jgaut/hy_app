@@ -172,7 +172,7 @@ class CreatePage extends Component {
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}}}
-            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){move();}}}
+            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Text 
               style={this.state.isMoving ? styles.nothing : styles.note}
@@ -190,7 +190,7 @@ class CreatePage extends Component {
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}}}
-            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){move();}}}
+            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Text 
               style={this.state.isMoving ? styles.nothing : styles.text}
@@ -208,8 +208,9 @@ class CreatePage extends Component {
           <TouchableOpacity
             //style={} 
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
+            onPress=
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}}}
-            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){move();}}}
+            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Image 
             style={this.state.isMoving ? styles.nothing : {width: Dimensions.get('window').width, height: Math.min((item.height * Dimensions.get('window').width / item.width), item.height) || 100}}
