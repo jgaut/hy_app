@@ -26,7 +26,7 @@ class EditNote extends Component {
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View>
+        <View  style={styles.container2}>
           <TextInput 
             style={styles.note} 
             value={this.state.text}
@@ -68,6 +68,10 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
+    justifyContent: 'center', 
+alignItems: 'center' 
+  },
+  container2: {
     justifyContent: 'center', 
 alignItems: 'center' 
   },
