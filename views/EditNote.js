@@ -26,7 +26,7 @@ class EditNote extends Component {
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View>
+   
           <TextInput 
             style={styles.note} 
             value={this.state.text}
@@ -46,7 +46,7 @@ class EditNote extends Component {
               </View>
             </TouchableOpacity>
           </View>
-        </View>
+      
       </KeyboardAvoidingView>
     );
   }
@@ -57,6 +57,7 @@ button: {
   padding:5,
   margin:5,
   height: 40,
+  flex:0.8
   backgroundColor: '#2196F3',
   alignItems: 'stretch',
   justifyContent: 'center',
@@ -68,8 +69,6 @@ container: {
     backgroundColor: '#f5fcff',
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
   },
   container2: {
     justifyContent: 'center', 
