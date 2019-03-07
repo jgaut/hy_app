@@ -196,7 +196,7 @@ class CreatePage extends Component {
               style={this.state.isMoving ? styles.nothing : styles.text}
               key={Math.random()} 
             >
-              {item.text}
+              {this.state.isMoving ? " " : item.text}
             </Text>
 
           </TouchableOpacity>
@@ -305,8 +305,6 @@ container: {
     paddingTop: Constants.statusBarHeight,
   },
   nothing: {
-    width:1,
-    height:1,
   },
   MovingBlock: {
     height: 50,
