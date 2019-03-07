@@ -119,7 +119,7 @@ class CreatePage extends Component {
 
     switch (type) {
       case 'note':
-        this.state.list.push({"type":"note", "text":this.props.navigation.state.params.text});
+        this.state.data.list.push({"type":"note", "text":this.props.navigation.state.params.text});
         console.log('add note');
         break;
       case 'text':
