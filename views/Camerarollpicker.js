@@ -30,7 +30,7 @@ class Roll extends Component {
     const {navigate} = this.props.navigation;
     //console.log(current);
     //console.log(this.state.selected);
-    navigate('Create Page', {image:current});
+    navigate('Create Page', {'type':'image', 'data':current});
     this.state.selected=[];
   }
 
