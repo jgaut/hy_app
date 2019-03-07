@@ -23,9 +23,10 @@ class CreatePage extends Component {
     super(...args);
 
     this.props.navigation.addListener('didFocus', () => {
-      console.log('time to launch!');
+      
       //From listPage
       if(this.props.navigation.state.params.fromKey!=null && this.props.navigation.state.params.fromKey!=''){
+        console.log('time to launch!');
         this.launch();
         this.props.navigation.state.params.fromKey=null;
       }else 
