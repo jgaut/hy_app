@@ -171,10 +171,12 @@ class CreatePage extends Component {
 
     switch(item.type) {
       case 'note':
+        var key = item.key;
+        var text = item.text;
         return (
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'note'})}}}
+            onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'note', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Text 
@@ -189,10 +191,12 @@ class CreatePage extends Component {
         break;
 
       case 'text':
+        var key = item.key;
+        var text = item.text;
         return (
           <TouchableOpacity
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}}}
+            onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'note', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Text 
