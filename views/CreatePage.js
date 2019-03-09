@@ -34,7 +34,12 @@ class CreatePage extends Component {
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
         switch(this.props.navigation.state.params.type) {
           case 'note':
-            this.AddElement('note');
+            if(!this.props.navigation.state.params.key || this.props.navigation.state.params.key=''){
+              this.AddElement('note');
+            }else{
+              this.MajElement(this.props.navigation.state.params);
+            }
+            
             break;
 
           case 'text':
@@ -155,6 +160,26 @@ class CreatePage extends Component {
     this.setState({'list': tmp});
     //console.log(JSON.stringify(tmp));
 
+    //unsave
+    this.setState({isSav:false});
+    
+    //force to refresh
+    this.forceUpdate();
+  }
+
+  MajElement(obj) {
+
+    if(obj.type=='note' || obj.type=='text') {
+    
+      this.state.list.forEach(function(element) {
+        console.log(element);
+        if(element.key == obj.key){
+          element.text = obj.text;
+        
+        }
+      );
+    }
+    
     //unsave
     this.setState({isSav:false});
     
