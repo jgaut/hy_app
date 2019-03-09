@@ -194,8 +194,7 @@ class CreatePage extends Component {
 
     const {navigate} = this.props.navigation;
 
-    switch(item.type) {
-      case 'note':
+    if(item.type=="text" || item.type=='note'){
         var key = item.key;
         var text = item.text;
           return (
@@ -210,7 +209,7 @@ class CreatePage extends Component {
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
           >
             <Text 
-              style={this.state.isMoving ? styles.nothing : styles.note}
+              style={this.state.isMoving ? styles.nothing : item.type=='note'? styles.note : styles.text}
               key={Math.random()} 
             >
               {item.text}
@@ -218,42 +217,8 @@ class CreatePage extends Component {
 
           </Swipeable>
         );
-        break;
+}else if(item.type='image'){
 
-      case 'text':
-        var key = item.key;
-        var text = item.text;
-        return (
-          <Swipeable 
-          leftContent={(
-        <View style={[styles.leftSwipeItem, {backgroundColor: 'lightskyblue'}]}>
-          <Text>Delete</Text>
-        </View>
-      )}
-      rightButtons={[
-        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen'}]}>
-          <Text>1</Text>
-        </TouchableOpacity>,
-        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'orchid'}]}>
-          <Text>2</Text>
-        </TouchableOpacity>
-      ]}
-            style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
-            onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
-            onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
-          >
-            <Text 
-              style={this.state.isMoving ? styles.nothing : styles.text}
-              key={Math.random()} 
-            >
-              {this.state.isMoving ? " " : item.text}
-            </Text>
-
-          </Swipeable>
-        );
-        break;
-
-      case 'image':
         return (
           <TouchableOpacity
             //style={} 
@@ -270,18 +235,7 @@ class CreatePage extends Component {
 
           </TouchableOpacity>
         );
-        break;
-
-        case 'loading':
-        return (
-          
-            <Text 
-            style={styles.button}
-              key={Math.random()}>Loading...</Text>
-
-        );
-        break;
-
+}else{
         default:
           console.log('Sorry, we are out of ' + item.type + '.');
   }
