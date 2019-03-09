@@ -196,7 +196,7 @@ class CreatePage extends Component {
         }
       });
     
-      this.setState({'list': tmp});
+      this.state.list=tmp;
     //unsave
     this.setState({isSav:false});
     
