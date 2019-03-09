@@ -175,9 +175,8 @@ class CreatePage extends Component {
         console.log(element);
         if(element.key == obj.key){
           element.text = obj.text;
-        
         }
-      );
+      });
     }
     
     //unsave
