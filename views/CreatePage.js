@@ -198,7 +198,6 @@ class CreatePage extends Component {
       case 'note':
         var key = item.key;
         var text = item.text;
-        return (
           return (
           <Swipeable 
           leftContent={(
