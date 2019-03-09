@@ -13,11 +13,14 @@ import { Constants } from 'expo';
 class EditNote extends Component {
 
   state = {
-    text: "",
+    text: '',
+    key:'',
   }
 
   constructor(...props) {
     super(...props);
+    this.state.key = this.props.navigation.state.params.key;
+    this.state.text = this.props.navigation.state.params.text;
   }
 
   render() {
@@ -34,7 +37,7 @@ class EditNote extends Component {
             />
           <View style={styles.submitButton}>
             
-            <TouchableOpacity key={Math.random()} onPress={() => {navigate('Create Page', {'type':'note', 'text':this.state.text});}}>
+            <TouchableOpacity key={Math.random()} onPress={() => {navigate('Create Page', {'type':'note', 'type': 'note', 'key':this.state.key, 'text':this.state.text});}}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>OK</Text>
               </View>
