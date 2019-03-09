@@ -20,12 +20,7 @@ class CreatePage extends Component {
     isEdit: false,
   }
 
-  const leftContent = <Text>Pull to activate</Text>;
- 
-const rightButtons = [
-  <TouchableHighlight><Text>Button 1</Text></TouchableHighlight>,
-  <TouchableHighlight><Text>Button 2</Text></TouchableHighlight>
-];
+
 
   constructor(...args) {
     super(...args);
@@ -200,6 +195,13 @@ const rightButtons = [
     //console.log("compo : " +JSON.stringify(this.state.isMoving));
 
     const {navigate} = this.props.navigation;
+
+      const leftContent = <Text>Pull to activate</Text>;
+ 
+const rightButtons = [
+  <TouchableHighlight><Text>Button 1</Text></TouchableHighlight>,
+  <TouchableHighlight><Text>Button 2</Text></TouchableHighlight>
+];
 
     switch(item.type) {
       case 'note':
