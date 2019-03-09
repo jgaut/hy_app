@@ -5,6 +5,7 @@ import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
 import { Constants } from 'expo';
+import Swipeable from 'react-native-swipeable-row';
 
 class CreatePage extends Component {
 
@@ -18,6 +19,13 @@ class CreatePage extends Component {
     isSav: false,
     isEdit: false,
   }
+
+  const leftContent = <Text>Pull to activate</Text>;
+ 
+const rightButtons = [
+  <TouchableHighlight><Text>Button 1</Text></TouchableHighlight>,
+  <TouchableHighlight><Text>Button 2</Text></TouchableHighlight>
+];
 
   constructor(...args) {
     super(...args);
@@ -218,7 +226,7 @@ class CreatePage extends Component {
         var key = item.key;
         var text = item.text;
         return (
-          <TouchableOpacity
+          <Swipeable leftContent={leftContent} rightButtons={rightButtons}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
@@ -230,7 +238,7 @@ class CreatePage extends Component {
               {this.state.isMoving ? " " : item.text}
             </Text>
 
-          </TouchableOpacity>
+          </Swipeable>
         );
         break;
 
