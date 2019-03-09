@@ -206,12 +206,9 @@ class CreatePage extends Component {
         </View>
       )}
       rightButtons={[
-        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen'}]}>
-          <Text>1</Text>
+        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen', flex:1}]}>
+          <Text>Delete</Text>
         </TouchableOpacity>,
-        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'orchid'}]}>
-          <Text>2</Text>
-        </TouchableOpacity>
       ]}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
