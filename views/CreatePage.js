@@ -196,12 +196,12 @@ class CreatePage extends Component {
         }
       });
     
-      this.state.list=tmp;
+      this.setState({'list': tmp});
     //unsave
-    this.state.isSav=false;
+    this.setState({isSav:false});
     
     //force to refresh
-    this.forceUpdate();
+    //this.forceUpdate();
   }
 
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
