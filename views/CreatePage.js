@@ -198,7 +198,7 @@ class CreatePage extends Component {
     
       this.state.list=tmp;
     //unsave
-    this.setState({isSav:false});
+    this.state.isSav=false;
     
     //force to refresh
     this.forceUpdate();
