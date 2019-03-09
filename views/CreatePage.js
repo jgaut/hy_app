@@ -20,7 +20,7 @@ class CreatePage extends Component {
     isEdit: false,
   }
 
-
+const element = <h1>Hello, world</h1>;
 
   constructor(...args) {
     super(...args);
@@ -221,7 +221,7 @@ class CreatePage extends Component {
         var key = item.key;
         var text = item.text;
         return (
-          <Swipeable leftContent={return (<Text>Pull to activate</Text>)} rightButtons={}
+          <Swipeable leftContent={} rightButtons={}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
