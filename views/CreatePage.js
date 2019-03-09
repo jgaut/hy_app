@@ -187,6 +187,25 @@ class CreatePage extends Component {
     this.forceUpdate();
   }
 
+  DelElement(obj) {
+
+    if(obj.type=='note' || obj.type=='text') {
+    
+      this.state.list.forEach(function(element) {
+        //console.log(element);
+        if(element.key == obj.key){
+          element.text = obj.text;
+        }
+      });
+    }
+    
+    //unsave
+    this.setState({isSav:false});
+    
+    //force to refresh
+    this.forceUpdate();
+  }
+
   renderItem = ({ item, index, move, moveEnd, isActive }) => {
     //console.log("item : " +item);
     //console.log("item : " +item.text||item.uri);
@@ -204,6 +223,7 @@ class CreatePage extends Component {
           <Text>Delete</Text>
         </View>
       )}
+            leftActionActivationDistance={50}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
