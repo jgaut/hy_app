@@ -196,13 +196,6 @@ class CreatePage extends Component {
 
     const {navigate} = this.props.navigation;
 
-      const leftContent = <Text>Pull to activate</Text>;
- 
-const rightButtons = [
-  <TouchableHighlight><Text>Button 1</Text></TouchableHighlight>,
-  <TouchableHighlight><Text>Button 2</Text></TouchableHighlight>
-];
-
     switch(item.type) {
       case 'note':
         var key = item.key;
@@ -228,7 +221,7 @@ const rightButtons = [
         var key = item.key;
         var text = item.text;
         return (
-          <Swipeable leftContent={leftContent} rightButtons={rightButtons}
+          <Swipeable leftContent={return (<Text>Pull to activate</Text>)} rightButtons={}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
