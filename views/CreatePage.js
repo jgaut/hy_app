@@ -187,18 +187,16 @@ class CreatePage extends Component {
     this.forceUpdate();
   }
 
-  DelElement(obj) {
-
-    if(obj.type=='note' || obj.type=='text') {
-    
+  DelElement(key) {
+      var tmp=[];
       this.state.list.forEach(function(element) {
         //console.log(element);
-        if(element.key == obj.key){
-          element.text = obj.text;
+        if(element.key != key){
+          tmp.push(element);
         }
       });
-    }
     
+      this.setState('list': tmp);
     //unsave
     this.setState({isSav:false});
     
@@ -224,6 +222,7 @@ class CreatePage extends Component {
         </View>
       )}
             leftActionActivationDistance={50}
+            onLeftActionRelease={this.DelElement(key)}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
