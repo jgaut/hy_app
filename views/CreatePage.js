@@ -34,7 +34,7 @@ class CreatePage extends Component {
       if(this.props.navigation.state.params.type!=null && this.props.navigation.state.params.type!=''){
         switch(this.props.navigation.state.params.type) {
           case 'note':
-            if(!this.props.navigation.state.params.key || this.props.navigation.state.params.key=''){
+            if(!this.props.navigation.state.params.key || this.props.navigation.state.params.key==''){
               this.AddElement('note');
             }else{
               this.MajElement(this.props.navigation.state.params);
