@@ -20,8 +20,6 @@ class CreatePage extends Component {
     isEdit: false,
   }
 
-const element = <h1>Hello, world</h1>;
-
   constructor(...args) {
     super(...args);
 
