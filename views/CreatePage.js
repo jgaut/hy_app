@@ -207,7 +207,7 @@ class CreatePage extends Component {
       )}
       rightButtons={[
         <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen', flex:1}]}>
-          <Text>Delete</Text>
+          <Text style={{flex:1}}>Delete</Text>
         </TouchableOpacity>,
       ]}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
