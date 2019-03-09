@@ -236,10 +236,9 @@ class CreatePage extends Component {
           </TouchableOpacity>
         );
 }else{
-        default:
           console.log('Sorry, we are out of ' + item.type + '.');
   }
-  }
+}
 
   render() {
 
