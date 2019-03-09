@@ -221,7 +221,20 @@ const element = <h1>Hello, world</h1>;
         var key = item.key;
         var text = item.text;
         return (
-          <Swipeable leftContent={} rightButtons={}
+          <Swipeable 
+          leftContent={(
+        <View style={[styles.leftSwipeItem, {backgroundColor: 'lightskyblue'}]}>
+          <Text>Pull action</Text>
+        </View>
+      )}
+      rightButtons={[
+        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'lightseagreen'}]}>
+          <Text>1</Text>
+        </TouchableOpacity>,
+        <TouchableOpacity style={[styles.rightSwipeItem, {backgroundColor: 'orchid'}]}>
+          <Text>2</Text>
+        </TouchableOpacity>
+      ]}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
