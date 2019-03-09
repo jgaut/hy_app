@@ -19,8 +19,8 @@ class EditNote extends Component {
 
   constructor(...props) {
     super(...props);
-    this.state.key = this.props.navigation.state.params.key;
-    this.state.text = this.props.navigation.state.params.text;
+    this.state.key = if(this.props.navigation.state.params || this.props.navigation.state.params.key){this.props.navigation.state.params.key}else{''};
+    this.state.text = if(this.props.navigation.state.params || this.props.navigation.state.params.text){this.props.navigation.state.params.text}else{''};
   }
 
   render() {
