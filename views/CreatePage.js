@@ -215,14 +215,7 @@ class CreatePage extends Component {
         var key = item.key;
         var text = item.text;
           return (
-          <Swipeable 
-          leftContent={(
-        <View style={[styles.leftSwipeItem, {backgroundColor: 'lightskyblue', flex:1}]}>
-          <Text>Delete</Text>
-        </View>
-      )}
-            leftActionActivationDistance={50}
-            onLeftActionRelease={console.log("onLeftActionRelease")/*this.DelElement(key);*/}
+          <TouchableOpacity 
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
@@ -234,7 +227,7 @@ class CreatePage extends Component {
               {item.text}
             </Text>
 
-          </Swipeable>
+          </TouchableOpacity>
         );
 }else if(item.type='image'){
 
