@@ -55,7 +55,12 @@ const CustomdrawerComponent = (props) => (
 
 
 const MyDrawerNavigator = createDrawerNavigator({
-  'Home': TabMenuScreen,
+  'Home': {
+    screen: TabMenuScreen,
+    navigationOptions: ({navigation}) => ({
+      drawerLockMode: 'locked-closed'
+    })
+  },
   'Profile': ProfileScreen,
   //'Journal': ListPageScreen,
   //'Create Page': CreatePageScreen
