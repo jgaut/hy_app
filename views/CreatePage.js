@@ -222,7 +222,7 @@ class CreatePage extends Component {
         </View>
       )}
             leftActionActivationDistance={50}
-            onLeftActionRelease={this.DelElement(key)}
+            onLeftActionRelease={console.log('onLeftActionRelease');/*this.DelElement(key);*/}
             style={this.state.isMoving ? styles.MovingBlock : styles.nothing}
             onLongPress={()=>{console.log("onLongPress!");if(this.state.isMoving){move();}else{navigate('EditNote', {'type': 'text', 'key':key, 'text':text})}}}
             onPressOut={()=>{console.log("onPressOut!");if(this.state.isMoving){moveEnd();}}}
