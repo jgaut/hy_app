@@ -1,9 +1,0 @@
-{
-    "bucketName": "hyappcbe4b1aa7865421486000f057f79685e",
-    "authPolicyName": "s3_amplify_b73bf406",
-    "unauthPolicyName": "s3_amplify_b73bf406",
-    "authRoleName": "hyapp-20190212201533-authRole",
-    "unauthRoleName": "hyapp-20190212201533-unauthRole",
-    "authPermissions": "rw",
-    "unauthPermissions": ""
-}

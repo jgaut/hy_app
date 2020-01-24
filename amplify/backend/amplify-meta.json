@@ -1,51 +1,54 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "hyapp-20190212201533-authRole",
-			"UnauthRoleArn": "arn:aws:iam::589551891303:role/hyapp-20190212201533-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::589551891303:role/hyapp-20190212201533-authRole",
+			"AuthRoleName": "amplify-hyapp-dev-190940-authRole",
+			"UnauthRoleArn": "arn:aws:iam::589551891303:role/amplify-hyapp-dev-190940-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::589551891303:role/amplify-hyapp-dev-190940-authRole",
 			"Region": "eu-west-1",
-			"DeploymentBucketName": "hyapp-20190212201533-deployment",
-			"UnauthRoleName": "hyapp-20190212201533-unauthRole",
-			"StackName": "hyapp-20190212201533",
-			"StackId": "arn:aws:cloudformation:eu-west-1:589551891303:stack/hyapp-20190212201533/91fc6610-2efa-11e9-b2c1-066324f10f26"
+			"DeploymentBucketName": "amplify-hyapp-dev-190940-deployment",
+			"UnauthRoleName": "amplify-hyapp-dev-190940-unauthRole",
+			"StackName": "amplify-hyapp-dev-190940",
+			"StackId": "arn:aws:cloudformation:eu-west-1:589551891303:stack/amplify-hyapp-dev-190940/b27bd430-3ed4-11ea-8e3a-026ecba91d00",
+			"AmplifyAppId": "d3fwaq2dx8kys"
 		}
 	},
 	"auth": {
-		"cognitof552d5a6": {
+		"hyapp9bf22896": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/hyapp-20190212201533-deployment/amplify-cfn-templates/auth/cognitof552d5a6-cloudformation-template.yml",
-				"logicalId": "authcognitof552d5a6"
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-hyapp-dev-190940-deployment/amplify-cfn-templates/auth/hyapp9bf22896-cloudformation-template.yml",
+				"logicalId": "authhyapp9bf22896"
 			},
-			"lastPushTimeStamp": "2019-02-12T19:21:04.962Z",
+			"lastPushTimeStamp": "2020-01-24T18:14:58.781Z",
 			"output": {
-				"AppClientSecret": "dja6u84c4f8ohetr434lsdo3oci9c48cc3jljr1j1r1h3evcc9u",
-				"UserPoolId": "eu-west-1_Xt5poitqQ",
-				"AppClientIDWeb": "45ojf6p4spvhkj9tq4id1fnpsf",
-				"AppClientID": "7fmdqlt3gkek2as5voebp4mei",
-				"IdentityPoolId": "eu-west-1:b2fb0687-8c9b-4554-bd24-0c823a134a25",
-				"IdentityPoolName": "cognitof552d5a6_identitypool_f552d5a6",
-				"UserPoolName": "cognitof552d5a6_userpool_f552d5a6"
+				"AppClientSecret": "9vns6of2podrpjfgaam5h36j7stqb3l2jhfaqd7qes47pt6mrum",
+				"UserPoolId": "eu-west-1_XLIPEnFDb",
+				"AppClientIDWeb": "j8b8ke4dovt0b97mlhv2cg06c",
+				"AppClientID": "1d1nnvuo3aagobdfr2199540it",
+				"IdentityPoolId": "eu-west-1:85d4e06b-975c-4cca-a744-ab77a00f8048",
+				"IdentityPoolName": "hyapp9bf22896_identitypool_9bf22896__dev",
+				"UserPoolName": "hyapp9bf22896_userpool_9bf22896"
 			},
-			"lastPushDirHash": "g14gxWfy/R0Qod3ePvpO9QVKsLE="
+			"lastPushDirHash": "6kRjwMuWXa+JCTb+H/xz0foi0l0="
 		}
 	},
 	"storage": {
-		"hys3": {
+		"s3fadba6a4": {
 			"service": "S3",
 			"providerPlugin": "awscloudformation",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/hyapp-20190212201533-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
-				"logicalId": "storagehys3"
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-hyapp-dev-190940-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storages3fadba6a4"
 			},
-			"lastPushTimeStamp": "2019-02-12T19:21:04.962Z",
+			"lastPushTimeStamp": "2020-01-24T18:14:58.781Z",
 			"output": {
-				"BucketName": "hyappcbe4b1aa7865421486000f057f79685e",
+				"BucketName": "hyapp-bucket0190940-dev",
 				"Region": "eu-west-1"
 			},
-			"lastPushDirHash": "9JN9HaqMjcu2m/PwSV3slOozeTc="
+			"lastPushDirHash": "f6Ej5eyaHA1qY9SjfVB3gutc16w="
 		}
 	}
 }

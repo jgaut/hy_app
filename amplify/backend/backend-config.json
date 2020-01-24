@@ -1,0 +1,16 @@
+{
+	"auth": {
+		"hyapp9bf22896": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"storage": {
+		"s3fadba6a4": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

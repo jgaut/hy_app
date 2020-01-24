@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-hyapp-dev-190940-authRole",
+            "UnauthRoleArn": "arn:aws:iam::589551891303:role/amplify-hyapp-dev-190940-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::589551891303:role/amplify-hyapp-dev-190940-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-hyapp-dev-190940-deployment",
+            "UnauthRoleName": "amplify-hyapp-dev-190940-unauthRole",
+            "StackName": "amplify-hyapp-dev-190940",
+            "StackId": "arn:aws:cloudformation:eu-west-1:589551891303:stack/amplify-hyapp-dev-190940/b27bd430-3ed4-11ea-8e3a-026ecba91d00",
+            "AmplifyAppId": "d3fwaq2dx8kys"
+        },
+        "categories": {
+            "auth": {
+                "hyapp9bf22896": {}
+            }
+        }
+    }
+}
