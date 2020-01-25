@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 15504,
-  "expoServerNgrokUrl": "https://g5-7bs.jgaut.hy-app.exp.direct",
-  "packagerNgrokUrl": "https://packager.g5-7bs.jgaut.hy-app.exp.direct",
-  "ngrokPid": 15527
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
