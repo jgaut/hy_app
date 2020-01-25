@@ -30,7 +30,7 @@ class AppAuth extends React.Component {
 }
 
 const CustomdrawerComponent = (props) => (
-  <SafeAreaView style={{ flex: 1, paddingTop: Constants.statusBarHeight }}>
+  <SafeAreaView style={{ flex: 1, paddingTop: 10 }}>
       <Text style={styles.text}>Logo</Text>
     <ScrollView>
       <DrawerItems {...props}/>
