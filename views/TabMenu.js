@@ -1,6 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, View } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Platform, StyleSheet, View, Image } from "react-native";
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -9,7 +8,7 @@ import ListPageScreen from './ListPage';
 import ChatBotScreen from './ChatBot';
 import NotifScreen from './Notif';
 
-import Image from 'react-native-remote-svg'
+//import Image from 'react-native-remote-svg'
 
 class TabMenuScreen extends React.Component {
 
