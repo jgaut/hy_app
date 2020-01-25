@@ -317,7 +317,7 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 10,
   },
   nothing: {
   },
