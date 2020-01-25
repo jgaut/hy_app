@@ -31,7 +31,7 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {"Journal"},
-      tabBarIcon: ({ tintColor }) => (<Text>Journal</Text>
+      tabBarIcon: ({ tintColor }) => (<Text>Journal</Text>)
     }),
   },
   'Notif': {
