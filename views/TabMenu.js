@@ -32,21 +32,21 @@ const MyTabNavigator = createBottomTabNavigator({
   'Journal': {
     screen: ListPageScreen,
     navigationOptions: () => ({
-      tabBarLabel: () => {},
+      tabBarLabel: () => {"Journal"},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/journal.svg')} style={styles.barbouton} />)
     }),
   },
   'Notif': {
     screen: NotifScreen,
     navigationOptions: () => ({
-      tabBarLabel: () => {},
+      tabBarLabel: () => {"Notif"},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
-      tabBarLabel: () => {},
+      tabBarLabel: () => {"New page"},
       tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
     }),
   },
@@ -60,7 +60,7 @@ const MyTabNavigator = createBottomTabNavigator({
   'Menu': {
     screen: () => {},
     navigationOptions: () => ({
-      tabBarLabel: () => {},
+      tabBarLabel: () => {"Menu"},
       tabBarIcon: ({}) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
