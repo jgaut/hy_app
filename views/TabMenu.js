@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, View, Image } from "react-native";
+import { Platform, StyleSheet, View, Image, Text } from "react-native";
 import {createAppContainer, createBottomTabNavigator, createStackNavigator} from 'react-navigation';
 import HomeScreen from './Home';
 import ProfileScreen from './Profile';
@@ -7,9 +7,6 @@ import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
 import ChatBotScreen from './ChatBot';
 import NotifScreen from './Notif';
-import { SvgUri } from 'react-native-svg';
-
-//import Image from 'react-native-remote-svg'
 
 class TabMenuScreen extends React.Component {
 
@@ -34,40 +31,35 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {"Journal"},
-      tabBarIcon: ({ tintColor }) => (
-        <SvgUri
-    width="40"
-    height="40"
-    uri="../images/journal.svg"
-  />)
+      tabBarIcon: ({ tintColor }) => (<Text>Journal</Text>
     }),
   },
   'Notif': {
     screen: NotifScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {"Notif"},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/notif.svg')} style={styles.barbouton} />)
+      tabBarIcon: ({ tintColor }) => (<Text>Notif</Text>)
     }),
   },
   'Create Page':{
     screen: CreatePageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {"New page"},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/newpage.svg')} style={styles.barbouton}/>)
+      tabBarIcon: ({ tintColor }) => (<Text>Create Page</Text>)
     }),
   },
   'ChatBot':{
     screen: ChatBotScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/bot.svg')} style={styles.barbouton}/>)
+      tabBarIcon: ({ tintColor }) => (<Text>ChatBot</Text>)
     }),
   },
   'Menu': {
     screen: () => {},
     navigationOptions: () => ({
       tabBarLabel: () => {"Menu"},
-      tabBarIcon: ({}) => (<Image source={require('../images/menu.svg')} style={styles.barbouton} />), 
+      tabBarIcon: ({}) => (<Text>Menu</Text>), 
       tabBarOnPress: (...props) => {props[0].navigation.openDrawer();},
     }),
   },
