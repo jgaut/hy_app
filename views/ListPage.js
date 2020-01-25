@@ -104,7 +104,7 @@ const formatData = (data, numColumns) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight
+    paddingTop: 10
   },
   item: {
     backgroundColor: '#4D243D',
