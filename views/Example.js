@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
-import DraggableFlatList from 'react-native-draggable-flatlist'
 
 class Example extends Component {
 
@@ -40,13 +39,6 @@ class Example extends Component {
     console.log(this.state.list);
     return (
       <View style={{ flex: 1 }}>
-        <DraggableFlatList
-          data={this.state.list}
-          renderItem={this.renderItem}
-          keyExtractor={(item, index) => `draggable-item-${item.key}`}
-          scrollPercent={5}
-          onMoveEnd={({ data }) => this.setState({ 'list': data})}
-        />
       </View>
     )
   }
