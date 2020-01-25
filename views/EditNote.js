@@ -8,7 +8,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
 } from 'react-native';
-import { Constants } from 'expo';
+import { Constants } from 'expo-constants';
 
 class EditNote extends Component {
 

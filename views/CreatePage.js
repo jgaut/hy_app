@@ -4,7 +4,7 @@ import DraggableFlatList from 'react-native-draggable-flatlist'
 import Storage from '@aws-amplify/storage';
 import { createStackNavigator } from 'react-navigation';
 import { createAppContainer } from 'react-navigation';
-import { Constants } from 'expo';
+import { Constants } from 'expo-constants';
 import Swipeable from 'react-native-swipeable-row';
 
 class CreatePage extends Component {

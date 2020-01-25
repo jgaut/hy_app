@@ -10,7 +10,7 @@ import CreatePageScreen from './views/CreatePage';
 import ListPageScreen from './views/ListPage';
 import TabMenuScreen from './views/TabMenu';
 import Auth from '@aws-amplify/auth';
-import { Constants } from 'expo';
+import { Constants } from 'expo-constants';
 
 class AppAuth extends React.Component {
 

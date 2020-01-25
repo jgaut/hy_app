@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from '
 import { createStackNavigator } from 'react-navigation';
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
-import { Constants } from 'expo';
+import { Constants } from 'expo-constants';
  
 const moment = extendMoment(Moment);
 
