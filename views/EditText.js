@@ -8,7 +8,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
 } from 'react-native';
-import { Constants } from 'expo';
+import { Constants } from 'expo-constants';
 
 class EditText extends Component {
 
@@ -70,7 +70,7 @@ button: {
 container: {
     backgroundColor: '#f5fcff',
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 10,
   },
   container2: {
     justifyContent: 'center', 
