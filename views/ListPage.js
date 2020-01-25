@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native'; //https://facebook.github.io/react-native/docs/flatlist#refreshing
+import { StyleSheet, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native'; //https://facebook.github.io/react-native/docs/flatlist#refreshing
+import View from 'react-native-webview';
 import { createStackNavigator } from 'react-navigation';
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
