@@ -7,6 +7,7 @@ import CreatePageScreen from './CreatePage';
 import ListPageScreen from './ListPage';
 import ChatBotScreen from './ChatBot';
 import NotifScreen from './Notif';
+import { SvgUri } from 'react-native-svg';
 
 //import Image from 'react-native-remote-svg'
 
@@ -33,7 +34,12 @@ const MyTabNavigator = createBottomTabNavigator({
     screen: ListPageScreen,
     navigationOptions: () => ({
       tabBarLabel: () => {"Journal"},
-      tabBarIcon: ({ tintColor }) => (<Image source={require('../images/journal.svg')} style={styles.barbouton} />)
+      tabBarIcon: ({ tintColor }) => (
+        <SvgUri
+    width="40"
+    height="40"
+    uri="../images/journal.svg"
+  />)
     }),
   },
   'Notif': {
